@@ -2,7 +2,7 @@
 
 <!--START_SECTION:readmes-description-->
 
-> TODO: Description
+Minimal state management using an extendable controller class
 
 <!--END_SECTION:readmes-description-->
 
