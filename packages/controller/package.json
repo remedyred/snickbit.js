@@ -18,8 +18,8 @@
 		"build": "tsup",
 		"clean": "shx rm -rf ./dist ",
 		"depcheck": "depcheck",
-		"meta": "pnpm run prod --metafile",
 		"docs": "typedoc",
+		"meta": "pnpm run prod --metafile",
 		"prod": "pnpm run clean && npm run build --minify",
 		"test": "jest",
 		"watch": "npm run build --watch"
