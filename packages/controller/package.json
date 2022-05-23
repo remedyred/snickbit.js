@@ -1,6 +1,6 @@
 {
 	"name": "@snickbit/controller",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"description": "Minimal state management using an extendable controller class",
 	"license": "MIT",
 	"exports": {
