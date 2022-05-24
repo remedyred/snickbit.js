@@ -1,44 +1,33 @@
-import {objectClone} from '@snickbit/utilities'
 import mitt, {Handler} from 'mitt'
+import {objectClone} from '@snickbit/utilities'
 
-export type ControllerKey = string
+export type ControllerKey = string | symbol
 export type ControllerValue = any
 
-export interface ControllerOptions {
-	name: string
-	persist?: boolean | string[]
-
-	[key: string]: any
-}
+export type WatchStop = () => void
+export type Watchers = Record<string, WatchStop>
 
 export interface ControllerState {
 	[key: ControllerKey]: ControllerValue
 }
 
-export type WatchStop = () => void
-export type Watchers = Record<string, WatchStop>
-
-export interface DefaultState {
-	[key: string | symbol]: any
-}
-
-export class Controller<State extends DefaultState> {
-	protected state: ControllerState = {}
-	protected originalState: ControllerState = {}
+export class Controller<State = ControllerState> {
+	protected state = {} as State
+	protected originalState = {} as State
 	protected proxy: Controller<State>
-	protected ready = false
 	protected emitter = mitt()
 	public $state: ProxyHandler<Controller<State>>
 
-	options: ControllerOptions = {
-		name: 'default',
-		persist: []
-	}
+	persistable: string[] = []
 
-	protected id = (...keys: string[]) => ['controller', this.$id, ...keys].join('.')
+	protected id = (...keys: string[]) => ['controller', this.$name, ...keys].join('.')
 
-	constructor(name: string, options?: Partial<ControllerOptions>, hydration?: ControllerState) {
-		this.$config(name, options, hydration)
+	constructor(data: Partial<State> = {}) {
+
+		this.originalState = objectClone(data) as State
+		for (let key in data) {
+			this.state[key] = data[key]
+		}
 
 		this.proxy = new Proxy(this, {
 			get(target: Controller<State>, prop: string, receiver?: any): any {
@@ -58,7 +47,7 @@ export class Controller<State extends DefaultState> {
 			}
 		})
 
-		this.$state = new Proxy(this.state, {
+		this.$state = new Proxy(this.state as ControllerState, {
 			get: (target: Controller<State>, prop: string) => {
 				if (this.$has(prop)) {
 					return this.$get(prop)
@@ -74,36 +63,8 @@ export class Controller<State extends DefaultState> {
 		return this.proxy
 	}
 
-	get $id() {
-		return this.options.name
-	}
-
-	get $ready() {
-		return this.ready
-	}
-
-	$config(name: string, options?: Partial<ControllerOptions>, hydration?: ControllerState) {
-		let isPending = (!options && !hydration)
-		if (!options) {
-			options = {}
-		}
-		if (!hydration) {
-			hydration = {}
-		}
-		this.options = {
-			...this.options,
-			...options,
-			name: name || this.options.name || 'default'
-		}
-
-		if (!isPending) {
-			this.originalState = objectClone(hydration)
-			for (let key in hydration) {
-				this.state[key] = hydration[key]
-			}
-		}
-
-		this.ready = !isPending
+	get $name() {
+		return this.constructor.name
 	}
 
 	$get(key: ControllerKey) {
@@ -122,7 +83,7 @@ export class Controller<State extends DefaultState> {
 		return Object.keys(this.state)
 	}
 
-	$patch(data: ControllerState) {
+	$patch(data: State) {
 		for (let key in data) {
 			this.$set(key, data[key])
 		}
