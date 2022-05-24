@@ -6,12 +6,6 @@
 
 - [Controller](classes/Controller.md)
 
-### Interfaces
-
-- [ControllerOptions](interfaces/ControllerOptions.md)
-- [ControllerState](interfaces/ControllerState.md)
-- [DefaultState](interfaces/DefaultState.md)
-
 ### Type aliases
 
 - [ControllerKey](README.md#controllerkey)
@@ -23,7 +17,7 @@
 
 ### ControllerKey
 
-Ƭ **ControllerKey**: `string`
+Ƭ **ControllerKey**: `string` \| `symbol`
 
 ___
 

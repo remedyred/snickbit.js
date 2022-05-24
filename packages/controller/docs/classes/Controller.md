@@ -2,9 +2,9 @@
 
 ## Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `State` | extends [`DefaultState`](../interfaces/DefaultState.md) |
+| Name |
+| :------ |
+| `State` |
 
 ## Table of contents
 
@@ -15,16 +15,14 @@
 ### Properties
 
 - [$state](Controller.md#$state)
-- [options](Controller.md#options)
+- [persistable](Controller.md#persistable)
 
 ### Accessors
 
-- [$id](Controller.md#$id)
-- [$ready](Controller.md#$ready)
+- [$name](Controller.md#$name)
 
 ### Methods
 
-- [$config](Controller.md#$config)
 - [$emit](Controller.md#$emit)
 - [$get](Controller.md#$get)
 - [$has](Controller.md#$has)
@@ -39,73 +37,43 @@
 
 ### constructor
 
-• **new Controller**<`State`\>(`name`, `options?`, `hydration?`)
+• **new Controller**<`State`\>(`data?`)
 
 #### Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `State` | extends [`DefaultState`](../interfaces/DefaultState.md) |
+| Name |
+| :------ |
+| `State` |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `name` | `string` |
-| `options?` | `Partial`<[`ControllerOptions`](../interfaces/ControllerOptions.md)\> |
-| `hydration?` | [`ControllerState`](../interfaces/ControllerState.md) |
+| `data` | `Partial`<`State`\> |
 
 ## Properties
 
 ### $state
 
-• **$state**: `ProxyHandler`<[`Controller`](Controller.md)<`State`\>\>
+• **$state**: `ProxyHandler`<[`Controller`](Controller.md)<`State`\>\> & `State`
 
 ___
 
-### options
+### persistable
 
-• **options**: [`ControllerOptions`](../interfaces/ControllerOptions.md)
+• **persistable**: `string`[] = `[]`
 
 ## Accessors
 
-### $id
+### $name
 
-• `get` **$id**(): `string`
+• `get` **$name**(): `string`
 
 #### Returns
 
 `string`
 
-___
-
-### $ready
-
-• `get` **$ready**(): `boolean`
-
-#### Returns
-
-`boolean`
-
 ## Methods
-
-### $config
-
-▸ **$config**(`name`, `options?`, `hydration?`): `void`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
-| `options?` | `Partial`<[`ControllerOptions`](../interfaces/ControllerOptions.md)\> |
-| `hydration?` | [`ControllerState`](../interfaces/ControllerState.md) |
-
-#### Returns
-
-`void`
-
-___
 
 ### $emit
 
@@ -132,7 +100,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `key` | `string` |
+| `key` | [`ControllerKey`](../README.md#controllerkey) |
 
 #### Returns
 
@@ -148,7 +116,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `key` | `string` |
+| `key` | [`ControllerKey`](../README.md#controllerkey) |
 
 #### Returns
 
@@ -208,7 +176,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `data` | [`ControllerState`](../interfaces/ControllerState.md) |
+| `data` | `State` |
 
 #### Returns
 
@@ -234,7 +202,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `key` | `string` |
+| `key` | [`ControllerKey`](../README.md#controllerkey) |
 | `value` | `any` |
 
 #### Returns
