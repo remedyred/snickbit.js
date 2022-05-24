@@ -20,9 +20,9 @@
 		"depcheck": "depcheck",
 		"docs": "typedoc",
 		"meta": "pnpm run prod --metafile",
-		"prod": "pnpm run clean && npm run build --minify",
+		"prod": "pnpm run clean && pnpm run build --minify",
 		"test": "jest",
-		"watch": "npm run build --watch"
+		"watch": "pnpm run build --watch"
 	},
 	"jest": {
 		"preset": "ts-jest",
