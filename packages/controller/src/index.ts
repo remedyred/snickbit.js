@@ -7,23 +7,18 @@ export type ControllerValue = any
 export type WatchStop = () => void
 export type Watchers = Record<string, WatchStop>
 
-export interface ControllerState {
-	[key: ControllerKey]: ControllerValue
-}
-
-export class Controller<State = ControllerState> {
+export class Controller<State> {
 	protected state = {} as State
 	protected originalState = {} as State
 	protected proxy: Controller<State>
 	protected emitter = mitt()
-	public $state: ProxyHandler<Controller<State>>
+	public $state: ProxyHandler<Controller<State>> & State
 
 	persistable: string[] = []
 
 	protected id = (...keys: string[]) => ['controller', this.$name, ...keys].join('.')
 
 	constructor(data: Partial<State> = {}) {
-
 		this.originalState = objectClone(data) as State
 		for (let key in data) {
 			this.state[key] = data[key]
@@ -47,7 +42,7 @@ export class Controller<State = ControllerState> {
 			}
 		})
 
-		this.$state = new Proxy(this.state as ControllerState, {
+		this.$state = new Proxy(this.state as any, {
 			get: (target: Controller<State>, prop: string) => {
 				if (this.$has(prop)) {
 					return this.$get(prop)
