@@ -8,22 +8,29 @@
 
 ### Type aliases
 
-- [ControllerKey](README.md#controllerkey)
-- [ControllerValue](README.md#controllervalue)
+- [WatchCallback](README.md#watchcallback)
 - [WatchStop](README.md#watchstop)
 - [Watchers](README.md#watchers)
 
 ## Type aliases
 
-### ControllerKey
+### WatchCallback
 
-Ƭ **ControllerKey**: `string` \| `symbol`
+Ƭ **WatchCallback**: (`value`: `any`) => `any`
 
-___
+#### Type declaration
 
-### ControllerValue
+▸ (`value`): `any`
 
-Ƭ **ControllerValue**: `any`
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `any` |
+
+##### Returns
+
+`any`
 
 ___
 
@@ -43,4 +50,4 @@ ___
 
 ### Watchers
 
-Ƭ **Watchers**: `Record`<`string`, [`WatchStop`](README.md#watchstop)\>
+Ƭ **Watchers**: `Record`<`string`, [`WatchCallback`](README.md#watchcallback)\>

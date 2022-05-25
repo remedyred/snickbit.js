@@ -1,10 +1,11 @@
-# Class: Controller<State\>
+# Class: Controller<T, D\>
 
 ## Type parameters
 
-| Name |
-| :------ |
-| `State` |
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `object` = `any` |
+| `D` | `Partial`<`T`\> |
 
 ## Table of contents
 
@@ -32,30 +33,32 @@
 - [$patch](Controller.md#$patch)
 - [$reset](Controller.md#$reset)
 - [$set](Controller.md#$set)
+- [$watch](Controller.md#$watch)
 
 ## Constructors
 
 ### constructor
 
-• **new Controller**<`State`\>(`data?`)
+• **new Controller**<`T`, `D`\>(`data?`)
 
 #### Type parameters
 
-| Name |
-| :------ |
-| `State` |
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `object` = `any` |
+| `D` | `Partial`<`T`\> |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `data` | `Partial`<`State`\> |
+| `data` | `T` |
 
 ## Properties
 
 ### $state
 
-• **$state**: `ProxyHandler`<[`Controller`](Controller.md)<`State`\>\> & `State`
+• **$state**: `ProxyHandler`<[`Controller`](Controller.md)<`T`, `Partial`<`T`\>\>\> & `T`
 
 ___
 
@@ -94,17 +97,17 @@ ___
 
 ### $get
 
-▸ **$get**(`key`): `any`
+▸ **$get**(`key`): `T`[keyof `T`]
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `key` | [`ControllerKey`](../README.md#controllerkey) |
+| `key` | keyof `T` |
 
 #### Returns
 
-`any`
+`T`[keyof `T`]
 
 ___
 
@@ -116,7 +119,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `key` | [`ControllerKey`](../README.md#controllerkey) |
+| `key` | `string` |
 
 #### Returns
 
@@ -176,7 +179,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `data` | `State` |
+| `data` | `D` |
 
 #### Returns
 
@@ -202,9 +205,32 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `key` | [`ControllerKey`](../README.md#controllerkey) |
+| `key` | keyof `T` \| keyof `D` |
 | `value` | `any` |
 
 #### Returns
+
+`void`
+
+___
+
+### $watch
+
+▸ **$watch**(`key`, `callback`): () => `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `key` | keyof `T` |
+| `callback` | [`WatchCallback`](../README.md#watchcallback) |
+
+#### Returns
+
+`fn`
+
+▸ (): `void`
+
+##### Returns
 
 `void`
