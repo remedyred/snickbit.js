@@ -17,13 +17,10 @@ export class Controller<T extends object = any, D = Partial<T>> {
 
 	protected id = (...keys: string[]) => ['controller', this.$name, ...keys].join('.')
 
-	constructor(data: D = {} as D) {
+	constructor(data: T = {} as T) {
 		this.originalState = objectClone(data) as T
-		const state = {} as D
-		for (let key in data) {
-			state[key] = data[key]
-		}
-		this.state = state as unknown as T
+		this.state = {} as T
+		this.$patch(data as unknown as D)
 
 		this.proxy = new Proxy(this, {
 			get(target: Controller<T>, prop: string, receiver?: any): any {
