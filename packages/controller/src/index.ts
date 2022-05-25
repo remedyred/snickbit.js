@@ -1,14 +1,16 @@
 import mitt, {Handler} from 'mitt'
-import {objectClone} from '@snickbit/utilities'
+import {objectClone, uuid} from '@snickbit/utilities'
 
+export type WatchCallback = (value: any) => any
 export type WatchStop = () => void
-export type Watchers = Record<string, WatchStop>
+export type Watchers = Record<string, WatchCallback>
 
 export class Controller<T extends object = any, D = Partial<T>> {
 	protected state: T
 	protected originalState: T
 	protected proxy: Controller<T>
 	protected emitter = mitt()
+	protected watchers: Record<keyof T, Watchers>
 	public $state: ProxyHandler<Controller<T>> & T
 
 	persistable: string[] = []
@@ -57,6 +59,14 @@ export class Controller<T extends object = any, D = Partial<T>> {
 		return this.proxy
 	}
 
+	private callWatchers(key: keyof T, value: any) {
+		if (this.watchers[key]) {
+			for (let id in this.watchers[key]) {
+				this.watchers[key][id](value)
+			}
+		}
+	}
+
 	get $name() {
 		return this.constructor.name
 	}
@@ -67,6 +77,7 @@ export class Controller<T extends object = any, D = Partial<T>> {
 
 	$set(key: keyof T | keyof D, value: any) {
 		this.state[key as keyof T] = value
+		this.callWatchers(key as keyof T, value)
 	}
 
 	$has(key: string) {
@@ -97,5 +108,18 @@ export class Controller<T extends object = any, D = Partial<T>> {
 
 	$emit(event: string, data: any) {
 		this.emitter.emit(this.id(event), data)
+	}
+
+	$watch(key: keyof T, callback: WatchCallback) {
+		const watchers: Watchers = this.watchers[key] || {}
+
+		const id = uuid() as string
+		watchers[id] = callback
+
+		this.watchers[key] = watchers
+
+		return () => {
+			delete this.watchers[key][id]
+		}
 	}
 }
