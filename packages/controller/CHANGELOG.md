@@ -1,5 +1,12 @@
 # @snickbit/controller Changelog
 
+## 0.0.3
+
+### Patch Changes
+
+- [f4884f5](https://github.com/snickbit/controller/commit/f4884f5) **style**:  heavy code restyling
+- [da99a49](https://github.com/snickbit/controller/commit/da99a49) **chore**:  bump dependencies
+
 ## 0.0.2
 
 ### Patch Changes
