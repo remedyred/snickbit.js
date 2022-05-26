@@ -1,5 +1,5 @@
-import mitt, {Handler} from 'mitt'
 import {objectClone, uuid} from '@snickbit/utilities'
+import mitt, {Handler} from 'mitt'
 
 export type WatchCallback = (value: any) => any
 export type WatchStop = () => void
@@ -7,10 +7,15 @@ export type Watchers = Record<string, WatchCallback>
 
 export class Controller<T extends object = any, D = Partial<T>> {
 	protected state: T
+
 	protected originalState: T
+
 	protected proxy: Controller<T>
+
 	protected emitter = mitt()
+
 	protected watchers: Record<keyof T, Watchers>
+
 	public $state: ProxyHandler<Controller<T>> & T
 
 	persistable: string[] = []
@@ -34,7 +39,7 @@ export class Controller<T extends object = any, D = Partial<T>> {
 
 				return Reflect.get(target, prop, receiver)
 			},
-			set: function (target: Controller<T>, prop: string, value?: any) {
+			set(target: Controller<T>, prop: string, value?: any) {
 				target.$set(prop as keyof T, value)
 				return true
 			}
@@ -72,7 +77,7 @@ export class Controller<T extends object = any, D = Partial<T>> {
 		return this.state[key]
 	}
 
-	$set(key: keyof T | keyof D, value: any) {
+	$set(key: keyof D | keyof T, value: any) {
 		this.state[key as keyof T] = value
 		this.callWatchers(key as keyof T, value)
 	}
