@@ -1,5 +1,12 @@
 # @snickbit/controller Changelog
 
+## 0.0.6
+
+### Patch Changes
+
+- [7d3535d](https://github.com/snickbit/controller/commit/7d3535d) **chore**:  update dependencies
+- [5ee4592](https://github.com/snickbit/controller/commit/5ee4592) **docs**:  update
+
 ## 0.0.3
 
 ### Patch Changes
