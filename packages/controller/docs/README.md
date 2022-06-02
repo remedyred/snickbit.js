@@ -6,13 +6,13 @@
 
 - [Controller](classes/Controller.md)
 
-### Type aliases
+### Type Aliases
 
 - [WatchCallback](README.md#watchcallback)
 - [WatchStop](README.md#watchstop)
 - [Watchers](README.md#watchers)
 
-## Type aliases
+## Type Aliases
 
 ### WatchCallback
 
