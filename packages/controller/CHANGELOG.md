@@ -1,5 +1,13 @@
 # @snickbit/controller Changelog
 
+## 0.0.9
+
+### Patch Changes
+
+- [e59577b](https://github.com/snickbit/controller/commit/e59577b) **chore**:  bump dependencies
+- [2bf8b16](https://github.com/snickbit/controller/commit/2bf8b16) **chore**:  bump dependencies
+- [8740cc2](https://github.com/snickbit/controller/commit/8740cc2) **chore**:  bump deps
+
 ## 0.0.6
 
 ### Patch Changes
