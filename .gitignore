@@ -9,9 +9,6 @@ logs/
 
 # Dependencies
 node_modules/
-*.lock
-*-lock.yaml
-*-lock.json
 
 # Compiled files
 dist/
@@ -19,12 +16,6 @@ bin/
 
 # Keep
 !.git*
-!.secrets/
-!.secrets/**
-!.changeset/
 !.eslintignore
 !.eslintrc.json
 !.depcheckrc
-!.templates
-!.templates/**
-!.husky
