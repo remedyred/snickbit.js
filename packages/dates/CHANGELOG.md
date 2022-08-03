@@ -1,3 +1,14 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [1.0.49](https://github.com/snickbit/snickbit.js/compare/@snickbit/dates@1.0.48...@snickbit/dates@1.0.49) (2022-08-03)
+
+### Bug Fixes
+
+* toWords options ([32877ba](https://github.com/snickbit/snickbit.js/commit/32877ba0aaba2646988f500220a3801c022d8955))
+
 # @snickbit/dates
 
 ## 1.0.46
