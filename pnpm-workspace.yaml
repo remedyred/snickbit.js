@@ -1,3 +1,4 @@
 save-workspace-protocol: false
 packages:
   - 'packages/*'
+  - 'clis/*'

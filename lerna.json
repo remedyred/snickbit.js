@@ -7,7 +7,8 @@
 		}
 	},
 	"packages": [
-		"packages/*"
+		"packages/*",
+		"clis/*"
 	],
 	"npmClient": "pnpm"
 }
