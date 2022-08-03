@@ -47,9 +47,9 @@ const abbreviations: DateAbbreviations = {
 	year: 'y'
 }
 
-type DateWords = Record<string, DateWordsRecord>
+export type DateWords = Record<string, DateWordsRecord>
 
-interface DateWordsRecord {
+export interface DateWordsRecord {
 	label: string
 	value: number
 }
@@ -64,9 +64,9 @@ function toWords(long: boolean): string
 function toWords(options: ToWordsOptions): string
 function toWords(longOrOptions?: ToWordsOptions | boolean): string {
 	let options: ToWordsOptions = {long: false, reduce: true, milliseconds: true}
-	if (longOrOptions === true || longOrOptions === false) {
+	if (typeof longOrOptions === 'boolean') {
 		options = {
-			long: !!longOrOptions,
+			long: longOrOptions,
 			reduce: !longOrOptions,
 			milliseconds: !longOrOptions
 		}

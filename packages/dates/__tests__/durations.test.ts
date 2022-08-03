@@ -1,5 +1,6 @@
 import {dates} from '../src'
 import {combinations} from '@snickbit/utilities'
+import {DateWords} from "../src/duration"
 
 describe('basics', () => {
 	test('should be a function', () => expect(dates.duration).toBeInstanceOf(Function))
@@ -36,13 +37,13 @@ describe('toWords', () => {
 		})
 
 		for (const option of options) {
-			const expected = {
+			const expected: DateWords = {
 				seconds: {
-					value: '2',
+					value: 2,
 					label: ' seconds'
 				},
 				milliseconds: {
-					value: '500',
+					value: 500,
 					label: ' milliseconds'
 				}
 			}
@@ -53,7 +54,7 @@ describe('toWords', () => {
 			if (!option.milliseconds || option.reduce) {
 				delete expected.milliseconds
 				if (option.milliseconds) {
-					expected.seconds.value = '2.5'
+					expected.seconds.value = 2.5
 				}
 			}
 
