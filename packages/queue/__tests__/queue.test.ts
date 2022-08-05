@@ -68,14 +68,12 @@ describe('Queue', () => {
 
 	it('should be able to accept multiple tasks', () => {
 		const queue = new Queue()
-		queue.push(
-			() => {
-				console.log('Queue task 1')
-			},
-			() => {
-				console.log('Queue task 2')
-			}
-		)
+		queue.push(() => {
+			console.log('Queue task 1')
+		},
+		() => {
+			console.log('Queue task 2')
+		})
 		expect(queue.length).toBe(2)
 	})
 
@@ -121,20 +119,18 @@ describe('Queue', () => {
 	it('should be able to run promises out of order', async () => {
 		const queue = new Queue()
 		const results: number[] = []
-		queue.push(
-			async () => {
-				console.log('start queue promise 1')
-				await sleep(400)
-				console.log('end queue promise 1')
-				results.push(1)
-			},
-			async () => {
-				console.log('start queue promise 2')
-				await sleep(100)
-				console.log('end queue promise 2')
-				results.push(2)
-			}
-		)
+		queue.push(async () => {
+			console.log('start queue promise 1')
+			await sleep(400)
+			console.log('end queue promise 1')
+			results.push(1)
+		},
+		async () => {
+			console.log('start queue promise 2')
+			await sleep(100)
+			console.log('end queue promise 2')
+			results.push(2)
+		})
 		queue.push(async () => {
 			console.log('start queue promise 3')
 			await sleep(100)
@@ -160,9 +156,9 @@ describe('Queue', () => {
 
 		for (let i = 2; i < tests; i++) {
 			queue.push(async () => {
-				console.log('start queue promise ' + i)
+				console.log(`start queue promise ${i}`)
 				await sleep(100)
-				console.log('end queue promise ' + i)
+				console.log(`end queue promise ${i}`)
 				results.push(i)
 			})
 			expected.push(i)

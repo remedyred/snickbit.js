@@ -1,6 +1,6 @@
 import {dates} from '../src'
 import {combinations} from '@snickbit/utilities'
-import {DateWords} from "../src/duration"
+import {DateWords} from '../src/duration'
 
 describe('basics', () => {
 	test('should be a function', () => expect(dates.duration).toBeInstanceOf(Function))
@@ -59,7 +59,7 @@ describe('toWords', () => {
 			}
 
 			const result = expected.seconds.value + expected.seconds.label +
-				(expected.milliseconds ? ' and ' + expected.milliseconds.value + expected.milliseconds.label : '')
+				(expected.milliseconds ? ` and ${expected.milliseconds.value}${expected.milliseconds.label}` : '')
 
 			test(`duration.toWords(${JSON.stringify(option)}) should return ${result}`, () => expect(duration.toWords(option)).toEqual(result))
 		}
