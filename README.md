@@ -35,14 +35,107 @@
 
 ## CLIs
 
+<div id="npx snickbit">
+    <h3>
+        <a href="https://github.com/snickbit/snickbit.js/tree/main/clis/snickbit">
+            npx snickbit
+        </a>
+    </h3>
+</div>
+
+My personal npx business card
+
 ## Libraries
 
+<div id="@snickbit/cycle">
+    <h3>
+        <a href="https://github.com/snickbit/snickbit.js/tree/main/packages/cycle">
+            @snickbit/cycle
+        </a>
+    </h3>
+</div>
+
+Helper function and class to cycle through an array of values
 
 
+<div id="@snickbit/dates">
+    <h3>
+        <a href="https://github.com/snickbit/snickbit.js/tree/main/packages/dates">
+            @snickbit/dates
+        </a>
+    </h3>
+</div>
+
+Extended Date and Time functionality for Dayjs
 
 
+<div id="@snickbit/model">
+    <h3>
+        <a href="https://github.com/snickbit/snickbit.js/tree/main/packages/model">
+            @snickbit/model
+        </a>
+    </h3>
+</div>
+
+Simple object modeling library based on [object-path](https://github.com/mariocasciaro/object-path)
 
 
+<div id="@snickbit/node-utilities">
+    <h3>
+        <a href="https://github.com/snickbit/snickbit.js/tree/main/packages/node-utilities">
+            @snickbit/node-utilities
+        </a>
+    </h3>
+</div>
+
+This is a collection of helper functions for Node.js. Some of these are just wrappers of other libraries with more intuitive APIs.
+
+
+<div id="@snickbit/plural">
+    <h3>
+        <a href="https://github.com/snickbit/snickbit.js/tree/main/packages/plural">
+            @snickbit/plural
+        </a>
+    </h3>
+</div>
+
+- Pluralizes strings
+- Singularizes strings
+- Written in TypeScript
+- Zero dependencies
+
+
+<div id="@snickbit/queue">
+    <h3>
+        <a href="https://github.com/snickbit/snickbit.js/tree/main/packages/queue">
+            @snickbit/queue
+        </a>
+    </h3>
+</div>
+
+Fluid queueing library for any function or promise
+
+
+<div id="@snickbit/upwords">
+    <h3>
+        <a href="https://github.com/snickbit/snickbit.js/tree/main/packages/upwords">
+            @snickbit/upwords
+        </a>
+    </h3>
+</div>
+
+Helper function to convert a string to title case, attempting to preserve acronyms and special case words like &#34;of&#34; and &#34;iPhone&#34;.
+
+
+<div id="@snickbit/utilities">
+    <h3>
+        <a href="https://github.com/snickbit/snickbit.js/tree/main/packages/utilities">
+            @snickbit/utilities
+        </a>
+    </h3>
+</div>
+
+This is a collection of basic helper functions with very minimal dependencies.
 
 <!--END_SECTION:readmes-packages-->
 

@@ -29,7 +29,7 @@
 	},
 	"devDependencies": {
 		"@lerna-lite/cli": "^1.6.0",
-		"@snickbit/readmes": "^0.0.1",
+		"@snickbit/readmes": "^0.0.2",
 		"@types/jest": "^27.5.2",
 		"@typescript-eslint/eslint-plugin": "^5.30.5",
 		"@typescript-eslint/parser": "^5.30.5",
