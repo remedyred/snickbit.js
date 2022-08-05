@@ -1,3 +1,12 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [1.2.2](https://github.com/snickbit/snickbit.js/compare/@snickbit/queue@1.2.1...@snickbit/queue@1.2.2) (2022-08-05)
+
+**Note:** Version bump only for package @snickbit/queue
+
 # @snickbit/queue Changelog
 
 ## 1.2.0
@@ -130,4 +139,3 @@
 - [a1b37df](https://github.com/snickbit/snickbit.js/commit/a1b37df) **chore**:  update dependencies
 - [b61521a](https://github.com/snickbit/snickbit.js/commit/b61521a) **chore**:  update build config
 - [67a87da](https://github.com/snickbit/snickbit.js/commit/67a87da) **docs**:  update
-
