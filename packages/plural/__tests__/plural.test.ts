@@ -5,7 +5,7 @@
  */
 import {isPlural, isSingular, plural, singular} from '../src'
 
-let BASIC_TESTS = [
+const BASIC_TESTS = [
 	// Uncountables.
 	['firmware', 'firmware'],
 	['fish', 'fish'],
@@ -673,7 +673,7 @@ let BASIC_TESTS = [
  *
  * @type {Array}
  */
-let SINGULAR_TESTS = [
+const SINGULAR_TESTS = [
 	['dingo', 'dingos'],
 	['mango', 'mangoes'],
 	['echo', 'echos'],
@@ -688,7 +688,7 @@ let SINGULAR_TESTS = [
  *
  * @type {Array}
  */
-let PLURAL_TESTS = [
+const PLURAL_TESTS = [
 	['plateaux', 'plateaux'],
 	['axis', 'axes'],
 	['basis', 'bases'],

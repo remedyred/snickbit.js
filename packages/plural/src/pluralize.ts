@@ -77,7 +77,7 @@ function sanitizeWord(token: string, word: string, rules: PluralRule[]): string 
 
 	// Iterate over the sanitization rules and use the first one to match.
 	while (len--) {
-		let rule = rules[len]
+		const rule = rules[len]
 		const [matcher, replacer] = rule
 
 		if (matcher.test(word)) {
@@ -118,7 +118,7 @@ export function replaceWord(word: string, count: number) {
 	} = getRules(count)
 
 	// Get the correct token and case restoration functions.
-	let token = word.toLowerCase()
+	const token = word.toLowerCase()
 
 	// Check against the keep object map.
 	if (Object.keys(keep).includes(token)) {
@@ -141,7 +141,7 @@ export function checkWord(word: string, count: number) {
 		rules
 	} = getRules(count)
 
-	let token = word.toLowerCase()
+	const token = word.toLowerCase()
 
 	if (Object.keys(keep).includes(token)) {
 		return true

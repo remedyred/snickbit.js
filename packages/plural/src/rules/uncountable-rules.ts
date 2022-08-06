@@ -109,7 +109,7 @@ export const uncountables = [
 
 const uncountableRules: string[] = []
 
-for (let uncountable of uncountables) {
+for (const uncountable of uncountables) {
 	if (typeof uncountable === 'string') {
 		uncountableRules.push(uncountable.toLowerCase())
 		continue

@@ -180,7 +180,7 @@ export class Queue {
 	 * @param {...QueueTask[]} tasks
 	 */
 	push(...tasks: QueueTask[]): this {
-		for (let key in tasks) {
+		for (const key in tasks) {
 			const taskDefinition: QueueTaskDefinition = {task: tasks[key]}
 			this.tasks++
 			this.queue.enqueue(taskDefinition)

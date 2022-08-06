@@ -627,7 +627,7 @@ export class Model<T extends object = any, D = Partial<T>> {
 		}
 
 		const schema_keys = Object.keys(schema)
-		let extra_keys: string[] = []
+		const extra_keys: string[] = []
 		for (const key of this.keys()) {
 			if (!schema_keys.includes(key)) {
 				extra_keys.push(key)

@@ -48,9 +48,9 @@ cli()
 		const shortest = keys.reduce((a, b) => a.length < b.length ? a : b)
 		const padding = longest.length - shortest.length + 5
 
-		let message: string[] = []
+		const message: string[] = []
 
-		for (let [key, value] of Object.entries(data)) {
+		for (const [key, value] of Object.entries(data)) {
 			const itemPadding = ' '.repeat(Math.max(2, padding - key.length))
 			message.push(`${key}:${itemPadding}${value}`)
 		}
