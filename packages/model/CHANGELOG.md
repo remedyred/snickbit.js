@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.54](https://github.com/snickbit/snickbit.js/compare/@snickbit/model@1.0.53...@snickbit/model@1.0.54) (2022-08-06)
+
+### Bug Fixes
+
+* replace let with const ([1d5c624](https://github.com/snickbit/snickbit.js/commit/1d5c6248acdc7d9e4d46ba94c03af1932d9a5c76))
+
 ## [1.0.53](https://github.com/snickbit/snickbit.js/compare/@snickbit/model@1.0.52...@snickbit/model@1.0.53) (2022-08-05)
 
 **Note:** Version bump only for package @snickbit/model

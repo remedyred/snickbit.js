@@ -1,3 +1,14 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [0.0.4](https://github.com/snickbit/snickbit.js/compare/@snickbit/plural@0.0.3...@snickbit/plural@0.0.4) (2022-08-06)
+
+### Bug Fixes
+
+* replace let with const ([1d5c624](https://github.com/snickbit/snickbit.js/commit/1d5c6248acdc7d9e4d46ba94c03af1932d9a5c76))
+
 # @snickbit/plural Changelog
 
 ## 0.0.3
@@ -14,4 +25,3 @@
 ### Patch Changes
 
 - [66624f1](https://github.com/snickbit/snickbit.js/commit/66624f1) **chore**:  update dependencies
-

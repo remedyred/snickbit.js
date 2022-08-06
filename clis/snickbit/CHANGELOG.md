@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.47](https://github.com/snickbit/snickbit.js/compare/snickbit@0.0.46...snickbit@0.0.47) (2022-08-06)
+
+### Bug Fixes
+
+* replace let with const ([1d5c624](https://github.com/snickbit/snickbit.js/commit/1d5c6248acdc7d9e4d46ba94c03af1932d9a5c76))
+
 ## [0.0.46](https://github.com/snickbit/snickbit.js/compare/snickbit@0.0.45...snickbit@0.0.46) (2022-08-05)
 
 **Note:** Version bump only for package snickbit

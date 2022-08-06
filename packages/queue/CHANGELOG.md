@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.3](https://github.com/snickbit/snickbit.js/compare/@snickbit/queue@1.2.2...@snickbit/queue@1.2.3) (2022-08-06)
+
+### Bug Fixes
+
+* remove unused var staticQueue ([5f9351c](https://github.com/snickbit/snickbit.js/commit/5f9351c8dfdf69d70c14c6a3390c356c8b7a0dfd))
+* replace let with const ([1d5c624](https://github.com/snickbit/snickbit.js/commit/1d5c6248acdc7d9e4d46ba94c03af1932d9a5c76))
+
 ## [1.2.2](https://github.com/snickbit/snickbit.js/compare/@snickbit/queue@1.2.1...@snickbit/queue@1.2.2) (2022-08-05)
 
 **Note:** Version bump only for package @snickbit/queue
