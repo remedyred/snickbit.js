@@ -8,7 +8,6 @@ describe('Queue', () => {
 	it('should have a static config method', () => expect(Queue.config).toBeInstanceOf(Function))
 
 	describe('Queue.config', () => {
-		const staticQueue = Queue
 		afterEach(() => Queue.config({
 			concurrency: 4,
 			limit: 0,
