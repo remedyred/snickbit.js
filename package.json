@@ -7,6 +7,7 @@
 		"clean": "pnpm run clean:builds && pnpm run clean:modules",
 		"clean:builds": "turbo run clean",
 		"clean:modules": "shx rm -rf **/node_modules",
+		"depcheck": "turbo run depcheck",
 		"dev": "turbo run dev",
 		"fix": "eslint **/*.{ts,json} --cache --color --fix",
 		"index": "turbo run index",
