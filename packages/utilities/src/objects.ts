@@ -3,10 +3,10 @@ import {isFunction, isObject} from './validations'
 import {mergeDeep, typeOf} from './variables'
 
 /** @category Objects */
-export type IObject = Record<string, any>
+export type IObject = Record<string | symbol, any>
 
 /** @category Objects */
-export type ObjectPredicate = (key: string | symbol, value?: any, obj?: object) => unknown
+export type ObjectPredicate<T = any> = (key: string | symbol, value?: T, obj?: object) => unknown
 
 /**
  * Finds an object property's name that matches the given predicate
