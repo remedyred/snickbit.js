@@ -216,7 +216,9 @@ export function objectMethods<I extends object = IObject>(obj: I): string[] {
 
 	const keys: string[] = Array.from(properties.keys()).map(item => item.toString())
 
-	return keys.filter((item: string) => obj[item] && isFunction(obj[item]))
+	const rawObjectProperties = Object.getOwnPropertyNames(Object.prototype).filter(prop => Object.prototype[prop] && isFunction(Object.prototype[prop]))
+
+	return keys.filter((item: string) => obj[item] && isFunction(obj[item]) && !rawObjectProperties.includes(item))
 }
 
 /**
