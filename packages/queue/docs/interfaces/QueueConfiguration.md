@@ -61,7 +61,9 @@ ___
 Queueing strategy to be used based on the lite-fifo package. The default strategy is "dynamic" or "DynamicCyclicQueue". \
 You can switch to "chunked" or "ChunkedQueue" for a slightly reduced memory footprint, but with a slightly slower performance.
 
-**`see`** https://github.com/kleinron/lite-fifo
+**`See`**
+
+https://github.com/kleinron/lite-fifo
 
 ___
 
@@ -73,4 +75,6 @@ Use a strict, more resource intensive, throttling algorithm. \
 The default algorithm uses a windowed approach that will work correctly in most cases, limiting the total number of calls at the specified limit per interval window. \
 The strict algorithm throttles each call individually, ensuring the limit is not exceeded for any interval.
 
-**`see`** https://github.com/sindresorhus/p-throttle
+**`See`**
+
+https://github.com/sindresorhus/p-throttle

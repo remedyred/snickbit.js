@@ -86,7 +86,9 @@ ___
 
 Create a simple object model
 
-**`description`** @snickbit/model
+**`Description`**
+
+@snickbit/model
 
 #### Type parameters
 

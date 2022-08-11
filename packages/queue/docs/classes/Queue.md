@@ -110,7 +110,7 @@ ___
 
 ### abortOnError
 
-▸ **abortOnError**(`abortOnError`): [`Queue`](Queue.md)
+▸ **abortOnError**(`abortOnError?`): [`Queue`](Queue.md)
 
 Enable (or disable) the queue's abortOnError option.
 
@@ -118,7 +118,7 @@ Enable (or disable) the queue's abortOnError option.
 
 | Name | Type |
 | :------ | :------ |
-| `abortOnError` | `boolean` |
+| `abortOnError?` | `boolean` |
 
 #### Returns
 
@@ -291,7 +291,9 @@ ___
 
 Set the queueing strategy. Dynamic uses slightly more resources but tends to be faster, chunked uses slightly less resources but tends to be slower. Dynamic is the default.
 
-**`see`** https://github.com/kleinron/lite-fifo lite-fifo for benchmarks
+**`See`**
+
+https://github.com/kleinron/lite-fifo lite-fifo for benchmarks
 
 #### Parameters
 
@@ -329,9 +331,12 @@ ___
 
 Set the queue's throttling
 
-**`example`**
+**`Example`**
+
+```ts
 // 1 task per second
 myQueue.throttle(1, 1000)
+```
 
 #### Parameters
 
@@ -339,7 +344,7 @@ myQueue.throttle(1, 1000)
 | :------ | :------ | :------ |
 | `limit` | `number` | The maximum number of tasks to run per interval |
 | `interval` | `number` | The interval in milliseconds |
-| `strict?` | `boolean` | - |
+| `strict?` | `boolean` | Use strict throttling (more accurate, but could be more resource intensive) |
 
 #### Returns
 

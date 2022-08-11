@@ -2,19 +2,33 @@
 
 Model Options
 
-**`property`** {ModelId} id - The id of the model. Stored separately from the model itself.
+**`Property`**
 
-**`property`** {string} name - The name of the model (class). Intended for extending the Model class, but can be used to identify the model.
+The id of the model. Stored separately from the model itself.
 
-**`property`** {boolean} autoId - Automatically generate an id for the model.
+**`Property`**
 
-**`property`** {ModelSchema} schema - The schema of the model. Used to validate the model.
+The name of the model (class). Intended for extending the Model class, but can be used to identify the model.
 
-**`property`** {boolean} strict - The schema of the model. Used to validate the model.
+**`Property`**
 
-**`property`** {boolean} timestamps - Automatically generate timestamps _created and _updated for the model. Stored with the model.
+Automatically generate an id for the model.
 
-**`property`** {string|null} root - Define a root path for the model. All paths/keys will be prefixed with this path unless they are prefixed with a dot ".".
+**`Property`**
+
+The schema of the model. Used to validate the model.
+
+**`Property`**
+
+The schema of the model. Used to validate the model.
+
+**`Property`**
+
+Automatically generate timestamps _created and _updated for the model. Stored with the model.
+
+**`Property`**
+
+Define a root path for the model. All paths/keys will be prefixed with this path unless they are prefixed with a dot ".".
 
 ## Table of contents
 

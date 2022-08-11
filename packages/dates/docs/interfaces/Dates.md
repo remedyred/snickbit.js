@@ -155,12 +155,6 @@ dayjs().date()// => 1-31
 ```
 Docs: https://day.js.org/docs/en/get-set/date
 
-Accepts numbers from 1 to 31. If the range is exceeded, it will bubble up to the next months.
-```
-dayjs().date(1)// => Dayjs
-```
-Docs: https://day.js.org/docs/en/get-set/date
-
 #### Returns
 
 `number`
@@ -505,12 +499,6 @@ dayjs().hour()// => 0-23
 ```
 Docs: https://day.js.org/docs/en/get-set/hour
 
-Accepts numbers from 0 to 23. If the range is exceeded, it will bubble up to the next day.
-```
-dayjs().hour(12)// => Dayjs
-```
-Docs: https://day.js.org/docs/en/get-set/hour
-
 #### Returns
 
 `number`
@@ -745,12 +733,6 @@ dayjs().millisecond()// => 0-999
 ```
 Docs: https://day.js.org/docs/en/get-set/millisecond
 
-Accepts numbers from 0 to 999. If the range is exceeded, it will bubble up to the next seconds.
-```
-dayjs().millisecond(1)// => Dayjs
-```
-Docs: https://day.js.org/docs/en/get-set/millisecond
-
 #### Returns
 
 `number`
@@ -792,12 +774,6 @@ ___
 Get the minutes.
 ```
 dayjs().minute()// => 0-59
-```
-Docs: https://day.js.org/docs/en/get-set/minute
-
-Accepts numbers from 0 to 59. If the range is exceeded, it will bubble up to the next hour.
-```
-dayjs().minute(59)// => Dayjs
 ```
 Docs: https://day.js.org/docs/en/get-set/minute
 
@@ -918,11 +894,6 @@ Get the seconds.
 dayjs().second()// => 0-59
 ```
 Docs: https://day.js.org/docs/en/get-set/second
-
-Accepts numbers from 0 to 59. If the range is exceeded, it will bubble up to the next minutes.
-```
-dayjs().second(1)// Dayjs
-```
 
 #### Returns
 

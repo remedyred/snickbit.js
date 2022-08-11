@@ -12,7 +12,7 @@
 - [DateInput](README.md#dateinput)
 - [OptionType](README.md#optiontype)
 
-### Variables
+### Functions
 
 - [dates](README.md#dates)
 
@@ -34,8 +34,18 @@ ___
 
 Ƭ **OptionType**: `dayjs.OptionType`
 
-## Variables
+## Functions
 
 ### dates
 
-• `Const` **dates**: [`Dates`](interfaces/Dates.md)
+▸ **dates**(`input?`): [`Dates`](interfaces/Dates.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `input?` | [`DateInput`](README.md#dateinput) |
+
+#### Returns
+
+[`Dates`](interfaces/Dates.md)

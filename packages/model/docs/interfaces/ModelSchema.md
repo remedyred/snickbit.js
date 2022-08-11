@@ -2,7 +2,7 @@
 
 Model Schema
 
-**`property`** {ModelValidationMethod | ModelSchemaRecord} [*]
+**`Property`**
 
 ## Indexable
 

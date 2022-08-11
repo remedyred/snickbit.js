@@ -2,7 +2,9 @@
 
 Create a simple object model
 
-**`description`** @snickbit/model
+**`Description`**
+
+@snickbit/model
 
 ## Type parameters
 
@@ -226,7 +228,7 @@ Find specific data in the model
 
 | Name | Type |
 | :------ | :------ |
-| `predicate` | `ObjectPredicate` |
+| `predicate` | `ObjectPredicate`<`any`\> |
 
 #### Returns
 
@@ -241,7 +243,7 @@ Find specific data in the model
 | Name | Type |
 | :------ | :------ |
 | `key` | [`ModelKey`](../README.md#modelkey) |
-| `predicate` | `ObjectPredicate` |
+| `predicate` | `ObjectPredicate`<`any`\> |
 
 #### Returns
 
@@ -259,7 +261,7 @@ Find a key/index matching a value
 
 | Name | Type |
 | :------ | :------ |
-| `predicate` | `ObjectPredicate` |
+| `predicate` | `ObjectPredicate`<`any`\> |
 
 #### Returns
 
@@ -274,7 +276,7 @@ Find a key/index matching a value
 | Name | Type |
 | :------ | :------ |
 | `key` | [`ModelKey`](../README.md#modelkey) |
-| `predicate` | `ObjectPredicate` |
+| `predicate` | `ObjectPredicate`<`any`\> |
 
 #### Returns
 
@@ -618,7 +620,9 @@ ___
 
 Validate the model against the schema
 
-**`throws`** {Error} If the model is invalid and strict mode is enabled
+**`Throws`**
+
+If the model is invalid and strict mode is enabled
 
 #### Returns
 

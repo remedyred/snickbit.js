@@ -2,15 +2,25 @@
 
 Model Schema Record
 
-**`property`** {VariableType | VariableType[]} type - The variable type of the value
+**`Property`**
 
-**`property`** {ModelValue} default - The default value
+The variable type of the value
 
-**`property`** {boolean} required - Whether the value is required
+**`Property`**
 
-**`property`** {string} message - Message to display when validation fails
+The default value
 
-**`property`** {ModelValidationMethod} validate - Validation method
+**`Property`**
+
+Whether the value is required
+
+**`Property`**
+
+Message to display when validation fails
+
+**`Property`**
+
+Validation method
 
 ## Table of contents
 

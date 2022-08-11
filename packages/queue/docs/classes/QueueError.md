@@ -1,5 +1,7 @@
 # Class: QueueError
 
+**`No Inherit Doc`**
+
 ## Hierarchy
 
 - `Error`
@@ -20,7 +22,10 @@
 
 - [data](QueueError.md#data)
 - [errors](QueueError.md#errors)
+- [message](QueueError.md#message)
+- [name](QueueError.md#name)
 - [spread](QueueError.md#spread)
+- [stack](QueueError.md#stack)
 - [type](QueueError.md#type)
 
 ### Methods
@@ -59,9 +64,39 @@ ___
 
 ___
 
+### message
+
+• **message**: `string`
+
+#### Inherited from
+
+Error.message
+
+___
+
+### name
+
+• **name**: `string`
+
+#### Inherited from
+
+Error.name
+
+___
+
 ### spread
 
 • `Readonly` **spread**: ``false``
+
+___
+
+### stack
+
+• `Optional` **stack**: `string`
+
+#### Inherited from
+
+Error.stack
 
 ___
 
