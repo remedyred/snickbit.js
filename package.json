@@ -26,7 +26,7 @@
 	},
 	"devDependencies": {
 		"@lerna-lite/cli": "1.9.1",
-		"@snickbit/eslint-config": "0.0.3",
+		"@snickbit/eslint-config": "0.0.7",
 		"@snickbit/readmes": "0.0.2",
 		"@types/jest": "27.5.2",
 		"@typescript-eslint/eslint-plugin": "5.32.0",
