@@ -1,6 +1,6 @@
 {
 	"name": "@snickbit/model",
-	"version": "1.0.54",
+	"version": "1.0.55",
 	"description": "Simple object modeling library",
 	"license": "MIT",
 	"exports": {
@@ -31,7 +31,7 @@
 	},
 	"dependencies": {
 		"@snickbit/out": "^2.0.37",
-		"@snickbit/utilities": "^3.2.2",
+		"@snickbit/utilities": "^3.3.0",
 		"object-path": "^0.11.8"
 	},
 	"devDependencies": {

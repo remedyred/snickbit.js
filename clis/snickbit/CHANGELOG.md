@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.48](https://github.com/snickbit/snickbit.js/compare/snickbit@0.0.47...snickbit@0.0.48) (2022-08-11)
+
+**Note:** Version bump only for package snickbit
+
 ## [0.0.47](https://github.com/snickbit/snickbit.js/compare/snickbit@0.0.46...snickbit@0.0.47) (2022-08-06)
 
 ### Bug Fixes

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.4](https://github.com/snickbit/snickbit.js/compare/@snickbit/queue@1.2.3...@snickbit/queue@1.2.4) (2022-08-11)
+
+### Bug Fixes
+
+* remove broken typedoc plugin typedoc-plugin-no-inherit ([3ae5ba5](https://github.com/snickbit/snickbit.js/commit/3ae5ba5a891289791fbc0502da9fd4a06524899d))
+
 ## [1.2.3](https://github.com/snickbit/snickbit.js/compare/@snickbit/queue@1.2.2...@snickbit/queue@1.2.3) (2022-08-06)
 
 ### Bug Fixes
