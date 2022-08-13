@@ -16,6 +16,8 @@ bin/
 
 # Keep
 !.git*
-!.eslintignore
-!.eslintrc.json
-!.depcheckrc
+!.*ignore
+!.*rc*
+
+# Force
+.npmrc
