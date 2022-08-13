@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.56](https://github.com/snickbit/snickbit.js/compare/@snickbit/model@1.0.55...@snickbit/model@1.0.56) (2022-08-13)
+
+**Note:** Version bump only for package @snickbit/model
+
 ## [1.0.55](https://github.com/snickbit/snickbit.js/compare/@snickbit/model@1.0.54...@snickbit/model@1.0.55) (2022-08-11)
 
 **Note:** Version bump only for package @snickbit/model

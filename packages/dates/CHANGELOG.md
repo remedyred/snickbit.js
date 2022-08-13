@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.53](https://github.com/snickbit/snickbit.js/compare/@snickbit/dates@1.0.52...@snickbit/dates@1.0.53) (2022-08-13)
+
+**Note:** Version bump only for package @snickbit/dates
+
 ## [1.0.52](https://github.com/snickbit/snickbit.js/compare/@snickbit/dates@1.0.51...@snickbit/dates@1.0.52) (2022-08-11)
 
 **Note:** Version bump only for package @snickbit/dates
