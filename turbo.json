@@ -22,7 +22,7 @@
 			"outputs": []
 		},
 		"//#fix": {
-			"outputs": []
+			"outputs": ["**/*.ts", "**/*.json"]
 		},
 		"//#prod": {
 			"outputs": []

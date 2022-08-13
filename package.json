@@ -16,7 +16,7 @@
 		"readmes": "readmes",
 		"prerelease": "turbo run prod test docs readmes fix depcheck",
 		"release": "pnpm run prerelease && lerna publish",
-		"test": "pnpm jest"
+		"test": "jest"
 	},
 	"lint-staged": {
 		"*.{ts,json}": "eslint --fix --cache"

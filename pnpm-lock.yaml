@@ -1456,15 +1456,15 @@ packages:
       '@snickbit/node-cli': 3.0.4
       '@snickbit/node-utilities': 4.4.5
       '@snickbit/out': 2.0.37
-      '@snickbit/upwords': 2.0.21
+      '@snickbit/upwords': 2.0.22
       '@snickbit/utilities': 3.3.0
       ejs: 3.1.8
       fast-glob: 3.2.11
       lilconfig: 2.0.6
     dev: true
 
-  /@snickbit/upwords/2.0.21:
-    resolution: {integrity: sha512-euKyZMt/rp0AoE/CIYRjMyYKj5vzq8Ij1JNJIl+7+T87RqvCrhbMZA/c8VrnLEPRCRttMtYLoChigQcYqZvNyw==}
+  /@snickbit/upwords/2.0.22:
+    resolution: {integrity: sha512-6JoYIAGl424CWAjc+KHxyftRcxMFcV1J1y0x3gA1/CLQGG3PL0ZMeBbfsXXmRLotenudmzu90swHybVIqYp+nA==}
     engines: {node: '>= 12'}
     dev: true
 
