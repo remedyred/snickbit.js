@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import {sleep} from '@snickbit/utilities'
 import {Queue} from '../src'
 
@@ -49,7 +50,6 @@ describe('Queue', () => {
 	it('should be able to accept a task', () => {
 		const queue = new Queue()
 		queue.add(() => {
-			console.log('Queue task 1')
 		})
 		expect(queue.length).toBe(1)
 	})
@@ -57,10 +57,8 @@ describe('Queue', () => {
 	it('should be able to accept multiple tasks', () => {
 		const queue = new Queue()
 		queue.push(() => {
-			console.log('Queue task 1')
 		})
 		queue.push(() => {
-			console.log('Queue task 2')
 		})
 		expect(queue.length).toBe(2)
 	})
@@ -68,10 +66,8 @@ describe('Queue', () => {
 	it('should be able to accept multiple tasks', () => {
 		const queue = new Queue()
 		queue.push(() => {
-			console.log('Queue task 1')
 		},
 		() => {
-			console.log('Queue task 2')
 		})
 		expect(queue.length).toBe(2)
 	})
@@ -79,7 +75,6 @@ describe('Queue', () => {
 	it('should be able to run a task', () => {
 		const queue = new Queue()
 		queue.push(() => {
-			console.log('Queue task 1')
 		})
 		queue.run().then(() => expect(queue.active).toBe(0)).catch(() => {
 			throw new Error('Queue run failed')
@@ -89,10 +84,8 @@ describe('Queue', () => {
 	it('should be able to run multiple tasks', () => {
 		const queue = new Queue()
 		queue.add(() => {
-			console.log('Queue task 1')
 		})
 		queue.add(() => {
-			console.log('Queue task 2')
 		})
 		queue.run().then(() => expect(queue.active).toBe(0)).catch(() => {
 			throw new Error('Queue run failed')
@@ -103,10 +96,8 @@ describe('Queue', () => {
 		const queue = new Queue()
 		let count = 0
 		queue.push(() => {
-			console.log('Queue task 1')
 		})
 		queue.push(() => {
-			console.log('Queue task 2')
 		})
 		queue.run().thenEach(() => {
 			count++
@@ -119,21 +110,15 @@ describe('Queue', () => {
 		const queue = new Queue()
 		const results: number[] = []
 		queue.push(async () => {
-			console.log('start queue promise 1')
 			await sleep(400)
-			console.log('end queue promise 1')
 			results.push(1)
 		},
 		async () => {
-			console.log('start queue promise 2')
 			await sleep(100)
-			console.log('end queue promise 2')
 			results.push(2)
 		})
 		queue.push(async () => {
-			console.log('start queue promise 3')
 			await sleep(100)
-			console.log('end queue promise 3')
 			results.push(3)
 		})
 		await queue.run()
@@ -147,17 +132,13 @@ describe('Queue', () => {
 		const tests = 4
 
 		queue.push(async () => {
-			console.log('Start Really Long Task 1')
 			await sleep(300)
-			console.log('End Really Long Task 1')
 			results.push(1)
 		})
 
 		for (let i = 2; i < tests; i++) {
 			queue.push(async () => {
-				console.log(`start queue promise ${i}`)
 				await sleep(100)
-				console.log(`end queue promise ${i}`)
 				results.push(i)
 			})
 			expected.push(i)
@@ -165,7 +146,6 @@ describe('Queue', () => {
 		expected.push(1)
 
 		await queue.run()
-		console.log('queue results', results)
 		expect(results).toStrictEqual(expected)
 	})
 })
