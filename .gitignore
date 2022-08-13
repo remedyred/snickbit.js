@@ -18,6 +18,7 @@ bin/
 !.git*
 !.*ignore
 !.*rc*
+!.husky/
 
 # Force
 .npmrc

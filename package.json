@@ -12,10 +12,14 @@
 		"fix": "eslint \"**/*.{ts,json}\" --cache --color --fix",
 		"index": "turbo run index",
 		"lint": "eslint \"**/*.{ts,json}\" --cache --color",
+		"prepare": "husky install",
 		"readmes": "readmes",
 		"prerelease": "turbo run prod test docs readmes fix depcheck",
 		"release": "pnpm run prerelease && lerna publish",
 		"test": "pnpm jest"
+	},
+	"lint-staged": {
+		"*.{ts,json}": "eslint --fix --cache"
 	},
 	"jest": {
 		"noStackTrace": true,
@@ -31,7 +35,9 @@
 		"@types/jest": "28.1.6",
 		"depcheck": "1.4.3",
 		"eslint": "8.21.0",
+		"husky": "^8.0.0",
 		"jest": "28.1.3",
+		"lint-staged": "^13.0.3",
 		"shx": "0.3.4",
 		"ts-jest": "28.0.7",
 		"turbo": "1.4.3",
