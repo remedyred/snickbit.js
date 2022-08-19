@@ -87,3 +87,13 @@ export function randomBetween(min: number, max: number, inclusive = true): numbe
 export function numberEven(num: number, subtract = false): number {
 	return num % 2 === 0 ? num : num + (subtract ? -1 : 1)
 }
+
+/**
+ * Force a number to be odd
+ * @param {number} num - the number to force odd
+ * @param {boolean} [subtract=false] - whether to subtract 1 from the number if it is even
+ * @category Numbers
+ */
+export function numberOdd(num: number, subtract = false): number {
+	return num % 2 === 1 ? num : num + (subtract ? -1 : 1)
+}

@@ -1,4 +1,4 @@
-import {numberEven, numberPad} from '../src'
+import {numberEven, numberOdd, numberPad} from '../src'
 
 describe('numbers', () => {
 	describe('numberPad', () => {
@@ -38,6 +38,17 @@ describe('numbers', () => {
 			[4, 4]
 		])('should return %d as the even number %d', (subject, result) => {
 			expect(numberEven(subject)).toBe(result)
+		})
+	})
+
+	describe('numberOdd', () => {
+		it.each([
+			[1, 1],
+			[2, 3],
+			[3, 3],
+			[4, 5]
+		])('should return %d as the odd number %d', (subject, result) => {
+			expect(numberOdd(subject)).toBe(result)
 		})
 	})
 })
