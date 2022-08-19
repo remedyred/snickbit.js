@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.6](https://github.com/snickbit/snickbit.js/compare/@snickbit/queue@1.2.5...@snickbit/queue@1.2.6) (2022-08-19)
+
+**Note:** Version bump only for package @snickbit/queue
+
 ## [1.2.5](https://github.com/snickbit/snickbit.js/compare/@snickbit/queue@1.2.4...@snickbit/queue@1.2.5) (2022-08-13)
 
 **Note:** Version bump only for package @snickbit/queue
