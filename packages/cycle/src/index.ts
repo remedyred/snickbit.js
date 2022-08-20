@@ -16,7 +16,7 @@ export class Cycle {
 		if (!itemsOrPreset) {
 			this.items = []
 		} else if (Array.isArray(itemsOrPreset)) {
-			this.items = itemsOrPreset.slice()
+			this.items = [...itemsOrPreset]
 		} else if (isString(itemsOrPreset)) {
 			this.items = presets[itemsOrPreset as keyof typeof presets]
 		} else {
