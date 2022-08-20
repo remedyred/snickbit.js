@@ -123,7 +123,7 @@ export class Model<T extends object = any, D = Partial<T>> {
 		this.out = new Out(this.options.name)
 
 		this.defaults = defaultValues(this.options.schema || {})
-		this.set({...this.defaults, ...data || {}} as T)
+		this.set({...this.defaults, ...data} as T)
 
 		this.is_new = !this.id
 		if (this.is_new && this.options.autoId) {
