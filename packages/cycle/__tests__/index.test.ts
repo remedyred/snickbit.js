@@ -44,16 +44,16 @@ describe('Parameters', () => {
 describe('Values Forward', () => {
 	const instance = cycle([1, 2, 3])
 
-	for (let i = 0; i < 6; i++) {
-		it(`${i + 1} next() should have value ${i % 3 + 1}`, () => expect(instance.next()).toBe(i % 3 + 1))
+	for (let index = 0; index < 6; index++) {
+		it(`${index + 1} next() should have value ${index % 3 + 1}`, () => expect(instance.next()).toBe(index % 3 + 1))
 	}
 })
 
 describe('Values Backward', () => {
 	const instance = cycle([1, 2, 3])
 
-	for (let i = 6; i > 0; i--) {
-		const num = i - 1
+	for (let index = 6; index > 0; index--) {
+		const num = index - 1
 		it(`${num} prev() should have value ${num % 3 + 1}`, () => expect(instance.prev()).toBe(num % 3 + 1))
 	}
 })
