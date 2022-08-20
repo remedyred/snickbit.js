@@ -9,7 +9,7 @@ export interface DatesDuration extends Dates {
 
 	humanize(withSuffix?: boolean): string
 
-	format(formatStr?: string): string
+	format(formatString?: string): string
 
 	toJSON(): string
 }
