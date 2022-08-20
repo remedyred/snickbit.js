@@ -66,7 +66,8 @@ export interface ModelOptions {
 /** @internal */
 function defaultValues(schema: Partial<ModelSchema>) {
 	const defaults = {}
-	for (let [key, schemaItem] of Object.entries(schema)) {
+	for (const key of Object.keys(schema)) {
+		let schemaItem = schema[key]
 		if (!isObject(schemaItem)) {
 			continue
 		}
@@ -589,7 +590,8 @@ export class Model<T extends object = any, D = Partial<T>> {
 		this.errors = {}
 		const schema = this.options.schema as ModelSchema
 
-		for (let [key, definition] of Object.entries(schema)) {
+		for (const key of Object.keys(schema)) {
+			let definition = schema[key]
 			const value = this.get(key)
 
 			if (isFunction(definition)) {
