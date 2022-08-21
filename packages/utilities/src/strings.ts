@@ -1,3 +1,4 @@
+/* eslint-disable unicorn/prefer-export-from */
 
 import {default as justCamelCase} from 'just-camel-case'
 import reserved from './data/reserved'
