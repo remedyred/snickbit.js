@@ -1,5 +1,5 @@
 import {Out} from '@snickbit/out'
-import {isArray, isCallable, isDate, isEmpty, isFunction, isObject, objectFind, objectFindKey, objectHasMethod, ObjectPredicate, typeOf, uuid, VariableType} from '@snickbit/utilities'
+import {isArray, isCallable, isDate, isEmpty, isFunction, isObject, isString, objectFind, objectFindKey, objectHasMethod, ObjectPredicate, typeOf, uuid, VariableType} from '@snickbit/utilities'
 import objectPath, {ObjectPathBound} from 'object-path'
 
 export type ModelId = number | string | undefined
@@ -150,18 +150,16 @@ export class Model<T extends object = any, D = Partial<T>> {
 	}
 
 	protected checkKey(key): string {
-		if (typeOf(key) === 'string' && key.startsWith('.')) {
-			key = key.substring(1)
+		if (isString(key) && key.startsWith('.')) {
+			key = key.slice(1)
 		} else if (this.options.root) {
-			if (typeOf(key) === 'string' && key !== this.options.root) {
+			if (isString(key) && key !== this.options.root) {
 				if (!key.startsWith(`${this.options.root}.`)) {
 					key = `${this.options.root}.${key}`
-				} else if (typeOf(key) === 'array' && key.slice()
-					.shift() !== this.options.root) {
+				} else if (Array.isArray(key) && [...key].shift() !== this.options.root) {
 					key = [this.options.root, key]
 				}
-			} else if (typeOf(key) === 'array' && key.slice()
-				.shift() !== this.options.root) {
+			} else if (Array.isArray(key) && [...key].shift() !== this.options.root) {
 				key = [this.options.root, key]
 			} else {
 				key = this.options.root
