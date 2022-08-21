@@ -74,11 +74,11 @@ export function functionClone(fn: FunctionType): FunctionType {
  * Send each item in an array to a function, await the results
  * @category Functions
  */
-export async function promiseAll(arr: any[], fn: (value: any, index: number, array: any[]) => any): Promise<Awaited<unknown>[]> {
-	if (!isArray(arr)) {
+export async function promiseAll(array: any[], fn: (value: any, index: number, array: any[]) => any): Promise<Awaited<unknown>[]> {
+	if (!isArray(array)) {
 		return []
 	}
-	return Promise.all(arr.map(fn))
+	return Promise.all(array.map((...args) => fn(...args)))
 }
 
 export type OverloadSchema = Record<string, VariableType>

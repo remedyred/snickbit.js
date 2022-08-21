@@ -141,4 +141,4 @@ cli()
 		// noinspection TypeScriptValidateJSTypes
 		$out.exit.success(goodbyes[Math.floor(Math.random() * goodbyes.length)])
 	})
-	.catch(err => $out.error(err))
+	.catch(error => $out.error(error))

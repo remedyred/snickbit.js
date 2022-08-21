@@ -414,9 +414,9 @@ export class Queue {
 			if (this.handlers.finallyEach) {
 				await this.handlers.finallyEach()
 			}
-		} catch (e) {
+		} catch (error) {
 			if (this.handlers.catchEach) {
-				await Promise.resolve(this.handlers.catchEach(new QueueException(e)))
+				await Promise.resolve(this.handlers.catchEach(new QueueException(error)))
 			}
 
 			if (this.handlers.finallyEach) {
@@ -424,7 +424,7 @@ export class Queue {
 			}
 
 			if (this.options.abortOnError) {
-				abortTask(e)
+				abortTask(error)
 			}
 		}
 

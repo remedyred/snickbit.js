@@ -53,7 +53,7 @@ export const singular = singularize
  * Convert a string to initials
  * @category Parsing
  */
-export const initials = (str: string): string => str
+export const initials = (text: string): string => text
 	.split(/[^a-zA-Z]/)
 	.filter(Boolean)
 	.map(word => word[0].toUpperCase())
@@ -63,15 +63,15 @@ export const initials = (str: string): string => str
  * Limit a string to a certain length
  * @category Parsing
  */
-export const limitString = (str: string, limit = 100, suffix = '...'): string => str.length > limit ? str.substring(0, limit) + suffix : str
+export const limitString = (text: string, limit = 100, suffix = '...'): string => text.length > limit ? text.slice(0, Math.max(0, limit)) + suffix : text
 
 /**
  * Limit a string to a certain amount of words
  * @category Parsing
  */
-export function limitWords(str: string, limit = 100, suffix = '...'): string {
-	const words = str.split(/\s+/)
-	return words.length > limit ? words.slice(0, limit).join(' ') + suffix : str
+export function limitWords(text: string, limit = 100, suffix = '...'): string {
+	const words = text.split(/\s+/)
+	return words.length > limit ? words.slice(0, limit).join(' ') + suffix : text
 }
 
 /**
@@ -87,35 +87,35 @@ export function padString(text: string, padding = 2, character = ' '): string {
  * Create a safe javascript variable name from a string
  * @category Parsing
  */
-export function safeVarName(str: string, replacer = ''): string {
+export function safeVarName(text: string, replacer = ''): string {
 	// check that replacer itself is valid
 	replacer = replacer.split(/[\W\s_-]/).join('')
 
-	str = str.split(/[\W\s_-]/) // Split on non-word characters
+	text = text.split(/[\W\s_-]/) // Split on non-word characters
 		.join(replacer) // Join words with replacer
 		.replace(new RegExp(replacer + replacer, 'g'), replacer) // Replace double replacer with single replacer
 
-	// If the first character is a number or if full str is a reserved word, add a replacer in front
-	if (/^\d/.test(str) || reserved.includes(str)) {
+	// If the first character is a number or if full text is a reserved word, add a replacer in front
+	if (/^\d/.test(text) || reserved.includes(text)) {
 		// if replacer is empty, use an underscore
-		str = (replacer || '_') + str
+		text = (replacer || '_') + text
 	}
 
-	return str
+	return text
 }
 
 /**
  * Convert a string to space-case
  * @category Parsing
  */
-export function spaceCase(str: string): string {
+export function spaceCase(text: string): string {
 	// force the variable to be a string
-	str = String(str)
+	text = String(text)
 	// treat cap + lower as the start of new word
-	str = str.replace(capital_plus_lower, match => ` ${match[0].toLowerCase() || match[0]}${match[1]}`) // the match is one cap followed by one non-cap
+	text = text.replace(capital_plus_lower, match => ` ${match[0].toLowerCase() || match[0]}${match[1]}`) // the match is one cap followed by one non-cap
 	// treat all remaining capitals as words
-	str = str.replace(capitals, match => ` ${match.toLowerCase()}`) // match is a series of caps
-	return str.trim() // trim leading and trailing spaces
+	text = text.replace(capitals, match => ` ${match.toLowerCase()}`) // match is a series of caps
+	return text.trim() // trim leading and trailing spaces
 }
 
 /**

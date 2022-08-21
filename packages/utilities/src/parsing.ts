@@ -55,9 +55,9 @@ export function JSONParse<T = any>(text: string, strict?: boolean): T | undefine
 	let json: T | undefined
 	try {
 		json = JSON.parse(text)
-	} catch (e) {
+	} catch (error) {
 		if (strict) {
-			throw e
+			throw error
 		}
 	}
 	return json
