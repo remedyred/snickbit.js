@@ -17,6 +17,7 @@ export class QueuePromise<T> extends Promise<T> {
 	 * @param onfulfilled
 	 * @param onrejected
 	 */
+	// eslint-disable-next-line unicorn/no-thenable
 	then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => (PromiseLike<TResult1> | TResult1)) | null | undefined, onrejected?: ((reason: any) => (PromiseLike<TResult2> | TResult2)) | null | undefined): Promise<TResult1 | TResult2> {
 		return super.then(onfulfilled, onrejected)
 	}
