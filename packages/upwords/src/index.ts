@@ -1,9 +1,9 @@
 import words from './words'
 
-function convertCase(word, i) {
+function convertCase(word, index) {
 	const manualWord = words.find(w => String(w).toLowerCase() === String(word).toLowerCase())
 	if (manualWord) {
-		return i === 0 && !manualWord.match(/[^a-z]/) ? upperFirst(manualWord) : manualWord
+		return index === 0 && !/[^a-z]/.test(manualWord) ? upperFirst(manualWord) : manualWord
 	}
 	return upperFirst(word)
 }
