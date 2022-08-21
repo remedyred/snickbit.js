@@ -1,4 +1,4 @@
-import {plural as pluralize, singular as singularize} from '@snickbit/plural'
+
 import {default as justCamelCase} from 'just-camel-case'
 import reserved from './data/reserved'
 
@@ -40,14 +40,14 @@ export const camelCase = (text: string): string => justCamelCase(text)
 /**
  * Create a pluralized string
  * @category Parsing
+ * @see @snickbit/plural
  */
-export const plural = pluralize
 
 /**
  * Create a singularized string
  * @category Parsing
+ * @see @snickbit/plural
  */
-export const singular = singularize
 
 /**
  * Convert a string to initials
@@ -148,3 +148,5 @@ export function findFirstDiff(first, second): number {
 	}
 	return index
 }
+
+export {plural, singular} from '@snickbit/plural'
