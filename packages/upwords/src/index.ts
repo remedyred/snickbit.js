@@ -1,7 +1,5 @@
 import words from './words'
 
-const default_options = {fast: false}
-
 function convertCase(word, i) {
 	const manualWord = words.find(w => String(w).toLowerCase() === String(word).toLowerCase())
 	if (manualWord) {
@@ -17,9 +15,7 @@ function upperFirst(string) {
 const stripPseudoSpaces = string => string.replace(/[_-]+$/, ' ').replace(/^[_-]+/, ' ')
 	.replace(/(\s)+/g, '$1')
 
-const upwords = function(text, options = {fast: false}) {
-	options = {...default_options, ...options || {}}
-
+const upwords = function(text, {fast = false}) {
 	if (text && typeof text === 'string') {
 		const regex = /[\d&A-Za-z]+/g
 		let m
@@ -31,7 +27,7 @@ const upwords = function(text, options = {fast: false}) {
 
 			const match = [...m].shift()
 			const index = m.index
-			const converted = options.fast ? upperFirst(match) : convertCase(match, match_index)
+			const converted = fast ? upperFirst(match) : convertCase(match, match_index)
 			const prefix = text.slice(0, Math.max(0, index))
 			const suffix = text.slice(Math.max(0, index + match.length))
 			text = stripPseudoSpaces(prefix) + stripPseudoSpaces(converted) + stripPseudoSpaces(suffix)
