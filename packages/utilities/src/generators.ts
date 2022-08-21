@@ -47,8 +47,8 @@ function combinationsLoop(options: CombinationOptions, optionIndex = 0, current:
 	const values = options[optionKey]
 	const results: any[] = []
 
-	for (let i = 0; i < values.length; i++) {
-		current[optionKey] = values[i]
+	for (const value of values) {
+		current[optionKey] = value
 
 		if (optionIndex + 1 < allKeys.length) {
 			results.push(...combinationsLoop(options, optionIndex + 1, current))
