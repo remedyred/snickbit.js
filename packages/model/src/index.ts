@@ -246,7 +246,7 @@ export class Model<T extends object = any, D = Partial<T>> {
 		if (isObject(value)) {
 			return objectFind(value, predicate)
 		} else if (isArray(value)) {
-			return value.find(predicate)
+			return value.find(element => predicate(element))
 		}
 		return false
 	}
@@ -278,7 +278,7 @@ export class Model<T extends object = any, D = Partial<T>> {
 		if (isObject(value)) {
 			return objectFindKey(value, predicate)
 		} else if (isArray(value)) {
-			return value.findIndex(predicate)
+			return value.findIndex(element => predicate(element))
 		}
 
 		return -1
@@ -299,7 +299,7 @@ export class Model<T extends object = any, D = Partial<T>> {
 			return Object.values(value)
 				.shift()
 		} else if (isArray(value)) {
-			return value.slice()
+			return [...value]
 				.shift()
 		}
 		return undefined
@@ -320,7 +320,7 @@ export class Model<T extends object = any, D = Partial<T>> {
 			return Object.values(value)
 				.pop()
 		} else if (isArray(value)) {
-			return value.slice()
+			return [...value]
 				.pop()
 		}
 		return undefined
@@ -363,11 +363,7 @@ export class Model<T extends object = any, D = Partial<T>> {
 			}
 
 			// set the data
-			if (this.options.root) {
-				this.data = objectPath({[this.options.root]: data})
-			} else {
-				this.data = objectPath(data)
-			}
+			this.data = this.options.root ? objectPath({[this.options.root]: data}) : objectPath(data)
 		} else {
 			const key = keyOrData as ModelKey
 			this.data.set(this.checkKey(key), value, !overwrite)
