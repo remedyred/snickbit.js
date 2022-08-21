@@ -82,7 +82,7 @@ export function JSONStringify<T = any>(data: T, options: JSONStringifyOptions = 
 
 	try {
 		return JSON.stringify(data, null, parsedOptions.pretty)
-	} catch (e) {
+	} catch {
 		return ''
 	}
 }

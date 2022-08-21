@@ -33,7 +33,7 @@ export function isJSONString(value: any, returnValue = false) {
 	try {
 		const result = JSON.parse(value)
 		return returnValue ? result : true
-	} catch (e) {
+	} catch {
 		return false
 	}
 }

@@ -160,7 +160,7 @@ export const isBase64 = (content: string) => /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/
 export function isDate(value: any): value is Date {
 	try {
 		return value instanceof Date || new Date(value).toString() !== 'Invalid Date'
-	} catch (e) {
+	} catch {
 		return false
 	}
 }
