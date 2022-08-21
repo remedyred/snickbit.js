@@ -716,75 +716,69 @@ it(`Werewolf -> Werewolves`, () => {
 describe('plural', () => {
 	describe('methods', () => {
 		describe('plural', () => {
-			BASIC_TESTS.concat(PLURAL_TESTS)
-				.forEach(test => {
-					it(`${test[0]} -> ${test[1]}`, () => {
-						expect(plural(test[0])).toBe(test[1])
-					})
+			for (const test of [...BASIC_TESTS, ...PLURAL_TESTS]) {
+				it(`${test[0]} -> ${test[1]}`, () => {
+					expect(plural(test[0])).toBe(test[1])
 				})
+			}
 		})
 
 		describe('isPlural', () => {
-			BASIC_TESTS.concat(PLURAL_TESTS)
-				.forEach(test => {
-					it(`isPlural(${test[1]})`, () => {
-						expect(isPlural(test[1])).toBe(true)
-					})
+			for (const test of [...BASIC_TESTS, ...PLURAL_TESTS]) {
+				it(`isPlural(${test[1]})`, () => {
+					expect(isPlural(test[1])).toBe(true)
 				})
+			}
 		})
 
 		describe('singular', () => {
-			BASIC_TESTS.concat(SINGULAR_TESTS)
-				.forEach(test => {
-					it(`${test[1]} -> ${test[0]}`, () => {
-						expect(singular(test[1])).toBe(test[0])
-					})
+			for (const test of [...BASIC_TESTS, ...SINGULAR_TESTS]) {
+				it(`${test[1]} -> ${test[0]}`, () => {
+					expect(singular(test[1])).toBe(test[0])
 				})
+			}
 		})
 
 		describe('isSingular', () => {
-			BASIC_TESTS.concat(SINGULAR_TESTS)
-				.forEach(test => {
-					it(`isSingular(${test[0]})`, () => {
-						expect(isSingular(test[0])).toBe(true)
-					})
+			for (const test of [...BASIC_TESTS, ...SINGULAR_TESTS]) {
+				it(`isSingular(${test[0]})`, () => {
+					expect(isSingular(test[0])).toBe(true)
 				})
+			}
 		})
 	})
 
 	describe('automatically convert', () => {
 		describe('plural', () => {
-			BASIC_TESTS.concat(PLURAL_TESTS)
-				.forEach(test => {
+			for (const test of [...BASIC_TESTS, ...PLURAL_TESTS]) {
 				// Make sure the word stays plurald.
-					it(`5 ${test[1]} -> ${test[1]}`, () => {
-						expect(plural(test[1], 5)).toBe(test[1])
-					})
-
-					// Make sure the word becomes a plural.
-					if (test[0] !== test[1]) {
-						it(`5 ${test[0]} -> ${test[1]}`, () => {
-							expect(plural(test[0], 5)).toBe(test[1])
-						})
-					}
+				it(`5 ${test[1]} -> ${test[1]}`, () => {
+					expect(plural(test[1], 5)).toBe(test[1])
 				})
+
+				// Make sure the word becomes a plural.
+				if (test[0] !== test[1]) {
+					it(`5 ${test[0]} -> ${test[1]}`, () => {
+						expect(plural(test[0], 5)).toBe(test[1])
+					})
+				}
+			}
 		})
 
 		describe('singular', () => {
-			BASIC_TESTS.concat(SINGULAR_TESTS)
-				.forEach(test => {
+			for (const test of [...BASIC_TESTS, ...SINGULAR_TESTS]) {
 				// Make sure the word stays singular.
-					it(`1 ${test[0]} -> ${test[0]}`, () => {
-						expect(plural(test[0], 1)).toBe(test[0])
-					})
-
-					// Make sure the word becomes singular.
-					if (test[0] !== test[1]) {
-						it(`1 ${test[1]} -> ${test[0]}`, () => {
-							expect(plural(test[1], 1)).toBe(test[0])
-						})
-					}
+				it(`1 ${test[0]} -> ${test[0]}`, () => {
+					expect(plural(test[0], 1)).toBe(test[0])
 				})
+
+				// Make sure the word becomes singular.
+				if (test[0] !== test[1]) {
+					it(`1 ${test[1]} -> ${test[0]}`, () => {
+						expect(plural(test[1], 1)).toBe(test[0])
+					})
+				}
+			}
 		})
 	})
 })
