@@ -6,7 +6,7 @@ import {objectFlatten} from './objects'
  * @returns {any}
  * @category Templating
  */
-export const escapeRegExp = (text: string) => String(text).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+export const escapeRegExp = (text: string) => String(text).replace(/[$()*+.?[\\\]^{|}]/g, '\\$&')
 
 /**
  * escape regexp replacement string

@@ -6,13 +6,13 @@ import reserved from './data/reserved'
  * @internal
  * @category Parsing
  */
-export const capital_plus_lower = /[A-ZÀ-Ý\u00C0-\u00D6\u00D9-\u00DD][a-zà-ÿ]/g
+export const capital_plus_lower = /[A-Z\u00C0-Ý][a-zà-ÿ]/g
 
 /**
  * @internal
  * @category Parsing
  */
-export const capitals = /[A-ZÀ-Ý\u00C0-\u00D6\u00D9-\u00DD]+/g
+export const capitals = /[A-Z\u00C0-Ý]+/g
 
 /**
  * Convert a string to snake_case
@@ -54,7 +54,7 @@ export const singular = singularize
  * @category Parsing
  */
 export const initials = (text: string): string => text
-	.split(/[^a-zA-Z]/)
+	.split(/[^A-Za-z]/)
 	.filter(Boolean)
 	.map(word => word[0].toUpperCase())
 	.join('')
@@ -89,9 +89,9 @@ export function padString(text: string, padding = 2, character = ' '): string {
  */
 export function safeVarName(text: string, replacer = ''): string {
 	// check that replacer itself is valid
-	replacer = replacer.split(/[\W\s_-]/).join('')
+	replacer = replacer.split(/[\W_]/).join('')
 
-	text = text.split(/[\W\s_-]/) // Split on non-word characters
+	text = text.split(/[\W_]/) // Split on non-word characters
 		.join(replacer) // Join words with replacer
 		.replace(new RegExp(replacer + replacer, 'g'), replacer) // Replace double replacer with single replacer
 
