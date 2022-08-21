@@ -19,7 +19,7 @@ export function objectFindKey<I extends object = IObject>(object: I, predicate: 
 
 /**
  * Finds an object property's value that matches the given predicate
- * @param {object} obj
+ * @param {object} object
  * @param {string|function} [predicate] - A string or function that returns a boolean
  * @returns {any}
  * @category Objects
