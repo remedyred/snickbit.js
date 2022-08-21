@@ -19,9 +19,9 @@ export function parse(value: any): any {
 		case 'null':
 			return null
 		case 'NaN':
-			return NaN
+			return Number.NaN
 		case 'Infinity':
-			return Infinity
+			return Number.POSITIVE_INFINITY
 		case 'true':
 			return true
 		case 'false':
@@ -32,10 +32,10 @@ export function parse(value: any): any {
 		return JSONParse(value)
 	}
 
-	const num = parseFloat(value)
-	if (!Number.isNaN(num) && isFinite(num)) {
+	const num = Number.parseFloat(value)
+	if (!Number.isNaN(num) && Number.isFinite(num)) {
 		if (value.toLowerCase().indexOf('0x') === 0) {
-			return parseInt(value, 16)
+			return Number.parseInt(value, 16)
 		}
 		return num
 	}
