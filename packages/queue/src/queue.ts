@@ -75,7 +75,7 @@ export class Queue {
 	constructor(options?: QueueOptions) {
 		this.options = {
 			...Queue.defaultOptions,
-			...options || {}
+			...options
 		}
 		this.options.throttle = !!this.options.limit && !!this.options.interval
 		this.makeQueue()
@@ -376,6 +376,14 @@ export class Queue {
 		return this
 	}
 
+	private abortTask(error?: any) {
+		if (this.waiting) {
+			this.waiting.reject(new QueueException('Queue has been aborted'))
+		}
+
+		throw new AbortQueueError(error)
+	}
+
 	private async executeTask(taskDefinition: QueueTaskDefinition): Promise<void> {
 		let result: any
 
@@ -383,28 +391,16 @@ export class Queue {
 			throw new QueueException('Task definition is undefined')
 		}
 
-		const abortTask = (e?: any) => {
-			if (this.waiting) {
-				this.waiting.reject(new QueueException('Queue has been aborted'))
-			}
-
-			throw new AbortQueueError(e)
-		}
-
 		if (this.options.throttle) {
 			await sleep(this.options.strict ? this.strictDelay() : this.windowedDelay())
 		}
 
 		if (this.aborted) {
-			abortTask()
+			this.abortTask()
 		}
 
 		try {
-			if (typeof taskDefinition.task === 'function') {
-				result = await Promise.resolve(taskDefinition.task.apply(taskDefinition.thisArg, taskDefinition.args))
-			} else {
-				result = await Promise.resolve(taskDefinition.task)
-			}
+			result = await (typeof taskDefinition.task === 'function' ? Promise.resolve(taskDefinition.task.apply(taskDefinition.thisArg, taskDefinition.args)) : Promise.resolve(taskDefinition.task))
 			this.processes--
 
 			if (this.handlers.thenEach) {
@@ -424,7 +420,7 @@ export class Queue {
 			}
 
 			if (this.options.abortOnError) {
-				abortTask(error)
+				this.abortTask(error)
 			}
 		}
 
