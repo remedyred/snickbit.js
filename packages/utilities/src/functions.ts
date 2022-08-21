@@ -31,7 +31,7 @@ export function parseOptions(given: IObject | any, defaults: IObject, non_object
 	}
 
 	// merge the given options with the defaults
-	for (const key of arrayUnique(Object.keys(defaults).concat(Object.keys(given)))) {
+	for (const key of arrayUnique([...Object.keys(defaults), ...Object.keys(given)])) {
 		if (given[key] === undefined) {
 			given[key] = defaults[key]
 		}
@@ -95,7 +95,7 @@ export function overloadOptions(options: any[], schemas: OverloadSchema[]): obje
 
 	if (matches.length !== 1) {
 		// check for type matches only
-		matches = matches.length ? matches : schemas.slice()
+		matches = matches.length ? matches : [...schemas]
 		for (const [index, option] of options.entries()) {
 			matches = matches.filter((schema: OverloadSchema) => isType(option, Object.values(schema)[index]))
 			if (matches.length === 1) {

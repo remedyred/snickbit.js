@@ -19,7 +19,7 @@ export function randomString(length = 10): string {
 	while (text.length < length) {
 		text += makeRandomSegment()
 	}
-	return text.substring(0, length)
+	return text.slice(0, Math.max(0, length))
 }
 
 /**
@@ -27,8 +27,7 @@ export function randomString(length = 10): string {
  * @category Generators
  */
 export function makeRandomSegment(): string {
-	return Math.random().toString(36)
-		.substring(2, 16)
+	return Math.random().toString(36).slice(2, 16)
 }
 
 /** @category Generators */
