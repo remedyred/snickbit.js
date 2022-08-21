@@ -49,33 +49,26 @@ describe('Queue', () => {
 
 	it('should be able to accept a task', () => {
 		const queue = new Queue()
-		queue.add(() => {
-		})
+		queue.add(() => {})
 		expect(queue.length).toBe(1)
 	})
 
 	it('should be able to accept multiple tasks', () => {
 		const queue = new Queue()
-		queue.push(() => {
-		})
-		queue.push(() => {
-		})
+		queue.push(() => {}, () => {})
 		expect(queue.length).toBe(2)
 	})
 
 	it('should be able to accept multiple tasks', () => {
 		const queue = new Queue()
-		queue.push(() => {
-		},
-		() => {
-		})
+		queue.push(() => {},
+			() => {})
 		expect(queue.length).toBe(2)
 	})
 
 	it('should be able to run a task', () => {
 		const queue = new Queue()
-		queue.push(() => {
-		})
+		queue.push(() => {})
 		queue.run().then(() => expect(queue.active).toBe(0)).catch(() => {
 			throw new Error('Queue run failed')
 		})
@@ -83,10 +76,8 @@ describe('Queue', () => {
 
 	it('should be able to run multiple tasks', () => {
 		const queue = new Queue()
-		queue.add(() => {
-		})
-		queue.add(() => {
-		})
+		queue.add(() => {})
+		queue.add(() => {})
 		queue.run().then(() => expect(queue.active).toBe(0)).catch(() => {
 			throw new Error('Queue run failed')
 		})
@@ -95,10 +86,7 @@ describe('Queue', () => {
 	it('should be able to run a hook after each task using thenEach', async () => {
 		const queue = new Queue()
 		let count = 0
-		queue.push(() => {
-		})
-		queue.push(() => {
-		})
+		queue.push(() => {}, () => {})
 		queue.run().thenEach(() => {
 			count++
 		}).then(() => expect(count).toBe(2)).catch(() => {
@@ -116,8 +104,8 @@ describe('Queue', () => {
 		async () => {
 			await sleep(100)
 			results.push(2)
-		})
-		queue.push(async () => {
+		},
+		async () => {
 			await sleep(100)
 			results.push(3)
 		})
@@ -136,12 +124,12 @@ describe('Queue', () => {
 			results.push(1)
 		})
 
-		for (let i = 2; i < tests; i++) {
+		for (let index = 2; index < tests; index++) {
 			queue.push(async () => {
 				await sleep(100)
-				results.push(i)
+				results.push(index)
 			})
-			expected.push(i)
+			expected.push(index)
 		}
 		expected.push(1)
 
