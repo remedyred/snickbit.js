@@ -50,12 +50,12 @@ export type TryWaitFunction = (...args: any[]) => Promise<any> | any
  */
 export function tryWait(fn: TryWaitFunction, ...args: any[][]): Promise<any> {
 	/* eslint no-async-promise-executor: off */
-	return new Promise(async resolve => {
+	return new Promise<void>(async resolve => {
 		try {
 			const result = await fn(...args)
 			resolve(result)
-		} catch (e) {
-			resolve(undefined)
+		} catch {
+			resolve()
 		}
 	})
 }
