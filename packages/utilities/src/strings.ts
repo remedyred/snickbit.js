@@ -139,12 +139,12 @@ export function slugify(text: string, replace = '-'): string {
  * @returns {number} -1 if no difference
  */
 export function findFirstDiff(first, second): number {
-	let i = 0
+	let index = 0
 	if (first === second) {
 		return -1
 	}
-	while (first[i] === second[i]) {
-		i++
+	while (first[index] === second[index]) {
+		index++
 	}
-	return i
+	return index
 }
