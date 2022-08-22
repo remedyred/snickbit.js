@@ -1,6 +1,6 @@
 import duration, {DatesDuration} from './duration'
 import limitedRelativeTime, {LimitedRelativeOptions} from './limited-relative-time'
-import dayjs from 'dayjs'
+import dayjs, {Dayjs, PluginFunc} from 'dayjs'
 import customParseFormat from 'dayjs/plugin/customParseFormat'
 import isTomorrow from 'dayjs/plugin/isTomorrow'
 import isYesterday from 'dayjs/plugin/isYesterday'
@@ -44,6 +44,8 @@ export interface Dates extends dayjs.Dayjs {
 	fromNowLimited(options: Partial<LimitedRelativeOptions>): string
 
 	relativeToday(fallbackFormat: string): string
+
+	extend<T = unknown>(plugin: PluginFunc<T>, option?: T): Dayjs
 }
 
 dayjs.extend(isYesterday)
