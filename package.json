@@ -20,7 +20,7 @@
 		"test": "jest"
 	},
 	"lint-staged": {
-		"*.{ts,json}": "eslint --fix --cache"
+		"*.{ts,json,yml,yaml}": "eslint --fix --cache"
 	},
 	"jest": {
 		"noStackTrace": true,
