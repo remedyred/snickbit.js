@@ -26,6 +26,10 @@
 			"dependsOn": ["docs"],
 			"outputs": ["README.md"]
 		},
+		"depcheck": {
+			"inputs": ["package.json"],
+			"outputs": []
+		},
 		"clean": {
 			"outputs": []
 		},
