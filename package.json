@@ -32,7 +32,7 @@
 	"devDependencies": {
 		"@lerna-lite/cli": "1.10.0",
 		"@semantic-release/exec": "^6.0.3",
-		"@snickbit/eslint-config": "0.0.10",
+		"@snickbit/eslint-config": "1.1.0",
 		"@snickbit/readmes": "0.0.2",
 		"@snickbit/semantic-release": "^1.1.1",
 		"@types/jest": "28.1.6",
