@@ -1,8 +1,8 @@
 {
 	"$schema": "https://turborepo.org/schema.json",
 	"pipeline": {
-		"prod": {
-			"dependsOn": ["^prod"],
+		"build": {
+			"dependsOn": ["^build"],
 			"outputs": ["dist/**"]
 		},
 		"dev": {
@@ -10,12 +10,12 @@
 			"outputs": ["dist/**"]
 		},
 		"docs": {
-			"dependsOn": ["prod"],
+			"dependsOn": ["build"],
 			"outputs": ["docs/**", "README.md"],
 			"inputs": ["src/**/*.tsx", "src/**/*.ts", "typedoc.json"]
 		},
 		"//#test": {
-			"dependsOn": ["prod"],
+			"dependsOn": ["build"],
 			"outputs": []
 		},
 		"//#lint": {
@@ -24,7 +24,7 @@
 		"//#fix": {
 			"outputs": ["**/*.ts", "**/*.json"]
 		},
-		"//#prod": {
+		"//#build": {
 			"outputs": []
 		},
 		"//#readmes": {

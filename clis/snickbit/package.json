@@ -11,13 +11,12 @@
 		"bin"
 	],
 	"scripts": {
-		"build": "pnpm run esbuild",
-		"build:meta": "pnpm run build --minify --metafile=.meta.json",
+		"build": "pnpm run esbuild --minify",
+		"build:meta": "pnpm run esbuild --minify --metafile=.meta.json",
 		"clean": "shx rm -rf ./dist",
 		"depcheck": "depcheck",
-		"dev": "pnpm run build --sourcemap",
+		"dev": "pnpm run esbuild --sourcemap",
 		"esbuild": "esbuild --bundle --outfile=bin/snickbit src/index.ts --target=node12 --platform=node",
-		"prod": "pnpm run build --minify",
 		"start": "node bin/snickbit.js",
 		"watch": "pnpm run dev --watch"
 	},

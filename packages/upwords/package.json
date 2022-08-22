@@ -15,12 +15,11 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "tsup",
+		"build": "tsup --minify",
 		"clean": "shx rm -rf ./dist",
 		"depcheck": "depcheck",
-		"dev": "pnpm run build --sourcemap",
-		"meta": "pnpm run prod --metafile",
-		"prod": "pnpm run build --minify",
+		"dev": "tsup",
+		"meta": "tsup --minify --metafile",
 		"test": "jest",
 		"watch": "pnpm run dev --watch"
 	},
