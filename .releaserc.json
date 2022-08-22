@@ -7,7 +7,7 @@
 		[
 			"@semantic-release/exec",
 			{
-				"prepareCmd": "pnpm turbo run readmes"
+				"prepareCmd": "pnpm turbo run docs"
 			}
 		]
 	]
