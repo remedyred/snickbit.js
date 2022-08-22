@@ -1,4 +1,10 @@
 import {dates} from '../src'
+import utc from 'dayjs/plugin/utc'
+import timezone from 'dayjs/plugin/timezone'
+import dayjs from 'dayjs' // dependent on utc plugin
+dayjs.extend(utc)
+dayjs.extend(timezone)
+dayjs.tz.setDefault('America/Detroit')
 
 const test_date = '2022-01-15'
 
