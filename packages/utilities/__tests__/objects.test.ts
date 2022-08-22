@@ -284,7 +284,7 @@ describe('objects', () => {
 		})
 	})
 
-	describe.only('objectSort', () => {
+	describe('objectSort', () => {
 		it('should expose a function', () => {
 			expect(objectSort).toBeDefined()
 		})
