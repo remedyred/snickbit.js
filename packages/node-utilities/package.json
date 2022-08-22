@@ -21,7 +21,11 @@
 		"dev": "tsup",
 		"docs": "typedoc",
 		"meta": "tsup --minify --metafile",
+		"release": "semantic-release",
 		"watch": "pnpm run dev --watch"
+	},
+	"release": {
+		"extends": "../../.releaserc.json"
 	},
 	"jest": {
 		"preset": "ts-jest",

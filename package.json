@@ -13,8 +13,9 @@
 		"lint": "eslint \"**/*.{ts,json}\" --cache --color",
 		"prepare": "husky install",
 		"readmes": "readmes",
-		"prerelease": "turbo run build test docs readmes fix depcheck",
-		"release": "pnpm run prerelease && lerna publish",
+		"prerelease": "turbo run build test readmes fix depcheck",
+		"release": "turbo run release",
+		"release:ci": "turbo run release --concurrency=1",
 		"test": "jest"
 	},
 	"lint-staged": {
@@ -29,6 +30,7 @@
 	},
 	"devDependencies": {
 		"@lerna-lite/cli": "1.10.0",
+		"@semantic-release/exec": "^6.0.3",
 		"@snickbit/eslint-config": "0.0.10",
 		"@snickbit/readmes": "0.0.2",
 		"@snickbit/semantic-release": "^1.1.1",

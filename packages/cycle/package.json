@@ -21,9 +21,13 @@
 		"dev": "tsup",
 		"docs": "typedoc",
 		"meta": "tsup --metafile",
+		"release": "semantic-release",
 		"start": "node ./examples/index.js",
 		"test": "jest",
 		"watch": "pnpm run dev --watch"
+	},
+	"release": {
+		"extends": "../../.releaserc.json"
 	},
 	"jest": {
 		"preset": "ts-jest",
