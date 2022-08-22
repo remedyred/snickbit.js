@@ -15,16 +15,19 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "tsup",
+		"build": "tsup --minify",
 		"clean": "shx rm -rf ./dist ",
 		"depcheck": "depcheck",
-		"dev": "pnpm run build --sourcemap",
+		"dev": "tsup",
 		"docs": "typedoc",
 		"index": "indexer",
-		"meta": "pnpm run prod --metafile",
-		"prod": "pnpm run clean && pnpm run build --minify",
+		"meta": "tsup --minify --metafile",
+		"release": "semantic-release",
 		"test": "jest",
 		"watch": "pnpm run dev --watch"
+	},
+	"release": {
+		"extends": "../../.releaserc.json"
 	},
 	"jest": {
 		"preset": "ts-jest",

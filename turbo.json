@@ -1,43 +1,42 @@
 {
 	"$schema": "https://turborepo.org/schema.json",
 	"pipeline": {
-		"prod": {
-			"dependsOn": ["^prod"],
-			"outputs": ["dist/**"]
-		},
-		"dev": {
-			"dependsOn": ["^dev"],
-			"outputs": ["dist/**"]
+		"build": {
+			"dependsOn": ["^build"],
+			"outputs": ["dist/**"],
+			"outputMode": "new-only"
 		},
 		"docs": {
-			"dependsOn": ["prod"],
+			"dependsOn": ["^build"],
 			"outputs": ["docs/**", "README.md"],
 			"inputs": ["src/**/*.tsx", "src/**/*.ts", "typedoc.json"]
 		},
 		"//#test": {
-			"dependsOn": ["prod"],
+			"dependsOn": ["@snickbit/utilities#build", "^build"],
 			"outputs": []
 		},
 		"//#lint": {
 			"outputs": []
 		},
 		"//#fix": {
-			"outputs": ["**/*.ts", "**/*.json"]
-		},
-		"//#prod": {
-			"outputs": []
+			"outputs": ["**/*.ts", "**/*.json"],
+			"outputMode": "new-only"
 		},
 		"//#readmes": {
+			"dependsOn": ["docs"],
 			"outputs": ["README.md"]
-		},
-		"depcheck": {
-			"outputs": []
-		},
-		"index": {
-			"outputs": []
 		},
 		"clean": {
 			"outputs": []
+		},
+		"release": {
+			"dependsOn": ["^build", "//#lint", "//#test"],
+			"outputs": ["CHANGELOG.md", "package.json", "docs/**", "README.md"]
+		},
+		"//#release:ci": {
+			"dependsOn": ["$GITHUB_TOKEN", "$NPM_TOKEN"],
+			"outputs": ["CHANGELOG.md", "package.json", "docs/**", "README.md"],
+			"outputMode": "new-only"
 		}
 	}
 }
