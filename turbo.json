@@ -12,7 +12,7 @@
 			"inputs": ["src/**/*.tsx", "src/**/*.ts", "typedoc.json"]
 		},
 		"//#test": {
-			"dependsOn": ["^build"],
+			"dependsOn": ["@snickbit/utilities#build", "^build"],
 			"outputs": []
 		},
 		"//#lint": {
