@@ -44,7 +44,9 @@ cli()
 
 		const keys = Object.keys(data)
 
+		// eslint-disable-next-line unicorn/no-array-reduce
 		const longest = keys.reduce((a, b) => a.length > b.length ? a : b)
+		// eslint-disable-next-line unicorn/no-array-reduce
 		const shortest = keys.reduce((a, b) => a.length < b.length ? a : b)
 		const padding = longest.length - shortest.length + 5
 
@@ -129,7 +131,7 @@ cli()
 						headers: {'Content-Type': 'application/json'}
 					})
 					$spinner.finish('Sent!')
-				} catch (e) {
+				} catch {
 					$spinner.fail('Uh oh, this is embarrassing...')
 					$out.error(`There was an error. Please head to my website ${data.website} or try again later.`)
 				}
@@ -141,4 +143,4 @@ cli()
 		// noinspection TypeScriptValidateJSTypes
 		$out.exit.success(goodbyes[Math.floor(Math.random() * goodbyes.length)])
 	})
-	.catch(err => $out.error(err))
+	.catch(error => $out.error(error))

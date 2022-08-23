@@ -13,7 +13,7 @@
 	"scripts": {
 		"build": "pnpm run esbuild --minify",
 		"build:meta": "pnpm run esbuild --minify --metafile=.meta.json",
-		"clean": "shx rm -rf ./dist",
+		"clean": "shx rm -rf ./dist ./.types",
 		"depcheck": "depcheck",
 		"dev": "pnpm run esbuild --sourcemap",
 		"esbuild": "esbuild --bundle --outfile=bin/snickbit src/index.ts --target=node12 --platform=node",

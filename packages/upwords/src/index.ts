@@ -1,11 +1,9 @@
 import words from './words'
 
-const default_options = {fast: false}
-
-function convertCase(word, i) {
+function convertCase(word, index) {
 	const manualWord = words.find(w => String(w).toLowerCase() === String(word).toLowerCase())
 	if (manualWord) {
-		return i === 0 && !manualWord.match(/[^a-z]/) ? upperFirst(manualWord) : manualWord
+		return index === 0 && !/[^a-z]/.test(manualWord) ? upperFirst(manualWord) : manualWord
 	}
 	return upperFirst(word)
 }
@@ -17,30 +15,27 @@ function upperFirst(string) {
 const stripPseudoSpaces = string => string.replace(/[_-]+$/, ' ').replace(/^[_-]+/, ' ')
 	.replace(/(\s)+/g, '$1')
 
-const upwords = function(str, options = {fast: false}) {
-	options = {...default_options, ...options || {}}
-
-	if (str && typeof str === 'string') {
-		const regex = /[a-zA-Z0-9&]+/g
+export default function upwords(text, fast = false) {
+	if (text && typeof text === 'string') {
+		const regex = /[\d&A-Za-z]+/g
 		let m
-		let i = 0
-		while ((m = regex.exec(str)) !== null) {
+		let match_index = 0
+		while ((m = regex.exec(text)) !== null) {
 			if (m.index === regex.lastIndex) {
 				regex.lastIndex++
 			}
 
-			const match = m.slice().shift()
+			const match = [...m].shift()
 			const index = m.index
-			const converted = options.fast ? upperFirst(match) : convertCase(match, i)
-			const prefix = str.substring(0, index)
-			const suffix = str.substring(index + match.length)
-			str = stripPseudoSpaces(prefix) + stripPseudoSpaces(converted) + stripPseudoSpaces(suffix)
-			i++
+			const converted = fast ? upperFirst(match) : convertCase(match, match_index)
+			const prefix = text.slice(0, Math.max(0, index))
+			const suffix = text.slice(Math.max(0, index + match.length))
+			text = stripPseudoSpaces(prefix) + stripPseudoSpaces(converted) + stripPseudoSpaces(suffix)
+			match_index++
 		}
 
-		return str
+		return text
 	}
-	return str
+	return text
 }
 
-export default upwords

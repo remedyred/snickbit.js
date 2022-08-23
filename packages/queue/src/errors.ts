@@ -24,8 +24,8 @@ export class QueueError extends Error {
 
 	readonly spread = false
 
-	constructor(err: ErrorMessage, name: string, _data: any) {
-		let msg = typeof err === 'string' ? err : 'Error'
+	constructor(error: ErrorMessage, name: string, _data: any) {
+		let msg = typeof error === 'string' ? error : 'Error'
 		const properties: ErrorProperties = {
 			name,
 			type: 'QueueError'
@@ -33,8 +33,8 @@ export class QueueError extends Error {
 
 		if (Array.isArray(_data)) {
 			properties.data = _data
-		} else if (typeof err === 'object' || _data !== undefined) {
-			const {message, errors, ...rest} = typeof err === 'object' ? err : _data
+		} else if (typeof error === 'object' || _data !== undefined) {
+			const {message, errors, ...rest} = typeof error === 'object' ? error : _data
 
 			msg = message || msg
 			properties.errors = errors

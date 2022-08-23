@@ -1,5 +1,5 @@
 import {Out} from '@snickbit/out'
-import {isArray, isCallable, isDate, isEmpty, isFunction, isObject, objectFind, objectFindKey, objectHasMethod, ObjectPredicate, typeOf, uuid, VariableType} from '@snickbit/utilities'
+import {isArray, isCallable, isDate, isEmpty, isFunction, isObject, isString, objectFind, objectFindKey, objectHasMethod, ObjectPredicate, typeOf, uuid, VariableType} from '@snickbit/utilities'
 import objectPath, {ObjectPathBound} from 'object-path'
 
 export type ModelId = number | string | undefined
@@ -66,7 +66,8 @@ export interface ModelOptions {
 /** @internal */
 function defaultValues(schema: Partial<ModelSchema>) {
 	const defaults = {}
-	for (let [key, schemaItem] of Object.entries(schema)) {
+	for (const key of Object.keys(schema)) {
+		let schemaItem = schema[key]
 		if (!isObject(schemaItem)) {
 			continue
 		}
@@ -122,7 +123,7 @@ export class Model<T extends object = any, D = Partial<T>> {
 		this.out = new Out(this.options.name)
 
 		this.defaults = defaultValues(this.options.schema || {})
-		this.set({...this.defaults, ...data || {}} as T)
+		this.set({...this.defaults, ...data} as T)
 
 		this.is_new = !this.id
 		if (this.is_new && this.options.autoId) {
@@ -149,18 +150,16 @@ export class Model<T extends object = any, D = Partial<T>> {
 	}
 
 	protected checkKey(key): string {
-		if (typeOf(key) === 'string' && key.startsWith('.')) {
-			key = key.substring(1)
+		if (isString(key) && key.startsWith('.')) {
+			key = key.slice(1)
 		} else if (this.options.root) {
-			if (typeOf(key) === 'string' && key !== this.options.root) {
+			if (isString(key) && key !== this.options.root) {
 				if (!key.startsWith(`${this.options.root}.`)) {
 					key = `${this.options.root}.${key}`
-				} else if (typeOf(key) === 'array' && key.slice()
-					.shift() !== this.options.root) {
+				} else if (Array.isArray(key) && [...key].shift() !== this.options.root) {
 					key = [this.options.root, key]
 				}
-			} else if (typeOf(key) === 'array' && key.slice()
-				.shift() !== this.options.root) {
+			} else if (Array.isArray(key) && [...key].shift() !== this.options.root) {
 				key = [this.options.root, key]
 			} else {
 				key = this.options.root
@@ -247,7 +246,7 @@ export class Model<T extends object = any, D = Partial<T>> {
 		if (isObject(value)) {
 			return objectFind(value, predicate)
 		} else if (isArray(value)) {
-			return value.find(predicate)
+			return value.find(element => predicate(element))
 		}
 		return false
 	}
@@ -279,7 +278,7 @@ export class Model<T extends object = any, D = Partial<T>> {
 		if (isObject(value)) {
 			return objectFindKey(value, predicate)
 		} else if (isArray(value)) {
-			return value.findIndex(predicate)
+			return value.findIndex(element => predicate(element))
 		}
 
 		return -1
@@ -300,7 +299,7 @@ export class Model<T extends object = any, D = Partial<T>> {
 			return Object.values(value)
 				.shift()
 		} else if (isArray(value)) {
-			return value.slice()
+			return [...value]
 				.shift()
 		}
 		return undefined
@@ -321,7 +320,7 @@ export class Model<T extends object = any, D = Partial<T>> {
 			return Object.values(value)
 				.pop()
 		} else if (isArray(value)) {
-			return value.slice()
+			return [...value]
 				.pop()
 		}
 		return undefined
@@ -364,11 +363,7 @@ export class Model<T extends object = any, D = Partial<T>> {
 			}
 
 			// set the data
-			if (this.options.root) {
-				this.data = objectPath({[this.options.root]: data})
-			} else {
-				this.data = objectPath(data)
-			}
+			this.data = this.options.root ? objectPath({[this.options.root]: data}) : objectPath(data)
 		} else {
 			const key = keyOrData as ModelKey
 			this.data.set(this.checkKey(key), value, !overwrite)
@@ -589,7 +584,8 @@ export class Model<T extends object = any, D = Partial<T>> {
 		this.errors = {}
 		const schema = this.options.schema as ModelSchema
 
-		for (let [key, definition] of Object.entries(schema)) {
+		for (const key of Object.keys(schema)) {
+			let definition = schema[key]
 			const value = this.get(key)
 
 			if (isFunction(definition)) {
