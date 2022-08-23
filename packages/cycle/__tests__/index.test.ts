@@ -34,11 +34,11 @@ describe('cycle()', () => it('should return Cycle instance', () => expect(cycle(
 describe('Parameters', () => {
 	it('[1,2,3] should have items [1,2,3]', () => expect(cycle([1, 2, 3])).toHaveProperty('items', [1, 2, 3]))
 
-	for (const [name, values] of Object.entries(presets)) {
+	describe.each(Object.entries(presets))('%s', (name, values) => {
 		it(`${name} should have items ${values.length} matching values`, () => expect(cycle(name)).toHaveProperty('items', values))
 
 		it(`${name} ${values.length} supplied values should have items ${values.length} matching values`, () => expect(cycle(values)).toHaveProperty('items', values))
-	}
+	})
 })
 
 describe('Values Forward', () => {
