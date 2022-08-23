@@ -45,7 +45,7 @@ export function getFile(filepath: PathLike, fallback?: any) {
  * Make a directory
  * @category Files
  */
-export function mkdir(dir_path: PathLike, {recursive = true}) {
+export function mkdir(dir_path: PathLike, recursive = true) {
 	dir_path = path.normalize(dir_path as string)
 	if (!fs.existsSync(dir_path)) {
 		fs.mkdirSync(dir_path, {recursive})
