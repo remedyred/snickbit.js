@@ -9,7 +9,7 @@ export interface DatesDuration extends Dates {
 
 	humanize(withSuffix?: boolean): string
 
-	format(formatStr?: string): string
+	format(formatString?: string): string
 
 	toJSON(): string
 }
@@ -100,11 +100,11 @@ function toWords(longOrOptions?: ToWordsOptions | boolean): string {
 }
 
 function toObject(): object {
-	const obj = {}
+	const object = {}
 	for (const key in abbreviations) {
-		obj[key] = this.get(key)
+		object[key] = this.get(key)
 	}
-	return obj
+	return object
 }
 
 export default (option, Dayjs, dayjs) => {

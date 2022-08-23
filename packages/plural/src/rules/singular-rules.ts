@@ -3,7 +3,7 @@ import {PluralRule} from '../pluralize'
 export default [
 	[/s$/i, ''],
 	[/(ss)$/i, '$1'],
-	[/(wi|kni|(?:after|half|high|low|mid|non|night|[^\w]|^)li)ves$/i, '$1fe'],
+	[/(wi|kni|(?:after|half|high|low|mid|non|night|\W|^)li)ves$/i, '$1fe'],
 	[/(ar|(?:wo|[ae])l|[eo][ao])ves$/i, '$1f'],
 	[/ies$/i, 'y'],
 	[/(dg|ss|ois|lk|ok|wn|mb|th|ch|ec|oal|is|ck|ix|sser|ts|wb)ies$/i, '$1ie'],

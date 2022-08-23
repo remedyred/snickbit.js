@@ -16,9 +16,11 @@
 	],
 	"scripts": {
 		"build": "tsup --minify",
-		"clean": "shx rm -rf ./dist ",
+		"build:types": "tsc --emitDeclarationOnly --declarationDir dist",
+		"clean": "shx rm -rf ./dist ./.types",
 		"depcheck": "depcheck",
 		"dev": "tsup",
+		"dev:types": "tsc --emitDeclarationOnly --declarationMap --declarationDir .types",
 		"docs": "typedoc",
 		"index": "indexer",
 		"meta": "tsup --minify --metafile",
@@ -50,16 +52,5 @@
 	},
 	"engines": {
 		"node": ">= 12"
-	},
-	"tsup": {
-		"entry": [
-			"src/index.ts"
-		],
-		"clean": true,
-		"dts": true,
-		"format": [
-			"esm",
-			"cjs"
-		]
 	}
 }
