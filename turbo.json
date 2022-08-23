@@ -31,7 +31,12 @@
 			"outputs": []
 		},
 		"clean": {
-			"outputs": []
+			"inputs": [".types/**", "dist/**"],
+			"outputs": [".types/**", "dist/**"]
+		},
+		"types": {
+			"dependsOn": ["^build"],
+			"outputs": [".types"]
 		},
 		"release": {
 			"dependsOn": ["^build", "//#lint", "//#test"],

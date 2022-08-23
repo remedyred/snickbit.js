@@ -16,7 +16,7 @@
 	],
 	"scripts": {
 		"build": "indexer && tsup --minify",
-		"clean": "shx rm -rf ./dist",
+		"clean": "shx rm -rf ./dist ./.types",
 		"depcheck": "depcheck",
 		"dev": "indexer && tsup",
 		"docs": "typedoc",

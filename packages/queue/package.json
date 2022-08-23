@@ -16,7 +16,7 @@
 	],
 	"scripts": {
 		"build": "tsup --minify",
-		"clean": "shx rm -rf ./dist ",
+		"clean": "shx rm -rf ./dist ./.types",
 		"depcheck": "depcheck",
 		"dev": "tsup",
 		"docs": "typedoc",
@@ -24,6 +24,7 @@
 		"meta": "tsup --minify --metafile",
 		"release": "semantic-release",
 		"test": "jest",
+		"types": "tsc --emitDeclarationOnly --declaration --declarationMap --declarationDir .types",
 		"watch": "pnpm run dev --watch"
 	},
 	"release": {
