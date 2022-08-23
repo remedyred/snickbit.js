@@ -38,6 +38,7 @@
 		"@types/jest": "28.1.6",
 		"depcheck": "1.4.3",
 		"eslint": "8.21.0",
+		"execa": "^6.1.0",
 		"husky": "^8.0.0",
 		"jest": "28.1.3",
 		"lint-staged": "^13.0.3",
@@ -45,6 +46,7 @@
 		"semantic-release-monorepo": "^7.0.5",
 		"shx": "0.3.4",
 		"ts-jest": "28.0.7",
+		"tsup": "6.2.2",
 		"turbo": "1.4.3",
 		"typescript": "4.7.4"
 	},
