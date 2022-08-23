@@ -2,8 +2,33 @@
 	"$schema": "https://turborepo.org/schema.json",
 	"pipeline": {
 		"build": {
+			"inputs": [
+				"src/**",
+				"*.json",
+				"../../tsup.config.json"
+			],
 			"dependsOn": ["^build"],
 			"outputs": ["dist/**"],
+			"outputMode": "new-only"
+		},
+		"build:types": {
+			"dependsOn": ["^build"],
+			"outputs": ["dist/**/*.d.ts"],
+			"outputMode": "new-only"
+		},
+		"dev": {
+			"inputs": [
+				"src/**",
+				"*.json",
+				"../../tsup.config.json"
+			],
+			"dependsOn": ["^dev"],
+			"outputs": ["dist/**"],
+			"outputMode": "new-only"
+		},
+		"dev:types": {
+			"dependsOn": ["^dev"],
+			"outputs": [".types"],
 			"outputMode": "new-only"
 		},
 		"docs": {
@@ -33,10 +58,6 @@
 		"clean": {
 			"inputs": [".types/**", "dist/**"],
 			"outputs": [".types/**", "dist/**"]
-		},
-		"types": {
-			"dependsOn": ["^build"],
-			"outputs": [".types"]
 		},
 		"release": {
 			"dependsOn": ["^build", "//#lint", "//#test"],

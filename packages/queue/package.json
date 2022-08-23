@@ -16,15 +16,16 @@
 	],
 	"scripts": {
 		"build": "tsup --minify",
+		"build:types": "tsc --emitDeclarationOnly --declarationDir dist",
 		"clean": "shx rm -rf ./dist ./.types",
 		"depcheck": "depcheck",
 		"dev": "tsup",
+		"dev:types": "tsc --emitDeclarationOnly --declarationMap --declarationDir .types",
 		"docs": "typedoc",
 		"index": "indexer",
 		"meta": "tsup --minify --metafile",
 		"release": "semantic-release",
 		"test": "jest",
-		"types": "tsc --emitDeclarationOnly --declaration --declarationMap --declarationDir .types",
 		"watch": "pnpm run dev --watch"
 	},
 	"release": {
