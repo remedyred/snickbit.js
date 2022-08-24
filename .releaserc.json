@@ -1,0 +1,14 @@
+{
+	"extends": [
+		"@snickbit/semantic-release",
+		"semantic-release-monorepo"
+	],
+	"plugins": [
+		[
+			"@semantic-release/exec",
+			{
+				"prepareCmd": "pnpm turbo run docs"
+			}
+		]
+	]
+}

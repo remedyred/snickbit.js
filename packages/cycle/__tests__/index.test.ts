@@ -34,26 +34,26 @@ describe('cycle()', () => it('should return Cycle instance', () => expect(cycle(
 describe('Parameters', () => {
 	it('[1,2,3] should have items [1,2,3]', () => expect(cycle([1, 2, 3])).toHaveProperty('items', [1, 2, 3]))
 
-	for (const [name, values] of Object.entries(presets)) {
+	describe.each(Object.entries(presets))('%s', (name, values) => {
 		it(`${name} should have items ${values.length} matching values`, () => expect(cycle(name)).toHaveProperty('items', values))
 
 		it(`${name} ${values.length} supplied values should have items ${values.length} matching values`, () => expect(cycle(values)).toHaveProperty('items', values))
-	}
+	})
 })
 
 describe('Values Forward', () => {
 	const instance = cycle([1, 2, 3])
 
-	for (let i = 0; i < 6; i++) {
-		it(`${i + 1} next() should have value ${i % 3 + 1}`, () => expect(instance.next()).toBe(i % 3 + 1))
+	for (let index = 0; index < 6; index++) {
+		it(`${index + 1} next() should have value ${index % 3 + 1}`, () => expect(instance.next()).toBe(index % 3 + 1))
 	}
 })
 
 describe('Values Backward', () => {
 	const instance = cycle([1, 2, 3])
 
-	for (let i = 6; i > 0; i--) {
-		const num = i - 1
+	for (let index = 6; index > 0; index--) {
+		const num = index - 1
 		it(`${num} prev() should have value ${num % 3 + 1}`, () => expect(instance.prev()).toBe(num % 3 + 1))
 	}
 })

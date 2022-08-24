@@ -31,22 +31,18 @@ function restoreCase(word: string, token: string): string {
 
 	// starting at the index of diff, match casing of each character
 	let result = word.slice(0, diff)
-	let lowers = word.match(/[a-z]/) ? 1 : 0
-	for (let i = diff; i < token.length; i++) {
-		if (word[i] !== undefined) {
+	let lowers = /[a-z]/.test(word) ? 1 : 0
+	for (let index = diff; index < token.length; index++) {
+		if (word[index] !== undefined) {
 			// check the casing of the character in the original string
-			if (word[i] === word[i].toUpperCase() && word[i] !== word[i].toLowerCase()) {
-				result += token[i].toUpperCase()
+			if (word[index] === word[index].toUpperCase() && word[index] !== word[index].toLowerCase()) {
+				result += token[index].toUpperCase()
 			} else {
 				lowers++
-				result += token[i].toLowerCase()
+				result += token[index].toLowerCase()
 			}
-		} else if (token[i] !== undefined) {
-			if (lowers === -1) {
-				result += token[i].toUpperCase()
-			} else {
-				result += token[i].toLowerCase()
-			}
+		} else if (token[index] !== undefined) {
+			result += lowers === -1 ? token[index].toUpperCase() : token[index].toLowerCase()
 		}
 	}
 
@@ -54,14 +50,14 @@ function restoreCase(word: string, token: string): string {
 }
 
 function findFirstDiff(first, second): number {
-	let i = 0
+	let index = 0
 	if (first === second) {
 		return -1
 	}
-	while (first[i] === second[i]) {
-		i++
+	while (first[index] === second[index]) {
+		index++
 	}
-	return i
+	return index
 }
 
 /**

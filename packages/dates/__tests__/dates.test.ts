@@ -1,27 +1,65 @@
-import {dates} from '../src'
+import {Dates, dates} from '../src'
+import dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
+
+dates.extend(utc)
 
 const test_date = '2022-01-15'
 
 describe('dates', () => {
-	test('dates should be a Function', () => expect(dates).toBeInstanceOf(Function))
-	test('dates.toString should return a string', () => expect(dates.toString()).toEqual(expect.any(String)))
-	test(`(${test_date}) should return Sat, 15 Jan 2022 05:00:00 GMT`, () => expect(dates(test_date).toString()).toEqual('Sat, 15 Jan 2022 05:00:00 GMT'))
+	it('dates should be a Function', () => expect(dates).toBeInstanceOf(Function))
+	it('dates should be a dates', () => expect(dates.constructor).toBeInstanceOf(dayjs.constructor))
 
-	test('dates().datestamp should be a Function', () => expect(dates().datestamp).toBeInstanceOf(Function))
-	test(`(${test_date}) should return 2022-01-15`, () => expect(dates(test_date).datestamp()).toEqual('2022-01-15'))
+	let instance: Dates
 
-	test('dates().timestamp should be a Function', () => expect(dates().timestamp).toBeInstanceOf(Function))
-	test(`(${test_date}) should return 2022-01-15 00:00:00`, () => expect(dates(test_date).timestamp()).toEqual('2022-01-15 00:00:00'))
+	beforeEach(() => {
+		instance = dates(dayjs.utc(test_date, 'YYYY-MM-DD'))
+	})
 
-	test('dates().time should be a Function', () => expect(dates().time).toBeInstanceOf(Function))
-	test(`(${test_date}) should return 00:00:00`, () => expect(dates(test_date).time()).toEqual('00:00:00'))
+	describe(test_date, () => {
+		describe('.utc()', () => {
+			it('should be a function', () => expect(instance.utc).toBeInstanceOf(Function))
+			it(`should return utc seconds`, () => expect(instance.utc().second()).toStrictEqual(expect.any(Number)))
+		})
 
-	test('dates().shortdate should be a Function', () => expect(dates().shortdate).toBeInstanceOf(Function))
-	test(`(${test_date}) should return 01/15/2022`, () => expect(dates(test_date).shortdate()).toEqual('01/15/2022'))
+		describe('.format()', () => {
+			it('should return a string', () => expect(instance.format()).toEqual(expect.any(String)))
+			it(`should return Sat, 15 Jan 2022 00:00:00 GMT`, () => expect(instance.utc().format()).toEqual('2022-01-15T00:00:00Z'))
+		})
 
-	test('dates().shorttime should be a Function', () => expect(dates().shorttime).toBeInstanceOf(Function))
-	test(`(${test_date}) should return 12:00 am`, () => expect(dates(test_date).shorttime()).toEqual('12:00 am'))
+		describe('.toString()', () => {
+			it('should return a string', () => expect(instance.toString()).toEqual(expect.any(String)))
+			it(`should return Sat, 15 Jan 2022 00:00:00 GMT`, () => expect(instance.toString()).toEqual('Sat, 15 Jan 2022 00:00:00 GMT'))
+		})
 
-	test('dates().shortdatetime should be a Function', () => expect(dates().shortdatetime).toBeInstanceOf(Function))
-	test(`(${test_date}) should return 01/15/2022 12:00 am`, () => expect(dates(test_date).shortdatetime()).toEqual('01/15/2022 12:00 am'))
+		describe('.datestamp()', () => {
+			it('should be a Function', () => expect(instance.datestamp).toBeInstanceOf(Function))
+			it(`should return 2022-01-15`, () => expect(instance.datestamp()).toEqual('2022-01-15'))
+		})
+
+		describe('.timestamp()', () => {
+			it('should be a Function', () => expect(instance.timestamp).toBeInstanceOf(Function))
+			it(`should return 2022-01-15 00:00:00`, () => expect(instance.timestamp()).toEqual('2022-01-15 00:00:00'))
+		})
+
+		describe('.time()', () => {
+			it('should be a Function', () => expect(instance.time).toBeInstanceOf(Function))
+			it(`should return 00:00:00`, () => expect(instance.time()).toEqual('00:00:00'))
+		})
+
+		describe('.shortdate()', () => {
+			it('should be a Function', () => expect(instance.shortdate).toBeInstanceOf(Function))
+			it(`should return 01/15/2022`, () => expect(instance.shortdate()).toEqual('01/15/2022'))
+		})
+
+		describe('.shorttime()', () => {
+			it('should be a Function', () => expect(instance.shorttime).toBeInstanceOf(Function))
+			it(`should return 12:00 am`, () => expect(instance.shorttime()).toEqual('12:00 am'))
+		})
+
+		describe('.shortdatetime()', () => {
+			it('should be a Function', () => expect(instance.shortdatetime).toBeInstanceOf(Function))
+			it(`should return 01/15/2022 12:00 am`, () => expect(instance.shortdatetime()).toEqual('01/15/2022 12:00 am'))
+		})
+	})
 })

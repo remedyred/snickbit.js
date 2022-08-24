@@ -15,15 +15,20 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "tsup",
-		"clean": "shx rm -rf ./dist",
+		"build": "tsup --minify",
+		"build:types": "tsc --emitDeclarationOnly --declarationDir dist",
+		"clean": "shx rm -rf ./dist ./.types",
 		"depcheck": "depcheck",
-		"dev": "pnpm run build --sourcemap",
+		"dev": "tsup",
+		"dev:types": "tsc --emitDeclarationOnly --declarationMap --declarationDir .types",
 		"docs": "typedoc",
-		"meta": "pnpm run prod --metafile",
-		"prod": "pnpm run build --minify",
+		"meta": "tsup --minify --metafile",
+		"release": "semantic-release",
 		"test": "jest",
 		"watch": "pnpm run dev --watch"
+	},
+	"release": {
+		"extends": "../../.releaserc.json"
 	},
 	"jest": {
 		"preset": "ts-jest",
@@ -45,16 +50,5 @@
 	},
 	"engines": {
 		"node": ">= 12"
-	},
-	"tsup": {
-		"entry": [
-			"src/index.ts"
-		],
-		"clean": true,
-		"dts": true,
-		"format": [
-			"esm",
-			"cjs"
-		]
 	}
 }
