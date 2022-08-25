@@ -8,7 +8,7 @@ importers:
       '@semantic-release/exec': ~6.0.3
       '@snickbit/eslint-config': ~1.3.0
       '@snickbit/readmes': ~0.0.2
-      '@snickbit/semantic-release': ~1.4.0
+      '@snickbit/semantic-release': ^1.5.0
       '@types/jest': ~28.1.7
       depcheck: ~1.4.3
       eslint: ~8.22.0
@@ -28,7 +28,7 @@ importers:
       '@semantic-release/exec': 6.0.3_semantic-release@19.0.5
       '@snickbit/eslint-config': 1.3.0_5mtwcutbsi3uflteaosuczcaoe
       '@snickbit/readmes': 0.0.2
-      '@snickbit/semantic-release': 1.4.0_semantic-release@19.0.5
+      '@snickbit/semantic-release': 1.5.0_semantic-release@19.0.5
       '@types/jest': 28.1.7
       depcheck: 1.4.3
       eslint: 8.22.0
@@ -1633,8 +1633,8 @@ packages:
       lilconfig: 2.0.6
     dev: true
 
-  /@snickbit/semantic-release/1.4.0_semantic-release@19.0.5:
-    resolution: {integrity: sha512-CiljVzMIZwBdJf4qdilxYF8dR9v34W3Ys7VP+yTtqwvYB3ZSB8cBSjb+JboqhiuGQEMx5QF2QIfhqeOD8nPF7A==}
+  /@snickbit/semantic-release/1.5.0_semantic-release@19.0.5:
+    resolution: {integrity: sha512-vmKb7dn/+fu5aqtb1g8l7/X3X3BG8JxohzXfrWEjv75RBN9dG5X1zWI4IvTka4YFtYfDoe7Vg5xw1uJiSRm4rg==}
     engines: {node: '>= 12'}
     dependencies:
       '@semantic-release/changelog': 6.0.1_semantic-release@19.0.5
@@ -1644,6 +1644,7 @@ packages:
       '@semantic-release/npm': 9.0.1_semantic-release@19.0.5
       '@semantic-release/release-notes-generator': 10.0.3_semantic-release@19.0.5
       conventional-changelog-conventionalcommits: 5.0.0
+      semantic-release-monorepo: 7.0.5_semantic-release@19.0.5
     transitivePeerDependencies:
       - encoding
       - semantic-release
