@@ -8,7 +8,7 @@ importers:
       '@semantic-release/exec': ~6.0.3
       '@snickbit/eslint-config': ~1.3.0
       '@snickbit/readmes': ~0.0.2
-      '@snickbit/semantic-release': ~1.4.0
+      '@snickbit/semantic-release': ^1.5.0
       '@types/jest': ~28.1.7
       depcheck: ~1.4.3
       eslint: ~8.22.0
@@ -28,7 +28,7 @@ importers:
       '@semantic-release/exec': 6.0.3_semantic-release@19.0.5
       '@snickbit/eslint-config': 1.3.0_5mtwcutbsi3uflteaosuczcaoe
       '@snickbit/readmes': 0.0.2
-      '@snickbit/semantic-release': 1.4.0_semantic-release@19.0.5
+      '@snickbit/semantic-release': 1.5.0_semantic-release@19.0.5
       '@types/jest': 28.1.7
       depcheck: 1.4.3
       eslint: 8.22.0
@@ -261,7 +261,7 @@ importers:
       typedoc-plugin-markdown: 3.13.4
       typescript: 4.7.4
     dependencies:
-      '@snickbit/plural': link:../plural
+      '@snickbit/plural': 0.0.6
       just-camel-case: 6.1.1
       nanoid: 3.3.4
     devDependencies:
@@ -1526,7 +1526,7 @@ packages:
     resolution: {integrity: sha512-hP/kU0+g9hRuvv1dtPEpq6qdtd0rxdLFLj/GZ6f8PqxqFTdxj4OeWtFn64Xlr1scsAQz9PYFCmf4hZ6tO+fGrw==}
     engines: {node: '>= 12'}
     dependencies:
-      '@snickbit/utilities': 3.3.1
+      '@snickbit/utilities': 3.4.1
 
   /@snickbit/eslint-config/1.3.0_5mtwcutbsi3uflteaosuczcaoe:
     resolution: {integrity: sha512-cflEQqaJ8yPPp937Lh6bOFs9f2JVTE9DMoQBkPUG+2/Mz+k0wPp+CHB+4pAY9hwPYgCVnKnqePszOEvYeuwSVw==}
@@ -1562,7 +1562,7 @@ packages:
       '@snickbit/node-cli': 2.0.2
       '@snickbit/node-utilities': 4.4.6
       '@snickbit/out': 2.0.37
-      '@snickbit/utilities': 3.3.1
+      '@snickbit/utilities': 3.4.1
       fast-glob: 3.2.11
       lilconfig: 2.0.6
       picomatch: 2.3.1
@@ -1574,7 +1574,7 @@ packages:
     dependencies:
       '@snickbit/node-utilities': 4.4.6
       '@snickbit/out': 2.0.37
-      '@snickbit/utilities': 3.3.1
+      '@snickbit/utilities': 3.4.1
       lilconfig: 2.0.6
       yargs-parser: 21.1.1
     dev: true
@@ -1585,7 +1585,7 @@ packages:
     dependencies:
       '@snickbit/node-utilities': 4.4.6
       '@snickbit/out': 2.0.37
-      '@snickbit/utilities': 3.3.1
+      '@snickbit/utilities': 3.4.1
       lilconfig: 2.0.6
       yargs-parser: 21.1.1
 
@@ -1594,7 +1594,7 @@ packages:
     engines: {node: '>= 12'}
     dependencies:
       '@snickbit/out': 2.0.37
-      '@snickbit/utilities': 3.3.1
+      '@snickbit/utilities': 3.4.1
       ansi-styles-template: 1.0.0
       cli-progress: 3.11.2
       is-wsl: 2.2.0
@@ -1608,14 +1608,14 @@ packages:
     dependencies:
       '@snickbit/ansi': 0.0.10
       '@snickbit/cycle': 0.0.29
-      '@snickbit/utilities': 3.3.1
+      '@snickbit/utilities': 3.4.1
       ansi-styles-template: 1.0.0
       browser-or-node: 2.0.0
       node-inspect-extracted: 1.1.0
       picomatch-browser: 2.2.6
 
-  /@snickbit/plural/0.0.5:
-    resolution: {integrity: sha512-cU0brdILQdpe6MJ6MoqV5c5/1xvHcG8BYnJV6UQHJWpNOo/6klgq1Pqt5AO/DGxVz9j4z+F7JN7woXXa9o8GQg==}
+  /@snickbit/plural/0.0.6:
+    resolution: {integrity: sha512-Bmxmhi984QgV+Yo5T4uMuKGmfgkkv7BpFkfo0p1di/4ZZt379vDTOLCPf3+HZec12pabMFUCHcq8vyxjUCxcDA==}
     engines: {node: '>= 12'}
 
   /@snickbit/readmes/0.0.2:
@@ -1627,14 +1627,14 @@ packages:
       '@snickbit/node-utilities': 4.4.6
       '@snickbit/out': 2.0.37
       '@snickbit/upwords': 2.0.23
-      '@snickbit/utilities': 3.3.1
+      '@snickbit/utilities': 3.4.1
       ejs: 3.1.8
       fast-glob: 3.2.11
       lilconfig: 2.0.6
     dev: true
 
-  /@snickbit/semantic-release/1.4.0_semantic-release@19.0.5:
-    resolution: {integrity: sha512-CiljVzMIZwBdJf4qdilxYF8dR9v34W3Ys7VP+yTtqwvYB3ZSB8cBSjb+JboqhiuGQEMx5QF2QIfhqeOD8nPF7A==}
+  /@snickbit/semantic-release/1.5.0_semantic-release@19.0.5:
+    resolution: {integrity: sha512-vmKb7dn/+fu5aqtb1g8l7/X3X3BG8JxohzXfrWEjv75RBN9dG5X1zWI4IvTka4YFtYfDoe7Vg5xw1uJiSRm4rg==}
     engines: {node: '>= 12'}
     dependencies:
       '@semantic-release/changelog': 6.0.1_semantic-release@19.0.5
@@ -1644,6 +1644,7 @@ packages:
       '@semantic-release/npm': 9.0.1_semantic-release@19.0.5
       '@semantic-release/release-notes-generator': 10.0.3_semantic-release@19.0.5
       conventional-changelog-conventionalcommits: 5.0.0
+      semantic-release-monorepo: 7.0.5_semantic-release@19.0.5
     transitivePeerDependencies:
       - encoding
       - semantic-release
@@ -1655,11 +1656,11 @@ packages:
     engines: {node: '>= 12'}
     dev: true
 
-  /@snickbit/utilities/3.3.1:
-    resolution: {integrity: sha512-wPteAd4d3OXFV+ah37uDWIF9rmhQzWLS0zSxc4/19VQ+tGgUky2o7/nDhhjHHmYWIYOZ9MOrhz6yW0TZ3GF5bg==}
+  /@snickbit/utilities/3.4.1:
+    resolution: {integrity: sha512-BuUOzdDBff9uClupK8Elguj8Z29sRvt/Qw6F7Steo1U7sM2s4p+eenpbTZ9rSWZm8H02SyWpApmAxyD9WWnHgQ==}
     engines: {node: '>= 12'}
     dependencies:
-      '@snickbit/plural': 0.0.5
+      '@snickbit/plural': 0.0.6
       just-camel-case: 6.1.1
       nanoid: 3.3.4
 

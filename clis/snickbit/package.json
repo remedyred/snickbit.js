@@ -1,6 +1,6 @@
 {
 	"name": "snickbit",
-	"version": "0.0.51",
+	"version": "0.0.52",
 	"description": "My personal npx business card",
 	"license": "MIT",
 	"main": "./bin/snickbit.js",
@@ -22,7 +22,10 @@
 		"watch": "pnpm run dev --watch"
 	},
 	"release": {
-		"extends": "../../.releaserc.json"
+		"extends": [
+			"semantic-release-monorepo",
+			"@snickbit/semantic-release"
+		]
 	},
 	"dependencies": {
 		"@snickbit/node-cli": "^3.0.4",

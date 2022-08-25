@@ -1,6 +1,6 @@
 {
 	"name": "@snickbit/queue",
-	"version": "1.2.6",
+	"version": "1.2.7",
 	"description": "Fluid queueing library for any function or promise",
 	"license": "MIT",
 	"exports": {
@@ -29,7 +29,10 @@
 		"watch": "pnpm run dev --watch"
 	},
 	"release": {
-		"extends": "../../.releaserc.json"
+		"extends": [
+			"semantic-release-monorepo",
+			"@snickbit/semantic-release"
+		]
 	},
 	"jest": {
 		"preset": "ts-jest",

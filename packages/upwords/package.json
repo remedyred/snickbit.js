@@ -1,6 +1,6 @@
 {
 	"name": "@snickbit/upwords",
-	"version": "2.0.23",
+	"version": "2.0.24",
 	"description": "Helper function to convert a string to title case, attempting to preserve acronyms and special case words.",
 	"license": "MIT",
 	"exports": {
@@ -27,7 +27,10 @@
 		"watch": "pnpm run dev --watch"
 	},
 	"release": {
-		"extends": "../../.releaserc.json"
+		"extends": [
+			"semantic-release-monorepo",
+			"@snickbit/semantic-release"
+		]
 	},
 	"jest": {
 		"preset": "ts-jest",

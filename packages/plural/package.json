@@ -1,6 +1,6 @@
 {
 	"name": "@snickbit/plural",
-	"version": "0.0.5",
+	"version": "1.0.0",
 	"description": ">> TODO: Description",
 	"license": "MIT",
 	"exports": {
@@ -27,7 +27,10 @@
 		"watch": "pnpm run dev --watch"
 	},
 	"release": {
-		"extends": "../../.releaserc.json"
+		"extends": [
+			"semantic-release-monorepo",
+			"@snickbit/semantic-release"
+		]
 	},
 	"jest": {
 		"preset": "ts-jest",
