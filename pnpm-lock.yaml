@@ -83,7 +83,7 @@ importers:
       typedoc-plugin-markdown: 3.13.4
       typescript: 4.7.4
     dependencies:
-      '@snickbit/utilities': link:../utilities
+      '@snickbit/utilities': 3.4.1
     devDependencies:
       '@types/jest': 28.1.8
       jest: 28.1.3
@@ -107,7 +107,7 @@ importers:
       typedoc-plugin-markdown: 3.13.4
       typescript: 4.7.4
     dependencies:
-      '@snickbit/utilities': link:../utilities
+      '@snickbit/utilities': 3.4.1
       dayjs: 1.11.5
     devDependencies:
       '@types/jest': 28.1.8
@@ -135,7 +135,7 @@ importers:
       typescript: 4.7.4
     dependencies:
       '@snickbit/out': 2.0.37
-      '@snickbit/utilities': link:../utilities
+      '@snickbit/utilities': 3.4.1
       object-path: 0.11.8
     devDependencies:
       '@types/jest': 28.1.8
@@ -169,7 +169,7 @@ importers:
       typescript: 4.7.4
     dependencies:
       '@snickbit/out': 2.0.37
-      '@snickbit/utilities': link:../utilities
+      '@snickbit/utilities': 3.4.1
       ansi-styles-template: 1.0.0
       cli-progress: 3.11.2
       is-wsl: 2.2.0
@@ -217,7 +217,7 @@ importers:
       typedoc-plugin-markdown: 3.13.4
       typescript: 4.7.4
     dependencies:
-      '@snickbit/utilities': link:../utilities
+      '@snickbit/utilities': 3.4.1
       lite-fifo: 0.3.0
     devDependencies:
       '@snickbit/indexer': 2.5.7
@@ -1526,7 +1526,7 @@ packages:
     resolution: {integrity: sha512-hP/kU0+g9hRuvv1dtPEpq6qdtd0rxdLFLj/GZ6f8PqxqFTdxj4OeWtFn64Xlr1scsAQz9PYFCmf4hZ6tO+fGrw==}
     engines: {node: '>= 12'}
     dependencies:
-      '@snickbit/utilities': 3.3.1
+      '@snickbit/utilities': 3.4.1
 
   /@snickbit/eslint-config/1.3.0_5mtwcutbsi3uflteaosuczcaoe:
     resolution: {integrity: sha512-cflEQqaJ8yPPp937Lh6bOFs9f2JVTE9DMoQBkPUG+2/Mz+k0wPp+CHB+4pAY9hwPYgCVnKnqePszOEvYeuwSVw==}
@@ -1562,7 +1562,7 @@ packages:
       '@snickbit/node-cli': 2.0.2
       '@snickbit/node-utilities': 4.4.6
       '@snickbit/out': 2.0.37
-      '@snickbit/utilities': 3.3.1
+      '@snickbit/utilities': 3.4.1
       fast-glob: 3.2.11
       lilconfig: 2.0.6
       picomatch: 2.3.1
@@ -1574,7 +1574,7 @@ packages:
     dependencies:
       '@snickbit/node-utilities': 4.4.6
       '@snickbit/out': 2.0.37
-      '@snickbit/utilities': 3.3.1
+      '@snickbit/utilities': 3.4.1
       lilconfig: 2.0.6
       yargs-parser: 21.1.1
     dev: true
@@ -1608,7 +1608,7 @@ packages:
     dependencies:
       '@snickbit/ansi': 0.0.10
       '@snickbit/cycle': 0.0.29
-      '@snickbit/utilities': 3.3.1
+      '@snickbit/utilities': 3.4.1
       ansi-styles-template: 1.0.0
       browser-or-node: 2.0.0
       node-inspect-extracted: 1.1.0
@@ -1616,6 +1616,10 @@ packages:
 
   /@snickbit/plural/0.0.5:
     resolution: {integrity: sha512-cU0brdILQdpe6MJ6MoqV5c5/1xvHcG8BYnJV6UQHJWpNOo/6klgq1Pqt5AO/DGxVz9j4z+F7JN7woXXa9o8GQg==}
+    engines: {node: '>= 12'}
+
+  /@snickbit/plural/0.0.6:
+    resolution: {integrity: sha512-Bmxmhi984QgV+Yo5T4uMuKGmfgkkv7BpFkfo0p1di/4ZZt379vDTOLCPf3+HZec12pabMFUCHcq8vyxjUCxcDA==}
     engines: {node: '>= 12'}
 
   /@snickbit/readmes/0.0.2:
@@ -1661,6 +1665,14 @@ packages:
     engines: {node: '>= 12'}
     dependencies:
       '@snickbit/plural': 0.0.5
+      just-camel-case: 6.1.1
+      nanoid: 3.3.4
+
+  /@snickbit/utilities/3.4.1:
+    resolution: {integrity: sha512-BuUOzdDBff9uClupK8Elguj8Z29sRvt/Qw6F7Steo1U7sM2s4p+eenpbTZ9rSWZm8H02SyWpApmAxyD9WWnHgQ==}
+    engines: {node: '>= 12'}
+    dependencies:
+      '@snickbit/plural': 0.0.6
       just-camel-case: 6.1.1
       nanoid: 3.3.4
 
