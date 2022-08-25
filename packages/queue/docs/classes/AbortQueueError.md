@@ -16,6 +16,7 @@
 
 ### Properties
 
+- [cause](AbortQueueError.md#cause)
 - [data](AbortQueueError.md#data)
 - [errors](AbortQueueError.md#errors)
 - [message](AbortQueueError.md#message)
@@ -46,6 +47,16 @@
 [QueueError](QueueError.md).[constructor](QueueError.md#constructor)
 
 ## Properties
+
+### cause
+
+• `Optional` **cause**: `Error`
+
+#### Inherited from
+
+[QueueError](QueueError.md).[cause](QueueError.md#cause)
+
+___
 
 ### data
 
