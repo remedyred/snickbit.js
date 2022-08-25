@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.35](https://github.com/snickbit/snickbit.js/compare/@snickbit/cycle@0.0.34...@snickbit/cycle@0.0.35) (2022-08-25)
+
+**Note:** Version bump only for package @snickbit/cycle
+
 ## [0.0.34](https://github.com/snickbit/snickbit.js/compare/@snickbit/cycle@0.0.33...@snickbit/cycle@0.0.34) (2022-08-19)
 
 **Note:** Version bump only for package @snickbit/cycle

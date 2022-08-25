@@ -1,6 +1,6 @@
 {
 	"name": "@snickbit/cycle",
-	"version": "0.0.34",
+	"version": "0.0.35",
 	"description": "Helper function and class to cycle through an array of values",
 	"license": "MIT",
 	"exports": {
@@ -36,7 +36,7 @@
 		"testEnvironment": "node"
 	},
 	"dependencies": {
-		"@snickbit/utilities": "^3.4.0"
+		"@snickbit/utilities": "^3.4.1"
 	},
 	"devDependencies": {
 		"@types/jest": "28.1.8",
