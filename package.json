@@ -42,7 +42,7 @@
 		"husky": "^8.0.0",
 		"jest": "28.1.3",
 		"lint-staged": "^13.0.3",
-		"semantic-release": "19.0.3",
+		"semantic-release": "19.0.5",
 		"semantic-release-monorepo": "^7.0.5",
 		"shx": "0.3.4",
 		"ts-jest": "28.0.7",
