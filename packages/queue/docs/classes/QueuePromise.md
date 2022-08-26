@@ -35,6 +35,7 @@
 - [thenEach](QueuePromise.md#theneach)
 - [all](QueuePromise.md#all)
 - [allSettled](QueuePromise.md#allsettled)
+- [any](QueuePromise.md#any)
 - [race](QueuePromise.md#race)
 - [reject](QueuePromise.md#reject)
 - [resolve](QueuePromise.md#resolve)
@@ -80,7 +81,7 @@ ___
 
 #### Inherited from
 
-Promise.\_\_@species@596
+Promise.\_\_@species@600
 
 ## Methods
 
@@ -331,6 +332,62 @@ A new Promise.
 #### Inherited from
 
 Promise.allSettled
+
+___
+
+### any
+
+▸ `Static` **any**<`T`\>(`values`): `Promise`<`Awaited`<`T`[`number`]\>\>
+
+The any function returns a promise that is fulfilled by the first given promise to be fulfilled, or rejected with an AggregateError containing an array of rejection reasons if all of the given promises are rejected. It resolves all elements of the passed iterable to promises as it runs this algorithm.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [] \| readonly `unknown`[] |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `values` | `T` | An array or iterable of Promises. |
+
+#### Returns
+
+`Promise`<`Awaited`<`T`[`number`]\>\>
+
+A new Promise.
+
+#### Inherited from
+
+Promise.any
+
+▸ `Static` **any**<`T`\>(`values`): `Promise`<`Awaited`<`T`\>\>
+
+The any function returns a promise that is fulfilled by the first given promise to be fulfilled, or rejected with an AggregateError containing an array of rejection reasons if all of the given promises are rejected. It resolves all elements of the passed iterable to promises as it runs this algorithm.
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `values` | `Iterable`<`T` \| `PromiseLike`<`T`\>\> | An array or iterable of Promises. |
+
+#### Returns
+
+`Promise`<`Awaited`<`T`\>\>
+
+A new Promise.
+
+#### Inherited from
+
+Promise.any
 
 ___
 

@@ -20,6 +20,7 @@
 
 ### Properties
 
+- [cause](QueueError.md#cause)
 - [data](QueueError.md#data)
 - [errors](QueueError.md#errors)
 - [message](QueueError.md#message)
@@ -36,13 +37,13 @@
 
 ### constructor
 
-• **new QueueError**(`err`, `name`, `_data`)
+• **new QueueError**(`error`, `name`, `_data`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `err` | [`ErrorMessage`](../README.md#errormessage) |
+| `error` | [`ErrorMessage`](../README.md#errormessage) |
 | `name` | `string` |
 | `_data` | `any` |
 
@@ -51,6 +52,16 @@
 Error.constructor
 
 ## Properties
+
+### cause
+
+• `Optional` **cause**: `Error`
+
+#### Inherited from
+
+Error.cause
+
+___
 
 ### data
 

@@ -28,14 +28,14 @@
 		]
 	},
 	"dependencies": {
-		"@snickbit/node-cli": "^3.0.4",
-		"@snickbit/node-utilities": "^4.4.7",
-		"@snickbit/out": "^2.0.37",
-		"ansi-styles-template": "^1.0.0",
-		"figlet": "^1.5.2",
-		"is-email": "^1.0.2",
-		"node-fetch": "^3.2.6",
-		"open": "^8.4.0"
+		"@snickbit/node-cli": "3.0.4",
+		"@snickbit/node-utilities": "4.4.8",
+		"@snickbit/out": "2.0.37",
+		"ansi-styles-template": "1.0.0",
+		"figlet": "1.5.2",
+		"is-email": "1.0.2",
+		"node-fetch": "3.2.10",
+		"open": "8.4.0"
 	},
 	"devDependencies": {
 		"esbuild": "0.15.5",

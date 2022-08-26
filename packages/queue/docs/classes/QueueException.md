@@ -16,6 +16,7 @@
 
 ### Properties
 
+- [cause](QueueException.md#cause)
 - [data](QueueException.md#data)
 - [errors](QueueException.md#errors)
 - [message](QueueException.md#message)
@@ -46,6 +47,16 @@
 [QueueError](QueueError.md).[constructor](QueueError.md#constructor)
 
 ## Properties
+
+### cause
+
+• `Optional` **cause**: `Error`
+
+#### Inherited from
+
+[QueueError](QueueError.md).[cause](QueueError.md#cause)
+
+___
 
 ### data
 
