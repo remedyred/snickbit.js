@@ -17,7 +17,7 @@
 		"depcheck": "depcheck",
 		"dev": "pnpm run esbuild --sourcemap",
 		"esbuild": "esbuild --bundle --outfile=bin/snickbit src/index.ts --target=node12 --platform=node",
-		"release": "semantic-release --dry-run",
+		"release": "semantic-release",
 		"start": "node bin/snickbit.js",
 		"watch": "pnpm run dev --watch"
 	},

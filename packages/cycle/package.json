@@ -23,7 +23,7 @@
 		"dev:types": "tsc --emitDeclarationOnly --declarationMap --declarationDir .types",
 		"docs": "typedoc",
 		"meta": "tsup --metafile",
-		"release": "semantic-release --dry-run",
+		"release": "semantic-release",
 		"start": "node ./examples/index.js",
 		"test": "jest",
 		"watch": "pnpm run dev --watch"
