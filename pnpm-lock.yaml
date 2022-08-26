@@ -59,7 +59,7 @@ importers:
       typescript: 4.7.4
     dependencies:
       '@snickbit/node-cli': 3.0.4
-      '@snickbit/node-utilities': link:../../packages/node-utilities
+      '@snickbit/node-utilities': 4.4.8
       '@snickbit/out': 2.0.37
       ansi-styles-template: 1.0.0
       figlet: 1.5.2
@@ -1583,7 +1583,7 @@ packages:
     resolution: {integrity: sha512-z9trPbhQCoqh38ptSvwx0U6yZF1RCx6RnnSwEnJs63lSaYv2yCfCXzt0fwkn6GSG0127za+7szU5M4wRLVKj+g==}
     engines: {node: '>= 12'}
     dependencies:
-      '@snickbit/node-utilities': 4.4.6
+      '@snickbit/node-utilities': 4.4.8
       '@snickbit/out': 2.0.37
       '@snickbit/utilities': 3.4.1
       lilconfig: 2.0.6
@@ -1591,6 +1591,20 @@ packages:
 
   /@snickbit/node-utilities/4.4.6:
     resolution: {integrity: sha512-DsKWpObdunYPkCNOS6xdtVgbEqa9qMQniOZE3jf98AmESgbezbhU+91+0aOG0Q6vRdjF+7K08Xjl7R4ixbWldg==}
+    engines: {node: '>= 12'}
+    dependencies:
+      '@snickbit/out': 2.0.37
+      '@snickbit/utilities': 3.4.1
+      ansi-styles-template: 1.0.0
+      cli-progress: 3.11.2
+      is-wsl: 2.2.0
+      lodash.throttle: 4.1.1
+      nanospinner: 1.1.0
+      prompts: 2.4.2
+    dev: true
+
+  /@snickbit/node-utilities/4.4.8:
+    resolution: {integrity: sha512-fGvy0f/0kVxxyvQGKOhAOSerr6xP/2t/hCAKw8Esc/ZOr5zC6LsBoqjTMvpTPbh23KSsOyG7NvlfZj5IOLNjnQ==}
     engines: {node: '>= 12'}
     dependencies:
       '@snickbit/out': 2.0.37
