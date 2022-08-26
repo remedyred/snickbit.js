@@ -228,7 +228,7 @@ Find specific data in the model
 
 | Name | Type |
 | :------ | :------ |
-| `predicate` | `ObjectPredicate`<`any`\> |
+| `predicate` | `ObjectPredicate` |
 
 #### Returns
 
@@ -243,7 +243,7 @@ Find specific data in the model
 | Name | Type |
 | :------ | :------ |
 | `key` | [`ModelKey`](../README.md#modelkey) |
-| `predicate` | `ObjectPredicate`<`any`\> |
+| `predicate` | `ObjectPredicate` |
 
 #### Returns
 
@@ -261,7 +261,7 @@ Find a key/index matching a value
 
 | Name | Type |
 | :------ | :------ |
-| `predicate` | `ObjectPredicate`<`any`\> |
+| `predicate` | `ObjectPredicate` |
 
 #### Returns
 
@@ -276,7 +276,7 @@ Find a key/index matching a value
 | Name | Type |
 | :------ | :------ |
 | `key` | [`ModelKey`](../README.md#modelkey) |
-| `predicate` | `ObjectPredicate`<`any`\> |
+| `predicate` | `ObjectPredicate` |
 
 #### Returns
 
