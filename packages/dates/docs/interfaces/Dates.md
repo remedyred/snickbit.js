@@ -35,6 +35,7 @@
 - [diff](Dates.md#diff)
 - [duration](Dates.md#duration)
 - [endOf](Dates.md#endof)
+- [extend](Dates.md#extend)
 - [format](Dates.md#format)
 - [from](Dates.md#from)
 - [fromLimited](Dates.md#fromlimited)
@@ -293,7 +294,7 @@ Docs: https://day.js.org/docs/en/display/difference
 | Name | Type |
 | :------ | :------ |
 | `date?` | ``null`` \| `string` \| `number` \| `Date` \| `Dayjs` |
-| `unit?` | ``"Q"`` \| ``"s"`` \| ``"day"`` \| ``"hour"`` \| ``"minute"`` \| ``"month"`` \| ``"second"`` \| ``"year"`` \| ``"years"`` \| ``"quarter"`` \| ``"quarters"`` \| ``"months"`` \| ``"week"`` \| ``"weeks"`` \| ``"days"`` \| ``"hours"`` \| ``"minutes"`` \| ``"seconds"`` \| ``"date"`` \| ``"millisecond"`` \| ``"milliseconds"`` \| ``"dates"`` \| ``"d"`` \| ``"D"`` \| ``"M"`` \| ``"y"`` \| ``"h"`` \| ``"m"`` \| ``"ms"`` \| ``"w"`` |
+| `unit?` | ``"Q"`` \| ``"s"`` \| ``"day"`` \| ``"hour"`` \| ``"minute"`` \| ``"month"`` \| ``"second"`` \| ``"year"`` \| ``"years"`` \| ``"quarter"`` \| ``"quarters"`` \| ``"months"`` \| ``"week"`` \| ``"weeks"`` \| ``"days"`` \| ``"hours"`` \| ``"minutes"`` \| ``"seconds"`` \| ``"millisecond"`` \| ``"date"`` \| ``"milliseconds"`` \| ``"dates"`` \| ``"d"`` \| ``"D"`` \| ``"M"`` \| ``"y"`` \| ``"h"`` \| ``"m"`` \| ``"ms"`` \| ``"w"`` |
 | `float?` | `boolean` |
 
 #### Returns
@@ -348,6 +349,29 @@ Docs: https://day.js.org/docs/en/manipulate/end-of
 #### Inherited from
 
 dayjs.Dayjs.endOf
+
+___
+
+### extend
+
+▸ **extend**<`T`\>(`plugin`, `option?`): `Dayjs`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | `unknown` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `plugin` | `PluginFunc`<`T`\> |
+| `option?` | `T` |
+
+#### Returns
+
+`Dayjs`
 
 ___
 
