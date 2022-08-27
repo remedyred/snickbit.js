@@ -200,12 +200,12 @@ const hexColorCycle = new Cycle('hex')
 
 ## Documentation
 
-### [API Docs](https://github.com/snickbit/snickbit.js/blob/main/packages/cycle/README.md)
+### [API Docs](../../README.md)
 
-### [CHANGELOG](https://github.com/snickbit/snickbit.js/blob/main/packages/cycle/CHANGELOG.md)
+### [CHANGELOG](CHANGELOG.md)
 
 ## License
 
 Copyright (c) 2022 - **Nicholas Lowe** aka **Snickbit**
 
-[MIT License](https://github.com/snickbit/snickbit.js/blob/main/LICENSE)
+[MIT License](../../LICENSE)

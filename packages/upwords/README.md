@@ -35,4 +35,4 @@ upwords('i-like-to--play--d&d-in-3d') // 'I Like to Play D&D in 3D'
 
 Copyright (c) 2022 - **Nicholas Lowe** aka **Snickbit**
 
-[MIT License](https://github.com/snickbit/snickbit.js/blob/main/LICENSE)
+[MIT License](../../LICENSE)

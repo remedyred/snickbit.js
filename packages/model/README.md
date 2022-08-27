@@ -54,12 +54,12 @@ console.log(person.has('age')); // false
 
 ## Documentation
 
-### [API Docs](https://github.com/snickbit/snickbit.js/blob/main/packages/model/docs/README.md)
+### [API Docs](./docs/README.md)
 
-### [CHANGELOG](https://github.com/snickbit/snickbit.js/blob/main/packages/model/CHANGELOG.md)
+### [CHANGELOG](CHANGELOG.md)
 
 ## License
 
 Copyright (c) 2022 - **Nicholas Lowe** aka **Snickbit**
 
-[MIT License](https://github.com/snickbit/snickbit.js/blob/main/LICENSE)
+[MIT License](../../LICENSE)

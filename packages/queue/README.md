@@ -74,9 +74,9 @@ Attaches a callback that is invoked when each Promise or Function in the queue i
 
 ## Documentation
 
-### [API Docs](https://github.com/snickbit/snickbit.js/blob/main/packages/queue/README.md)
+### [API Docs](../../README.md)
 
-### [CHANGELOG](https://github.com/snickbit/snickbit.js/blob/main/packages/queue/CHANGELOG.md)
+### [CHANGELOG](CHANGELOG.md)
 
 ## Acknowledgements
 
@@ -87,4 +87,4 @@ Attaches a callback that is invoked when each Promise or Function in the queue i
 
 Copyright (c) 2022 - **Nicholas Lowe** aka **Snickbit**
 
-[MIT License](https://github.com/snickbit/snickbit.js/blob/main/LICENSE)
+[MIT License](../../LICENSE)
