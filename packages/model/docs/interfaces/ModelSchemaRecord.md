@@ -54,7 +54,7 @@ ___
 
 ### type
 
-• **type**: `any`
+• **type**: `VariableType` \| `VariableType`[]
 
 ___
 

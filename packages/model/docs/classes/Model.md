@@ -228,7 +228,7 @@ Find specific data in the model
 
 | Name | Type |
 | :------ | :------ |
-| `predicate` | `ObjectPredicate` |
+| `predicate` | `ObjectPredicate`<`any`\> |
 
 #### Returns
 
@@ -243,7 +243,7 @@ Find specific data in the model
 | Name | Type |
 | :------ | :------ |
 | `key` | [`ModelKey`](../README.md#modelkey) |
-| `predicate` | `ObjectPredicate` |
+| `predicate` | `ObjectPredicate`<`any`\> |
 
 #### Returns
 
@@ -261,7 +261,7 @@ Find a key/index matching a value
 
 | Name | Type |
 | :------ | :------ |
-| `predicate` | `ObjectPredicate` |
+| `predicate` | `ObjectPredicate`<`any`\> |
 
 #### Returns
 
@@ -276,7 +276,7 @@ Find a key/index matching a value
 | Name | Type |
 | :------ | :------ |
 | `key` | [`ModelKey`](../README.md#modelkey) |
-| `predicate` | `ObjectPredicate` |
+| `predicate` | `ObjectPredicate`<`any`\> |
 
 #### Returns
 
@@ -328,7 +328,7 @@ Get a path from an object
 
 | Name | Type |
 | :------ | :------ |
-| `key` | `undefined` \| [`ModelKey`](../README.md#modelkey) |
+| `key` | [`ModelKey`](../README.md#modelkey) |
 
 #### Returns
 
@@ -580,7 +580,7 @@ Set the value of a key
 
 | Name | Type |
 | :------ | :------ |
-| `key` | `undefined` \| [`ModelKey`](../README.md#modelkey) |
+| `key` | [`ModelKey`](../README.md#modelkey) |
 | `value` | `any` |
 | `overwrite?` | `boolean` |
 
