@@ -1560,7 +1560,7 @@ packages:
     hasBin: true
     dependencies:
       '@snickbit/node-cli': 2.0.2
-      '@snickbit/node-utilities': 4.4.6
+      '@snickbit/node-utilities': 4.4.8
       '@snickbit/out': 2.0.37
       '@snickbit/utilities': 3.4.1
       fast-glob: 3.2.11
@@ -1572,7 +1572,7 @@ packages:
     resolution: {integrity: sha512-AAvtvzmL+b9lqT0gIzjWR98MVE5TEVDTv1eFFqAvEB9g+A+3aBE1wgdxLPqndaQpDg20SpbMl/xlzG4o3er0zQ==}
     engines: {node: '>= 12'}
     dependencies:
-      '@snickbit/node-utilities': 4.4.6
+      '@snickbit/node-utilities': 4.4.8
       '@snickbit/out': 2.0.37
       '@snickbit/utilities': 3.4.1
       lilconfig: 2.0.6
@@ -1588,20 +1588,6 @@ packages:
       '@snickbit/utilities': 3.4.1
       lilconfig: 2.0.6
       yargs-parser: 21.1.1
-
-  /@snickbit/node-utilities/4.4.6:
-    resolution: {integrity: sha512-DsKWpObdunYPkCNOS6xdtVgbEqa9qMQniOZE3jf98AmESgbezbhU+91+0aOG0Q6vRdjF+7K08Xjl7R4ixbWldg==}
-    engines: {node: '>= 12'}
-    dependencies:
-      '@snickbit/out': 2.0.37
-      '@snickbit/utilities': 3.4.1
-      ansi-styles-template: 1.0.0
-      cli-progress: 3.11.2
-      is-wsl: 2.2.0
-      lodash.throttle: 4.1.1
-      nanospinner: 1.1.0
-      prompts: 2.4.2
-    dev: true
 
   /@snickbit/node-utilities/4.4.8:
     resolution: {integrity: sha512-fGvy0f/0kVxxyvQGKOhAOSerr6xP/2t/hCAKw8Esc/ZOr5zC6LsBoqjTMvpTPbh23KSsOyG7NvlfZj5IOLNjnQ==}
@@ -1638,7 +1624,7 @@ packages:
     hasBin: true
     dependencies:
       '@snickbit/node-cli': 3.0.4
-      '@snickbit/node-utilities': 4.4.6
+      '@snickbit/node-utilities': 4.4.8
       '@snickbit/out': 2.0.37
       '@snickbit/upwords': 2.0.23
       '@snickbit/utilities': 3.4.1

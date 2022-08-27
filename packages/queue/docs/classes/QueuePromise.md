@@ -71,7 +71,7 @@ Promise&lt;T\&gt;.constructor
 
 #### Inherited from
 
-Promise.\_\_@toStringTag@22
+Promise.\_\_@toStringTag@248
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 #### Inherited from
 
-Promise.\_\_@species@600
+Promise.\_\_@species@712
 
 ## Methods
 
@@ -101,7 +101,7 @@ Attaches a callback for only the rejection of the Queue as a whole.
 
 | Name | Type |
 | :------ | :------ |
-| `onrejected?` | ``null`` \| (`reason`: `any`) => `TResult` \| `PromiseLike`<`TResult`\> |
+| `onrejected?` | (`reason`: `any`) => `TResult` \| `PromiseLike`<`TResult`\> |
 
 #### Returns
 
@@ -141,7 +141,7 @@ Attaches a callback that is invoked when the Queue as a whole is settled (fulfil
 
 | Name | Type |
 | :------ | :------ |
-| `onfulfilled?` | ``null`` \| () => `void` |
+| `onfulfilled?` | () => `void` |
 
 #### Returns
 
@@ -188,8 +188,8 @@ Attaches callbacks for the resolution and/or rejection of the Queue as a whole.
 
 | Name | Type |
 | :------ | :------ |
-| `onfulfilled?` | ``null`` \| (`value`: `T`) => `TResult1` \| `PromiseLike`<`TResult1`\> |
-| `onrejected?` | ``null`` \| (`reason`: `any`) => `TResult2` \| `PromiseLike`<`TResult2`\> |
+| `onfulfilled?` | (`value`: `T`) => `TResult1` \| `PromiseLike`<`TResult1`\> |
+| `onrejected?` | (`reason`: `any`) => `TResult2` \| `PromiseLike`<`TResult2`\> |
 
 #### Returns
 
@@ -257,7 +257,7 @@ resolve, or rejected when any Promise is rejected.
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends [] \| readonly `unknown`[] |
+| `T` | extends readonly `unknown`[] \| [] |
 
 #### Parameters
 
@@ -288,7 +288,7 @@ of the provided Promises resolve or reject.
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends [] \| readonly `unknown`[] |
+| `T` | extends readonly `unknown`[] \| [] |
 
 #### Parameters
 
@@ -345,7 +345,7 @@ The any function returns a promise that is fulfilled by the first given promise 
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends [] \| readonly `unknown`[] |
+| `T` | extends readonly `unknown`[] \| [] |
 
 #### Parameters
 
@@ -429,7 +429,7 @@ or rejected.
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends [] \| readonly `unknown`[] |
+| `T` | extends readonly `unknown`[] \| [] |
 
 #### Parameters
 

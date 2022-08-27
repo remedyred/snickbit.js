@@ -45,9 +45,9 @@ console.log(singular('test', 2)) //=> "tests"
 
 ## Documentation
 
-### [API Docs](https://github.com/snickbit/plural/blob/main/docs/README.md)
+### [API Docs](./docs/README.md)
 
-### [CHANGELOG](https://github.com/snickbit/plural/blob/main/CHANGELOG.md)
+### [CHANGELOG](CHANGELOG.md)
 
 ## Acknowledgements
 
@@ -57,4 +57,4 @@ console.log(singular('test', 2)) //=> "tests"
 
 Copyright (c) 2022 - **Nicholas Lowe** aka **Snickbit**
 
-[MIT License](https://github.com/snickbit/plural/blob/main/LICENSE)
+[MIT License](../../LICENSE)

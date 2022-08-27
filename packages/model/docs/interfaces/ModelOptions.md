@@ -64,7 +64,7 @@ ___
 
 ### root
 
-• `Optional` **root**: ``null`` \| `string`
+• `Optional` **root**: `string`
 
 ___
 

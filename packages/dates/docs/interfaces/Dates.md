@@ -48,8 +48,10 @@
 - [isSame](Dates.md#issame)
 - [isToday](Dates.md#istoday)
 - [isTomorrow](Dates.md#istomorrow)
+- [isUTC](Dates.md#isutc)
 - [isValid](Dates.md#isvalid)
 - [isYesterday](Dates.md#isyesterday)
+- [local](Dates.md#local)
 - [locale](Dates.md#locale)
 - [millisecond](Dates.md#millisecond)
 - [minute](Dates.md#minute)
@@ -74,6 +76,7 @@
 - [toNowLimited](Dates.md#tonowlimited)
 - [toString](Dates.md#tostring)
 - [unix](Dates.md#unix)
+- [utc](Dates.md#utc)
 - [utcOffset](Dates.md#utcoffset)
 - [valueOf](Dates.md#valueof)
 - [year](Dates.md#year)
@@ -293,8 +296,8 @@ Docs: https://day.js.org/docs/en/display/difference
 
 | Name | Type |
 | :------ | :------ |
-| `date?` | ``null`` \| `string` \| `number` \| `Date` \| `Dayjs` |
-| `unit?` | ``"Q"`` \| ``"s"`` \| ``"day"`` \| ``"hour"`` \| ``"minute"`` \| ``"month"`` \| ``"second"`` \| ``"year"`` \| ``"years"`` \| ``"quarter"`` \| ``"quarters"`` \| ``"months"`` \| ``"week"`` \| ``"weeks"`` \| ``"days"`` \| ``"hours"`` \| ``"minutes"`` \| ``"seconds"`` \| ``"millisecond"`` \| ``"date"`` \| ``"milliseconds"`` \| ``"dates"`` \| ``"d"`` \| ``"D"`` \| ``"M"`` \| ``"y"`` \| ``"h"`` \| ``"m"`` \| ``"ms"`` \| ``"w"`` |
+| `date?` | `string` \| `number` \| `Date` \| `Dayjs` |
+| `unit?` | ``"date"`` \| ``"ms"`` \| ``"s"`` \| ``"m"`` \| ``"h"`` \| ``"d"`` \| ``"w"`` \| ``"y"`` \| ``"millisecond"`` \| ``"second"`` \| ``"minute"`` \| ``"hour"`` \| ``"day"`` \| ``"week"`` \| ``"month"`` \| ``"year"`` \| ``"milliseconds"`` \| ``"seconds"`` \| ``"minutes"`` \| ``"hours"`` \| ``"days"`` \| ``"months"`` \| ``"years"`` \| ``"dates"`` \| ``"D"`` \| ``"M"`` \| ``"weeks"`` \| ``"quarter"`` \| ``"quarters"`` \| ``"Q"`` |
 | `float?` | `boolean` |
 
 #### Returns
@@ -413,7 +416,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `compared` | `undefined` \| ``null`` \| `string` \| `number` \| `Date` \| `Dayjs` |
+| `compared` | `string` \| `number` \| `Date` \| `Dayjs` |
 | `withoutSuffix?` | `boolean` |
 
 #### Returns
@@ -577,7 +580,7 @@ Docs: https://day.js.org/docs/en/query/is-after
 
 | Name | Type |
 | :------ | :------ |
-| `date` | `undefined` \| ``null`` \| `string` \| `number` \| `Date` \| `Dayjs` |
+| `date` | `string` \| `number` \| `Date` \| `Dayjs` |
 | `unit?` | `OpUnitType` |
 
 #### Returns
@@ -610,7 +613,7 @@ Docs: https://day.js.org/docs/en/query/is-before
 
 | Name | Type |
 | :------ | :------ |
-| `date` | `undefined` \| ``null`` \| `string` \| `number` \| `Date` \| `Dayjs` |
+| `date` | `string` \| `number` \| `Date` \| `Dayjs` |
 | `unit?` | `OpUnitType` |
 
 #### Returns
@@ -641,7 +644,7 @@ Docs: https://day.js.org/docs/en/query/is-same
 
 | Name | Type |
 | :------ | :------ |
-| `date` | `undefined` \| ``null`` \| `string` \| `number` \| `Date` \| `Dayjs` |
+| `date` | `string` \| `number` \| `Date` \| `Dayjs` |
 | `unit?` | `OpUnitType` |
 
 #### Returns
@@ -682,6 +685,20 @@ dayjs.Dayjs.isTomorrow
 
 ___
 
+### isUTC
+
+▸ **isUTC**(): `boolean`
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+dayjs.Dayjs.isUTC
+
+___
+
 ### isValid
 
 ▸ **isValid**(): `boolean`
@@ -713,6 +730,20 @@ ___
 #### Inherited from
 
 dayjs.Dayjs.isYesterday
+
+___
+
+### local
+
+▸ **local**(): `Dayjs`
+
+#### Returns
+
+`Dayjs`
+
+#### Inherited from
+
+dayjs.Dayjs.local
 
 ___
 
@@ -1118,7 +1149,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `compared` | `undefined` \| ``null`` \| `string` \| `number` \| `Date` \| `Dayjs` |
+| `compared` | `string` \| `number` \| `Date` \| `Dayjs` |
 | `withoutSuffix?` | `boolean` |
 
 #### Returns
@@ -1285,6 +1316,26 @@ dayjs.Dayjs.unix
 
 ___
 
+### utc
+
+▸ **utc**(`keepLocalTime?`): `Dayjs`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `keepLocalTime?` | `boolean` |
+
+#### Returns
+
+`Dayjs`
+
+#### Inherited from
+
+dayjs.Dayjs.utc
+
+___
+
 ### utcOffset
 
 ▸ **utcOffset**(): `number`
@@ -1298,6 +1349,23 @@ Docs: https://day.js.org/docs/en/manipulate/utc-offset
 #### Returns
 
 `number`
+
+#### Inherited from
+
+dayjs.Dayjs.utcOffset
+
+▸ **utcOffset**(`offset`, `keepLocalTime?`): `Dayjs`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `offset` | `string` \| `number` |
+| `keepLocalTime?` | `boolean` |
+
+#### Returns
+
+`Dayjs`
 
 #### Inherited from
 
