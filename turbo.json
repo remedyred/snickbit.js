@@ -47,8 +47,7 @@
 			"outputs": ["**/*.ts", "**/*.json"],
 			"outputMode": "new-only"
 		},
-		"//#readmes": {
-			"dependsOn": ["docs"],
+		"//#docs": {
 			"outputs": ["README.md"]
 		},
 		"depcheck": {
