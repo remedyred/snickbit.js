@@ -13,5 +13,8 @@ node_modules/
 # Compiled files
 dist/
 
-# keep
+# Keep
 !.git*
+!.*rc*
+!.*ignore
+!.*config
