@@ -1,112 +1,62 @@
+@snickbit/plural / [Exports](modules.md)
+
 # @snickbit/plural
 
-## Table of contents
+<!--START_SECTION:readmes-description-->
 
-### Functions
+- Pluralizes strings
+- Singularizes strings
+- Written in TypeScript
+- Zero dependencies
 
-- [isPlural](README.md#isplural)
-- [isSingular](README.md#issingular)
-- [plural](README.md#plural)
-- [singular](README.md#singular)
+<!--END_SECTION:readmes-description-->
 
-## Functions
+## Installation
+```bash
+pnpm add @snickbit/plural
+```
 
-### isPlural
+```bash
+yarn add @snickbit/plural
+```
 
-▸ **isPlural**(`word`, `count?`): `boolean`
+```bash
+npm i @snickbit/plural
+```
 
-Check if a word is plural.
+## Usage
 
-#### Parameters
+```js
+import {plural, singular} from '@snickbit/plural'
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `word` | `string` | `undefined` |
-| `count` | `number` | `2` |
+// or in Node.js
+// const {plural, singular} = require('@snickbit/plural')
 
-#### Returns
+console.log(plural('test')) //=> "tests"
+console.log(plural('test', 0)) //=> "tests"
+console.log(plural('test', 1)) //=> "test"
+console.log(plural('test', 2)) //=> "tests"
 
-`boolean`
+// Singularize
+console.log(singular('tests')) //=> "test"
+console.log(singular('test')) //=> "test"
+console.log(singular('test', 0)) //=> "tests"
+console.log(singular('test', 2)) //=> "tests"
 
-___
+```
 
-### isSingular
+## Documentation
 
-▸ **isSingular**(`word`, `count?`): `boolean`
+### [API Docs](./docs/README.md)
 
-Check if a word is singular.
+### [CHANGELOG](CHANGELOG.md)
 
-#### Parameters
+## Acknowledgements
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `word` | `string` | `undefined` |
-| `count` | `number` | `1` |
+### Based on [pluralize](https://github.com/plurals/pluralize)
 
-#### Returns
+## License
 
-`boolean`
+Copyright (c) 2022 - **Nicholas Lowe** aka **Snickbit**
 
-___
-
-### plural
-
-▸ **plural**(`word`, `count?`): `any`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `word` | `string` |
-| `count?` | `number` |
-
-#### Returns
-
-`any`
-
-▸ **plural**(`word`, `pluralized`, `count?`): `any`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `word` | `string` |
-| `pluralized` | `string` |
-| `count?` | `number` |
-
-#### Returns
-
-`any`
-
-___
-
-### singular
-
-▸ **singular**(`word`, `count?`): `any`
-
-Singularize a word.
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `word` | `string` |
-| `count?` | `number` |
-
-#### Returns
-
-`any`
-
-▸ **singular**(`word`, `singularized`, `count?`): `any`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `word` | `string` |
-| `singularized` | `string` |
-| `count?` | `number` |
-
-#### Returns
-
-`any`
+[MIT License](../../LICENSE)

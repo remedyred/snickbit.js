@@ -1,3 +1,5 @@
+[@snickbit/node-utilities](../README.md) / [Exports](../modules.md) / Progress
+
 # Class: Progress
 
 Progress bar. Uses cli-progress and @snickbit/out to output progress.
@@ -11,6 +13,8 @@ https://github.com/npkgz/cli-progress
 - **`Progress`**
 
   ↳ [`MultiProgress`](MultiProgress.md)
+
+  ↳ [`MultiProgressChild`](MultiProgressChild.md)
 
 ## Table of contents
 
@@ -26,6 +30,8 @@ https://github.com/npkgz/cli-progress
 
 ### Methods
 
+- [#create](Progress.md##create)
+- [#formatValue](Progress.md##formatvalue)
 - [eta](Progress.md#eta)
 - [fail](Progress.md#fail)
 - [finish](Progress.md#finish)
@@ -49,11 +55,19 @@ https://github.com/npkgz/cli-progress
 | :------ | :------ |
 | `options?` | `Partial`<[`ProgressConfig`](../interfaces/ProgressConfig.md)\> |
 
+#### Defined in
+
+[progress.ts:102](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/progress.ts#L102)
+
 ## Properties
 
 ### bar
 
 • **bar**: `SingleBar`
+
+#### Defined in
+
+[progress.ts:100](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/progress.ts#L100)
 
 ___
 
@@ -61,13 +75,57 @@ ___
 
 • **options**: [`ProgressConfig`](../interfaces/ProgressConfig.md)
 
+#### Defined in
+
+[progress.ts:96](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/progress.ts#L96)
+
 ___
 
 ### out
 
 • **out**: `Out`
 
+#### Defined in
+
+[progress.ts:98](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/progress.ts#L98)
+
 ## Methods
+
+### #create
+
+▸ `Private` **#create**(): [`Progress`](Progress.md)
+
+#### Returns
+
+[`Progress`](Progress.md)
+
+#### Defined in
+
+[progress.ts:112](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/progress.ts#L112)
+
+___
+
+### #formatValue
+
+▸ `Private` **#formatValue**(`v`, `options`, `type`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `v` | `any` |
+| `options` | `any` |
+| `type` | `any` |
+
+#### Returns
+
+`any`
+
+#### Defined in
+
+[progress.ts:121](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/progress.ts#L121)
+
+___
 
 ### eta
 
@@ -78,6 +136,10 @@ Get the ETA
 #### Returns
 
 `string` \| `number`
+
+#### Defined in
+
+[progress.ts:135](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/progress.ts#L135)
 
 ___
 
@@ -97,6 +159,10 @@ Fail and stop the progress bar
 
 [`Progress`](Progress.md)
 
+#### Defined in
+
+[progress.ts:232](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/progress.ts#L232)
+
 ___
 
 ### finish
@@ -114,6 +180,10 @@ Succeed and stop the progress bar
 #### Returns
 
 [`Progress`](Progress.md)
+
+#### Defined in
+
+[progress.ts:258](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/progress.ts#L258)
 
 ___
 
@@ -133,6 +203,10 @@ Set the progress bar message
 
 [`Progress`](Progress.md)
 
+#### Defined in
+
+[progress.ts:214](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/progress.ts#L214)
+
 ___
 
 ### set
@@ -146,11 +220,15 @@ Set the progress bar current value
 | Name | Type |
 | :------ | :------ |
 | `value` | `number` |
-| `payload?` | [`ProgressPayload`](../README.md#progresspayload) |
+| `payload?` | [`ProgressPayload`](../modules.md#progresspayload) |
 
 #### Returns
 
 `void`
+
+#### Defined in
+
+[progress.ts:188](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/progress.ts#L188)
 
 ___
 
@@ -170,6 +248,10 @@ Set the progress bar total
 
 [`Progress`](Progress.md)
 
+#### Defined in
+
+[progress.ts:221](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/progress.ts#L221)
+
 ___
 
 ### start
@@ -187,6 +269,10 @@ Start the progress bar
 #### Returns
 
 [`Progress`](Progress.md)
+
+#### Defined in
+
+[progress.ts:142](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/progress.ts#L142)
 
 ___
 
@@ -206,6 +292,10 @@ Stop the progress bar
 
 [`Progress`](Progress.md)
 
+#### Defined in
+
+[progress.ts:245](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/progress.ts#L245)
+
 ___
 
 ### tick
@@ -218,11 +308,15 @@ Tick the progress
 
 | Name | Type |
 | :------ | :------ |
-| `payload` | [`ProgressPayload`](../README.md#progresspayload) |
+| `payload` | [`ProgressPayload`](../modules.md#progresspayload) |
 
 #### Returns
 
 [`Progress`](Progress.md)
+
+#### Defined in
+
+[progress.ts:156](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/progress.ts#L156)
 
 ▸ **tick**(`value?`, `payload?`): [`Progress`](Progress.md)
 
@@ -231,11 +325,15 @@ Tick the progress
 | Name | Type |
 | :------ | :------ |
 | `value?` | `number` |
-| `payload?` | [`ProgressPayload`](../README.md#progresspayload) |
+| `payload?` | [`ProgressPayload`](../modules.md#progresspayload) |
 
 #### Returns
 
 [`Progress`](Progress.md)
+
+#### Defined in
+
+[progress.ts:157](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/progress.ts#L157)
 
 ▸ **tick**(`message`, `payload?`): [`Progress`](Progress.md)
 
@@ -244,11 +342,15 @@ Tick the progress
 | Name | Type |
 | :------ | :------ |
 | `message` | `string` |
-| `payload?` | [`ProgressPayload`](../README.md#progresspayload) |
+| `payload?` | [`ProgressPayload`](../modules.md#progresspayload) |
 
 #### Returns
 
 [`Progress`](Progress.md)
+
+#### Defined in
+
+[progress.ts:158](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/progress.ts#L158)
 
 ___
 
@@ -262,8 +364,12 @@ Update the progress bar
 
 | Name | Type |
 | :------ | :------ |
-| `payload?` | [`ProgressPayload`](../README.md#progresspayload) |
+| `payload?` | [`ProgressPayload`](../modules.md#progresspayload) |
 
 #### Returns
 
 [`Progress`](Progress.md)
+
+#### Defined in
+
+[progress.ts:203](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/progress.ts#L203)

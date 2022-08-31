@@ -1,51 +1,46 @@
+@snickbit/dates / [Exports](modules.md)
+
 # @snickbit/dates
 
-## Table of contents
+<!--START_SECTION:readmes-description-->
 
-### Interfaces
+Extended Date and Time functionality for Dayjs
 
-- [Dates](interfaces/Dates.md)
+<!--END_SECTION:readmes-description-->
 
-### Type Aliases
+## Installation
 
-- [ConfigType](README.md#configtype)
-- [DateInput](README.md#dateinput)
-- [OptionType](README.md#optiontype)
+```bash
+yarn add @snickbit/dates
+```
 
-### Functions
+```bash
+npm add @snickbit/dates
+```
 
-- [dates](README.md#dates)
+## Usage
 
-## Type Aliases
+```js
+import {dates} from '@snickbit/dates'
 
-### ConfigType
+console.log(dates('2022-01-15').shortdate()) // '01/15/2022'
+console.log(dates('2022-01-15').shorttime()) // '12:00 am'
+// more quick presets in the docs
 
-Ƭ **ConfigType**: `dayjs.ConfigType`
+const duration = dates.duration(2500)
+console.log(duration.humanize()) // 'a few seconds' - normal Dayjs duration output
+console.log(duration.toWords()) // '2s and 500ms' - extended output
+console.log(duration.toWords(true)) // '2 seconds' - consult the docs for more options
+```
 
-___
+## Documentation
 
-### DateInput
+### [API Docs](./docs/README.md)
 
-Ƭ **DateInput**: [`ConfigType`](README.md#configtype) \| `Date` \| [`Dates`](interfaces/Dates.md) \| `dayjs.Dayjs` \| `number` \| `string`
+### [CHANGELOG](CHANGELOG.md)
 
-___
+## License
 
-### OptionType
+Copyright (c) 2022 - **Nicholas Lowe** aka **Snickbit**
 
-Ƭ **OptionType**: `dayjs.OptionType`
-
-## Functions
-
-### dates
-
-▸ **dates**(`input?`): [`Dates`](interfaces/Dates.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `input?` | [`DateInput`](README.md#dateinput) |
-
-#### Returns
-
-[`Dates`](interfaces/Dates.md)
+[MIT License](../../LICENSE)

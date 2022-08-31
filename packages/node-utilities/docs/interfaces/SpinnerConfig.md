@@ -1,3 +1,5 @@
+[@snickbit/node-utilities](../README.md) / [Exports](../modules.md) / SpinnerConfig
+
 # Interface: SpinnerConfig
 
 ## Table of contents
@@ -17,11 +19,19 @@
 
 • **color**: `string`
 
+#### Defined in
+
+[spinner.ts:9](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/spinner.ts#L9)
+
 ___
 
 ### frames
 
 • **frames**: `string`[]
+
+#### Defined in
+
+[spinner.ts:12](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/spinner.ts#L12)
 
 ___
 
@@ -29,11 +39,19 @@ ___
 
 • **interval**: `number`
 
+#### Defined in
+
+[spinner.ts:11](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/spinner.ts#L11)
+
 ___
 
 ### mark
 
 • **mark**: `string`
+
+#### Defined in
+
+[spinner.ts:13](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/spinner.ts#L13)
 
 ___
 
@@ -41,8 +59,16 @@ ___
 
 • **stream**: `any`
 
+#### Defined in
+
+[spinner.ts:10](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/spinner.ts#L10)
+
 ___
 
 ### text
 
 • **text**: `string`
+
+#### Defined in
+
+[spinner.ts:8](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/spinner.ts#L8)

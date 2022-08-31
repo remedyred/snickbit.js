@@ -1,3 +1,5 @@
+[@snickbit/node-utilities](../README.md) / [Exports](../modules.md) / AutoCompleteMultiSelectQuestion
+
 # Interface: AutoCompleteMultiSelectQuestion
 
 ## Hierarchy
@@ -33,21 +35,29 @@
 
 ### choices
 
-• **choices**: [`ChoiceDefinition`](ChoiceDefinition.md) \| [`ChoiceOption`](../README.md#choiceoption)[]
+• **choices**: [`ChoiceDefinition`](ChoiceDefinition.md) \| [`ChoiceOption`](../modules.md#choiceoption)[]
 
 #### Inherited from
 
 Omit.choices
 
+#### Defined in
+
+[prompt.ts:52](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L52)
+
 ___
 
 ### format
 
-• **format**: [`PromptsMethod`](../README.md#promptsmethod)
+• **format**: [`PromptsMethod`](../modules.md#promptsmethod)
 
 #### Inherited from
 
 Omit.format
+
+#### Defined in
+
+[prompt.ts:27](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L27)
 
 ___
 
@@ -59,6 +69,10 @@ ___
 
 Omit.hint
 
+#### Defined in
+
+[prompt.ts:46](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L46)
+
 ___
 
 ### instructions
@@ -68,6 +82,10 @@ ___
 #### Inherited from
 
 Omit.instructions
+
+#### Defined in
+
+[prompt.ts:101](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L101)
 
 ___
 
@@ -79,15 +97,23 @@ ___
 
 Omit.max
 
+#### Defined in
+
+[prompt.ts:41](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L41)
+
 ___
 
 ### message
 
-• **message**: `string` \| [`PromptsMethod`](../README.md#promptsmethod)
+• **message**: `string` \| [`PromptsMethod`](../modules.md#promptsmethod)
 
 #### Inherited from
 
 Omit.message
+
+#### Defined in
+
+[prompt.ts:25](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L25)
 
 ___
 
@@ -99,15 +125,23 @@ ___
 
 Omit.min
 
+#### Defined in
+
+[prompt.ts:40](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L40)
+
 ___
 
 ### name
 
-• **name**: `string` \| [`PromptsMethod`](../README.md#promptsmethod)
+• **name**: `string` \| [`PromptsMethod`](../modules.md#promptsmethod)
 
 #### Inherited from
 
 Omit.name
+
+#### Defined in
+
+[prompt.ts:24](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L24)
 
 ___
 
@@ -119,6 +153,10 @@ ___
 
 Omit.optionsPerPage
 
+#### Defined in
+
+[prompt.ts:102](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L102)
+
 ___
 
 ### stdin
@@ -128,6 +166,10 @@ ___
 #### Inherited from
 
 Omit.stdin
+
+#### Defined in
+
+[prompt.ts:33](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L33)
 
 ___
 
@@ -139,11 +181,19 @@ ___
 
 Omit.stdout
 
+#### Defined in
+
+[prompt.ts:34](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L34)
+
 ___
 
 ### type
 
 • **type**: ``"autocompleteMultiselect"`` \| [`PromptTypeMethod`](PromptTypeMethod.md)<``"autocompleteMultiselect"``\>
+
+#### Defined in
+
+[prompt.ts:69](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L69)
 
 ___
 
@@ -154,6 +204,10 @@ ___
 #### Inherited from
 
 Omit.warn
+
+#### Defined in
+
+[prompt.ts:47](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L47)
 
 ## Methods
 
@@ -176,6 +230,10 @@ Omit.warn
 
 Omit.onRender
 
+#### Defined in
+
+[prompt.ts:29](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L29)
+
 ___
 
 ### onState
@@ -195,3 +253,7 @@ ___
 #### Inherited from
 
 Omit.onState
+
+#### Defined in
+
+[prompt.ts:31](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L31)

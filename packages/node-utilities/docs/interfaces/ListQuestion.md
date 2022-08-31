@@ -1,3 +1,5 @@
+[@snickbit/node-utilities](../README.md) / [Exports](../modules.md) / ListQuestion
+
 # Interface: ListQuestion
 
 ## Hierarchy
@@ -28,47 +30,67 @@
 
 ### format
 
-• **format**: [`PromptsMethod`](../README.md#promptsmethod)
+• **format**: [`PromptsMethod`](../modules.md#promptsmethod)
 
 #### Inherited from
 
 BaseQuestion.format
 
+#### Defined in
+
+[prompt.ts:27](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L27)
+
 ___
 
 ### initial
 
-• **initial**: `string` \| [`PromptsMethod`](../README.md#promptsmethod)
+• **initial**: `string` \| [`PromptsMethod`](../modules.md#promptsmethod)
 
 #### Inherited from
 
 BaseQuestion.initial
 
+#### Defined in
+
+[prompt.ts:26](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L26)
+
 ___
 
 ### message
 
-• **message**: `string` \| [`PromptsMethod`](../README.md#promptsmethod)
+• **message**: `string` \| [`PromptsMethod`](../modules.md#promptsmethod)
 
 #### Inherited from
 
 BaseQuestion.message
 
+#### Defined in
+
+[prompt.ts:25](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L25)
+
 ___
 
 ### name
 
-• **name**: `string` \| [`PromptsMethod`](../README.md#promptsmethod)
+• **name**: `string` \| [`PromptsMethod`](../modules.md#promptsmethod)
 
 #### Inherited from
 
 BaseQuestion.name
+
+#### Defined in
+
+[prompt.ts:24](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L24)
 
 ___
 
 ### separator
 
 • **separator**: `string`
+
+#### Defined in
+
+[prompt.ts:94](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L94)
 
 ___
 
@@ -80,6 +102,10 @@ ___
 
 BaseQuestion.stdin
 
+#### Defined in
+
+[prompt.ts:33](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L33)
+
 ___
 
 ### stdout
@@ -90,11 +116,19 @@ ___
 
 BaseQuestion.stdout
 
+#### Defined in
+
+[prompt.ts:34](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L34)
+
 ___
 
 ### type
 
 • **type**: ``"list"`` \| [`PromptTypeMethod`](PromptTypeMethod.md)<``"list"``\>
+
+#### Defined in
+
+[prompt.ts:93](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L93)
 
 ## Methods
 
@@ -117,6 +151,10 @@ ___
 
 BaseQuestion.onRender
 
+#### Defined in
+
+[prompt.ts:29](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L29)
+
 ___
 
 ### onState
@@ -136,3 +174,7 @@ ___
 #### Inherited from
 
 BaseQuestion.onState
+
+#### Defined in
+
+[prompt.ts:31](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L31)

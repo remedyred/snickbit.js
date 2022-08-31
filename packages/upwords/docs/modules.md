@@ -27,4 +27,4 @@
 
 #### Defined in
 
-[index.ts:18](https://github.com/snickbit/snickbit.js/blob/69108f1/packages/upwords/src/index.ts#L18)
+[index.ts:18](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/upwords/src/index.ts#L18)

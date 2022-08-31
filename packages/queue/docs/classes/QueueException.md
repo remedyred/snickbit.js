@@ -1,3 +1,5 @@
+[@snickbit/queue](../README.md) / [Exports](../modules.md) / QueueException
+
 # Class: QueueException
 
 **`No Inherit Doc`**
@@ -24,13 +26,10 @@
 - [spread](QueueException.md#spread)
 - [stack](QueueException.md#stack)
 - [type](QueueException.md#type)
-- [prepareStackTrace](QueueException.md#preparestacktrace)
-- [stackTraceLimit](QueueException.md#stacktracelimit)
 
 ### Methods
 
 - [toJSON](QueueException.md#tojson)
-- [captureStackTrace](QueueException.md#capturestacktrace)
 
 ## Constructors
 
@@ -42,12 +41,16 @@
 
 | Name | Type |
 | :------ | :------ |
-| `message?` | [`ErrorMessage`](../README.md#errormessage) |
+| `message?` | [`ErrorMessage`](../modules.md#errormessage) |
 | `data?` | `any` |
 
 #### Overrides
 
 [QueueError](QueueError.md).[constructor](QueueError.md#constructor)
+
+#### Defined in
+
+[packages/queue/src/errors.ts:77](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/queue/src/errors.ts#L77)
 
 ## Properties
 
@@ -59,6 +62,10 @@
 
 [QueueError](QueueError.md).[cause](QueueError.md#cause)
 
+#### Defined in
+
+node_modules/.pnpm/typescript@4.8.2/node_modules/typescript/lib/lib.es2022.error.d.ts:26
+
 ___
 
 ### data
@@ -68,6 +75,10 @@ ___
 #### Inherited from
 
 [QueueError](QueueError.md).[data](QueueError.md#data)
+
+#### Defined in
+
+[packages/queue/src/errors.ts:21](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/queue/src/errors.ts#L21)
 
 ___
 
@@ -79,6 +90,10 @@ ___
 
 [QueueError](QueueError.md).[errors](QueueError.md#errors)
 
+#### Defined in
+
+[packages/queue/src/errors.ts:23](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/queue/src/errors.ts#L23)
+
 ___
 
 ### message
@@ -88,6 +103,10 @@ ___
 #### Inherited from
 
 [QueueError](QueueError.md).[message](QueueError.md#message)
+
+#### Defined in
+
+node_modules/.pnpm/typescript@4.8.2/node_modules/typescript/lib/lib.es5.d.ts:1041
 
 ___
 
@@ -99,6 +118,10 @@ ___
 
 [QueueError](QueueError.md).[name](QueueError.md#name)
 
+#### Defined in
+
+node_modules/.pnpm/typescript@4.8.2/node_modules/typescript/lib/lib.es5.d.ts:1040
+
 ___
 
 ### spread
@@ -108,6 +131,10 @@ ___
 #### Inherited from
 
 [QueueError](QueueError.md).[spread](QueueError.md#spread)
+
+#### Defined in
+
+[packages/queue/src/errors.ts:25](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/queue/src/errors.ts#L25)
 
 ___
 
@@ -119,6 +146,10 @@ ___
 
 [QueueError](QueueError.md).[stack](QueueError.md#stack)
 
+#### Defined in
+
+node_modules/.pnpm/typescript@4.8.2/node_modules/typescript/lib/lib.es5.d.ts:1042
+
 ___
 
 ### type
@@ -129,46 +160,9 @@ ___
 
 [QueueError](QueueError.md).[type](QueueError.md#type)
 
-___
+#### Defined in
 
-### prepareStackTrace
-
-▪ `Static` `Optional` **prepareStackTrace**: (`err`: `Error`, `stackTraces`: `CallSite`[]) => `any`
-
-#### Type declaration
-
-▸ (`err`, `stackTraces`): `any`
-
-Optional override for formatting stack traces
-
-**`See`**
-
-https://v8.dev/docs/stack-trace-api#customizing-stack-traces
-
-##### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `err` | `Error` |
-| `stackTraces` | `CallSite`[] |
-
-##### Returns
-
-`any`
-
-#### Inherited from
-
-[QueueError](QueueError.md).[prepareStackTrace](QueueError.md#preparestacktrace)
-
-___
-
-### stackTraceLimit
-
-▪ `Static` **stackTraceLimit**: `number`
-
-#### Inherited from
-
-[QueueError](QueueError.md).[stackTraceLimit](QueueError.md#stacktracelimit)
+[packages/queue/src/errors.ts:19](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/queue/src/errors.ts#L19)
 
 ## Methods
 
@@ -184,25 +178,6 @@ ___
 
 [QueueError](QueueError.md).[toJSON](QueueError.md#tojson)
 
-___
+#### Defined in
 
-### captureStackTrace
-
-▸ `Static` **captureStackTrace**(`targetObject`, `constructorOpt?`): `void`
-
-Create .stack property on a target object
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `targetObject` | `object` |
-| `constructorOpt?` | `Function` |
-
-#### Returns
-
-`void`
-
-#### Inherited from
-
-[QueueError](QueueError.md).[captureStackTrace](QueueError.md#capturestacktrace)
+[packages/queue/src/errors.ts:48](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/queue/src/errors.ts#L48)
