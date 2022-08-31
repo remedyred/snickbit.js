@@ -58,7 +58,7 @@ Error.constructor
 
 ### cause
 
-• `Optional` **cause**: `Error`
+• `Optional` **cause**: `unknown`
 
 #### Inherited from
 
