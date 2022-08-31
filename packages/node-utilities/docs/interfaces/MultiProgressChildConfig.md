@@ -1,3 +1,5 @@
+[@snickbit/node-utilities](../README.md) / [Exports](../modules.md) / MultiProgressChildConfig
+
 # Interface: MultiProgressChildConfig
 
 ## Hierarchy
@@ -31,6 +33,10 @@
 
 [ProgressConfig](ProgressConfig.md).[autoStart](ProgressConfig.md#autostart)
 
+#### Defined in
+
+[progress.ts:9](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/progress.ts#L9)
+
 ___
 
 ### config
@@ -40,6 +46,10 @@ ___
 #### Inherited from
 
 [ProgressConfig](ProgressConfig.md).[config](ProgressConfig.md#config)
+
+#### Defined in
+
+[progress.ts:15](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/progress.ts#L15)
 
 ___
 
@@ -51,11 +61,19 @@ ___
 
 [ProgressConfig](ProgressConfig.md).[current](ProgressConfig.md#current)
 
+#### Defined in
+
+[progress.ts:13](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/progress.ts#L13)
+
 ___
 
 ### id
 
 • **id**: `string`
+
+#### Defined in
+
+[multi-progress.ts:85](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/multi-progress.ts#L85)
 
 ___
 
@@ -67,6 +85,10 @@ ___
 
 [ProgressConfig](ProgressConfig.md).[message](ProgressConfig.md#message)
 
+#### Defined in
+
+[progress.ts:10](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/progress.ts#L10)
+
 ___
 
 ### name
@@ -76,6 +98,10 @@ ___
 #### Inherited from
 
 [ProgressConfig](ProgressConfig.md).[name](ProgressConfig.md#name)
+
+#### Defined in
+
+[progress.ts:8](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/progress.ts#L8)
 
 ___
 
@@ -87,11 +113,19 @@ ___
 
 [ProgressConfig](ProgressConfig.md).[out](ProgressConfig.md#out)
 
+#### Defined in
+
+[progress.ts:14](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/progress.ts#L14)
+
 ___
 
 ### parent
 
 • **parent**: `string`
+
+#### Defined in
+
+[multi-progress.ts:84](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/multi-progress.ts#L84)
 
 ___
 
@@ -103,6 +137,10 @@ ___
 
 [ProgressConfig](ProgressConfig.md).[total](ProgressConfig.md#total)
 
+#### Defined in
+
+[progress.ts:12](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/progress.ts#L12)
+
 ___
 
 ### valueFormat
@@ -112,3 +150,7 @@ ___
 #### Inherited from
 
 [ProgressConfig](ProgressConfig.md).[valueFormat](ProgressConfig.md#valueformat)
+
+#### Defined in
+
+[progress.ts:11](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/progress.ts#L11)

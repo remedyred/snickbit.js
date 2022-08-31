@@ -1,63 +1,54 @@
-[@snickbit/node-utilities](../README.md) / [Exports](../modules.md) / MultiProgress
+[@snickbit/node-utilities](../README.md) / [Exports](../modules.md) / MultiProgressChild
 
-# Class: MultiProgress
-
-Multi-Progress bar. Uses cli-progress to create multiple progress bars.
-
-**`See`**
-
-https://github.com/npkgz/cli-progress
+# Class: MultiProgressChild
 
 ## Hierarchy
 
 - [`Progress`](Progress.md)
 
-  ↳ **`MultiProgress`**
+  ↳ **`MultiProgressChild`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](MultiProgress.md#constructor)
+- [constructor](MultiProgressChild.md#constructor)
 
 ### Properties
 
-- [bar](MultiProgress.md#bar)
-- [bars](MultiProgress.md#bars)
-- [id](MultiProgress.md#id)
-- [multibar](MultiProgress.md#multibar)
-- [options](MultiProgress.md#options)
-- [out](MultiProgress.md#out)
+- [bar](MultiProgressChild.md#bar)
+- [id](MultiProgressChild.md#id)
+- [options](MultiProgressChild.md#options)
+- [out](MultiProgressChild.md#out)
 
 ### Methods
 
-- [#create](MultiProgress.md##create)
-- [#create](MultiProgress.md##create-1)
-- [#formatValue](MultiProgress.md##formatvalue)
-- [create](MultiProgress.md#create)
-- [eta](MultiProgress.md#eta)
-- [fail](MultiProgress.md#fail)
-- [finish](MultiProgress.md#finish)
-- [message](MultiProgress.md#message)
-- [remove](MultiProgress.md#remove)
-- [set](MultiProgress.md#set)
-- [setTotal](MultiProgress.md#settotal)
-- [start](MultiProgress.md#start)
-- [stop](MultiProgress.md#stop)
-- [tick](MultiProgress.md#tick)
-- [update](MultiProgress.md#update)
+- [#create](MultiProgressChild.md##create)
+- [#create](MultiProgressChild.md##create-1)
+- [#formatValue](MultiProgressChild.md##formatvalue)
+- [eta](MultiProgressChild.md#eta)
+- [fail](MultiProgressChild.md#fail)
+- [finish](MultiProgressChild.md#finish)
+- [message](MultiProgressChild.md#message)
+- [remove](MultiProgressChild.md#remove)
+- [set](MultiProgressChild.md#set)
+- [setTotal](MultiProgressChild.md#settotal)
+- [start](MultiProgressChild.md#start)
+- [stop](MultiProgressChild.md#stop)
+- [tick](MultiProgressChild.md#tick)
+- [update](MultiProgressChild.md#update)
 
 ## Constructors
 
 ### constructor
 
-• **new MultiProgress**(`options?`)
+• **new MultiProgressChild**(`options?`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `options?` | `Partial`<[`ProgressConfig`](../interfaces/ProgressConfig.md)\> |
+| `options?` | `Partial`<[`MultiProgressChildConfig`](../interfaces/MultiProgressChildConfig.md)\> |
 
 #### Overrides
 
@@ -65,7 +56,7 @@ https://github.com/npkgz/cli-progress
 
 #### Defined in
 
-[multi-progress.ts:32](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/multi-progress.ts#L32)
+[multi-progress.ts:98](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/multi-progress.ts#L98)
 
 ## Properties
 
@@ -83,47 +74,27 @@ https://github.com/npkgz/cli-progress
 
 ___
 
-### bars
-
-• **bars**: [`MultiProgressBars`](../modules.md#multiprogressbars)
-
-#### Defined in
-
-[multi-progress.ts:28](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/multi-progress.ts#L28)
-
-___
-
 ### id
 
 • **id**: `string`
 
 #### Defined in
 
-[multi-progress.ts:26](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/multi-progress.ts#L26)
-
-___
-
-### multibar
-
-• **multibar**: `MultiBar`
-
-#### Defined in
-
-[multi-progress.ts:30](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/multi-progress.ts#L30)
+[multi-progress.ts:94](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/multi-progress.ts#L94)
 
 ___
 
 ### options
 
-• **options**: [`ProgressConfig`](../interfaces/ProgressConfig.md)
+• **options**: [`MultiProgressChildConfig`](../interfaces/MultiProgressChildConfig.md)
 
-#### Inherited from
+#### Overrides
 
 [Progress](Progress.md).[options](Progress.md#options)
 
 #### Defined in
 
-[progress.ts:96](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/progress.ts#L96)
+[multi-progress.ts:96](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/multi-progress.ts#L96)
 
 ___
 
@@ -155,17 +126,17 @@ ___
 
 #### Defined in
 
-[multi-progress.ts:40](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/multi-progress.ts#L40)
+[multi-progress.ts:102](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/multi-progress.ts#L102)
 
 ___
 
 ### #create
 
-▸ `Private` **#create**(): [`MultiProgress`](MultiProgress.md)
+▸ `Private` **#create**(): [`MultiProgressChild`](MultiProgressChild.md)
 
 #### Returns
 
-[`MultiProgress`](MultiProgress.md)
+[`MultiProgressChild`](MultiProgressChild.md)
 
 #### Inherited from
 
@@ -203,28 +174,6 @@ ___
 
 ___
 
-### create
-
-▸ **create**(`options?`): [`MultiProgressChild`](MultiProgressChild.md)
-
-Create a child progress bar
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `options?` | `Partial`<[`ProgressConfig`](../interfaces/ProgressConfig.md)\> |
-
-#### Returns
-
-[`MultiProgressChild`](MultiProgressChild.md)
-
-#### Defined in
-
-[multi-progress.ts:49](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/multi-progress.ts#L49)
-
-___
-
 ### eta
 
 ▸ **eta**(): `string` \| `number`
@@ -247,7 +196,7 @@ ___
 
 ### fail
 
-▸ **fail**(...`messages`): [`MultiProgress`](MultiProgress.md)
+▸ **fail**(...`messages`): [`MultiProgressChild`](MultiProgressChild.md)
 
 Fail and stop the progress bar
 
@@ -259,7 +208,7 @@ Fail and stop the progress bar
 
 #### Returns
 
-[`MultiProgress`](MultiProgress.md)
+[`MultiProgressChild`](MultiProgressChild.md)
 
 #### Inherited from
 
@@ -273,7 +222,7 @@ ___
 
 ### finish
 
-▸ **finish**(...`messages`): [`MultiProgress`](MultiProgress.md)
+▸ **finish**(...`messages`): [`MultiProgressChild`](MultiProgressChild.md)
 
 Succeed and stop the progress bar
 
@@ -285,7 +234,7 @@ Succeed and stop the progress bar
 
 #### Returns
 
-[`MultiProgress`](MultiProgress.md)
+[`MultiProgressChild`](MultiProgressChild.md)
 
 #### Inherited from
 
@@ -299,7 +248,7 @@ ___
 
 ### message
 
-▸ **message**(`message`): [`MultiProgress`](MultiProgress.md)
+▸ **message**(`message`): [`MultiProgressChild`](MultiProgressChild.md)
 
 Set the progress bar message
 
@@ -311,7 +260,7 @@ Set the progress bar message
 
 #### Returns
 
-[`MultiProgress`](MultiProgress.md)
+[`MultiProgressChild`](MultiProgressChild.md)
 
 #### Inherited from
 
@@ -325,23 +274,17 @@ ___
 
 ### remove
 
-▸ **remove**(`instance`): [`MultiProgress`](MultiProgress.md)
+▸ **remove**(): `void`
 
-Remove a child progress bar
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `instance` | [`MultiProgressChild`](MultiProgressChild.md) |
+Remove this child progress bar
 
 #### Returns
 
-[`MultiProgress`](MultiProgress.md)
+`void`
 
 #### Defined in
 
-[multi-progress.ts:76](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/multi-progress.ts#L76)
+[multi-progress.ts:111](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/multi-progress.ts#L111)
 
 ___
 
@@ -374,7 +317,7 @@ ___
 
 ### setTotal
 
-▸ **setTotal**(`total`): [`MultiProgress`](MultiProgress.md)
+▸ **setTotal**(`total`): [`MultiProgressChild`](MultiProgressChild.md)
 
 Set the progress bar total
 
@@ -386,7 +329,7 @@ Set the progress bar total
 
 #### Returns
 
-[`MultiProgress`](MultiProgress.md)
+[`MultiProgressChild`](MultiProgressChild.md)
 
 #### Inherited from
 
@@ -400,7 +343,7 @@ ___
 
 ### start
 
-▸ **start**(`options?`): [`MultiProgress`](MultiProgress.md)
+▸ **start**(`options?`): [`MultiProgressChild`](MultiProgressChild.md)
 
 Start the progress bar
 
@@ -412,7 +355,7 @@ Start the progress bar
 
 #### Returns
 
-[`MultiProgress`](MultiProgress.md)
+[`MultiProgressChild`](MultiProgressChild.md)
 
 #### Inherited from
 
@@ -426,9 +369,9 @@ ___
 
 ### stop
 
-▸ **stop**(...`messages`): [`MultiProgress`](MultiProgress.md)
+▸ **stop**(...`messages`): [`MultiProgressChild`](MultiProgressChild.md)
 
-Stop all child progress bars
+Stop the progress bar
 
 #### Parameters
 
@@ -438,21 +381,21 @@ Stop all child progress bars
 
 #### Returns
 
-[`MultiProgress`](MultiProgress.md)
+[`MultiProgressChild`](MultiProgressChild.md)
 
-#### Overrides
+#### Inherited from
 
 [Progress](Progress.md).[stop](Progress.md#stop)
 
 #### Defined in
 
-[multi-progress.ts:65](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/multi-progress.ts#L65)
+[progress.ts:245](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/progress.ts#L245)
 
 ___
 
 ### tick
 
-▸ **tick**(`payload`): [`MultiProgress`](MultiProgress.md)
+▸ **tick**(`payload`): [`MultiProgressChild`](MultiProgressChild.md)
 
 Tick the progress
 
@@ -464,7 +407,7 @@ Tick the progress
 
 #### Returns
 
-[`MultiProgress`](MultiProgress.md)
+[`MultiProgressChild`](MultiProgressChild.md)
 
 #### Inherited from
 
@@ -474,7 +417,7 @@ Tick the progress
 
 [progress.ts:156](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/progress.ts#L156)
 
-▸ **tick**(`value?`, `payload?`): [`MultiProgress`](MultiProgress.md)
+▸ **tick**(`value?`, `payload?`): [`MultiProgressChild`](MultiProgressChild.md)
 
 #### Parameters
 
@@ -485,7 +428,7 @@ Tick the progress
 
 #### Returns
 
-[`MultiProgress`](MultiProgress.md)
+[`MultiProgressChild`](MultiProgressChild.md)
 
 #### Inherited from
 
@@ -495,7 +438,7 @@ Tick the progress
 
 [progress.ts:157](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/progress.ts#L157)
 
-▸ **tick**(`message`, `payload?`): [`MultiProgress`](MultiProgress.md)
+▸ **tick**(`message`, `payload?`): [`MultiProgressChild`](MultiProgressChild.md)
 
 #### Parameters
 
@@ -506,7 +449,7 @@ Tick the progress
 
 #### Returns
 
-[`MultiProgress`](MultiProgress.md)
+[`MultiProgressChild`](MultiProgressChild.md)
 
 #### Inherited from
 
@@ -520,7 +463,7 @@ ___
 
 ### update
 
-▸ **update**(`payload?`): [`MultiProgress`](MultiProgress.md)
+▸ **update**(`payload?`): [`MultiProgressChild`](MultiProgressChild.md)
 
 Update the progress bar
 
@@ -532,7 +475,7 @@ Update the progress bar
 
 #### Returns
 
-[`MultiProgress`](MultiProgress.md)
+[`MultiProgressChild`](MultiProgressChild.md)
 
 #### Inherited from
 

@@ -1,3 +1,5 @@
+[@snickbit/node-utilities](../README.md) / [Exports](../modules.md) / SelectQuestion
+
 # Interface: SelectQuestion
 
 ## Hierarchy
@@ -34,21 +36,29 @@
 
 ### choices
 
-• **choices**: [`ChoiceDefinition`](ChoiceDefinition.md) \| [`ChoiceOption`](../README.md#choiceoption)[]
+• **choices**: [`ChoiceDefinition`](ChoiceDefinition.md) \| [`ChoiceOption`](../modules.md#choiceoption)[]
 
 #### Inherited from
 
 QuestionChoices.choices
 
+#### Defined in
+
+[prompt.ts:52](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/prompt.ts#L52)
+
 ___
 
 ### format
 
-• **format**: [`PromptsMethod`](../README.md#promptsmethod)
+• **format**: [`PromptsMethod`](../modules.md#promptsmethod)
 
 #### Inherited from
 
 BaseQuestion.format
+
+#### Defined in
+
+[prompt.ts:27](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/prompt.ts#L27)
 
 ___
 
@@ -60,35 +70,51 @@ ___
 
 QuestionHints.hint
 
+#### Defined in
+
+[prompt.ts:46](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/prompt.ts#L46)
+
 ___
 
 ### initial
 
-• **initial**: `string` \| `number` \| [`PromptsMethod`](../README.md#promptsmethod)
+• **initial**: `string` \| `number` \| [`PromptsMethod`](../modules.md#promptsmethod)
 
 #### Inherited from
 
 BaseQuestion.initial
 
+#### Defined in
+
+[prompt.ts:26](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/prompt.ts#L26)
+
 ___
 
 ### message
 
-• **message**: `string` \| [`PromptsMethod`](../README.md#promptsmethod)
+• **message**: `string` \| [`PromptsMethod`](../modules.md#promptsmethod)
 
 #### Inherited from
 
 BaseQuestion.message
 
+#### Defined in
+
+[prompt.ts:25](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/prompt.ts#L25)
+
 ___
 
 ### name
 
-• **name**: `string` \| [`PromptsMethod`](../README.md#promptsmethod)
+• **name**: `string` \| [`PromptsMethod`](../modules.md#promptsmethod)
 
 #### Inherited from
 
 BaseQuestion.name
+
+#### Defined in
+
+[prompt.ts:24](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/prompt.ts#L24)
 
 ___
 
@@ -100,6 +126,10 @@ ___
 
 BaseQuestion.stdin
 
+#### Defined in
+
+[prompt.ts:33](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/prompt.ts#L33)
+
 ___
 
 ### stdout
@@ -110,11 +140,19 @@ ___
 
 BaseQuestion.stdout
 
+#### Defined in
+
+[prompt.ts:34](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/prompt.ts#L34)
+
 ___
 
 ### type
 
 • **type**: ``"select"`` \| [`PromptTypeMethod`](PromptTypeMethod.md)<``"select"``\>
+
+#### Defined in
+
+[prompt.ts:121](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/prompt.ts#L121)
 
 ___
 
@@ -125,6 +163,10 @@ ___
 #### Inherited from
 
 QuestionHints.warn
+
+#### Defined in
+
+[prompt.ts:47](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/prompt.ts#L47)
 
 ## Methods
 
@@ -147,6 +189,10 @@ QuestionHints.warn
 
 BaseQuestion.onRender
 
+#### Defined in
+
+[prompt.ts:29](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/prompt.ts#L29)
+
 ___
 
 ### onState
@@ -166,3 +212,7 @@ ___
 #### Inherited from
 
 BaseQuestion.onState
+
+#### Defined in
+
+[prompt.ts:31](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/prompt.ts#L31)

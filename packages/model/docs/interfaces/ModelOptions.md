@@ -1,3 +1,5 @@
+[@snickbit/model](../README.md) / [Exports](../modules.md) / ModelOptions
+
 # Interface: ModelOptions
 
 Model Options
@@ -48,11 +50,19 @@ Define a root path for the model. All paths/keys will be prefixed with this path
 
 • `Optional` **autoId**: `boolean`
 
+#### Defined in
+
+[index.ts:59](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L59)
+
 ___
 
 ### id
 
-• `Optional` **id**: [`ModelId`](../README.md#modelid)
+• `Optional` **id**: [`ModelId`](../modules.md#modelid)
+
+#### Defined in
+
+[index.ts:57](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L57)
 
 ___
 
@@ -60,11 +70,19 @@ ___
 
 • `Optional` **name**: `string`
 
+#### Defined in
+
+[index.ts:58](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L58)
+
 ___
 
 ### root
 
 • `Optional` **root**: `string`
+
+#### Defined in
+
+[index.ts:63](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L63)
 
 ___
 
@@ -72,14 +90,26 @@ ___
 
 • `Optional` **schema**: `Partial`<[`ModelSchema`](ModelSchema.md)\>
 
+#### Defined in
+
+[index.ts:60](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L60)
+
 ___
 
 ### strict
 
 • `Optional` **strict**: `boolean`
 
+#### Defined in
+
+[index.ts:61](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L61)
+
 ___
 
 ### timestamps
 
 • `Optional` **timestamps**: `boolean`
+
+#### Defined in
+
+[index.ts:62](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L62)

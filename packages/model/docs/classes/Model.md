@@ -1,3 +1,5 @@
+[@snickbit/model](../README.md) / [Exports](../modules.md) / Model
+
 # Class: Model<T, D\>
 
 Create a simple object model
@@ -23,6 +25,12 @@ Create a simple object model
 
 - [append](Model.md#append)
 - [data](Model.md#data)
+- [defaults](Model.md#defaults)
+- [errors](Model.md#errors)
+- [is\_new](Model.md#is_new)
+- [options](Model.md#options)
+- [out](Model.md#out)
+- [schema](Model.md#schema)
 
 ### Accessors
 
@@ -30,6 +38,8 @@ Create a simple object model
 
 ### Methods
 
+- [applyTimestamps](Model.md#applytimestamps)
+- [checkKey](Model.md#checkkey)
 - [coalesce](Model.md#coalesce)
 - [count](Model.md#count)
 - [decrement](Model.md#decrement)
@@ -47,9 +57,11 @@ Create a simple object model
 - [keys](Model.md#keys)
 - [last](Model.md#last)
 - [patch](Model.md#patch)
+- [prepareData](Model.md#preparedata)
 - [pull](Model.md#pull)
 - [push](Model.md#push)
 - [remove](Model.md#remove)
+- [resetOut](Model.md#resetout)
 - [set](Model.md#set)
 - [toJSON](Model.md#tojson)
 - [toString](Model.md#tostring)
@@ -75,11 +87,19 @@ Create a simple object model
 | `data?` | `T` |
 | `options?` | `Partial`<[`ModelOptions`](../interfaces/ModelOptions.md)\> |
 
+#### Defined in
+
+[index.ts:111](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L111)
+
 ## Properties
 
 ### append
 
 • **append**: `string`[] = `[]`
+
+#### Defined in
+
+[index.ts:109](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L109)
 
 ___
 
@@ -87,19 +107,125 @@ ___
 
 • **data**: `ObjectPathBound`<`T`\>
 
+#### Defined in
+
+[index.ts:107](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L107)
+
+___
+
+### defaults
+
+• `Protected` `Readonly` **defaults**: `Object`
+
+#### Index signature
+
+▪ [key: `string`]: [`ModelValue`](../modules.md#modelvalue)
+
+#### Defined in
+
+[index.ts:97](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L97)
+
+___
+
+### errors
+
+• `Protected` **errors**: [`ModelErrors`](../modules.md#modelerrors) = `{}`
+
+#### Defined in
+
+[index.ts:105](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L105)
+
+___
+
+### is\_new
+
+• `Protected` **is\_new**: `boolean`
+
+#### Defined in
+
+[index.ts:99](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L99)
+
+___
+
+### options
+
+• `Protected` **options**: [`ModelOptions`](../interfaces/ModelOptions.md) = `{}`
+
+#### Defined in
+
+[index.ts:95](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L95)
+
+___
+
+### out
+
+• `Protected` **out**: `Out`
+
+#### Defined in
+
+[index.ts:101](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L101)
+
+___
+
+### schema
+
+• `Protected` **schema**: `Partial`<[`ModelSchema`](../interfaces/ModelSchema.md)\>
+
+#### Defined in
+
+[index.ts:103](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L103)
+
 ## Accessors
 
 ### id
 
-• `get` **id**(): [`ModelId`](../README.md#modelid)
+• `get` **id**(): [`ModelId`](../modules.md#modelid)
 
 Get the model's id
 
 #### Returns
 
-[`ModelId`](../README.md#modelid)
+[`ModelId`](../modules.md#modelid)
+
+#### Defined in
+
+[index.ts:138](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L138)
 
 ## Methods
+
+### applyTimestamps
+
+▸ `Protected` **applyTimestamps**(): `void`
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[index.ts:174](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L174)
+
+___
+
+### checkKey
+
+▸ `Protected` **checkKey**(`key`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `key` | `any` |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+[index.ts:152](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L152)
+
+___
 
 ### coalesce
 
@@ -111,6 +237,10 @@ Get the first non-undefined property of a set
 
 `any`
 
+#### Defined in
+
+[index.ts:430](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L430)
+
 ▸ **coalesce**(`key`, `defaultValue?`): `any`
 
 Get the first non-undefined property of a set
@@ -119,12 +249,16 @@ Get the first non-undefined property of a set
 
 | Name | Type |
 | :------ | :------ |
-| `key` | [`ModelKey`](../README.md#modelkey) |
+| `key` | [`ModelKey`](../modules.md#modelkey) |
 | `defaultValue?` | `any` |
 
 #### Returns
 
 `any`
+
+#### Defined in
+
+[index.ts:435](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L435)
 
 ___
 
@@ -138,6 +272,10 @@ Count the items in a set
 
 `number`
 
+#### Defined in
+
+[index.ts:397](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L397)
+
 ▸ **count**(`key`): `number`
 
 Count the items in a set
@@ -146,11 +284,15 @@ Count the items in a set
 
 | Name | Type |
 | :------ | :------ |
-| `key` | [`ModelKey`](../README.md#modelkey) |
+| `key` | [`ModelKey`](../modules.md#modelkey) |
 
 #### Returns
 
 `number`
+
+#### Defined in
+
+[index.ts:402](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L402)
 
 ___
 
@@ -164,12 +306,16 @@ Decrement a number path
 
 | Name | Type | Default value |
 | :------ | :------ | :------ |
-| `key` | [`ModelKey`](../README.md#modelkey) | `undefined` |
+| `key` | [`ModelKey`](../modules.md#modelkey) | `undefined` |
 | `value` | `number` | `1` |
 
 #### Returns
 
 [`Model`](Model.md)<`T`, `D`\>
+
+#### Defined in
+
+[index.ts:527](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L527)
 
 ___
 
@@ -183,6 +329,10 @@ Remove all the items in a set
 
 [`Model`](Model.md)<`T`, `D`\>
 
+#### Defined in
+
+[index.ts:416](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L416)
+
 ▸ **empty**(`key`): [`Model`](Model.md)<`T`, `D`\>
 
 Remove all the items in a set
@@ -191,11 +341,15 @@ Remove all the items in a set
 
 | Name | Type |
 | :------ | :------ |
-| `key` | [`ModelKey`](../README.md#modelkey) |
+| `key` | [`ModelKey`](../modules.md#modelkey) |
 
 #### Returns
 
 [`Model`](Model.md)<`T`, `D`\>
+
+#### Defined in
+
+[index.ts:421](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L421)
 
 ___
 
@@ -209,12 +363,16 @@ Set a value if it doesn't exist, do nothing if it does
 
 | Name | Type |
 | :------ | :------ |
-| `key` | [`ModelKey`](../README.md#modelkey) |
+| `key` | [`ModelKey`](../modules.md#modelkey) |
 | `value` | `any` |
 
 #### Returns
 
 [`Model`](Model.md)<`T`, `D`\>
+
+#### Defined in
+
+[index.ts:538](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L538)
 
 ___
 
@@ -234,6 +392,10 @@ Find specific data in the model
 
 `any`
 
+#### Defined in
+
+[index.ts:225](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L225)
+
 ▸ **find**(`key`, `predicate`): `any`
 
 Find specific data in the model
@@ -242,12 +404,16 @@ Find specific data in the model
 
 | Name | Type |
 | :------ | :------ |
-| `key` | [`ModelKey`](../README.md#modelkey) |
+| `key` | [`ModelKey`](../modules.md#modelkey) |
 | `predicate` | `ObjectPredicate`<`any`\> |
 
 #### Returns
 
 `any`
+
+#### Defined in
+
+[index.ts:230](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L230)
 
 ___
 
@@ -267,6 +433,10 @@ Find a key/index matching a value
 
 `any`
 
+#### Defined in
+
+[index.ts:257](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L257)
+
 ▸ **findKey**(`key`, `predicate`): `any`
 
 Find a key/index matching a value
@@ -275,12 +445,16 @@ Find a key/index matching a value
 
 | Name | Type |
 | :------ | :------ |
-| `key` | [`ModelKey`](../README.md#modelkey) |
+| `key` | [`ModelKey`](../modules.md#modelkey) |
 | `predicate` | `ObjectPredicate`<`any`\> |
 
 #### Returns
 
 `any`
+
+#### Defined in
+
+[index.ts:262](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L262)
 
 ___
 
@@ -294,6 +468,10 @@ Get the first value in a set
 
 `any`
 
+#### Defined in
+
+[index.ts:290](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L290)
+
 ▸ **first**(`key?`): `any`
 
 Get the first value in a set
@@ -302,11 +480,15 @@ Get the first value in a set
 
 | Name | Type |
 | :------ | :------ |
-| `key?` | [`ModelKey`](../README.md#modelkey) |
+| `key?` | [`ModelKey`](../modules.md#modelkey) |
 
 #### Returns
 
 `any`
+
+#### Defined in
+
+[index.ts:295](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L295)
 
 ___
 
@@ -320,6 +502,10 @@ Get the entire model's data
 
 `any`
 
+#### Defined in
+
+[index.ts:198](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L198)
+
 ▸ **get**(`key`): `any`
 
 Get a path from an object
@@ -328,11 +514,15 @@ Get a path from an object
 
 | Name | Type |
 | :------ | :------ |
-| `key` | [`ModelKey`](../README.md#modelkey) |
+| `key` | [`ModelKey`](../modules.md#modelkey) |
 
 #### Returns
 
 `any`
+
+#### Defined in
+
+[index.ts:203](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L203)
 
 ___
 
@@ -352,6 +542,10 @@ Get the error for a key, if there is one
 
 `string`
 
+#### Defined in
+
+[index.ts:184](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L184)
+
 ___
 
 ### has
@@ -364,11 +558,15 @@ Tests path existence
 
 | Name | Type |
 | :------ | :------ |
-| `key` | [`ModelKey`](../README.md#modelkey) |
+| `key` | [`ModelKey`](../modules.md#modelkey) |
 
 #### Returns
 
 `boolean`
+
+#### Defined in
+
+[index.ts:377](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L377)
 
 ___
 
@@ -388,6 +586,10 @@ Check if a key has an error
 
 `boolean`
 
+#### Defined in
+
+[index.ts:191](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L191)
+
 ___
 
 ### increment
@@ -400,12 +602,16 @@ Increment a number path
 
 | Name | Type | Default value |
 | :------ | :------ | :------ |
-| `key` | [`ModelKey`](../README.md#modelkey) | `undefined` |
+| `key` | [`ModelKey`](../modules.md#modelkey) | `undefined` |
 | `value` | `number` | `1` |
 
 #### Returns
 
 [`Model`](Model.md)<`T`, `D`\>
+
+#### Defined in
+
+[index.ts:516](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L516)
 
 ___
 
@@ -419,13 +625,17 @@ Insert an item in an array path
 
 | Name | Type |
 | :------ | :------ |
-| `key` | [`ModelKey`](../README.md#modelkey) |
+| `key` | [`ModelKey`](../modules.md#modelkey) |
 | `value` | `any` |
 | `at?` | `number` |
 
 #### Returns
 
 [`Model`](Model.md)<`T`, `D`\>
+
+#### Defined in
+
+[index.ts:443](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L443)
 
 ___
 
@@ -439,6 +649,10 @@ Get the keys of the data
 
 `string`[]
 
+#### Defined in
+
+[index.ts:384](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L384)
+
 ___
 
 ### last
@@ -451,6 +665,10 @@ Get the last value in a set
 
 `any`
 
+#### Defined in
+
+[index.ts:311](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L311)
+
 ▸ **last**(`key`): `any`
 
 Get the last value in a set
@@ -459,11 +677,15 @@ Get the last value in a set
 
 | Name | Type |
 | :------ | :------ |
-| `key` | [`ModelKey`](../README.md#modelkey) |
+| `key` | [`ModelKey`](../modules.md#modelkey) |
 
 #### Returns
 
 `any`
+
+#### Defined in
+
+[index.ts:316](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L316)
 
 ___
 
@@ -483,6 +705,10 @@ Patch/merge the value of a path
 
 [`Model`](Model.md)<`T`, `D`\>
 
+#### Defined in
+
+[index.ts:468](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L468)
+
 ▸ **patch**(`key`, `value`): [`Model`](Model.md)<`T`, `D`\>
 
 Patch/merge the value of a path
@@ -491,12 +717,30 @@ Patch/merge the value of a path
 
 | Name | Type |
 | :------ | :------ |
-| `key` | [`ModelKey`](../README.md#modelkey) |
+| `key` | [`ModelKey`](../modules.md#modelkey) |
 | `value` | `any` |
 
 #### Returns
 
 [`Model`](Model.md)<`T`, `D`\>
+
+#### Defined in
+
+[index.ts:473](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L473)
+
+___
+
+### prepareData
+
+▸ `Protected` **prepareData**(): `Promise`<`any`\>
+
+#### Returns
+
+`Promise`<`any`\>
+
+#### Defined in
+
+[index.ts:565](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L565)
 
 ___
 
@@ -510,12 +754,16 @@ Get the value of a path and remove it
 
 | Name | Type |
 | :------ | :------ |
-| `key` | [`ModelKey`](../README.md#modelkey) |
+| `key` | [`ModelKey`](../modules.md#modelkey) |
 | `defaultValue?` | `any` |
 
 #### Returns
 
 `any`
+
+#### Defined in
+
+[index.ts:459](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L459)
 
 ___
 
@@ -529,12 +777,16 @@ Push a value to an array path
 
 | Name | Type |
 | :------ | :------ |
-| `key` | [`ModelKey`](../README.md#modelkey) |
+| `key` | [`ModelKey`](../modules.md#modelkey) |
 | `...values` | `any`[] |
 
 #### Returns
 
 [`Model`](Model.md)<`T`, `D`\>
+
+#### Defined in
+
+[index.ts:451](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L451)
 
 ___
 
@@ -548,11 +800,29 @@ Remove a value from a path
 
 | Name | Type |
 | :------ | :------ |
-| `key` | [`ModelKey`](../README.md#modelkey) |
+| `key` | [`ModelKey`](../modules.md#modelkey) |
 
 #### Returns
 
 [`Model`](Model.md)<`T`, `D`\>
+
+#### Defined in
+
+[index.ts:546](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L546)
+
+___
+
+### resetOut
+
+▸ `Protected` **resetOut**(): `void`
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[index.ts:148](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L148)
 
 ___
 
@@ -572,6 +842,10 @@ Overwrite the entire object
 
 [`Model`](Model.md)<`T`, `D`\>
 
+#### Defined in
+
+[index.ts:332](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L332)
+
 ▸ **set**(`key`, `value`, `overwrite?`): [`Model`](Model.md)<`T`, `D`\>
 
 Set the value of a key
@@ -580,13 +854,17 @@ Set the value of a key
 
 | Name | Type |
 | :------ | :------ |
-| `key` | [`ModelKey`](../README.md#modelkey) |
+| `key` | [`ModelKey`](../modules.md#modelkey) |
 | `value` | `any` |
 | `overwrite?` | `boolean` |
 
 #### Returns
 
 [`Model`](Model.md)<`T`, `D`\>
+
+#### Defined in
+
+[index.ts:337](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L337)
 
 ___
 
@@ -600,6 +878,10 @@ Convert the model to a JSON object. This is the same as calling `.get()
 
 `any`
 
+#### Defined in
+
+[index.ts:561](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L561)
+
 ___
 
 ### toString
@@ -612,11 +894,15 @@ Convert the model to a JSON string
 
 `string`
 
+#### Defined in
+
+[index.ts:554](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L554)
+
 ___
 
 ### validate
 
-▸ **validate**(): `Promise`<``true`` \| [`ModelErrors`](../README.md#modelerrors)\>
+▸ **validate**(): `Promise`<``true`` \| [`ModelErrors`](../modules.md#modelerrors)\>
 
 Validate the model against the schema
 
@@ -626,4 +912,8 @@ If the model is invalid and strict mode is enabled
 
 #### Returns
 
-`Promise`<``true`` \| [`ModelErrors`](../README.md#modelerrors)\>
+`Promise`<``true`` \| [`ModelErrors`](../modules.md#modelerrors)\>
+
+#### Defined in
+
+[index.ts:583](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/model/src/index.ts#L583)
