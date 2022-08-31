@@ -32,7 +32,7 @@
 			"outputMode": "new-only"
 		},
 		"docs": {
-			"dependsOn": ["^build"],
+			"dependsOn": ["build"],
 			"outputs": ["docs/**", "README.md"],
 			"inputs": ["src/**/*.tsx", "src/**/*.ts", "typedoc.json"]
 		},
