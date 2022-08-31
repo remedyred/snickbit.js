@@ -38,7 +38,7 @@
 		"testEnvironment": "node"
 	},
 	"dependencies": {
-		"@snickbit/utilities": "^3.4.0"
+		"@snickbit/utilities": "^3.4.2"
 	},
 	"devDependencies": {
 		"@types/jest": "28.1.8",
