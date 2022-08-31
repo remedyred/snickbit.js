@@ -32,6 +32,7 @@ describe('numbers', () => {
 
 	describe('numberEven', () => {
 		it.each([
+			[0, 0],
 			[1, 2],
 			[2, 2],
 			[3, 4],
@@ -43,6 +44,7 @@ describe('numbers', () => {
 
 	describe('numberOdd', () => {
 		it.each([
+			[0, 1],
 			[1, 1],
 			[2, 3],
 			[3, 3],
