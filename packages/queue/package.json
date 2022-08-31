@@ -15,7 +15,7 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "tsup --minify",
+		"build": "tsup --minify --dts",
 		"build:types": "tsc --emitDeclarationOnly --declarationDir dist",
 		"clean": "shx rm -rf ./dist ./.types",
 		"depcheck": "depcheck",
@@ -23,7 +23,6 @@
 		"dev:types": "tsc --emitDeclarationOnly --declarationMap --declarationDir .types",
 		"docs": "typedoc",
 		"index": "indexer",
-		"meta": "tsup --minify --metafile",
 		"release": "semantic-release",
 		"test": "jest",
 		"watch": "pnpm run dev --watch"

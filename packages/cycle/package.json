@@ -15,14 +15,13 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "tsup --minify",
+		"build": "tsup --minify --dts",
 		"build:types": "tsc --emitDeclarationOnly --declarationDir dist",
 		"clean": "shx rm -rf ./dist ./.types",
 		"depcheck": "depcheck",
 		"dev": "tsup",
 		"dev:types": "tsc --emitDeclarationOnly --declarationMap --declarationDir .types",
 		"docs": "typedoc",
-		"meta": "tsup --metafile",
 		"release": "semantic-release",
 		"start": "node ./examples/index.js",
 		"test": "jest",
