@@ -1,5 +1,3 @@
-[@snickbit/queue](../README.md) / [Exports](../modules.md) / QueuePromise
-
 # Class: QueuePromise<T\>
 
 **`No Inherit Doc`**
@@ -25,7 +23,6 @@
 ### Properties
 
 - [[toStringTag]](QueuePromise.md#[tostringtag])
-- [queue](QueuePromise.md#queue)
 - [[species]](QueuePromise.md#[species])
 
 ### Methods
@@ -66,10 +63,6 @@
 
 Promise&lt;T\&gt;.constructor
 
-#### Defined in
-
-[packages/queue/src/queue.promise.ts:10](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/queue/src/queue.promise.ts#L10)
-
 ## Properties
 
 ### [toStringTag]
@@ -80,20 +73,6 @@ Promise&lt;T\&gt;.constructor
 
 Promise.\_\_@toStringTag@183
 
-#### Defined in
-
-node_modules/.pnpm/typescript@4.8.2/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts:174
-
-___
-
-### queue
-
-• `Private` **queue**: [`Queue`](Queue.md)
-
-#### Defined in
-
-[packages/queue/src/queue.promise.ts:8](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/queue/src/queue.promise.ts#L8)
-
 ___
 
 ### [species]
@@ -103,10 +82,6 @@ ___
 #### Inherited from
 
 Promise.\_\_@species@82
-
-#### Defined in
-
-node_modules/.pnpm/typescript@4.8.2/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts:178
 
 ## Methods
 
@@ -136,10 +111,6 @@ Attaches a callback for only the rejection of the Queue as a whole.
 
 Promise.catch
 
-#### Defined in
-
-[packages/queue/src/queue.promise.ts:29](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/queue/src/queue.promise.ts#L29)
-
 ___
 
 ### catchEach
@@ -152,15 +123,11 @@ Attaches a callback for the rejection of each Promise or Function in the queue.
 
 | Name | Type |
 | :------ | :------ |
-| `callback` | [`CatchCallback`](../modules.md#catchcallback) |
+| `callback` | [`CatchCallback`](../README.md#catchcallback) |
 
 #### Returns
 
 [`QueuePromise`](QueuePromise.md)<`T`\>
-
-#### Defined in
-
-[packages/queue/src/queue.promise.ts:54](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/queue/src/queue.promise.ts#L54)
 
 ___
 
@@ -184,10 +151,6 @@ Attaches a callback that is invoked when the Queue as a whole is settled (fulfil
 
 Promise.finally
 
-#### Defined in
-
-[packages/queue/src/queue.promise.ts:37](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/queue/src/queue.promise.ts#L37)
-
 ___
 
 ### finallyEach
@@ -200,15 +163,11 @@ Attaches a callback that is invoked when each Promise or Function in the queue i
 
 | Name | Type |
 | :------ | :------ |
-| `callback` | [`FinallyCallback`](../modules.md#finallycallback) |
+| `callback` | [`FinallyCallback`](../README.md#finallycallback) |
 
 #### Returns
 
 [`QueuePromise`](QueuePromise.md)<`T`\>
-
-#### Defined in
-
-[packages/queue/src/queue.promise.ts:63](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/queue/src/queue.promise.ts#L63)
 
 ___
 
@@ -240,10 +199,6 @@ Attaches callbacks for the resolution and/or rejection of the Queue as a whole.
 
 Promise.then
 
-#### Defined in
-
-[packages/queue/src/queue.promise.ts:21](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/queue/src/queue.promise.ts#L21)
-
 ___
 
 ### thenEach
@@ -256,15 +211,11 @@ Attaches a callback for the resolution of each Promise or Function in the queue.
 
 | Name | Type |
 | :------ | :------ |
-| `callback` | [`ThenCallback`](../modules.md#thencallback) |
+| `callback` | [`ThenCallback`](../README.md#thencallback) |
 
 #### Returns
 
 [`QueuePromise`](QueuePromise.md)<`T`\>
-
-#### Defined in
-
-[packages/queue/src/queue.promise.ts:45](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/queue/src/queue.promise.ts#L45)
 
 ___
 
@@ -297,10 +248,6 @@ A new Promise.
 
 Promise.all
 
-#### Defined in
-
-node_modules/.pnpm/typescript@4.8.2/node_modules/typescript/lib/lib.es2015.iterable.d.ts:227
-
 ▸ `Static` **all**<`T`\>(`values`): `Promise`<{ -readonly [P in string \| number \| symbol]: Awaited<T[P]\> }\>
 
 Creates a Promise that is resolved with an array of results when all of the provided Promises
@@ -327,10 +274,6 @@ A new Promise.
 #### Inherited from
 
 Promise.all
-
-#### Defined in
-
-node_modules/.pnpm/typescript@4.8.2/node_modules/typescript/lib/lib.es2015.promise.d.ts:41
 
 ___
 
@@ -363,10 +306,6 @@ A new Promise.
 
 Promise.allSettled
 
-#### Defined in
-
-node_modules/.pnpm/typescript@4.8.2/node_modules/typescript/lib/lib.es2020.promise.d.ts:40
-
 ▸ `Static` **allSettled**<`T`\>(`values`): `Promise`<`PromiseSettledResult`<`Awaited`<`T`\>\>[]\>
 
 Creates a Promise that is resolved with an array of results when all
@@ -393,10 +332,6 @@ A new Promise.
 #### Inherited from
 
 Promise.allSettled
-
-#### Defined in
-
-node_modules/.pnpm/typescript@4.8.2/node_modules/typescript/lib/lib.es2020.promise.d.ts:48
 
 ___
 
@@ -428,10 +363,6 @@ A new Promise.
 
 Promise.any
 
-#### Defined in
-
-node_modules/.pnpm/typescript@4.8.2/node_modules/typescript/lib/lib.es2021.promise.d.ts:42
-
 ▸ `Static` **any**<`T`\>(`values`): `Promise`<`Awaited`<`T`\>\>
 
 The any function returns a promise that is fulfilled by the first given promise to be fulfilled, or rejected with an AggregateError containing an array of rejection reasons if all of the given promises are rejected. It resolves all elements of the passed iterable to promises as it runs this algorithm.
@@ -457,10 +388,6 @@ A new Promise.
 #### Inherited from
 
 Promise.any
-
-#### Defined in
-
-node_modules/.pnpm/typescript@4.8.2/node_modules/typescript/lib/lib.es2021.promise.d.ts:49
 
 ___
 
@@ -493,10 +420,6 @@ A new Promise.
 
 Promise.race
 
-#### Defined in
-
-node_modules/.pnpm/typescript@4.8.2/node_modules/typescript/lib/lib.es2015.iterable.d.ts:235
-
 ▸ `Static` **race**<`T`\>(`values`): `Promise`<`Awaited`<`T`[`number`]\>\>
 
 Creates a Promise that is resolved or rejected when any of the provided Promises are resolved
@@ -523,10 +446,6 @@ A new Promise.
 #### Inherited from
 
 Promise.race
-
-#### Defined in
-
-node_modules/.pnpm/typescript@4.8.2/node_modules/typescript/lib/lib.es2015.promise.d.ts:52
 
 ___
 
@@ -558,10 +477,6 @@ A new rejected Promise.
 
 Promise.reject
 
-#### Defined in
-
-node_modules/.pnpm/typescript@4.8.2/node_modules/typescript/lib/lib.es2015.promise.d.ts:62
-
 ___
 
 ### resolve
@@ -579,10 +494,6 @@ A resolved promise.
 #### Inherited from
 
 Promise.resolve
-
-#### Defined in
-
-node_modules/.pnpm/typescript@4.8.2/node_modules/typescript/lib/lib.es2015.promise.d.ts:68
 
 ▸ `Static` **resolve**<`T`\>(`value`): `Promise`<`T`\>
 
@@ -609,7 +520,3 @@ A promise whose internal state matches the provided promise.
 #### Inherited from
 
 Promise.resolve
-
-#### Defined in
-
-node_modules/.pnpm/typescript@4.8.2/node_modules/typescript/lib/lib.es2015.promise.d.ts:75

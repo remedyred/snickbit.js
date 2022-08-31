@@ -1,5 +1,3 @@
-[@snickbit/dates](../README.md) / [Exports](../modules.md) / Dates
-
 # Interface: Dates
 
 ## Hierarchy
@@ -18,15 +16,11 @@
 
 | Name | Type |
 | :------ | :------ |
-| `input?` | [`DateInput`](../modules.md#dateinput) |
+| `input?` | [`DateInput`](../README.md#dateinput) |
 
 #### Returns
 
 [`Dates`](Dates.md)
-
-#### Defined in
-
-[packages/dates/src/index.ts:18](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/dates/src/index.ts#L18)
 
 ## Table of contents
 
@@ -113,10 +107,6 @@ Docs: https://day.js.org/docs/en/manipulate/add
 
 dayjs.Dayjs.add
 
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:240
-
 ▸ **add**(`duration`): `Dayjs`
 
 #### Parameters
@@ -132,10 +122,6 @@ node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:240
 #### Inherited from
 
 dayjs.Dayjs.add
-
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/plugin/duration.d.ts:79
 
 ___
 
@@ -158,10 +144,6 @@ Docs: https://day.js.org/docs/en/parse/dayjs-clone
 
 dayjs.Dayjs.clone
 
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:43
-
 ___
 
 ### date
@@ -181,10 +163,6 @@ Docs: https://day.js.org/docs/en/get-set/date
 #### Inherited from
 
 dayjs.Dayjs.date
-
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:97
 
 ▸ **date**(`value`): `Dayjs`
 
@@ -210,10 +188,6 @@ Docs: https://day.js.org/docs/en/get-set/date
 
 dayjs.Dayjs.date
 
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:107
-
 ___
 
 ### datestamp
@@ -223,10 +197,6 @@ ___
 #### Returns
 
 `string`
-
-#### Defined in
-
-[packages/dates/src/index.ts:22](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/dates/src/index.ts#L22)
 
 ___
 
@@ -249,10 +219,6 @@ Docs: https://day.js.org/docs/en/get-set/day
 #### Inherited from
 
 dayjs.Dayjs.day
-
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:117
 
 ▸ **day**(`value`): `Dayjs`
 
@@ -278,10 +244,6 @@ Docs: https://day.js.org/docs/en/get-set/day
 
 dayjs.Dayjs.day
 
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:127
-
 ___
 
 ### daysInMonth
@@ -301,10 +263,6 @@ Docs: https://day.js.org/docs/en/display/days-in-month
 #### Inherited from
 
 dayjs.Dayjs.daysInMonth
-
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:332
 
 ___
 
@@ -347,10 +305,6 @@ Docs: https://day.js.org/docs/en/display/difference
 
 dayjs.Dayjs.diff
 
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:303
-
 ___
 
 ### duration
@@ -361,16 +315,12 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `input` | [`DateInput`](../modules.md#dateinput) |
+| `input` | [`DateInput`](../README.md#dateinput) |
 | `unit?` | `string` |
 
 #### Returns
 
 `DatesDuration`
-
-#### Defined in
-
-[packages/dates/src/index.ts:36](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/dates/src/index.ts#L36)
 
 ___
 
@@ -400,10 +350,6 @@ Docs: https://day.js.org/docs/en/manipulate/end-of
 
 dayjs.Dayjs.endOf
 
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:270
-
 ___
 
 ### extend
@@ -426,10 +372,6 @@ ___
 #### Returns
 
 `Dayjs`
-
-#### Defined in
-
-[packages/dates/src/index.ts:48](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/dates/src/index.ts#L48)
 
 ___
 
@@ -461,10 +403,6 @@ Docs: https://day.js.org/docs/en/display/format
 
 dayjs.Dayjs.format
 
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:282
-
 ___
 
 ### from
@@ -486,10 +424,6 @@ ___
 
 dayjs.Dayjs.from
 
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/plugin/relativeTime.d.ts:20
-
 ___
 
 ### fromLimited
@@ -500,16 +434,12 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `input` | [`DateInput`](../modules.md#dateinput) |
+| `input` | [`DateInput`](../README.md#dateinput) |
 | `options` | `Partial`<`LimitedRelativeOptions`\> |
 
 #### Returns
 
 `string`
-
-#### Defined in
-
-[packages/dates/src/index.ts:40](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/dates/src/index.ts#L40)
 
 ___
 
@@ -531,10 +461,6 @@ ___
 
 dayjs.Dayjs.fromNow
 
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/plugin/relativeTime.d.ts:19
-
 ___
 
 ### fromNowLimited
@@ -550,10 +476,6 @@ ___
 #### Returns
 
 `string`
-
-#### Defined in
-
-[packages/dates/src/index.ts:44](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/dates/src/index.ts#L44)
 
 ___
 
@@ -589,10 +511,6 @@ Docs: https://day.js.org/docs/en/get-set/get
 
 dayjs.Dayjs.get
 
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:230
-
 ___
 
 ### hour
@@ -612,10 +530,6 @@ Docs: https://day.js.org/docs/en/get-set/hour
 #### Inherited from
 
 dayjs.Dayjs.hour
-
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:135
 
 ▸ **hour**(`value`): `Dayjs`
 
@@ -640,10 +554,6 @@ Docs: https://day.js.org/docs/en/get-set/hour
 #### Inherited from
 
 dayjs.Dayjs.hour
-
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:145
 
 ___
 
@@ -678,10 +588,6 @@ Docs: https://day.js.org/docs/en/query/is-after
 
 dayjs.Dayjs.isAfter
 
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:411
-
 ___
 
 ### isBefore
@@ -715,10 +621,6 @@ Docs: https://day.js.org/docs/en/query/is-before
 
 dayjs.Dayjs.isBefore
 
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:385
-
 ___
 
 ### isSame
@@ -750,10 +652,6 @@ Docs: https://day.js.org/docs/en/query/is-same
 
 dayjs.Dayjs.isSame
 
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:397
-
 ___
 
 ### isToday
@@ -768,10 +666,6 @@ ___
 
 dayjs.Dayjs.isToday
 
-#### Defined in
-
-[packages/dates/src/index.ts:20](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/dates/src/index.ts#L20)
-
 ___
 
 ### isTomorrow
@@ -785,10 +679,6 @@ ___
 #### Inherited from
 
 dayjs.Dayjs.isTomorrow
-
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/plugin/isTomorrow.d.ts:8
 
 ___
 
@@ -810,10 +700,6 @@ Docs: https://day.js.org/docs/en/parse/is-valid
 
 dayjs.Dayjs.isValid
 
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:51
-
 ___
 
 ### isYesterday
@@ -828,10 +714,6 @@ ___
 
 dayjs.Dayjs.isYesterday
 
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/plugin/isYesterday.d.ts:8
-
 ___
 
 ### locale
@@ -845,10 +727,6 @@ ___
 #### Inherited from
 
 dayjs.Dayjs.locale
-
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:413
 
 ▸ **locale**(`preset`, `object?`): `Dayjs`
 
@@ -866,10 +744,6 @@ node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:413
 #### Inherited from
 
 dayjs.Dayjs.locale
-
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:415
 
 ___
 
@@ -890,10 +764,6 @@ Docs: https://day.js.org/docs/en/get-set/millisecond
 #### Inherited from
 
 dayjs.Dayjs.millisecond
-
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:188
 
 ▸ **millisecond**(`value`): `Dayjs`
 
@@ -919,10 +789,6 @@ Docs: https://day.js.org/docs/en/get-set/millisecond
 
 dayjs.Dayjs.millisecond
 
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:198
-
 ___
 
 ### minute
@@ -942,10 +808,6 @@ Docs: https://day.js.org/docs/en/get-set/minute
 #### Inherited from
 
 dayjs.Dayjs.minute
-
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:153
 
 ▸ **minute**(`value`): `Dayjs`
 
@@ -971,10 +833,6 @@ Docs: https://day.js.org/docs/en/get-set/minute
 
 dayjs.Dayjs.minute
 
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:163
-
 ___
 
 ### month
@@ -996,10 +854,6 @@ Docs: https://day.js.org/docs/en/get-set/month
 #### Inherited from
 
 dayjs.Dayjs.month
-
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:77
 
 ▸ **month**(`value`): `Dayjs`
 
@@ -1027,10 +881,6 @@ Docs: https://day.js.org/docs/en/get-set/month
 
 dayjs.Dayjs.month
 
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:89
-
 ___
 
 ### relativeToday
@@ -1047,10 +897,6 @@ ___
 
 `string`
 
-#### Defined in
-
-[packages/dates/src/index.ts:46](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/dates/src/index.ts#L46)
-
 ___
 
 ### safeTimestamp
@@ -1060,10 +906,6 @@ ___
 #### Returns
 
 `string`
-
-#### Defined in
-
-[packages/dates/src/index.ts:26](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/dates/src/index.ts#L26)
 
 ___
 
@@ -1084,10 +926,6 @@ Docs: https://day.js.org/docs/en/get-set/second
 #### Inherited from
 
 dayjs.Dayjs.second
-
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:171
 
 ▸ **second**(`value`): `Dayjs`
 
@@ -1111,10 +949,6 @@ dayjs().second(1)// Dayjs
 #### Inherited from
 
 dayjs.Dayjs.second
-
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:180
 
 ___
 
@@ -1151,10 +985,6 @@ Docs: https://day.js.org/docs/en/get-set/set
 
 dayjs.Dayjs.set
 
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:214
-
 ___
 
 ### shortdate
@@ -1164,10 +994,6 @@ ___
 #### Returns
 
 `string`
-
-#### Defined in
-
-[packages/dates/src/index.ts:32](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/dates/src/index.ts#L32)
 
 ___
 
@@ -1179,10 +1005,6 @@ ___
 
 `string`
 
-#### Defined in
-
-[packages/dates/src/index.ts:34](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/dates/src/index.ts#L34)
-
 ___
 
 ### shorttime
@@ -1192,10 +1014,6 @@ ___
 #### Returns
 
 `string`
-
-#### Defined in
-
-[packages/dates/src/index.ts:30](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/dates/src/index.ts#L30)
 
 ___
 
@@ -1224,10 +1042,6 @@ Docs: https://day.js.org/docs/en/manipulate/start-of
 #### Inherited from
 
 dayjs.Dayjs.startOf
-
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:260
 
 ___
 
@@ -1258,10 +1072,6 @@ Docs: https://day.js.org/docs/en/manipulate/subtract
 
 dayjs.Dayjs.subtract
 
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:250
-
 ▸ **subtract**(`duration`): `Dayjs`
 
 #### Parameters
@@ -1278,10 +1088,6 @@ node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:250
 
 dayjs.Dayjs.subtract
 
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/plugin/duration.d.ts:80
-
 ___
 
 ### time
@@ -1292,10 +1098,6 @@ ___
 
 `string`
 
-#### Defined in
-
-[packages/dates/src/index.ts:28](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/dates/src/index.ts#L28)
-
 ___
 
 ### timestamp
@@ -1305,10 +1107,6 @@ ___
 #### Returns
 
 `string`
-
-#### Defined in
-
-[packages/dates/src/index.ts:24](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/dates/src/index.ts#L24)
 
 ___
 
@@ -1331,10 +1129,6 @@ ___
 
 dayjs.Dayjs.to
 
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/plugin/relativeTime.d.ts:22
-
 ___
 
 ### toDate
@@ -1353,10 +1147,6 @@ dayjs('2019-01-25').toDate()// => Date
 #### Inherited from
 
 dayjs.Dayjs.toDate
-
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:339
 
 ___
 
@@ -1378,10 +1168,6 @@ Docs: https://day.js.org/docs/en/display/as-iso-string
 
 dayjs.Dayjs.toISOString
 
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:355
-
 ___
 
 ### toJSON
@@ -1402,10 +1188,6 @@ Docs: https://day.js.org/docs/en/display/as-json
 
 dayjs.Dayjs.toJSON
 
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:347
-
 ___
 
 ### toLimited
@@ -1416,16 +1198,12 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `input` | [`DateInput`](../modules.md#dateinput) |
+| `input` | [`DateInput`](../README.md#dateinput) |
 | `options` | `Partial`<`LimitedRelativeOptions`\> |
 
 #### Returns
 
 `string`
-
-#### Defined in
-
-[packages/dates/src/index.ts:38](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/dates/src/index.ts#L38)
 
 ___
 
@@ -1447,10 +1225,6 @@ ___
 
 dayjs.Dayjs.toNow
 
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/plugin/relativeTime.d.ts:21
-
 ___
 
 ### toNowLimited
@@ -1466,10 +1240,6 @@ ___
 #### Returns
 
 `string`
-
-#### Defined in
-
-[packages/dates/src/index.ts:42](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/dates/src/index.ts#L42)
 
 ___
 
@@ -1490,10 +1260,6 @@ Docs: https://day.js.org/docs/en/display/as-string
 #### Inherited from
 
 dayjs.Dayjs.toString
-
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:363
 
 ___
 
@@ -1517,10 +1283,6 @@ Docs: https://day.js.org/docs/en/display/unix-timestamp
 
 dayjs.Dayjs.unix
 
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:324
-
 ___
 
 ### utcOffset
@@ -1540,10 +1302,6 @@ Docs: https://day.js.org/docs/en/manipulate/utc-offset
 #### Inherited from
 
 dayjs.Dayjs.utcOffset
-
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:371
 
 ___
 
@@ -1568,10 +1326,6 @@ Docs: https://day.js.org/docs/en/display/unix-timestamp-milliseconds
 
 dayjs.Dayjs.valueOf
 
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:314
-
 ___
 
 ### year
@@ -1591,10 +1345,6 @@ Docs: https://day.js.org/docs/en/get-set/year
 #### Inherited from
 
 dayjs.Dayjs.year
-
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:59
 
 ▸ **year**(`value`): `Dayjs`
 
@@ -1617,7 +1367,3 @@ Docs: https://day.js.org/docs/en/get-set/year
 #### Inherited from
 
 dayjs.Dayjs.year
-
-#### Defined in
-
-node_modules/.pnpm/dayjs@1.11.5/node_modules/dayjs/index.d.ts:67

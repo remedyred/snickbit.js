@@ -1,5 +1,3 @@
-[@snickbit/node-utilities](../README.md) / [Exports](../modules.md) / DateQuestion
-
 # Interface: DateQuestion
 
 ## Hierarchy
@@ -35,29 +33,21 @@
 
 ### format
 
-• **format**: [`PromptsMethod`](../modules.md#promptsmethod)
+• **format**: [`PromptsMethod`](../README.md#promptsmethod)
 
 #### Inherited from
 
 BaseQuestion.format
 
-#### Defined in
-
-[prompt.ts:27](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L27)
-
 ___
 
 ### initial
 
-• **initial**: `Date` \| [`PromptsMethod`](../modules.md#promptsmethod)
+• **initial**: `Date` \| [`PromptsMethod`](../README.md#promptsmethod)
 
 #### Inherited from
 
 BaseQuestion.initial
-
-#### Defined in
-
-[prompt.ts:26](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L26)
 
 ___
 
@@ -65,19 +55,11 @@ ___
 
 • **locales**: [`PromptsLocales`](PromptsLocales.md)
 
-#### Defined in
-
-[prompt.ts:81](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L81)
-
 ___
 
 ### mask
 
 • **mask**: `string`
-
-#### Defined in
-
-[prompt.ts:82](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L82)
 
 ___
 
@@ -89,23 +71,15 @@ ___
 
 QuestionMinMax.max
 
-#### Defined in
-
-[prompt.ts:41](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L41)
-
 ___
 
 ### message
 
-• **message**: `string` \| [`PromptsMethod`](../modules.md#promptsmethod)
+• **message**: `string` \| [`PromptsMethod`](../README.md#promptsmethod)
 
 #### Inherited from
 
 BaseQuestion.message
-
-#### Defined in
-
-[prompt.ts:25](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L25)
 
 ___
 
@@ -117,23 +91,15 @@ ___
 
 QuestionMinMax.min
 
-#### Defined in
-
-[prompt.ts:40](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L40)
-
 ___
 
 ### name
 
-• **name**: `string` \| [`PromptsMethod`](../modules.md#promptsmethod)
+• **name**: `string` \| [`PromptsMethod`](../README.md#promptsmethod)
 
 #### Inherited from
 
 BaseQuestion.name
-
-#### Defined in
-
-[prompt.ts:24](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L24)
 
 ___
 
@@ -145,10 +111,6 @@ ___
 
 BaseQuestion.stdin
 
-#### Defined in
-
-[prompt.ts:33](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L33)
-
 ___
 
 ### stdout
@@ -159,19 +121,11 @@ ___
 
 BaseQuestion.stdout
 
-#### Defined in
-
-[prompt.ts:34](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L34)
-
 ___
 
 ### type
 
 • **type**: ``"date"`` \| [`PromptTypeMethod`](PromptTypeMethod.md)<``"date"``\>
-
-#### Defined in
-
-[prompt.ts:80](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L80)
 
 ## Methods
 
@@ -194,10 +148,6 @@ ___
 
 BaseQuestion.onRender
 
-#### Defined in
-
-[prompt.ts:29](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L29)
-
 ___
 
 ### onState
@@ -217,7 +167,3 @@ ___
 #### Inherited from
 
 BaseQuestion.onState
-
-#### Defined in
-
-[prompt.ts:31](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/node-utilities/src/prompt.ts#L31)

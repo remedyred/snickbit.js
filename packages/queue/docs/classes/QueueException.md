@@ -1,5 +1,3 @@
-[@snickbit/queue](../README.md) / [Exports](../modules.md) / QueueException
-
 # Class: QueueException
 
 **`No Inherit Doc`**
@@ -41,16 +39,12 @@
 
 | Name | Type |
 | :------ | :------ |
-| `message?` | [`ErrorMessage`](../modules.md#errormessage) |
+| `message?` | [`ErrorMessage`](../README.md#errormessage) |
 | `data?` | `any` |
 
 #### Overrides
 
 [QueueError](QueueError.md).[constructor](QueueError.md#constructor)
-
-#### Defined in
-
-[packages/queue/src/errors.ts:77](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/queue/src/errors.ts#L77)
 
 ## Properties
 
@@ -62,10 +56,6 @@
 
 [QueueError](QueueError.md).[cause](QueueError.md#cause)
 
-#### Defined in
-
-node_modules/.pnpm/typescript@4.8.2/node_modules/typescript/lib/lib.es2022.error.d.ts:26
-
 ___
 
 ### data
@@ -75,10 +65,6 @@ ___
 #### Inherited from
 
 [QueueError](QueueError.md).[data](QueueError.md#data)
-
-#### Defined in
-
-[packages/queue/src/errors.ts:21](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/queue/src/errors.ts#L21)
 
 ___
 
@@ -90,10 +76,6 @@ ___
 
 [QueueError](QueueError.md).[errors](QueueError.md#errors)
 
-#### Defined in
-
-[packages/queue/src/errors.ts:23](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/queue/src/errors.ts#L23)
-
 ___
 
 ### message
@@ -103,10 +85,6 @@ ___
 #### Inherited from
 
 [QueueError](QueueError.md).[message](QueueError.md#message)
-
-#### Defined in
-
-node_modules/.pnpm/typescript@4.8.2/node_modules/typescript/lib/lib.es5.d.ts:1041
 
 ___
 
@@ -118,10 +96,6 @@ ___
 
 [QueueError](QueueError.md).[name](QueueError.md#name)
 
-#### Defined in
-
-node_modules/.pnpm/typescript@4.8.2/node_modules/typescript/lib/lib.es5.d.ts:1040
-
 ___
 
 ### spread
@@ -131,10 +105,6 @@ ___
 #### Inherited from
 
 [QueueError](QueueError.md).[spread](QueueError.md#spread)
-
-#### Defined in
-
-[packages/queue/src/errors.ts:25](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/queue/src/errors.ts#L25)
 
 ___
 
@@ -146,10 +116,6 @@ ___
 
 [QueueError](QueueError.md).[stack](QueueError.md#stack)
 
-#### Defined in
-
-node_modules/.pnpm/typescript@4.8.2/node_modules/typescript/lib/lib.es5.d.ts:1042
-
 ___
 
 ### type
@@ -159,10 +125,6 @@ ___
 #### Inherited from
 
 [QueueError](QueueError.md).[type](QueueError.md#type)
-
-#### Defined in
-
-[packages/queue/src/errors.ts:19](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/queue/src/errors.ts#L19)
 
 ## Methods
 
@@ -177,7 +139,3 @@ ___
 #### Inherited from
 
 [QueueError](QueueError.md).[toJSON](QueueError.md#tojson)
-
-#### Defined in
-
-[packages/queue/src/errors.ts:48](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/queue/src/errors.ts#L48)

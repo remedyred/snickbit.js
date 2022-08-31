@@ -1,5 +1,3 @@
-[@snickbit/queue](../README.md) / [Exports](../modules.md) / QueueError
-
 # Class: QueueError
 
 **`No Inherit Doc`**
@@ -45,17 +43,13 @@
 
 | Name | Type |
 | :------ | :------ |
-| `error` | [`ErrorMessage`](../modules.md#errormessage) |
+| `error` | [`ErrorMessage`](../README.md#errormessage) |
 | `name` | `string` |
 | `_data` | `any` |
 
 #### Overrides
 
 Error.constructor
-
-#### Defined in
-
-[packages/queue/src/errors.ts:27](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/queue/src/errors.ts#L27)
 
 ## Properties
 
@@ -67,29 +61,17 @@ Error.constructor
 
 Error.cause
 
-#### Defined in
-
-node_modules/.pnpm/typescript@4.8.2/node_modules/typescript/lib/lib.es2022.error.d.ts:26
-
 ___
 
 ### data
 
 • `Readonly` **data**: `any`
 
-#### Defined in
-
-[packages/queue/src/errors.ts:21](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/queue/src/errors.ts#L21)
-
 ___
 
 ### errors
 
 • `Readonly` **errors**: `any`
-
-#### Defined in
-
-[packages/queue/src/errors.ts:23](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/queue/src/errors.ts#L23)
 
 ___
 
@@ -101,10 +83,6 @@ ___
 
 Error.message
 
-#### Defined in
-
-node_modules/.pnpm/typescript@4.8.2/node_modules/typescript/lib/lib.es5.d.ts:1041
-
 ___
 
 ### name
@@ -115,19 +93,11 @@ ___
 
 Error.name
 
-#### Defined in
-
-node_modules/.pnpm/typescript@4.8.2/node_modules/typescript/lib/lib.es5.d.ts:1040
-
 ___
 
 ### spread
 
 • `Readonly` **spread**: ``false``
-
-#### Defined in
-
-[packages/queue/src/errors.ts:25](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/queue/src/errors.ts#L25)
 
 ___
 
@@ -139,19 +109,11 @@ ___
 
 Error.stack
 
-#### Defined in
-
-node_modules/.pnpm/typescript@4.8.2/node_modules/typescript/lib/lib.es5.d.ts:1042
-
 ___
 
 ### type
 
 • `Readonly` **type**: `string`
-
-#### Defined in
-
-[packages/queue/src/errors.ts:19](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/queue/src/errors.ts#L19)
 
 ## Methods
 
@@ -162,7 +124,3 @@ ___
 #### Returns
 
 [`QueueErrorJSON`](../interfaces/QueueErrorJSON.md)
-
-#### Defined in
-
-[packages/queue/src/errors.ts:48](https://github.com/snickbit/snickbit.js/blob/3fd09b6/packages/queue/src/errors.ts#L48)
