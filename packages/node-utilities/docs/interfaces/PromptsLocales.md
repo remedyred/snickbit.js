@@ -1,5 +1,3 @@
-[@snickbit/node-utilities](../README.md) / [Exports](../modules.md) / PromptsLocales
-
 # Interface: PromptsLocales
 
 ## Table of contents
@@ -17,19 +15,11 @@
 
 • **months**: `string`[]
 
-#### Defined in
-
-[prompt.ts:156](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/prompt.ts#L156)
-
 ___
 
 ### monthsShort
 
 • **monthsShort**: `string`[]
-
-#### Defined in
-
-[prompt.ts:157](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/prompt.ts#L157)
 
 ___
 
@@ -37,16 +27,8 @@ ___
 
 • **weekdays**: `string`[]
 
-#### Defined in
-
-[prompt.ts:158](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/prompt.ts#L158)
-
 ___
 
 ### weekdaysShort
 
 • **weekdaysShort**: `string`[]
-
-#### Defined in
-
-[prompt.ts:159](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/node-utilities/src/prompt.ts#L159)

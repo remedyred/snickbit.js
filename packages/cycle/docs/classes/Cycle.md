@@ -1,5 +1,3 @@
-[@snickbit/cycle](../README.md) / [Exports](../modules.md) / Cycle
-
 # Class: Cycle
 
 ## Table of contents
@@ -10,7 +8,6 @@
 
 ### Properties
 
-- [#started](Cycle.md##started)
 - [index](Cycle.md#index)
 - [items](Cycle.md#items)
 
@@ -48,10 +45,6 @@
 | :------ | :------ |
 | `items?` | `any`[] |
 
-#### Defined in
-
-[index.ts:11](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/cycle/src/index.ts#L11)
-
 • **new Cycle**(`preset?`)
 
 #### Parameters
@@ -59,10 +52,6 @@
 | Name | Type |
 | :------ | :------ |
 | `preset?` | `string` |
-
-#### Defined in
-
-[index.ts:12](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/cycle/src/index.ts#L12)
 
 • **new Cycle**(`itemsOrPreset?`)
 
@@ -72,39 +61,17 @@
 | :------ | :------ |
 | `itemsOrPreset?` | `string` \| `any`[] |
 
-#### Defined in
-
-[index.ts:13](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/cycle/src/index.ts#L13)
-
 ## Properties
-
-### #started
-
-• `Private` **#started**: `boolean`
-
-#### Defined in
-
-[index.ts:5](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/cycle/src/index.ts#L5)
-
-___
 
 ### index
 
 • **index**: `number`
-
-#### Defined in
-
-[index.ts:9](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/cycle/src/index.ts#L9)
 
 ___
 
 ### items
 
 • **items**: `any`[] = `[]`
-
-#### Defined in
-
-[index.ts:7](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/cycle/src/index.ts#L7)
 
 ## Accessors
 
@@ -116,10 +83,6 @@ ___
 
 `number`
 
-#### Defined in
-
-[index.ts:35](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/cycle/src/index.ts#L35)
-
 ___
 
 ### firstIndex
@@ -129,10 +92,6 @@ ___
 #### Returns
 
 `number`
-
-#### Defined in
-
-[index.ts:39](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/cycle/src/index.ts#L39)
 
 ___
 
@@ -144,10 +103,6 @@ ___
 
 `number`
 
-#### Defined in
-
-[index.ts:43](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/cycle/src/index.ts#L43)
-
 ___
 
 ### nextIndex
@@ -157,10 +112,6 @@ ___
 #### Returns
 
 `number`
-
-#### Defined in
-
-[index.ts:31](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/cycle/src/index.ts#L31)
 
 ___
 
@@ -172,10 +123,6 @@ ___
 
 `number`
 
-#### Defined in
-
-[index.ts:27](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/cycle/src/index.ts#L27)
-
 ## Methods
 
 ### current
@@ -185,10 +132,6 @@ ___
 #### Returns
 
 `any`
-
-#### Defined in
-
-[index.ts:71](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/cycle/src/index.ts#L71)
 
 ___
 
@@ -205,10 +148,6 @@ ___
 #### Returns
 
 `any`
-
-#### Defined in
-
-[index.ts:63](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/cycle/src/index.ts#L63)
 
 ___
 
@@ -227,10 +166,6 @@ ___
 
 `any`
 
-#### Defined in
-
-[index.ts:75](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/cycle/src/index.ts#L75)
-
 ___
 
 ### getIndex
@@ -248,10 +183,6 @@ ___
 
 `any`
 
-#### Defined in
-
-[index.ts:47](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/cycle/src/index.ts#L47)
-
 ___
 
 ### last
@@ -267,10 +198,6 @@ ___
 #### Returns
 
 `any`
-
-#### Defined in
-
-[index.ts:67](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/cycle/src/index.ts#L67)
 
 ___
 
@@ -288,10 +215,6 @@ ___
 
 `any`
 
-#### Defined in
-
-[index.ts:55](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/cycle/src/index.ts#L55)
-
 ___
 
 ### prev
@@ -307,10 +230,6 @@ ___
 #### Returns
 
 `any`
-
-#### Defined in
-
-[index.ts:59](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/cycle/src/index.ts#L59)
 
 ___
 
@@ -328,10 +247,6 @@ ___
 
 `void`
 
-#### Defined in
-
-[index.ts:83](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/cycle/src/index.ts#L83)
-
 ___
 
 ### remove
@@ -347,10 +262,6 @@ ___
 #### Returns
 
 `void`
-
-#### Defined in
-
-[index.ts:87](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/cycle/src/index.ts#L87)
 
 ___
 
@@ -369,10 +280,6 @@ ___
 
 `void`
 
-#### Defined in
-
-[index.ts:79](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/cycle/src/index.ts#L79)
-
 ___
 
 ### shuffle
@@ -382,7 +289,3 @@ ___
 #### Returns
 
 `void`
-
-#### Defined in
-
-[index.ts:91](https://github.com/snickbit/snickbit.js/blob/166d3ad/packages/cycle/src/index.ts#L91)

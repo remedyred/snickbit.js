@@ -1,92 +1,173 @@
-@snickbit/queue / [Exports](modules.md)
-
 # @snickbit/queue
 
-<!--START_SECTION:readmes-description-->
+## Table of contents
 
-Fluid queueing library for any function or promise
+### Classes
 
-<!--END_SECTION:readmes-description-->
+- [AbortQueueError](classes/AbortQueueError.md)
+- [Queue](classes/Queue.md)
+- [QueueError](classes/QueueError.md)
+- [QueueException](classes/QueueException.md)
+- [QueuePromise](classes/QueuePromise.md)
 
-## Installation
+### Interfaces
 
-```bash
-pnpm add @snickbit/queue
-```
+- [QueueConfiguration](interfaces/QueueConfiguration.md)
+- [QueueErrorJSON](interfaces/QueueErrorJSON.md)
 
-```bash
-yarn add @snickbit/queue
-```
+### Type Aliases
 
-```bash
-npm i @snickbit/queue
-```
+- [CatchCallback](README.md#catchcallback)
+- [DynamicError](README.md#dynamicerror)
+- [ErrorMessage](README.md#errormessage)
+- [FinallyCallback](README.md#finallycallback)
+- [QueueConfigurationValue](README.md#queueconfigurationvalue)
+- [QueueOption](README.md#queueoption)
+- [QueueOptions](README.md#queueoptions)
+- [QueueOptionsValue](README.md#queueoptionsvalue)
+- [QueueTask](README.md#queuetask)
+- [QueueTaskFunction](README.md#queuetaskfunction)
+- [QueueTaskPromise](README.md#queuetaskpromise)
+- [ThenCallback](README.md#thencallback)
 
-## Basic Usage
+### Functions
 
-### Initialize
+- [queue](README.md#queue)
 
-```js
-import {queue} from '@snickbit/queue'
-// or const {queue} = require('@snickbit/queue')
+## Type Aliases
 
-const $queue = queue({concurrency: 25, limit: 5, interval: 1000, strict: true})
-```
+### CatchCallback
 
-or as a class with
+Ƭ **CatchCallback**: (`error`: [`QueueException`](classes/QueueException.md)) => `Promise`<`any`\> \| `any`
 
-```js
-import {Queue} from '@snickbit/queue'
+#### Type declaration
 
-const $queue = new Queue({concurrency: 5})
-```
+▸ (`error`): `Promise`<`any`\> \| `any`
 
-Add some Promises or functions to the queue
+##### Parameters
 
-```js
-const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms))
+| Name | Type |
+| :------ | :------ |
+| `error` | [`QueueException`](classes/QueueException.md) |
 
-for (let i = 0; i < 100; i++) {
-	$queue.push(async () => {
-		await sleep(Math.random() * 100)
-		console.log(`${i}`)
-	})
-}
+##### Returns
 
-$queue.run()
-	.then(() => console.log('done'))
-	.catch((err) => console.error('Oops', err))
+`Promise`<`any`\> \| `any`
 
-// or await $queue.run()
-```
+___
 
-### `thenEach (callback)`
+### DynamicError
 
-Attaches a callback for the resolution of each Promise or Function in the queue.
+Ƭ **DynamicError**: `Error` & `Record`<`string`, `any`\>
 
-### `catchEach (callback)`
+___
 
-Attaches a callback for the rejection of each Promise or Function in the queue.
+### ErrorMessage
 
-### `finallyEach (callback)`
+Ƭ **ErrorMessage**: `any`[] \| [`DynamicError`](README.md#dynamicerror) \| `Record`<`string`, `any`\> \| `string`
 
-Attaches a callback that is invoked when each Promise or Function in the queue is settled (fulfilled or rejected).
+___
 
-### Check the API Docs for more details
+### FinallyCallback
 
-## Documentation
+Ƭ **FinallyCallback**: () => `Promise`<`any`\> \| `any`
 
-### [API Docs](../../README.md)
+#### Type declaration
 
-### [CHANGELOG](CHANGELOG.md)
+▸ (): `Promise`<`any`\> \| `any`
 
-## Acknowledgements
+##### Returns
 
-- [kleinron/lite-fifo](https://github.com/kleinron/lite-fifo)
-- [sindresorhus/p-throttle](https://github.com/sindresorhus/p-throttle)
+`Promise`<`any`\> \| `any`
 
-## License
+___
 
-Copyright (c) 2022 - **Nicholas Lowe** aka **Snickbit**
+### QueueConfigurationValue
 
-[MIT License](../../LICENSE)
+Ƭ **QueueConfigurationValue**: [`QueueConfiguration`](interfaces/QueueConfiguration.md)[keyof [`QueueConfiguration`](interfaces/QueueConfiguration.md)]
+
+___
+
+### QueueOption
+
+Ƭ **QueueOption**: keyof [`QueueConfiguration`](interfaces/QueueConfiguration.md)
+
+___
+
+### QueueOptions
+
+Ƭ **QueueOptions**: `Partial`<[`QueueConfiguration`](interfaces/QueueConfiguration.md)\>
+
+___
+
+### QueueOptionsValue
+
+Ƭ **QueueOptionsValue**: [`QueueOptions`](README.md#queueoptions)[keyof [`QueueOptions`](README.md#queueoptions)]
+
+___
+
+### QueueTask
+
+Ƭ **QueueTask**: [`QueueTaskFunction`](README.md#queuetaskfunction) \| [`QueueTaskPromise`](README.md#queuetaskpromise)
+
+___
+
+### QueueTaskFunction
+
+Ƭ **QueueTaskFunction**: (...`args`: `any`[]) => [`QueueTaskPromise`](README.md#queuetaskpromise) \| `any`
+
+#### Type declaration
+
+▸ (...`args`): [`QueueTaskPromise`](README.md#queuetaskpromise) \| `any`
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...args` | `any`[] |
+
+##### Returns
+
+[`QueueTaskPromise`](README.md#queuetaskpromise) \| `any`
+
+___
+
+### QueueTaskPromise
+
+Ƭ **QueueTaskPromise**: `Promise`<`any`\>
+
+___
+
+### ThenCallback
+
+Ƭ **ThenCallback**: (`result`: `any`) => `Promise`<`any`\> \| `any`
+
+#### Type declaration
+
+▸ (`result`): `Promise`<`any`\> \| `any`
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `result` | `any` |
+
+##### Returns
+
+`Promise`<`any`\> \| `any`
+
+## Functions
+
+### queue
+
+▸ **queue**(`options?`): [`Queue`](classes/Queue.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `options?` | `Partial`<[`QueueConfiguration`](interfaces/QueueConfiguration.md)\> |
+
+#### Returns
+
+[`Queue`](classes/Queue.md)

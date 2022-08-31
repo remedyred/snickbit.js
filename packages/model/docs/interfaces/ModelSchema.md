@@ -1,5 +1,3 @@
-[@snickbit/model](../README.md) / [Exports](../modules.md) / ModelSchema
-
 # Interface: ModelSchema
 
 Model Schema
@@ -8,4 +6,4 @@ Model Schema
 
 ## Indexable
 
-▪ [key: `string`]: [`ModelSchemaRecord`](ModelSchemaRecord.md) \| [`ModelValidationMethod`](../modules.md#modelvalidationmethod)
+▪ [key: `string`]: [`ModelSchemaRecord`](ModelSchemaRecord.md) \| [`ModelValidationMethod`](../README.md#modelvalidationmethod)

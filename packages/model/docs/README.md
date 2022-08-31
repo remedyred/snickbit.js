@@ -1,67 +1,108 @@
-@snickbit/model / [Exports](modules.md)
-
 # @snickbit/model
 
-<!--START_SECTION:readmes-description-->
+## Table of contents
 
-Simple object modeling library based on [object-path](https://github.com/mariocasciaro/object-path)
+### Classes
 
-<!--END_SECTION:readmes-description-->
+- [Model](classes/Model.md)
 
-## Installation
+### Interfaces
 
-```bash
-yarn add @snickbit/model
-```
+- [ModelOptions](interfaces/ModelOptions.md)
+- [ModelSchema](interfaces/ModelSchema.md)
+- [ModelSchemaRecord](interfaces/ModelSchemaRecord.md)
 
-```bash
-npm add @snickbit/model
-```
+### Type Aliases
 
-## Basic Usage
+- [ModelErrors](README.md#modelerrors)
+- [ModelId](README.md#modelid)
+- [ModelKey](README.md#modelkey)
+- [ModelPath](README.md#modelpath)
+- [ModelValidationMethod](README.md#modelvalidationmethod)
+- [ModelValue](README.md#modelvalue)
 
-```js
-import {Model} from '@snickbit/model';
-// const { Model } = require('@snickbit/model');
+### Functions
 
-// Use lowercase import for use as a function instead.
-// import { model } from '@snickbit/model';
+- [model](README.md#model)
 
-const data = {
-	name: 'John Doe',
-	age: 30,
-	address: {
-		street: '123 Main St',
-		city: 'Anytown',
-		state: 'CA',
-		zip: '12345',
-	},
-}
+## Type Aliases
 
-const person = new Model(data);
-// or as a function
-// const person = model(data)
+### ModelErrors
 
-console.log(person.get('name')); // John Doe
-console.log(person.get('address.street')); // 123 Main St
-console.log(person.get('address.city')); // Anytown
-console.log(person.get()); // { name: 'John Doe', age: 30, address: { street: '123 Main St', city: 'Anytown', state: 'CA', zip: '12345' } }
+Ƭ **ModelErrors**: `Record`<`string`, `string`\>
 
-person.set('name', 'Jane Doe');
-console.log(person.get('name')); // Jane Doe
+___
 
-console.log(person.pull('age')); // 30
-console.log(person.has('age')); // false
-```
+### ModelId
 
-## Documentation
+Ƭ **ModelId**: `number` \| `string` \| `undefined`
 
-### [API Docs](./docs/README.md)
+___
 
-### [CHANGELOG](CHANGELOG.md)
+### ModelKey
 
-## License
+Ƭ **ModelKey**: [`ModelPath`](README.md#modelpath)[] \| [`ModelPath`](README.md#modelpath)
 
-Copyright (c) 2022 - **Nicholas Lowe** aka **Snickbit**
+___
 
-[MIT License](../../LICENSE)
+### ModelPath
+
+Ƭ **ModelPath**: `number` \| `string` \| `symbol`
+
+___
+
+### ModelValidationMethod
+
+Ƭ **ModelValidationMethod**: (`key`: `string`, `value`: [`ModelValue`](README.md#modelvalue)) => `boolean`
+
+#### Type declaration
+
+▸ (`key`, `value`): `boolean`
+
+Model Validation Method
+
+##### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `key` | `string` | The key of the property being validated |
+| `value` | [`ModelValue`](README.md#modelvalue) | The value of the property being validated |
+
+##### Returns
+
+`boolean`
+
+___
+
+### ModelValue
+
+Ƭ **ModelValue**: `any`
+
+## Functions
+
+### model
+
+▸ **model**<`T`\>(`data`, `options?`): [`Model`](classes/Model.md)<`T`, `Partial`<`T`\>\>
+
+Create a simple object model
+
+**`Description`**
+
+@snickbit/model
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `object` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `data` | `T` |
+| `options?` | `Partial`<[`ModelOptions`](interfaces/ModelOptions.md)\> |
+
+#### Returns
+
+[`Model`](classes/Model.md)<`T`, `Partial`<`T`\>\>
