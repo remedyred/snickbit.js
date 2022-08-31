@@ -8,7 +8,7 @@ importers:
       '@semantic-release/exec': 6.0.3
       '@snickbit/eslint-config': 1.3.2
       '@snickbit/readmes': 0.0.2
-      '@snickbit/semantic-release': ^1.5.0
+      '@snickbit/semantic-release': ^1.5.3
       '@types/jest': 28.1.7
       depcheck: 1.4.3
       eslint: 8.22.0
@@ -28,7 +28,7 @@ importers:
       '@semantic-release/exec': 6.0.3_semantic-release@19.0.5
       '@snickbit/eslint-config': 1.3.2_hxlgsl3dff2pq5fi6lzaqrpwam
       '@snickbit/readmes': 0.0.2
-      '@snickbit/semantic-release': 1.5.2_semantic-release@19.0.5
+      '@snickbit/semantic-release': 1.5.3_semantic-release@19.0.5
       '@types/jest': 28.1.7
       depcheck: 1.4.3
       eslint: 8.22.0
@@ -73,7 +73,7 @@ importers:
 
   packages/cycle:
     specifiers:
-      '@snickbit/utilities': ^3.4.0
+      '@snickbit/utilities': ^3.4.2
       '@types/jest': 28.1.8
       jest: 28.1.3
       shx: 0.3.4
@@ -96,7 +96,7 @@ importers:
 
   packages/dates:
     specifiers:
-      '@snickbit/utilities': ^3.4.0
+      '@snickbit/utilities': ^3.4.2
       '@types/jest': 28.1.8
       dayjs: ^1.11.3
       jest: 28.1.3
@@ -122,7 +122,7 @@ importers:
   packages/model:
     specifiers:
       '@snickbit/out': ^2.0.37
-      '@snickbit/utilities': ^3.4.0
+      '@snickbit/utilities': ^3.4.2
       '@types/jest': 28.1.8
       '@types/object-path': 0.11.1
       jest: 28.1.3
@@ -151,7 +151,7 @@ importers:
   packages/node-utilities:
     specifiers:
       '@snickbit/out': ^2.0.37
-      '@snickbit/utilities': ^3.4.0
+      '@snickbit/utilities': ^3.4.2
       '@types/jest': 28.1.8
       '@types/node': 18.6.4
       ansi-styles-template: ^1.0.0
@@ -206,7 +206,7 @@ importers:
   packages/queue:
     specifiers:
       '@snickbit/indexer': 2.5.7
-      '@snickbit/utilities': ^3.4.0
+      '@snickbit/utilities': ^3.4.2
       '@types/jest': 28.1.8
       jest: 28.1.3
       lite-fifo: ^0.3.0
@@ -249,7 +249,7 @@ importers:
   packages/utilities:
     specifiers:
       '@snickbit/indexer': 2.5.7
-      '@snickbit/plural': ^1.0.0
+      '@snickbit/plural': ^1.0.1
       '@types/jest': 28.1.8
       jest: 28.1.3
       just-camel-case: ^6.0.1
@@ -1619,8 +1619,8 @@ packages:
       lilconfig: 2.0.6
     dev: true
 
-  /@snickbit/semantic-release/1.5.2_semantic-release@19.0.5:
-    resolution: {integrity: sha512-o1AKQFJCXhjE7bDfrl8lSyfXi2oS6aEB48Tup5YNdqKMi6ZYH6ytPogzlg7RXmbtxngHpWYgJBEfFxOz/9C9XQ==}
+  /@snickbit/semantic-release/1.5.3_semantic-release@19.0.5:
+    resolution: {integrity: sha512-hOOuP2TOUMLQmbVZiJrR/vPCDR8MZgQhFhM5Sl0K/jfRaz2AYgQg+LUvTevonXepYUFfVqXxAwuXX+XGP5WbGQ==}
     engines: {node: '>= 12'}
     dependencies:
       '@semantic-release/changelog': 6.0.1_semantic-release@19.0.5
