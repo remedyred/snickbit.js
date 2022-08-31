@@ -21,6 +21,7 @@
 		"depcheck": "depcheck",
 		"dev": "tsup",
 		"dev:types": "tsc --emitDeclarationOnly --declarationMap --declarationDir .types",
+		"docs": "typedoc --tsconfig ./tsconfig.typedoc.json",
 		"release": "semantic-release",
 		"test": "jest",
 		"watch": "pnpm run dev --watch"
