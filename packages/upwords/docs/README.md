@@ -1,24 +1,40 @@
+@snickbit/upwords / [Exports](modules.md)
+
 # @snickbit/upwords
 
-## Table of contents
+<!--START_SECTION:readmes-description-->
 
-### Functions
+Helper function to convert a string to title case, attempting to preserve acronyms and special case words like "of" and "iPhone".
 
-- [default](README.md#default)
+<!--END_SECTION:readmes-description-->
 
-## Functions
+## Installation
 
-### default
+```bash
+yarn add @snickbit/upwords
+```
 
-▸ **default**(`text`, `fast?`): `any`
+```bash
+npm add @snickbit/upwords
+```
 
-#### Parameters
+## Basic Usage
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `text` | `any` | `undefined` |
-| `fast` | `boolean` | `false` |
+```js
+import upwords from '@snickbit/upwords'
 
-#### Returns
+upwords('hello') // 'Hello'
+upwords('hello world') // 'Hello World'
+upwords('iphone') // 'iPhone'
+upwords('usd') // 'USD'
+upwords('d&d') // 'D&D'
+upwords('created_at') // 'Created at'
+upwords('created__at') // 'Created at'
+upwords('i-like-to--play--d&d-in-3d') // 'I Like to Play D&D in 3D'
+```
 
-`any`
+## License
+
+Copyright (c) 2022 - **Nicholas Lowe** aka **Snickbit**
+
+[MIT License](../../LICENSE)
