@@ -15,7 +15,7 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "tsup --minify",
+		"build": "tsup --minify --dts",
 		"build:types": "tsc --emitDeclarationOnly --declarationDir dist",
 		"clean": "shx rm -rf ./dist ./.types",
 		"depcheck": "depcheck",

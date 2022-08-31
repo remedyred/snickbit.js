@@ -15,8 +15,9 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "tsup --minify",
-		"build:types": "tsc --emitDeclarationOnly --declarationDir dist",
+		"build": "pnpm run build:lib && pnpm run build:types",
+		"build:lib": "tsup --minify",
+		"build:types": "tsc --project ./tsconfig.types.json --declarationDir dist",
 		"clean": "shx rm -rf ./dist ./.types",
 		"depcheck": "depcheck",
 		"dev": "tsup",
