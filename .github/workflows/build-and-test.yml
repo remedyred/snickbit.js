@@ -1,4 +1,4 @@
-name: CI
+name: Build Checks
 
 on:
   pull_request:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    name: Build, lint, and Test
+    name: Build Checks
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
@@ -30,3 +30,8 @@ jobs:
 
       - name: Build, test, and lint
         run: pnpm turbo run build //#lint //#test
+
+      - name: Check docs
+        run: |
+            pnpm turbo run docs
+            git diff --quiet || echo 'Working tree is dirty. Did you forget to update the docs?' && exit 1
