@@ -50,7 +50,6 @@ export class Controller<T extends object = any, D = Partial<T>> {
 				if (this.$has(prop)) {
 					return this.$get(prop as keyof T)
 				}
-				return undefined
 			},
 			set: (target: Controller<T>, prop: string, value: any) => {
 				this.$set(prop as keyof T, value)
@@ -63,7 +62,7 @@ export class Controller<T extends object = any, D = Partial<T>> {
 
 	private callWatchers(key: keyof T, value: any) {
 		if (this.watchers[key]) {
-			for (let id in this.watchers[key]) {
+			for (const id in this.watchers[key]) {
 				this.watchers[key][id](value)
 			}
 		}
@@ -91,7 +90,7 @@ export class Controller<T extends object = any, D = Partial<T>> {
 	}
 
 	$patch(data: D) {
-		for (let key in data) {
+		for (const key in data) {
 			this.$set(key, data[key])
 		}
 	}
