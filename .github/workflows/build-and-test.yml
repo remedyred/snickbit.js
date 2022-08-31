@@ -34,7 +34,8 @@ jobs:
       - name: Reset git state
         run: git reset --hard
 
-      - name: Check docs
-        run: |
-          pnpm turbo run docs
-          git diff --quiet || echo 'Working tree is dirty. Did you forget to update the docs?' && exit 1
+      - name: Build docs
+        run: pnpm turbo run docs
+
+      - name: Check working tree
+        run: git diff --quiet || { echo 'Working tree is dirty. Did you forget to update the docs?'; exit 1; }
