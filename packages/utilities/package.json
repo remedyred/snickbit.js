@@ -21,7 +21,6 @@
 		"dev": "indexer && tsup",
 		"docs": "typedoc",
 		"index": "indexer",
-		"meta": "tsup --minify --metafile",
 		"release": "semantic-release",
 		"test": "jest",
 		"watch": "pnpm run dev --watch"
