@@ -29,7 +29,7 @@
 	},
 	"dependencies": {
 		"@snickbit/node-cli": "3.0.24",
-		"@snickbit/node-utilities": "4.4.9",
+		"@snickbit/node-utilities": "4.4.10",
 		"@snickbit/out": "2.0.45",
 		"ansi-styles-template": "1.0.0",
 		"figlet": "1.5.2",
