@@ -12,7 +12,7 @@
 			"outputMode": "new-only"
 		},
 		"build:types": {
-			"dependsOn": ["^build"],
+			"dependsOn": ["build"],
 			"outputs": ["dist/**/*.d.ts"],
 			"outputMode": "new-only"
 		},
@@ -27,7 +27,7 @@
 			"outputMode": "new-only"
 		},
 		"dev:types": {
-			"dependsOn": ["^dev"],
+			"dependsOn": ["dev"],
 			"outputs": [".types"],
 			"outputMode": "new-only"
 		},
@@ -37,7 +37,7 @@
 			"inputs": ["src/**/*.tsx", "src/**/*.ts", "typedoc.json"]
 		},
 		"//#test": {
-			"dependsOn": ["@snickbit/utilities#build", "^build"],
+			"dependsOn": ["build"],
 			"outputs": []
 		},
 		"//#lint": {
@@ -59,7 +59,7 @@
 			"outputs": []
 		},
 		"release": {
-			"dependsOn": ["^build", "//#lint", "//#test"],
+			"dependsOn": ["build", "//#lint", "//#test"],
 			"outputs": ["CHANGELOG.md", "package.json", "docs/**", "README.md"]
 		},
 		"//#release:ci": {
