@@ -18,6 +18,7 @@
 * [CLIs](#clis)
   - [npx snickbit](#npx-snickbit)
 * [Libraries](#libraries)
+  - [@snickbit/controller](#snickbit-controller)
   - [@snickbit/cycle](#snickbit-cycle)
   - [@snickbit/dates](#snickbit-dates)
   - [@snickbit/model](#snickbit-model)
@@ -46,6 +47,17 @@
 My personal npx business card
 
 ## Libraries
+
+<div id="@snickbit/controller">
+    <h3>
+        <a href="https://github.com/snickbit/snickbit.js/tree/main/packages/controller">
+            @snickbit/controller
+        </a>
+    </h3>
+</div>
+
+Minimal state management using an extendable controller class
+
 
 <div id="@snickbit/cycle">
     <h3>

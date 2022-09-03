@@ -5,7 +5,7 @@
 | Name | Type |
 | :------ | :------ |
 | `T` | extends `object` = `any` |
-| `D` | `Partial`<`T`\> |
+| `D` | extends `Partial`<`T`\> = `Partial`<`T`\> |
 
 ## Table of contents
 
@@ -46,7 +46,7 @@
 | Name | Type |
 | :------ | :------ |
 | `T` | extends `object` = `any` |
-| `D` | `Partial`<`T`\> |
+| `D` | extends `Partial`<`T`\> = `Partial`<`T`\> |
 
 #### Parameters
 
