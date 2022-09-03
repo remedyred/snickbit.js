@@ -5,12 +5,12 @@ export type WatchCallback = (value: any) => any
 export type WatchStop = () => void
 export type Watchers = Record<string, WatchCallback>
 
-export class Controller<T extends object = any, D = Partial<T>> {
+export class Controller<T extends object = any, D extends Partial<T> = Partial<T>> {
 	protected state: T
 
 	protected originalState: T
 
-	protected proxy: Controller<T>
+	protected proxy: Controller<T, D>
 
 	protected emitter = mitt()
 
