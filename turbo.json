@@ -36,6 +36,10 @@
 			"outputs": ["docs/**", "README.md"],
 			"inputs": ["src/**/*.tsx", "src/**/*.ts", "typedoc.json"]
 		},
+		"//#build": {
+			"dependsOn": ["^build"],
+			"outputs": []
+		},
 		"//#test": {
 			"dependsOn": ["build"],
 			"outputs": []
