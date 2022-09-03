@@ -21,12 +21,12 @@ npm i @snickbit/controller
 
 ## Documentation
 
-### [API Docs](https://github.com/snickbit/controller/blob/main/docs/README.md)
+### [API Docs](../../README.md)
 
-### [CHANGELOG](https://github.com/snickbit/controller/blob/main/CHANGELOG.md)
+### [CHANGELOG](CHANGELOG.md)
 
 ## License
 
 Copyright (c) 2022 - **Nicholas Lowe** aka **Snickbit**
 
-[MIT License](https://github.com/snickbit/controller/blob/main/LICENSE)
+[MIT License](../../LICENSE)
