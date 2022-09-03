@@ -31,8 +31,10 @@
 	},
 	"devDependencies": {
 		"@snickbit/eslint-config": "1.3.2",
+		"@snickbit/semantic-release": "^1.5.3",
 		"concurrently": "7.3.0",
 		"eslint": "8.23.0",
+		"semantic-release": "^19.0.5",
 		"shx": "0.3.4",
 		"tsup": "6.2.3",
 		"typedoc": "0.23.11",
