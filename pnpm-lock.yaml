@@ -39,7 +39,7 @@ importers:
       semantic-release: 19.0.5
       semantic-release-monorepo: 7.0.5_semantic-release@19.0.5
       shx: 0.3.4
-      ts-jest: 28.0.8_plssv4h6jk35d2qb6exs4xw2wm
+      ts-jest: 28.0.8_pbchm4a4dosw4zu4viyh3ll6ca
       tsup: 6.2.3_typescript@4.8.2
       turbo: 1.4.3
       typescript: 4.8.2
@@ -59,7 +59,7 @@ importers:
       typescript: 4.8.2
     dependencies:
       '@snickbit/node-cli': 3.0.4
-      '@snickbit/node-utilities': link:../../packages/node-utilities
+      '@snickbit/node-utilities': 4.4.9
       '@snickbit/out': 2.0.37
       ansi-styles-template: 1.0.0
       figlet: 1.5.2
@@ -69,6 +69,25 @@ importers:
     devDependencies:
       esbuild: 0.15.5
       shx: 0.3.4
+      typescript: 4.8.2
+
+  packages/controller:
+    specifiers:
+      '@snickbit/utilities': ~3.4.3
+      mitt: ~3.0.0
+      shx: 0.3.4
+      tsup: 6.2.3
+      typedoc: 0.23.12
+      typedoc-plugin-markdown: 3.13.5
+      typescript: 4.8.2
+    dependencies:
+      '@snickbit/utilities': link:../utilities
+      mitt: 3.0.0
+    devDependencies:
+      shx: 0.3.4
+      tsup: 6.2.3_typescript@4.8.2
+      typedoc: 0.23.12_typescript@4.8.2
+      typedoc-plugin-markdown: 3.13.5_typedoc@0.23.12
       typescript: 4.8.2
 
   packages/cycle:
@@ -5615,6 +5634,10 @@ packages:
       yallist: 4.0.0
     dev: true
 
+  /mitt/3.0.0:
+    resolution: {integrity: sha512-7dX2/10ITVyqh4aOSVI9gdape+t9l2/8QxHrFmUXu4EEUpdlxl6RudZUPZoc+zuY2hk1j7XxVroIVIan/pD/SQ==}
+    dev: false
+
   /mkdirp/1.0.4:
     resolution: {integrity: sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==}
     engines: {node: '>=10'}
@@ -7475,7 +7498,7 @@ packages:
       yargs-parser: 21.1.1
     dev: true
 
-  /ts-jest/28.0.8_plssv4h6jk35d2qb6exs4xw2wm:
+  /ts-jest/28.0.8_pbchm4a4dosw4zu4viyh3ll6ca:
     resolution: {integrity: sha512-5FaG0lXmRPzApix8oFG8RKjAz4ehtm8yMKOTy5HX3fY6W8kmvOrmcY0hKDElW52FJov+clhUbrKAqofnj4mXTg==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     hasBin: true
@@ -7498,7 +7521,6 @@ packages:
     dependencies:
       '@babel/core': 7.18.13
       bs-logger: 0.2.6
-      esbuild: 0.15.5
       fast-json-stable-stringify: 2.1.0
       jest: 28.1.3
       jest-util: 28.1.3

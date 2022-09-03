@@ -1,0 +1,42 @@
+{
+	"name": "@snickbit/controller",
+	"version": "0.0.11",
+	"description": "Minimal state management using an extendable controller class",
+	"license": "MIT",
+	"exports": {
+		"require": "./dist/index.js",
+		"import": "./dist/index.mjs",
+		"types": "./dist/index.d.ts"
+	},
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "tsup --minify --dts",
+		"build:types": "tsc --emitDeclarationOnly --declarationDir dist",
+		"clean": "shx rm -rf ./dist ./.types",
+		"depcheck": "depcheck",
+		"dev": "tsup",
+		"dev:types": "tsc --emitDeclarationOnly --declarationMap --declarationDir .types",
+		"docs": "typedoc --tsconfig ./tsconfig.typedoc.json",
+		"release": "semantic-release",
+		"watch": "pnpm run dev --watch"
+	},
+	"dependencies": {
+		"@snickbit/utilities": "~3.4.3",
+		"mitt": "~3.0.0"
+	},
+	"devDependencies": {
+		"shx": "0.3.4",
+		"tsup": "6.2.3",
+		"typedoc": "0.23.12",
+		"typedoc-plugin-markdown": "3.13.5",
+		"typescript": "4.8.2"
+	},
+	"engines": {
+		"node": ">= 12"
+	}
+}
