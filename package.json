@@ -38,7 +38,7 @@
 		"@snickbit/semantic-release": "^1.5.0",
 		"@types/jest": "28.1.8",
 		"depcheck": "1.4.3",
-		"eslint": "8.22.0",
+		"eslint": "8.23.0",
 		"execa": "6.1.0",
 		"husky": "8.0.1",
 		"jest": "28.1.3",
