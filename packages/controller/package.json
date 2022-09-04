@@ -16,12 +16,10 @@
 	],
 	"scripts": {
 		"build": "tsup --minify --dts",
-		"build:types": "tsc --emitDeclarationOnly --declarationDir dist",
 		"clean": "shx rm -rf ./dist ./.types",
 		"depcheck": "depcheck",
 		"dev": "tsup",
-		"dev:types": "tsc --emitDeclarationOnly --declarationMap --declarationDir .types",
-		"docs": "typedoc --tsconfig ./tsconfig.typedoc.json",
+		"docs": "typedoc src/index.ts --tsconfig ./tsconfig.typedoc.json",
 		"release": "semantic-release",
 		"watch": "pnpm run dev --watch"
 	},
