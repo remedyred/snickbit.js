@@ -24,7 +24,6 @@
 		"docs": "typedoc --tsconfig ./tsconfig.typedoc.json",
 		"release": "semantic-release",
 		"start": "node ./examples/index.js",
-		"test": "jest",
 		"watch": "pnpm run dev --watch"
 	},
 	"release": {
