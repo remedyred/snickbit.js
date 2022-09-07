@@ -78,7 +78,7 @@ importers:
       shx: 0.3.4
       tsup: 6.2.3
       typedoc: 0.23.12
-      typedoc-plugin-markdown: 3.13.5
+      typedoc-plugin-markdown: 3.13.6
       typescript: 4.8.2
     dependencies:
       '@snickbit/utilities': link:../utilities
@@ -87,7 +87,7 @@ importers:
       shx: 0.3.4
       tsup: 6.2.3_typescript@4.8.2
       typedoc: 0.23.12_typescript@4.8.2
-      typedoc-plugin-markdown: 3.13.5_typedoc@0.23.12
+      typedoc-plugin-markdown: 3.13.6_typedoc@0.23.12
       typescript: 4.8.2
 
   packages/cycle:
@@ -99,7 +99,7 @@ importers:
       ts-jest: 28.0.8
       tsup: 6.2.3
       typedoc: 0.23.12
-      typedoc-plugin-markdown: 3.13.5
+      typedoc-plugin-markdown: 3.13.6
       typescript: 4.8.2
     dependencies:
       '@snickbit/utilities': link:../utilities
@@ -110,7 +110,7 @@ importers:
       ts-jest: 28.0.8_556mfp7b5dutuj2jcrj5i7zc5q
       tsup: 6.2.3_typescript@4.8.2
       typedoc: 0.23.12_typescript@4.8.2
-      typedoc-plugin-markdown: 3.13.5_typedoc@0.23.12
+      typedoc-plugin-markdown: 3.13.6_typedoc@0.23.12
       typescript: 4.8.2
 
   packages/dates:
@@ -123,7 +123,7 @@ importers:
       ts-jest: 28.0.8
       tsup: 6.2.3
       typedoc: 0.23.12
-      typedoc-plugin-markdown: 3.13.5
+      typedoc-plugin-markdown: 3.13.6
       typescript: 4.8.2
     dependencies:
       '@snickbit/utilities': link:../utilities
@@ -135,7 +135,7 @@ importers:
       ts-jest: 28.0.8_556mfp7b5dutuj2jcrj5i7zc5q
       tsup: 6.2.3_typescript@4.8.2
       typedoc: 0.23.12_typescript@4.8.2
-      typedoc-plugin-markdown: 3.13.5_typedoc@0.23.12
+      typedoc-plugin-markdown: 3.13.6_typedoc@0.23.12
       typescript: 4.8.2
 
   packages/model:
@@ -150,7 +150,7 @@ importers:
       ts-jest: 28.0.8
       tsup: 6.2.3
       typedoc: 0.23.12
-      typedoc-plugin-markdown: 3.13.5
+      typedoc-plugin-markdown: 3.13.6
       typescript: 4.8.2
     dependencies:
       '@snickbit/out': 2.0.39
@@ -164,7 +164,7 @@ importers:
       ts-jest: 28.0.8_556mfp7b5dutuj2jcrj5i7zc5q
       tsup: 6.2.3_typescript@4.8.2
       typedoc: 0.23.12_typescript@4.8.2
-      typedoc-plugin-markdown: 3.13.5_typedoc@0.23.12
+      typedoc-plugin-markdown: 3.13.6_typedoc@0.23.12
       typescript: 4.8.2
 
   packages/node-utilities:
@@ -184,7 +184,7 @@ importers:
       ts-jest: 28.0.8
       tsup: 6.2.3
       typedoc: 0.23.12
-      typedoc-plugin-markdown: 3.13.5
+      typedoc-plugin-markdown: 3.13.6
       typescript: 4.8.2
     dependencies:
       '@snickbit/out': 2.0.39
@@ -203,7 +203,7 @@ importers:
       ts-jest: 28.0.8_556mfp7b5dutuj2jcrj5i7zc5q
       tsup: 6.2.3_typescript@4.8.2
       typedoc: 0.23.12_typescript@4.8.2
-      typedoc-plugin-markdown: 3.13.5_typedoc@0.23.12
+      typedoc-plugin-markdown: 3.13.6_typedoc@0.23.12
       typescript: 4.8.2
 
   packages/plural:
@@ -214,7 +214,7 @@ importers:
       ts-jest: 28.0.8
       tsup: 6.2.3
       typedoc: 0.23.12
-      typedoc-plugin-markdown: 3.13.5
+      typedoc-plugin-markdown: 3.13.6
       typescript: 4.8.2
     devDependencies:
       '@types/jest': 28.1.8
@@ -223,7 +223,7 @@ importers:
       ts-jest: 28.0.8_556mfp7b5dutuj2jcrj5i7zc5q
       tsup: 6.2.3_typescript@4.8.2
       typedoc: 0.23.12_typescript@4.8.2
-      typedoc-plugin-markdown: 3.13.5_typedoc@0.23.12
+      typedoc-plugin-markdown: 3.13.6_typedoc@0.23.12
       typescript: 4.8.2
 
   packages/queue:
@@ -237,7 +237,7 @@ importers:
       ts-jest: 28.0.8
       tsup: 6.2.3
       typedoc: 0.23.12
-      typedoc-plugin-markdown: 3.13.5
+      typedoc-plugin-markdown: 3.13.6
       typescript: 4.8.2
     dependencies:
       '@snickbit/utilities': link:../utilities
@@ -250,7 +250,7 @@ importers:
       ts-jest: 28.0.8_556mfp7b5dutuj2jcrj5i7zc5q
       tsup: 6.2.3_typescript@4.8.2
       typedoc: 0.23.12_typescript@4.8.2
-      typedoc-plugin-markdown: 3.13.5_typedoc@0.23.12
+      typedoc-plugin-markdown: 3.13.6_typedoc@0.23.12
       typescript: 4.8.2
 
   packages/upwords:
@@ -261,7 +261,7 @@ importers:
       ts-jest: 28.0.8
       tsup: 6.2.3
       typedoc: 0.23.12
-      typedoc-plugin-markdown: 3.13.5
+      typedoc-plugin-markdown: 3.13.6
       typescript: 4.8.2
     devDependencies:
       '@types/jest': 28.1.8
@@ -270,7 +270,7 @@ importers:
       ts-jest: 28.0.8_556mfp7b5dutuj2jcrj5i7zc5q
       tsup: 6.2.3_typescript@4.8.2
       typedoc: 0.23.12_typescript@4.8.2
-      typedoc-plugin-markdown: 3.13.5_typedoc@0.23.12
+      typedoc-plugin-markdown: 3.13.6_typedoc@0.23.12
       typescript: 4.8.2
 
   packages/utilities:
@@ -285,7 +285,7 @@ importers:
       ts-jest: 28.0.8
       tsup: 6.2.3
       typedoc: 0.23.12
-      typedoc-plugin-markdown: 3.13.5
+      typedoc-plugin-markdown: 3.13.6
       typescript: 4.8.2
     dependencies:
       '@snickbit/plural': link:../plural
@@ -299,7 +299,7 @@ importers:
       ts-jest: 28.0.8_556mfp7b5dutuj2jcrj5i7zc5q
       tsup: 6.2.3_typescript@4.8.2
       typedoc: 0.23.12_typescript@4.8.2
-      typedoc-plugin-markdown: 3.13.5_typedoc@0.23.12
+      typedoc-plugin-markdown: 3.13.6_typedoc@0.23.12
       typescript: 4.8.2
 
 packages:
@@ -8005,8 +8005,8 @@ packages:
     resolution: {integrity: sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==}
     dev: true
 
-  /typedoc-plugin-markdown/3.13.5_typedoc@0.23.12:
-    resolution: {integrity: sha512-E6bSn96MtiWTU4fr9wddD7d2T91XTtONj4Jdx2TZsjdAg/ig4ft2ECet/rNbBOiyw9MC0VO9toC/yvI8ZcY2PQ==}
+  /typedoc-plugin-markdown/3.13.6_typedoc@0.23.12:
+    resolution: {integrity: sha512-ISSc9v3BK7HkokxSBuJPttXox4tJ6hP0N9wfSIk0fmLN67+eqtAxbk97gs2nDiuha+RTO5eW9gdeAb+RPP0mgg==}
     peerDependencies:
       typedoc: '>=0.23.0'
     dependencies:
