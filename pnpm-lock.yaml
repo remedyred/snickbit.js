@@ -48,7 +48,7 @@ importers:
     specifiers:
       '@snickbit/node-cli': 3.0.11
       '@snickbit/node-utilities': 4.4.9
-      '@snickbit/out': 2.0.39
+      '@snickbit/out': 2.0.40
       ansi-styles-template: 1.0.0
       esbuild: 0.15.5
       figlet: 1.5.2
@@ -60,7 +60,7 @@ importers:
     dependencies:
       '@snickbit/node-cli': 3.0.11
       '@snickbit/node-utilities': 4.4.9
-      '@snickbit/out': 2.0.39
+      '@snickbit/out': 2.0.40
       ansi-styles-template: 1.0.0
       figlet: 1.5.2
       is-email: 1.0.2
@@ -1600,7 +1600,7 @@ packages:
     engines: {node: '>= 12'}
     dependencies:
       '@snickbit/node-utilities': 4.4.10
-      '@snickbit/out': 2.0.39
+      '@snickbit/out': 2.0.40
       '@snickbit/utilities': 3.4.4
       lilconfig: 2.0.6
       yargs-parser: 21.1.1
@@ -1620,7 +1620,7 @@ packages:
     resolution: {integrity: sha512-Auq7DSIWHNQ+2lv5rTeEYL4pvmDdbEaioMScoW+yoMS39aXnHR7V5mIm1AlBSz04gB9E99xaBdWtttNEgSSHyw==}
     engines: {node: '>= 12'}
     dependencies:
-      '@snickbit/out': 2.0.39
+      '@snickbit/out': 2.0.40
       '@snickbit/utilities': 3.4.4
       ansi-styles-template: 1.0.0
       cli-progress: 3.11.2
@@ -1634,7 +1634,7 @@ packages:
     resolution: {integrity: sha512-FZPHi2JhujSIwGi113iHz2+0G9mEBR0m1H8y87kY9Sov3PdzCuBq8zBoy+i2cWjJzPHQj++MhLyCXmu2ArBOlg==}
     engines: {node: '>= 12'}
     dependencies:
-      '@snickbit/out': 2.0.39
+      '@snickbit/out': 2.0.40
       '@snickbit/utilities': 3.4.4
       ansi-styles-template: 1.0.0
       cli-progress: 3.11.2
@@ -1645,6 +1645,18 @@ packages:
 
   /@snickbit/out/2.0.39:
     resolution: {integrity: sha512-iEI2vveTraYiRLyxjRPX5wNJv2AjuFOf+goEA3z7pc/FNSpNz/r+fvggVXp3SOnSzzsfXntz6Wb2/rfuvUwMWQ==}
+    engines: {node: '>= 12'}
+    dependencies:
+      '@snickbit/ansi': 0.0.12
+      '@snickbit/cycle': 1.0.3
+      '@snickbit/utilities': 3.4.4
+      ansi-styles-template: 1.0.0
+      browser-or-node: 2.0.0
+      node-inspect-extracted: 1.1.0
+      picomatch-browser: 2.2.6
+
+  /@snickbit/out/2.0.40:
+    resolution: {integrity: sha512-syS69rIaTCQUmIFwJVYyGh+ADnyMin1HpB4dgsG7HodX52YYLP+y7RwnbC2cjmqXoyDjYTA4sm0Bss+JuoJJLA==}
     engines: {node: '>= 12'}
     dependencies:
       '@snickbit/ansi': 0.0.12
