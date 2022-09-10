@@ -37,6 +37,7 @@
 		"@snickbit/readmes": "0.0.9",
 		"@snickbit/semantic-release": "^1.5.0",
 		"@types/jest": "28.1.8",
+		"concurrently": "^7.4.0",
 		"depcheck": "1.4.3",
 		"eslint": "8.23.0",
 		"execa": "6.1.0",
