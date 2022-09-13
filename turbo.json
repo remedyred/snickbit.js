@@ -11,11 +11,6 @@
 			"outputs": ["dist/**"],
 			"outputMode": "new-only"
 		},
-		"build:types": {
-			"dependsOn": ["build"],
-			"outputs": ["dist/**/*.d.ts"],
-			"outputMode": "new-only"
-		},
 		"dev": {
 			"inputs": [
 				"src/**",
@@ -26,9 +21,9 @@
 			"outputs": ["dist/**"],
 			"outputMode": "new-only"
 		},
-		"dev:types": {
+		"types": {
 			"dependsOn": ["dev"],
-			"outputs": [".types"],
+			"outputs": ["dist/**/*.d.ts"],
 			"outputMode": "new-only"
 		},
 		"docs": {
@@ -59,7 +54,7 @@
 			"outputs": []
 		},
 		"clean": {
-			"inputs": [".types/**", "dist/**"],
+			"inputs": ["dist/**"],
 			"outputs": []
 		},
 		"release": {

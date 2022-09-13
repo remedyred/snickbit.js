@@ -15,15 +15,14 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "tsup --minify --dts",
-		"build:types": "tsc --emitDeclarationOnly --declarationDir dist",
-		"clean": "shx rm -rf ./dist ./.types",
+		"build": "tsup --minify",
+		"clean": "shx rm -rf ./dist",
 		"depcheck": "depcheck",
 		"dev": "tsup",
-		"dev:types": "tsc --emitDeclarationOnly --declarationMap --declarationDir .types",
 		"docs": "typedoc src/index.ts --tsconfig ./tsconfig.typedoc.json",
 		"index": "indexer",
 		"release": "semantic-release",
+		"types": "tsc --project ./tsconfig.types.json",
 		"watch": "pnpm run dev --watch"
 	},
 	"release": {
