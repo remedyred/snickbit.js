@@ -14,7 +14,7 @@
 		"build": "pnpm run bundle --minify",
 		"build:meta": "pnpm run build --metafile=.meta.json",
 		"bundle": "esbuild --bundle --outfile=bin/snickbit src/index.ts --target=node12 --platform=node",
-		"clean": "shx rm -rf ./dist ./.types",
+		"clean": "shx rm -rf ./dist",
 		"depcheck": "depcheck",
 		"dev": "pnpm run build --sourcemap",
 		"release": "semantic-release",
