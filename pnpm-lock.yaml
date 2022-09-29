@@ -48,7 +48,7 @@ importers:
 
   clis/snickbit:
     specifiers:
-      '@snickbit/node-cli': 3.0.11
+      '@snickbit/node-cli': 3.0.20
       '@snickbit/node-utilities': 4.4.9
       '@snickbit/out': 2.0.40
       ansi-styles-template: 1.0.0
@@ -60,7 +60,7 @@ importers:
       shx: 0.3.4
       typescript: 4.8.3
     dependencies:
-      '@snickbit/node-cli': 3.0.11
+      '@snickbit/node-cli': 3.0.20
       '@snickbit/node-utilities': 4.4.9
       '@snickbit/out': 2.0.40
       ansi-styles-template: 1.0.0
@@ -1602,7 +1602,7 @@ packages:
     engines: {node: '>= 12'}
     dependencies:
       '@snickbit/node-utilities': 4.4.9
-      '@snickbit/out': 2.0.40
+      '@snickbit/out': 2.0.42
       '@snickbit/utilities': 3.4.9
       lilconfig: 2.0.6
       yargs-parser: 21.1.1
@@ -1617,6 +1617,18 @@ packages:
       '@snickbit/utilities': 3.4.2
       lilconfig: 2.0.6
       yargs-parser: 21.1.1
+    dev: true
+
+  /@snickbit/node-cli/3.0.20:
+    resolution: {integrity: sha512-I+sQnpGp1zkG0zk4KeZyQeItyBpw2YJu1lETnjjO3fgz9dLT2oVtaHraPgHCgD83C3SAJorkm9Wh4kc24mAbwg==}
+    engines: {node: '>= 12'}
+    dependencies:
+      '@snickbit/node-utilities': 4.4.9
+      '@snickbit/out': 2.0.40
+      '@snickbit/utilities': 3.4.2
+      lilconfig: 2.0.6
+      yargs-parser: 21.1.1
+    dev: false
 
   /@snickbit/node-utilities/4.4.9:
     resolution: {integrity: sha512-FZPHi2JhujSIwGi113iHz2+0G9mEBR0m1H8y87kY9Sov3PdzCuBq8zBoy+i2cWjJzPHQj++MhLyCXmu2ArBOlg==}
@@ -1642,6 +1654,7 @@ packages:
       browser-or-node: 2.0.0
       node-inspect-extracted: 1.1.0
       picomatch-browser: 2.2.6
+    dev: true
 
   /@snickbit/out/2.0.40:
     resolution: {integrity: sha512-syS69rIaTCQUmIFwJVYyGh+ADnyMin1HpB4dgsG7HodX52YYLP+y7RwnbC2cjmqXoyDjYTA4sm0Bss+JuoJJLA==}
@@ -1666,7 +1679,6 @@ packages:
       browser-or-node: 2.0.0
       node-inspect-extracted: 1.1.0
       picomatch-browser: 2.2.6
-    dev: false
 
   /@snickbit/plural/0.0.6:
     resolution: {integrity: sha512-Bmxmhi984QgV+Yo5T4uMuKGmfgkkv7BpFkfo0p1di/4ZZt379vDTOLCPf3+HZec12pabMFUCHcq8vyxjUCxcDA==}
