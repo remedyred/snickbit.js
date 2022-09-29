@@ -6,7 +6,7 @@ importers:
     specifiers:
       '@lerna-lite/cli': 1.11.1
       '@semantic-release/exec': 6.0.3
-      '@snickbit/eslint-config': 1.3.2
+      '@snickbit/eslint-config': 1.3.4
       '@snickbit/readmes': 0.0.9
       '@snickbit/semantic-release': ^1.5.0
       '@types/jest': 28.1.8
@@ -27,7 +27,7 @@ importers:
     devDependencies:
       '@lerna-lite/cli': 1.11.1
       '@semantic-release/exec': 6.0.3_semantic-release@19.0.5
-      '@snickbit/eslint-config': 1.3.2_vklkxboanhj25rernuwqbphqma
+      '@snickbit/eslint-config': 1.3.4_vklkxboanhj25rernuwqbphqma
       '@snickbit/readmes': 0.0.9
       '@snickbit/semantic-release': 1.5.3_semantic-release@19.0.5
       '@types/jest': 28.1.8
@@ -1557,8 +1557,8 @@ packages:
     dependencies:
       '@snickbit/utilities': 3.4.9
 
-  /@snickbit/eslint-config/1.3.2_vklkxboanhj25rernuwqbphqma:
-    resolution: {integrity: sha512-m6qtuXzgWSVLGA4H0HIScP4/LuPW1OFAwG6rlQuwFypBHoBRV19paFxRL+gGVzcFAlzA5YdwHPlGtsxpEbqEtA==}
+  /@snickbit/eslint-config/1.3.4_vklkxboanhj25rernuwqbphqma:
+    resolution: {integrity: sha512-rgV1f+7SI0xhIUuU3xau7FlE/JYgTppxMUc8iZKBIvPx17GO9fEYeD6s1q9Cq22kyMfF0TN+Jc7fTXOcobhh3Q==}
     engines: {node: '>= 12'}
     peerDependencies:
       eslint: '>= 8.19.0'
@@ -1568,7 +1568,7 @@ packages:
       '@typescript-eslint/parser': 5.36.2_itqs5654cmlnjraw6gjzqacppi
       eslint: 8.23.0
       eslint-plugin-beautiful-sort: 2.0.3
-      eslint-plugin-jest: 26.9.0_rlrdafuslbzhehe6zhuocvwlqa
+      eslint-plugin-jest: 27.0.4_rlrdafuslbzhehe6zhuocvwlqa
       eslint-plugin-json: 3.1.0
       eslint-plugin-json-files: 1.3.0_eslint@8.23.0
       eslint-plugin-sort-annotation: 1.0.4_itqs5654cmlnjraw6gjzqacppi
@@ -1603,7 +1603,7 @@ packages:
     dependencies:
       '@snickbit/node-utilities': 4.4.9
       '@snickbit/out': 2.0.40
-      '@snickbit/utilities': 3.4.2
+      '@snickbit/utilities': 3.4.9
       lilconfig: 2.0.6
       yargs-parser: 21.1.1
     dev: true
@@ -3615,12 +3615,12 @@ packages:
     engines: {node: ^16.13.2, npm: ^8.1.2}
     dev: true
 
-  /eslint-plugin-jest/26.9.0_rlrdafuslbzhehe6zhuocvwlqa:
-    resolution: {integrity: sha512-TWJxWGp1J628gxh2KhaH1H1paEdgE2J61BBF1I59c6xWeL5+D1BzMxGDN/nXAfX+aSkR5u80K+XhskK6Gwq9ng==}
-    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+  /eslint-plugin-jest/27.0.4_rlrdafuslbzhehe6zhuocvwlqa:
+    resolution: {integrity: sha512-BuvY78pHMpMJ6Cio7sKg6jrqEcnRYPUc4Nlihku4vKx3FjlmMINSX4vcYokZIe+8TKcyr1aI5Kq7vYwgJNdQSA==}
+    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': ^5.0.0
-      eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
+      eslint: ^7.0.0 || ^8.0.0
       jest: '*'
     peerDependenciesMeta:
       '@typescript-eslint/eslint-plugin':
