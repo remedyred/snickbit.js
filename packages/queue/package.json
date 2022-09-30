@@ -1,6 +1,6 @@
 {
 	"name": "@snickbit/queue",
-	"version": "1.2.16",
+	"version": "1.2.17",
 	"description": "Fluid queueing library for any function or promise",
 	"license": "MIT",
 	"exports": {
