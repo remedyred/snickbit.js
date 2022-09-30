@@ -50,7 +50,7 @@ importers:
     specifiers:
       '@snickbit/node-cli': 3.0.20
       '@snickbit/node-utilities': 4.4.9
-      '@snickbit/out': 2.0.40
+      '@snickbit/out': 2.0.43
       ansi-styles-template: 1.0.0
       esbuild: 0.15.5
       figlet: 1.5.2
@@ -62,7 +62,7 @@ importers:
     dependencies:
       '@snickbit/node-cli': 3.0.20
       '@snickbit/node-utilities': 4.4.9
-      '@snickbit/out': 2.0.40
+      '@snickbit/out': 2.0.43
       ansi-styles-template: 1.0.0
       figlet: 1.5.2
       is-email: 1.0.2
@@ -1602,7 +1602,7 @@ packages:
     engines: {node: '>= 12'}
     dependencies:
       '@snickbit/node-utilities': 4.4.9
-      '@snickbit/out': 2.0.42
+      '@snickbit/out': 2.0.43
       '@snickbit/utilities': 3.4.9
       lilconfig: 2.0.6
       yargs-parser: 21.1.1
@@ -1634,7 +1634,7 @@ packages:
     resolution: {integrity: sha512-FZPHi2JhujSIwGi113iHz2+0G9mEBR0m1H8y87kY9Sov3PdzCuBq8zBoy+i2cWjJzPHQj++MhLyCXmu2ArBOlg==}
     engines: {node: '>= 12'}
     dependencies:
-      '@snickbit/out': 2.0.40
+      '@snickbit/out': 2.0.43
       '@snickbit/utilities': 3.4.9
       ansi-styles-template: 1.0.0
       cli-progress: 3.11.2
@@ -1670,6 +1670,19 @@ packages:
 
   /@snickbit/out/2.0.42:
     resolution: {integrity: sha512-fmNZ66vQasU+K2Y+ooCnOJY9GWjYx//4/KT9zwUKlhZ7pKOKL4Q43yxhalJf0Y8RvAeVDL9cPjzAF9zmPjEVKw==}
+    engines: {node: '>= 12'}
+    dependencies:
+      '@snickbit/ansi': 0.0.18
+      '@snickbit/cycle': 1.0.5
+      '@snickbit/utilities': 3.4.9
+      ansi-styles-template: 1.0.0
+      browser-or-node: 2.0.0
+      node-inspect-extracted: 1.1.0
+      picomatch-browser: 2.2.6
+    dev: false
+
+  /@snickbit/out/2.0.43:
+    resolution: {integrity: sha512-VrAPmU3yVvbGY2MpryFNzJ/0yCdViTJUSadVAqnVg9luCAdvVWOG7QgIqDPiNc7WO3vPvYIKwV6m5nhgJDHKrw==}
     engines: {node: '>= 12'}
     dependencies:
       '@snickbit/ansi': 0.0.18
