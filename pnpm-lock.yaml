@@ -48,7 +48,7 @@ importers:
 
   clis/snickbit:
     specifiers:
-      '@snickbit/node-cli': 3.0.20
+      '@snickbit/node-cli': 3.0.21
       '@snickbit/node-utilities': 4.4.9
       '@snickbit/out': 2.0.43
       ansi-styles-template: 1.0.0
@@ -60,7 +60,7 @@ importers:
       shx: 0.3.4
       typescript: 4.8.3
     dependencies:
-      '@snickbit/node-cli': 3.0.20
+      '@snickbit/node-cli': 3.0.21
       '@snickbit/node-utilities': 4.4.9
       '@snickbit/out': 2.0.43
       ansi-styles-template: 1.0.0
@@ -1619,8 +1619,8 @@ packages:
       yargs-parser: 21.1.1
     dev: true
 
-  /@snickbit/node-cli/3.0.20:
-    resolution: {integrity: sha512-I+sQnpGp1zkG0zk4KeZyQeItyBpw2YJu1lETnjjO3fgz9dLT2oVtaHraPgHCgD83C3SAJorkm9Wh4kc24mAbwg==}
+  /@snickbit/node-cli/3.0.21:
+    resolution: {integrity: sha512-VNs00DT0rV21Os70/8pZeJrSfX0+J93Dl/5BF5eOcho1U5tF8Kv/BoX+LE6dStPmG9xyX4CRwQ4I5mYdheq5Dg==}
     engines: {node: '>= 12'}
     dependencies:
       '@snickbit/node-utilities': 4.4.9
