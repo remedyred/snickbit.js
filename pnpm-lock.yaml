@@ -48,7 +48,7 @@ importers:
 
   clis/snickbit:
     specifiers:
-      '@snickbit/node-cli': 3.0.22
+      '@snickbit/node-cli': 3.0.24
       '@snickbit/node-utilities': 4.4.9
       '@snickbit/out': 2.0.45
       ansi-styles-template: 1.0.0
@@ -60,7 +60,7 @@ importers:
       shx: 0.3.4
       typescript: 4.8.4
     dependencies:
-      '@snickbit/node-cli': 3.0.22
+      '@snickbit/node-cli': 3.0.24
       '@snickbit/node-utilities': 4.4.9
       '@snickbit/out': 2.0.45
       ansi-styles-template: 1.0.0
@@ -1626,6 +1626,18 @@ packages:
       '@snickbit/utilities': 3.4.2
       lilconfig: 2.0.6
       yargs-parser: 21.1.1
+    dev: true
+
+  /@snickbit/node-cli/3.0.24:
+    resolution: {integrity: sha512-8JuelOjc0rheep3qJmwhB0SMs3NRhDa9hADVv53WaBLdtRVCaKL1nbwgIb26Bkvo9c8/sn76A74dcZ8hWYIPTw==}
+    engines: {node: '>= 12'}
+    dependencies:
+      '@snickbit/node-utilities': 4.4.9
+      '@snickbit/out': 2.0.45
+      '@snickbit/utilities': 3.4.2
+      lilconfig: 2.0.6
+      yargs-parser: 21.1.1
+    dev: false
 
   /@snickbit/node-utilities/4.4.9:
     resolution: {integrity: sha512-FZPHi2JhujSIwGi113iHz2+0G9mEBR0m1H8y87kY9Sov3PdzCuBq8zBoy+i2cWjJzPHQj++MhLyCXmu2ArBOlg==}
@@ -1651,6 +1663,7 @@ packages:
       browser-or-node: 2.0.0
       node-inspect-extracted: 1.1.0
       picomatch-browser: 2.2.6
+    dev: true
 
   /@snickbit/out/2.0.44:
     resolution: {integrity: sha512-MC36yhVTXqMSMfneG2g6X0yx7IhhJYu/19zU0nhkXd01EfPPqbYo4QOZLkLtnffnXQ6OiCgNGDHmLh+ruyzA/g==}
