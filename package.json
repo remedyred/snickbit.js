@@ -33,7 +33,7 @@
 	"devDependencies": {
 		"@semantic-release/exec": "6.0.3",
 		"@snickbit/eslint-config": "1.3.7",
-		"@snickbit/readmes": "0.0.20",
+		"@snickbit/readmes": "0.0.22",
 		"@snickbit/semantic-release": "^1.5.0",
 		"@types/jest": "28.1.8",
 		"concurrently": "^7.4.0",
