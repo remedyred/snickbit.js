@@ -92,18 +92,22 @@ cli()
 		})
 
 		switch (answer) {
-			case 'website':
+			case 'website': {
 				await open(data.website, {wait: true})
 				break
-			case 'github':
+			}
+			case 'github': {
 				await open(data.github, {wait: true})
 				break
-			case 'linkedin':
+			}
+			case 'linkedin': {
 				await open(data.linkedin, {wait: true})
 				break
-			case 'email':
+			}
+			case 'email': {
 				await open(`mailto:${data.email}`, {wait: true})
 				break
+			}
 			case 'resume': {
 				let name = ''
 				while (!name) {

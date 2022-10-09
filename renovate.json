@@ -1,7 +1,7 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
 	"extends": [
-		"github>snickbit/configs"
+		"github>remedyred/configs"
 	],
 	"updateInternalDeps": true
 }
