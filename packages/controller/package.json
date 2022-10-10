@@ -24,6 +24,11 @@
 		"types": "tsc --project ./tsconfig.types.json",
 		"watch": "pnpm run dev --watch"
 	},
+	"release": {
+		"extends": [
+			"@snickbit/semantic-release"
+		]
+	},
 	"dependencies": {
 		"@snickbit/utilities": "~3.4.3",
 		"mitt": "~3.0.0"
