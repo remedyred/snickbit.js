@@ -8,10 +8,5 @@
 - [ ] Style (change to code style, formatting, and/or linting)
 - [ ] Test (change or add tests)
 - [ ] Refactor (change which doesn't affect functionality)
+- [ ] Build (change which affects build process)
 - [ ] Other (change which doesn't fit into any of the above categories)
-
-## Checklist
-- [ ] My code follows the code style of this project.
-- [ ] I have updated the documentation accordingly if needed.
-- [ ] I have added tests to cover my changes if needed.
-- [ ] All new and existing tests passed.
