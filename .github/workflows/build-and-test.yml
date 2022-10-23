@@ -29,7 +29,9 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build, test, and lint
-        run: pnpm turbo run build //#lint //#test
+        run: |
+          pnpm turbo run build //#lint
+          pnpm jest --ci
 
       - name: Reset git state
         run: git reset --hard
