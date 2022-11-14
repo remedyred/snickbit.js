@@ -13,7 +13,8 @@ export interface QueueConfiguration {
 
 	/**
 	 * Use a strict, more resource intensive, throttling algorithm. \
-	 * The default algorithm uses a windowed approach that will work correctly in most cases, limiting the total number of calls at the specified limit per interval window. \
+	 * The default algorithm uses a windowed approach that will work correctly in most cases, \
+	 * limiting the total number of calls at the specified limit per interval window. \
 	 * The strict algorithm throttles each call individually, ensuring the limit is not exceeded for any interval.
 	 * @see https://github.com/sindresorhus/p-throttle
 	 */
