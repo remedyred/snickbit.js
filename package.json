@@ -34,7 +34,7 @@
 		"@semantic-release/exec": "6.0.3",
 		"@snickbit/eslint-config": "1.4.0",
 		"@snickbit/readmes": "0.0.23",
-		"@snickbit/semantic-release": "^1.5.0",
+		"@snickbit/semantic-release": "1.6.2",
 		"@types/jest": "29.2.2",
 		"concurrently": "7.5.0",
 		"depcheck": "1.4.3",
