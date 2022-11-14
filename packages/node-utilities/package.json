@@ -37,7 +37,7 @@
 		"@snickbit/out": "2.0.48",
 		"@snickbit/utilities": "3.4.15",
 		"ansi-styles-template": "^1.0.0",
-		"cli-progress": "^3.11.1",
+		"cli-progress": "3.11.2",
 		"is-wsl": "^2.2.0",
 		"lodash.throttle": "^4.1.1",
 		"nanospinner": "^1.1.0",
