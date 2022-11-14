@@ -30,7 +30,7 @@
 		]
 	},
 	"dependencies": {
-		"@snickbit/utilities": "3.4.15",
+		"@snickbit/utilities": "3.4.16",
 		"mitt": "~3.0.0"
 	},
 	"devDependencies": {
