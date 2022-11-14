@@ -35,7 +35,7 @@
 	},
 	"dependencies": {
 		"@snickbit/utilities": "3.4.15",
-		"dayjs": "^1.11.3"
+		"dayjs": "1.11.6"
 	},
 	"devDependencies": {
 		"@types/jest": "29.2.2",
