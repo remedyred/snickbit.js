@@ -36,7 +36,7 @@
 	},
 	"dependencies": {
 		"@snickbit/utilities": "3.4.15",
-		"lite-fifo": "^0.3.0"
+		"lite-fifo": "0.3.1"
 	},
 	"devDependencies": {
 		"@snickbit/indexer": "2.5.28",
