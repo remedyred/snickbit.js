@@ -24,7 +24,6 @@
 	},
 	"jest": {
 		"noStackTrace": true,
-		"onlyChanged": true,
 		"passWithNoTests": true,
 		"preset": "ts-jest",
 		"silent": true,
