@@ -1,6 +1,17 @@
 import {sleep} from '@snickbit/utilities'
 import {ChunkedQueue, DynamicCyclicQueue} from 'lite-fifo'
-import {CatchCallback, FinallyCallback, QueueConfiguration, QueueOption, QueueOptions, QueueOptionsValue, QueueTask, QueueTaskFunction, QueueTaskPromise, ThenCallback} from './definitions'
+import {
+	CatchCallback,
+	FinallyCallback,
+	QueueConfiguration,
+	QueueOption,
+	QueueOptions,
+	QueueOptionsValue,
+	QueueTask,
+	QueueTaskFunction,
+	QueueTaskPromise,
+	ThenCallback
+} from './definitions'
 import {AbortQueueError, QueueException} from './errors'
 import {QueuePromise} from './queue.promise'
 
@@ -303,7 +314,9 @@ export class Queue {
 	}
 
 	/**
-	 * Set the queueing strategy. Dynamic uses slightly more resources but tends to be faster, chunked uses slightly less resources but tends to be slower. Dynamic is the default.
+	 * Set the queueing strategy. Dynamic uses slightly more resources but tends to be faster,
+	 * chunked uses slightly less resources but tends to be slower.
+	 * Dynamic is the default.
 	 * @see https://github.com/kleinron/lite-fifo lite-fifo for benchmarks
 	 * @param {'dynamic' | 'chunked'} strategy
 	 */
@@ -316,36 +329,34 @@ export class Queue {
 	 * Run your queue.
 	 */
 	run(): QueuePromise<any> {
-		if (!this.process) {
-			this.process = new QueuePromise(async (resolve, reject) => {
-				this.#reject = reject
-				this.processes = 0
-				const promises: Promise<any>[] = []
-				while (this.queue.size() > 0) {
-					const task = this.queue.dequeue()
-					if (this.aborted || !task) {
-						break
-					}
-					if (this.options.concurrency >= 0 && this.processes >= this.options.concurrency) {
-						// queue is full, wait for the next promise to finish
-						await this.wait()
-					}
-
-					this.processes++
-					promises.push(this.executeTask(task))
-
-					while (this.queue.size() === 0 && this.processes > 0) {
-						// while the queue is empty and there are processes running, wait for the next promise to finish
-						await this.wait()
-					}
+		this.process ||= new QueuePromise(async (resolve, reject) => {
+			this.#reject = reject
+			this.processes = 0
+			const promises: Promise<any>[] = []
+			while (this.queue.size() > 0) {
+				const task = this.queue.dequeue()
+				if (this.aborted || !task) {
+					break
+				}
+				if (this.options.concurrency >= 0 && this.processes >= this.options.concurrency) {
+					// queue is full, wait for the next promise to finish
+					await this.wait()
 				}
 
-				// Double check that there are no more promises to wait for
-				await Promise.all(promises)
+				this.processes++
+				promises.push(this.executeTask(task))
 
-				resolve(this.#results)
-			}, this)
-		}
+				while (this.queue.size() === 0 && this.processes > 0) {
+					// while the queue is empty and there are processes running, wait for the next promise to finish
+					await this.wait()
+				}
+			}
+
+			// Double check that there are no more promises to wait for
+			await Promise.all(promises)
+
+			resolve(this.#results)
+		}, this)
 		return this.process
 	}
 
@@ -400,7 +411,9 @@ export class Queue {
 		}
 
 		try {
-			result = await (typeof taskDefinition.task === 'function' ? Promise.resolve(taskDefinition.task.apply(taskDefinition.thisArg, taskDefinition.args)) : Promise.resolve(taskDefinition.task))
+			result = await (typeof taskDefinition.task === 'function'
+				? Promise.resolve(taskDefinition.task.apply(taskDefinition.thisArg, taskDefinition.args))
+				: Promise.resolve(taskDefinition.task))
 			this.processes--
 
 			if (this.handlers.thenEach) {

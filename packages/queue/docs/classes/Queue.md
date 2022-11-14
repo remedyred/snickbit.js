@@ -289,7 +289,9 @@ ___
 
 ▸ **strategy**(`strategy`): [`Queue`](Queue.md)
 
-Set the queueing strategy. Dynamic uses slightly more resources but tends to be faster, chunked uses slightly less resources but tends to be slower. Dynamic is the default.
+Set the queueing strategy. Dynamic uses slightly more resources but tends to be faster,
+chunked uses slightly less resources but tends to be slower.
+Dynamic is the default.
 
 **`See`**
 

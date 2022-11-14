@@ -1,6 +1,9 @@
 import {CatchCallback, FinallyCallback, ThenCallback} from './definitions'
 import {Queue} from './queue'
 
+type PromiseCallback<TValue, TResult> = (value: TValue) => (PromiseLike<TResult> | TResult)
+type PromiseCallbackValue<TValue, TResult> = PromiseCallback<TValue, TResult> | null | undefined
+
 /**
  * @noInheritDoc
  */
@@ -18,7 +21,7 @@ export class QueuePromise<T> extends Promise<T> {
 	 * @param onrejected
 	 */
 	// eslint-disable-next-line unicorn/no-thenable
-	then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => (PromiseLike<TResult1> | TResult1)) | null | undefined, onrejected?: ((reason: any) => (PromiseLike<TResult2> | TResult2)) | null | undefined): Promise<TResult1 | TResult2> {
+	then<TResult1 = T, TResult2 = never>(onfulfilled?: PromiseCallbackValue<T, TResult1>, onrejected?: PromiseCallbackValue<T, TResult2>): Promise<TResult1 | TResult2> {
 		return super.then(onfulfilled, onrejected)
 	}
 
@@ -31,7 +34,8 @@ export class QueuePromise<T> extends Promise<T> {
 	}
 
 	/**
-	 * Attaches a callback that is invoked when the Queue as a whole is settled (fulfilled or rejected). The resolved value cannot be modified from the callback.
+	 * Attaches a callback that is invoked when the Queue as a whole is settled (fulfilled or rejected).
+	 * The resolved value cannot be modified from the callback.
 	 * @param onfulfilled
 	 */
 	finally(onfulfilled?: (() => void) | null | undefined): Promise<T> {
@@ -57,7 +61,8 @@ export class QueuePromise<T> extends Promise<T> {
 	}
 
 	/**
-	 * Attaches a callback that is invoked when each Promise or Function in the queue is settled (fulfilled or rejected). The resolved value cannot be modified from the callback.
+	 * Attaches a callback that is invoked when each Promise or Function in the queue is settled (fulfilled or rejected).
+	 * The resolved value cannot be modified from the callback.
 	 * @param {FinallyCallback} callback
 	 */
 	finallyEach(callback: FinallyCallback) {

@@ -1,5 +1,20 @@
 import {Out} from '@snickbit/out'
-import {isArray, isCallable, isDate, isEmpty, isFunction, isObject, isString, objectFind, objectFindKey, objectHasMethod, ObjectPredicate, typeOf, uuid, VariableType} from '@snickbit/utilities'
+import {
+	isArray,
+	isCallable,
+	isDate,
+	isEmpty,
+	isFunction,
+	isObject,
+	isString,
+	objectFind,
+	objectFindKey,
+	objectHasMethod,
+	ObjectPredicate,
+	typeOf,
+	uuid,
+	VariableType
+} from '@snickbit/utilities'
 import objectPath, {ObjectPathBound} from 'object-path'
 
 export type ModelId = number | string | undefined
@@ -51,7 +66,8 @@ export interface ModelSchemaRecord {
  * @property {ModelSchema} schema - The schema of the model. Used to validate the model.
  * @property {boolean} strict - The schema of the model. Used to validate the model.
  * @property {boolean} timestamps - Automatically generate timestamps _created and _updated for the model. Stored with the model.
- * @property {string|null} root - Define a root path for the model. All paths/keys will be prefixed with this path unless they are prefixed with a dot ".".
+ * @property {string|null} root - Define a root path for the model.
+ *  All paths/keys will be prefixed with this path unless they are prefixed with a dot ".".
  */
 export interface ModelOptions {
 	id?: ModelId
@@ -165,9 +181,7 @@ export class Model<T extends object = any, D = Partial<T>> {
 				key = this.options.root
 			}
 		}
-		if (!key) {
-			key = ''
-		}
+		key ||= ''
 		return key
 	}
 

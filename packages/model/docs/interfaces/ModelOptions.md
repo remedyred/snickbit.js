@@ -28,7 +28,8 @@ Automatically generate timestamps _created and _updated for the model. Stored wi
 
 **`Property`**
 
-Define a root path for the model. All paths/keys will be prefixed with this path unless they are prefixed with a dot ".".
+Define a root path for the model.
+ All paths/keys will be prefixed with this path unless they are prefixed with a dot ".".
 
 ## Table of contents
 
