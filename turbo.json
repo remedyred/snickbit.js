@@ -7,7 +7,7 @@
 				"*.json",
 				"../../tsup.config.json"
 			],
-			"dependsOn": ["^build"],
+			"dependsOn": ["^clean", "^build"],
 			"outputs": ["dist/**"],
 			"outputMode": "new-only"
 		},

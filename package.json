@@ -14,10 +14,10 @@
 		"index": "turbo run index",
 		"lint": "eslint \"**/*.{ts,json,yml,yaml}\" --cache --color",
 		"prepare": "husky install",
-		"prerelease": "turbo run build docs //#fix //#test depcheck",
+		"prerelease": "turbo run --no-daemon --no-cache clean build docs //#fix //#test depcheck",
 		"release": "turbo run release",
 		"release:ci": "multi-semantic-release",
-		"test": "jest"
+		"test": "jest --no-cache"
 	},
 	"lint-staged": {
 		"*.{ts,json,yml,yaml}": "eslint --fix --cache"
