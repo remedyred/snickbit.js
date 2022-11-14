@@ -71,7 +71,7 @@ Promise&lt;T\&gt;.constructor
 
 #### Inherited from
 
-Promise.\_\_@toStringTag@183
+Promise.\_\_@toStringTag@192
 
 ___
 
@@ -135,7 +135,8 @@ ___
 
 ▸ **finally**(`onfulfilled?`): `Promise`<`T`\>
 
-Attaches a callback that is invoked when the Queue as a whole is settled (fulfilled or rejected). The resolved value cannot be modified from the callback.
+Attaches a callback that is invoked when the Queue as a whole is settled (fulfilled or rejected).
+The resolved value cannot be modified from the callback.
 
 #### Parameters
 
@@ -157,7 +158,8 @@ ___
 
 ▸ **finallyEach**(`callback`): [`QueuePromise`](QueuePromise.md)<`T`\>
 
-Attaches a callback that is invoked when each Promise or Function in the queue is settled (fulfilled or rejected). The resolved value cannot be modified from the callback.
+Attaches a callback that is invoked when each Promise or Function in the queue is settled (fulfilled or rejected).
+The resolved value cannot be modified from the callback.
 
 #### Parameters
 
@@ -188,8 +190,8 @@ Attaches callbacks for the resolution and/or rejection of the Queue as a whole.
 
 | Name | Type |
 | :------ | :------ |
-| `onfulfilled?` | (`value`: `T`) => `TResult1` \| `PromiseLike`<`TResult1`\> |
-| `onrejected?` | (`reason`: `any`) => `TResult2` \| `PromiseLike`<`TResult2`\> |
+| `onfulfilled?` | `PromiseCallback`<`T`, `TResult1`\> |
+| `onrejected?` | `PromiseCallback`<`T`, `TResult2`\> |
 
 #### Returns
 
