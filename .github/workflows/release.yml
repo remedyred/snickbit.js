@@ -32,7 +32,9 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build, test, and lint
-        run: pnpm turbo run build docs //#fix //#test
+        run: | 
+          pnpm turbo run build docs //#fix
+          pnpm jest --ci --onlyChanged
 
       - name: Release
         env:
