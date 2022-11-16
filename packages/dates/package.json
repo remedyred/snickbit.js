@@ -34,7 +34,7 @@
 		"testEnvironment": "node"
 	},
 	"dependencies": {
-		"@snickbit/utilities": "3.4.16",
+		"@snickbit/utilities": "3.4.17",
 		"dayjs": "1.11.6"
 	},
 	"devDependencies": {
