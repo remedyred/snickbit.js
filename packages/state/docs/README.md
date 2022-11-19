@@ -79,7 +79,7 @@ ___
 
 ### UseStore
 
-Ƭ **UseStore**<`T`\>: () => [`Store`](classes/Store.md)<`T`\>
+Ƭ **UseStore**<`T`\>: () => [`Store`](classes/Store.md)<`T`\> & `T`
 
 #### Type parameters
 
@@ -89,11 +89,11 @@ ___
 
 #### Type declaration
 
-▸ (): [`Store`](classes/Store.md)<`T`\>
+▸ (): [`Store`](classes/Store.md)<`T`\> & `T`
 
 ##### Returns
 
-[`Store`](classes/Store.md)<`T`\>
+[`Store`](classes/Store.md)<`T`\> & `T`
 
 ## Functions
 

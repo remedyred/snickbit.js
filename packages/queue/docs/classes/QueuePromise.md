@@ -259,7 +259,7 @@ resolve, or rejected when any Promise is rejected.
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends readonly `unknown`[] \| [] |
+| `T` | extends [] \| readonly `unknown`[] |
 
 #### Parameters
 
@@ -290,7 +290,7 @@ of the provided Promises resolve or reject.
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends readonly `unknown`[] \| [] |
+| `T` | extends [] \| readonly `unknown`[] |
 
 #### Parameters
 
@@ -347,7 +347,7 @@ The any function returns a promise that is fulfilled by the first given promise 
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends readonly `unknown`[] \| [] |
+| `T` | extends [] \| readonly `unknown`[] |
 
 #### Parameters
 
@@ -431,7 +431,7 @@ or rejected.
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends readonly `unknown`[] \| [] |
+| `T` | extends [] \| readonly `unknown`[] |
 
 #### Parameters
 
@@ -497,7 +497,33 @@ A resolved promise.
 
 Promise.resolve
 
-▸ `Static` **resolve**<`T`\>(`value`): `Promise`<`T`\>
+▸ `Static` **resolve**<`T`\>(`value`): `Promise`<`Awaited`<`T`\>\>
+
+Creates a new resolved promise for the provided value.
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `value` | `T` | A promise. |
+
+#### Returns
+
+`Promise`<`Awaited`<`T`\>\>
+
+A promise whose internal state matches the provided promise.
+
+#### Inherited from
+
+Promise.resolve
+
+▸ `Static` **resolve**<`T`\>(`value`): `Promise`<`Awaited`<`T`\>\>
 
 Creates a new resolved promise for the provided value.
 
@@ -515,7 +541,7 @@ Creates a new resolved promise for the provided value.
 
 #### Returns
 
-`Promise`<`T`\>
+`Promise`<`Awaited`<`T`\>\>
 
 A promise whose internal state matches the provided promise.
 
