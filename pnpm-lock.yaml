@@ -47,7 +47,7 @@ importers:
   clis/snickbit:
     specifiers:
       '@snickbit/node-cli': 3.0.24
-      '@snickbit/node-utilities': 4.4.20
+      '@snickbit/node-utilities': 4.5.0
       '@snickbit/out': 2.0.48
       ansi-styles-template: 1.0.0
       figlet: 1.5.2
@@ -60,7 +60,7 @@ importers:
       typescript: 4.9.3
     dependencies:
       '@snickbit/node-cli': 3.0.24
-      '@snickbit/node-utilities': 4.4.20
+      '@snickbit/node-utilities': 4.5.0
       '@snickbit/out': 2.0.48
       ansi-styles-template: 1.0.0
       figlet: 1.5.2
@@ -1402,7 +1402,7 @@ packages:
     resolution: {integrity: sha512-AAvtvzmL+b9lqT0gIzjWR98MVE5TEVDTv1eFFqAvEB9g+A+3aBE1wgdxLPqndaQpDg20SpbMl/xlzG4o3er0zQ==}
     engines: {node: '>= 12'}
     dependencies:
-      '@snickbit/node-utilities': 4.4.20
+      '@snickbit/node-utilities': 4.5.0
       '@snickbit/out': 2.0.48
       '@snickbit/utilities': 3.4.18
       lilconfig: 2.0.6
@@ -1433,19 +1433,6 @@ packages:
       prompts: 2.4.2
     dev: true
 
-  /@snickbit/node-utilities/4.4.20:
-    resolution: {integrity: sha512-P+JE5m4Y7f5PUDaEzeeJnn3ioK1o0Ph3OYs+03zZxbd0GPmkMtWYtBFy0hlZ3t9KyZbtwxCOVFcrKqNf4O3Pgw==}
-    engines: {node: '>= 14.17'}
-    dependencies:
-      '@snickbit/out': 2.0.48
-      '@snickbit/utilities': 3.4.18
-      ansi-styles-template: 1.0.0
-      cli-progress: 3.11.2
-      is-wsl: 2.2.0
-      lodash.throttle: 4.1.1
-      nanospinner: 1.1.0
-      prompts: 2.4.2
-
   /@snickbit/node-utilities/4.4.9:
     resolution: {integrity: sha512-FZPHi2JhujSIwGi113iHz2+0G9mEBR0m1H8y87kY9Sov3PdzCuBq8zBoy+i2cWjJzPHQj++MhLyCXmu2ArBOlg==}
     engines: {node: '>= 12'}
@@ -1457,6 +1444,19 @@ packages:
       is-wsl: 2.2.0
       lodash.throttle: 4.1.1
       nanospinner: 1.1.0
+      prompts: 2.4.2
+
+  /@snickbit/node-utilities/4.5.0:
+    resolution: {integrity: sha512-g4upllsbGsWMZwBmZQXdeZA+/WuT+mrWTUl9nWCzaCpwaUM+mhvPsJntpvnaM4Q367RIKP0VY/4sWyI1mo43zQ==}
+    engines: {node: '>= 14.17'}
+    dependencies:
+      '@snickbit/out': 2.0.48
+      '@snickbit/utilities': 3.4.18
+      '@trufflesuite/spinnies': 0.1.1
+      ansi-styles-template: 1.0.0
+      cli-progress: 3.11.2
+      is-wsl: 2.2.0
+      lodash.throttle: 4.1.1
       prompts: 2.4.2
 
   /@snickbit/out/2.0.45:
@@ -1569,7 +1569,6 @@ packages:
       chalk: 4.1.2
       cli-cursor: 3.1.0
       strip-ansi: 6.0.1
-    dev: false
 
   /@tsconfig/node10/1.0.9:
     resolution: {integrity: sha512-jNsYVVxU8v5g43Erja32laIDHXeoNvFEpX33OK4d6hljo3jDhCBDhx5dhCCTMWUojscpAagGiRkBKxpdl9fxqA==}
