@@ -9,7 +9,7 @@ importers:
       '@snickbit/readmes': 0.0.23
       '@snickbit/semantic-release': 1.6.3
       '@types/jest': 29.2.2
-      concurrently: 7.5.0
+      concurrently: 7.6.0
       depcheck: 1.4.3
       eslint: 8.28.0
       execa: 6.1.0
@@ -29,7 +29,7 @@ importers:
       '@snickbit/readmes': 0.0.23
       '@snickbit/semantic-release': 1.6.3_semantic-release@19.0.5
       '@types/jest': 29.2.2
-      concurrently: 7.5.0
+      concurrently: 7.6.0
       depcheck: 1.4.3
       eslint: 8.28.0
       execa: 6.1.0
@@ -47,7 +47,7 @@ importers:
   clis/snickbit:
     specifiers:
       '@snickbit/node-cli': 3.0.24
-      '@snickbit/node-utilities': 4.5.0
+      '@snickbit/node-utilities': 4.6.0
       '@snickbit/out': 2.0.48
       ansi-styles-template: 1.0.0
       figlet: 1.5.2
@@ -60,7 +60,7 @@ importers:
       typescript: 4.9.3
     dependencies:
       '@snickbit/node-cli': 3.0.24
-      '@snickbit/node-utilities': 4.5.0
+      '@snickbit/node-utilities': 4.6.0
       '@snickbit/out': 2.0.48
       ansi-styles-template: 1.0.0
       figlet: 1.5.2
@@ -1402,7 +1402,7 @@ packages:
     resolution: {integrity: sha512-AAvtvzmL+b9lqT0gIzjWR98MVE5TEVDTv1eFFqAvEB9g+A+3aBE1wgdxLPqndaQpDg20SpbMl/xlzG4o3er0zQ==}
     engines: {node: '>= 12'}
     dependencies:
-      '@snickbit/node-utilities': 4.5.0
+      '@snickbit/node-utilities': 4.6.0
       '@snickbit/out': 2.0.48
       '@snickbit/utilities': 3.4.18
       lilconfig: 2.0.6
@@ -1446,8 +1446,8 @@ packages:
       nanospinner: 1.1.0
       prompts: 2.4.2
 
-  /@snickbit/node-utilities/4.5.0:
-    resolution: {integrity: sha512-g4upllsbGsWMZwBmZQXdeZA+/WuT+mrWTUl9nWCzaCpwaUM+mhvPsJntpvnaM4Q367RIKP0VY/4sWyI1mo43zQ==}
+  /@snickbit/node-utilities/4.6.0:
+    resolution: {integrity: sha512-m1jrI0bHiGkkavIrdoulZ4gu247p83W8IoCHFq4XPMoOXFqPW2NzC5+o6hfAI52+I9hGJMZeeUXVSMsCOnsZAg==}
     engines: {node: '>= 14.17'}
     dependencies:
       '@snickbit/out': 2.0.48
@@ -2461,8 +2461,8 @@ packages:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
     dev: true
 
-  /concurrently/7.5.0:
-    resolution: {integrity: sha512-5E3mwiS+i2JYBzr5BpXkFxOnleZTMsG+WnE/dCG4/P+oiVXrbmrBwJ2ozn4SxwB2EZDrKR568X+puVohxz3/Mg==}
+  /concurrently/7.6.0:
+    resolution: {integrity: sha512-BKtRgvcJGeZ4XttiDiNcFiRlxoAeZOseqUvyYRUp/Vtd+9p1ULmeoSqGsDA+2ivdeDFpqrJvGvmI+StKfKl5hw==}
     engines: {node: ^12.20.0 || ^14.13.0 || >=16.0.0}
     hasBin: true
     dependencies:
