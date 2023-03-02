@@ -40,4 +40,4 @@ jobs:
         run: pnpm turbo run docs
 
       - name: Check working tree
-        run: git diff --quiet || { echo 'Working tree is dirty. Did you forget to update the docs?'; exit 1; }
+        run: test -z $(git status --porcelain=v1) || { echo 'Working tree is dirty. Did you forget to update the docs?'; exit 1; }
