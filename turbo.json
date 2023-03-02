@@ -49,10 +49,6 @@
 		"//#docs": {
 			"outputs": ["README.md"]
 		},
-		"depcheck": {
-			"inputs": ["package.json"],
-			"outputs": []
-		},
 		"clean": {
 			"inputs": ["dist/**"],
 			"outputs": []
