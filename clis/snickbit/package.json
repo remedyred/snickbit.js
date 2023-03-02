@@ -39,7 +39,7 @@
 	"devDependencies": {
 		"esbuild": "0.15.13",
 		"shx": "0.3.4",
-		"typescript": "4.8.4"
+		"typescript": "4.9.5"
 	},
 	"engines": {
 		"node": ">= 14.17"
