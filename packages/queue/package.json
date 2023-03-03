@@ -34,7 +34,7 @@
 		"testEnvironment": "node"
 	},
 	"dependencies": {
-		"@snickbit/utilities": "3.4.19",
+		"@snickbit/utilities": "3.4.20",
 		"lite-fifo": "0.3.3"
 	},
 	"devDependencies": {
