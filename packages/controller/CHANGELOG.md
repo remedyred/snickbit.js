@@ -1,3 +1,21 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## @snickbit/controller [1.0.6](https://github.com/remedyred/snickbit.js/compare/@snickbit/controller@1.0.5...@snickbit/controller@1.0.6) (2023-03-03)
+
+
+### Bug Fixes
+
+* remove depcheck ([#119](https://github.com/remedyred/snickbit.js/issues/119)) ([0fb970f](https://github.com/remedyred/snickbit.js/commit/0fb970fe23d85f4e678fbdca577c877b059a86fb))
+
+
+
+### Dependencies
+
+* **@snickbit/utilities:** upgraded to 3.4.19
+
 # @snickbit/controller Changelog
 
 ## 0.0.9
@@ -34,4 +52,3 @@
 - [67b38be](https://github.com/snickbit/controller/commit/67b38be) **fix**:  type returns
 - [7edf363](https://github.com/snickbit/controller/commit/7edf363) **build**:  replace npm with pnpm
 - [73e2b02](https://github.com/snickbit/controller/commit/73e2b02) **fix**:  simplify controller
-
