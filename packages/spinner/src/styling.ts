@@ -22,3 +22,35 @@ export function isUnicodeSupported(): boolean {
 
 	return is_unicode_supported
 }
+
+interface Symbols {
+	error: string
+	warning: string
+	success: string
+	stop: string
+}
+
+const symbols: Symbols = {
+	// Symbols
+	error: '×',
+	warning: '⚠',
+	success: '✔',
+	stop: '⏹'
+}
+
+const symbolsUnicode: Symbols = {
+	error: '✖',
+	warning: '⚠',
+	success: '✔',
+	stop: '⏹'
+}
+
+export function useSymbols(): Symbols {
+	if (isUnicodeSupported()) {
+		return {
+			...symbols,
+			...symbolsUnicode
+		}
+	}
+	return symbols
+}

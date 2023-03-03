@@ -1,7 +1,7 @@
 import {EventEmitter} from 'events'
 import {performance} from 'perf_hooks'
 import {ansiRegex, stripAnsi} from '@snickbit/ansi'
-import {isUnicodeSupported} from './styling'
+import {useSymbols} from './styling'
 import {objectOnly} from '@snickbit/utilities'
 import * as TTY from 'tty'
 import readline from 'readline'
@@ -13,9 +13,7 @@ let internalSpinnerCount = 0
 
 // CONSTANTS
 const kDefaultSpinnerName = 'dots' satisfies cliSpinners.SpinnerName
-const kLogSymbols = isUnicodeSupported()
-	? {success: kleur.green('✔'), error: kleur.red('✖')}
-	: {success: kleur.green('√'), error: kleur.red('×')}
+const kLogSymbols = useSymbols()
 
 export interface ISpinnerOptions {
 
@@ -40,10 +38,10 @@ export interface ISpinnerOptions {
      */
     verbose?: boolean
 
-	/**
-	 * Show this prefix before all text
-	 */
-	textPrefix?: string
+    /**
+     * Show this prefix before all text
+     */
+    textPrefix?: string
 }
 
 export interface IStartOptions {
@@ -67,10 +65,10 @@ export class Spinner extends EventEmitter {
 	protected interval: NodeJS.Timer | null = null
 	protected frameIndex = 0
 	protected spinnerPos = 0
+
 	protected _text = ''
 	protected _startTime: number
 	protected _started = false
-
 	constructor(options: ISpinnerOptions = {}) {
 		super()
 		this.verbose = options.verbose ?? true
@@ -107,6 +105,10 @@ export class Spinner extends EventEmitter {
 		}
 	}
 
+	get startTime() {
+		return this._startTime
+	}
+
 	get started() {
 		return this._started
 	}
@@ -115,21 +117,17 @@ export class Spinner extends EventEmitter {
 		return performance.now() - this._startTime
 	}
 
-	get startTime() {
-		return this._startTime
-	}
-
 	/**
-	 * Reset the spinner count
-	 */
+     * Reset the spinner count
+     */
 	static reset() {
 		internalSpinnerCount = 0
 	}
 
 	/**
-	 * Add text to the spinner after the existing text
-	 * @param text
-	 */
+     * Add text to the spinner after the existing text
+     * @param text
+     */
 	next(text: string): this {
 		if (!this._started) {
 			return this.start(text)
@@ -142,10 +140,10 @@ export class Spinner extends EventEmitter {
 	}
 
 	/**
-	 * Start the spinner
-	 * @param text
-	 * @param options
-	 */
+     * Start the spinner
+     * @param text
+     * @param options
+     */
 	start(text?: string, options: IStartOptions = {}) {
 		this._started = true
 		this.text = text
@@ -169,10 +167,10 @@ export class Spinner extends EventEmitter {
 	}
 
 	/**
-	 * Add a new spinner
-	 * @param text
-	 * @param options
-	 */
+     * Add a new spinner
+     * @param text
+     * @param options
+     */
 	add(text?: string, options: IAddOptions = {}) {
 		const spinnerOptions = objectOnly(options, ['name', 'color', 'verbose'])
 		const startOptions = objectOnly(options, ['withPrefix'])
@@ -180,9 +178,9 @@ export class Spinner extends EventEmitter {
 	}
 
 	/**
-	 * Stop the spinner with a success state
-	 * @param text
-	 */
+     * Stop the spinner with a success state
+     * @param text
+     */
 	finish(text?: string) {
 		if (this._started) {
 			this.#stop(text)
@@ -194,14 +192,42 @@ export class Spinner extends EventEmitter {
 	}
 
 	/**
-	 * Stop the spinner with a failure state
-	 * @param text
-	 */
+     * Stop the spinner with a failure state
+     * @param text
+     */
 	fail(text?: string) {
 		if (this._started) {
 			this.#stop(text)
 			this.#renderLine(kLogSymbols.error)
 			this.emit('failed')
+		}
+
+		return this
+	}
+
+	/**
+     * Stop the spinner with a stop state
+     * @param text
+     */
+	stop(text?: string) {
+		if (this._started) {
+			this.#stop(text)
+			this.#renderLine(kLogSymbols.stop)
+			this.emit('stopped')
+		}
+
+		return this
+	}
+
+	/**
+     * Stop the spinner with a warning state
+     * @param text
+     */
+	warn(text?: string) {
+		if (this._started) {
+			this.#stop(text)
+			this.#renderLine(kLogSymbols.warning)
+			this.emit('warned')
 		}
 
 		return this
