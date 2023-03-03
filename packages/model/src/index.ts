@@ -222,11 +222,7 @@ export class Model<T extends object = any, D = Partial<T>> {
 			for (const appendable of this.append) {
 				if (this[appendable]) {
 					const value = this[appendable]
-					if (isCallable(value)) {
-						data[appendable] = value()
-					} else {
-						data[appendable] = value
-					}
+					data[appendable] = isCallable(value) ? value() : value
 				}
 			}
 		}

@@ -89,14 +89,14 @@ function getRules(count: number) {
 	let replace: IrregularRule
 	let rules: PluralRule[]
 
-	if (Math.abs(count) !== 1) {
-		replace = irregularSingles
-		keep = irregularPlurals
-		rules = pluralRules
-	} else {
+	if (Math.abs(count) === 1) {
 		replace = irregularPlurals
 		keep = irregularSingles
 		rules = singularRules
+	} else {
+		replace = irregularSingles
+		keep = irregularPlurals
+		rules = pluralRules
 	}
 
 	return {
