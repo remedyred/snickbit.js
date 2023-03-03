@@ -1,21 +1,18 @@
-name: Release
+name: Merge Checks
 
 on:
-  push:
-    branches:
-      - main
+  merge_group:
 
 jobs:
-  release:
-    name: Release
-    timeout-minutes: 10
+  merge-checks:
+    name: Merge Checks
+    timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
-      - name: Release
+      - name: Build, test, and verify
         uses: remedyred/release-please-action@v1.8.8
         with:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          AUTO_BOOTSTRAP: true
-          AUTO_COMMIT: true
+          PRERELEASE_ONLY: true
           PRERELEASE_SCRIPTS: build,test,fix,docs

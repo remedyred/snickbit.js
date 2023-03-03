@@ -1,18 +1,20 @@
-name: CI
+name: PR Checks
 
 on:
   pull_request:
     types: [opened, synchronize]
+    branches: [main,dev,next]
 
 jobs:
-  build:
-    name: Build, lint, and Test
+  pr-checks:
+    name: PR Checks
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
       - name: Build, test, and verify
-        uses: remedyred/release-please-action@v1.3.20
+        uses: remedyred/release-please-action@v1.8.8
         with:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           PRERELEASE_ONLY: true
+          PRERELEASE_SCRIPTS: build,test,fix
