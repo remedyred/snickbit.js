@@ -30,7 +30,7 @@
 
 #### Type declaration
 
-▸ (`this`, ...`args`): `any`
+▸ (`this`, `...args`): `any`
 
 ##### Parameters
 

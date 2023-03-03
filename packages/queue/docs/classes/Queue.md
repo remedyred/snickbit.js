@@ -257,7 +257,7 @@ ___
 
 ### push
 
-▸ **push**(...`tasks`): [`Queue`](Queue.md)
+▸ **push**(`...tasks`): [`Queue`](Queue.md)
 
 Push a task or set of tasks to the queue.
 

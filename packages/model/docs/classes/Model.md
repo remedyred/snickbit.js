@@ -521,7 +521,7 @@ ___
 
 ### push
 
-▸ **push**(`key`, ...`values`): [`Model`](Model.md)<`T`, `D`\>
+▸ **push**(`key`, `...values`): [`Model`](Model.md)<`T`, `D`\>
 
 Push a value to an array path
 

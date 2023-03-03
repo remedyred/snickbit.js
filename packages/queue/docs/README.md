@@ -118,7 +118,7 @@ ___
 
 #### Type declaration
 
-▸ (...`args`): [`QueueTaskPromise`](README.md#queuetaskpromise) \| `any`
+▸ (`...args`): [`QueueTaskPromise`](README.md#queuetaskpromise) \| `any`
 
 ##### Parameters
 
