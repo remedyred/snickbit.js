@@ -1,3 +1,4 @@
+<<<<<<<< HEAD:.github/workflows/merge-checks.yml
 name: Merge Checks
 
 on:
@@ -6,6 +7,18 @@ on:
 jobs:
   merge-checks:
     name: Merge Checks
+========
+name: PR Checks
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches: [main,dev,next]
+
+jobs:
+  pr-checks:
+    name: PR Checks
+>>>>>>>> ba12247 (ci: update remedyred/release-please-action and workflows):.github/workflows/pr-checks.yml
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
@@ -15,4 +28,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           PRERELEASE_ONLY: true
+<<<<<<<< HEAD:.github/workflows/merge-checks.yml
           PRERELEASE_SCRIPTS: build,test,fix,docs
+========
+          PRERELEASE_SCRIPTS: build,test,fix
+>>>>>>>> ba12247 (ci: update remedyred/release-please-action and workflows):.github/workflows/pr-checks.yml
