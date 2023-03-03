@@ -25,6 +25,7 @@
   - [@snickbit/node-utilities](#snickbit-node-utilities)
   - [@snickbit/plural](#snickbit-plural)
   - [@snickbit/queue](#snickbit-queue)
+  - [@snickbit/spinner](#snickbit-spinner)
   - [@snickbit/upwords](#snickbit-upwords)
   - [@snickbit/utilities](#snickbit-utilities)
 
@@ -126,6 +127,17 @@ This is a collection of helper functions for Node.js. Some of these are just wra
 </div>
 
 Fluid queueing library for any function or promise
+
+
+<div id="@snickbit/spinner">
+    <h3>
+        <a href="https://github.com/snickbit/snickbit.js/tree/main/packages/spinner">
+            @snickbit/spinner
+        </a>
+    </h3>
+</div>
+
+Minimal terminal spinner for Node.js
 
 
 <div id="@snickbit/upwords">
