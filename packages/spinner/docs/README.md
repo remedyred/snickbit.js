@@ -16,6 +16,7 @@
 
 - [isUnicodeSupported](README.md#isunicodesupported)
 - [spinner](README.md#spinner)
+- [useSymbols](README.md#usesymbols)
 
 ## Functions
 
@@ -44,3 +45,13 @@ ___
 #### Returns
 
 [`Spinner`](classes/Spinner.md)
+
+___
+
+### useSymbols
+
+▸ **useSymbols**(): `Symbols`
+
+#### Returns
+
+`Symbols`

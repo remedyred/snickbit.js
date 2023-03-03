@@ -50,6 +50,8 @@
 - [removeListener](Spinner.md#removelistener)
 - [setMaxListeners](Spinner.md#setmaxlisteners)
 - [start](Spinner.md#start)
+- [stop](Spinner.md#stop)
+- [warn](Spinner.md#warn)
 - [getEventListeners](Spinner.md#geteventlisteners)
 - [listenerCount](Spinner.md#listenercount-1)
 - [on](Spinner.md#on-1)
@@ -896,6 +898,42 @@ Start the spinner
 | :------ | :------ |
 | `text?` | `string` |
 | `options` | [`IStartOptions`](../interfaces/IStartOptions.md) |
+
+#### Returns
+
+[`Spinner`](Spinner.md)
+
+___
+
+### stop
+
+▸ **stop**(`text?`): [`Spinner`](Spinner.md)
+
+Stop the spinner with a stop state
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `text?` | `string` |
+
+#### Returns
+
+[`Spinner`](Spinner.md)
+
+___
+
+### warn
+
+▸ **warn**(`text?`): [`Spinner`](Spinner.md)
+
+Stop the spinner with a warning state
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `text?` | `string` |
 
 #### Returns
 
