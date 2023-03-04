@@ -1,0 +1,17 @@
+{
+  "separate-pull-requests": false,
+  "packages": {
+    "snickbit": {},
+    "controller": {},
+    "cycle": {},
+    "dates": {},
+    "model": {},
+    "node-utilities": {},
+    "plural": {},
+    "queue": {},
+    "spinner": {},
+    "state": {},
+    "upwords": {},
+    "utilities": {}
+  }
+}
