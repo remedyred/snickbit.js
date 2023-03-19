@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Build, test, and verify
-        uses: remedyred/release-please-action@v1.8.8
+        uses: remedyred/release-please-action@v1.8.20
         with:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
