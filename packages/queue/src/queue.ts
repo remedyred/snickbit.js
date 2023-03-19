@@ -16,29 +16,29 @@ import {AbortQueueError, QueueException} from './errors'
 import {QueuePromise} from './queue.promise'
 
 interface QueueTaskDefinition {
-	task: QueueTask
-	thisArg?: any
-	args?: any[]
+    task: QueueTask
+    thisArg?: any
+    args?: any[]
 }
 
 interface QueueTicks {
-	current: number
-	active: number
-	strict: number[]
+    current: number
+    active: number
+    strict: number[]
 }
 
 type Waiting = {
-	resolve(value: unknown): void
-	reject(error: unknown): void
+    resolve(value: unknown): void
+    reject(error: unknown): void
 }
 
 interface QueueHandlers {
-	then?: ThenCallback
-	thenEach?: ThenCallback
-	finally?: FinallyCallback
-	finallyEach?: FinallyCallback
-	catch?: CatchCallback
-	catchEach?: CatchCallback
+    then?: ThenCallback
+    thenEach?: ThenCallback
+    finally?: FinallyCallback
+    finallyEach?: FinallyCallback
+    catch?: CatchCallback
+    catchEach?: CatchCallback
 }
 
 const defaultOptions: QueueConfiguration = {
@@ -54,23 +54,15 @@ const defaultOptions: QueueConfiguration = {
 
 export class Queue {
 	static readonly defaultOptions: QueueConfiguration = {...defaultOptions}
-
+	readonly options: QueueConfiguration
 	private stopped: boolean
-
 	private tasks = 0
-
 	#results: any[] = []
-
 	private queue: ChunkedQueue | DynamicCyclicQueue
-
 	private aborted = false
-
 	private processes = 0
-
 	private process: QueuePromise<any>
-
 	private handlers = {} as QueueHandlers
-
 	private ticks: QueueTicks = {
 		current: 0,
 		active: 0,
@@ -78,10 +70,7 @@ export class Queue {
 	}
 
 	private waiting: Waiting | null
-
 	#reject: ((error: QueueException) => void) | ((reason?: any) => void) | undefined
-
-	readonly options: QueueConfiguration
 
 	constructor(options?: QueueOptions) {
 		this.options = {
@@ -90,29 +79,6 @@ export class Queue {
 		}
 		this.options.throttle = !!this.options.limit && !!this.options.interval
 		this.makeQueue()
-	}
-
-	/**
-	 * Set the default options for the queue
-	 * @param {QueueOptions} options
-	 */
-	static config(options: QueueOptions): void
-
-	/**
-	 * Set a default option for the queue
-	 * @param {QueueOption} option
-	 * @param {QueueOptionsValue} value
-	 */
-	static config(option: QueueOption, value: QueueOptionsValue): void
-	static config(optionOrOptions: QueueOption | QueueOptions, value?: QueueOptionsValue): void {
-		const options: any = typeof optionOrOptions === 'string' ? {[optionOrOptions]: value} : optionOrOptions
-		for (const option in options) {
-			if (option in Queue.defaultOptions) {
-				Queue.defaultOptions[option] = options[option]
-			} else {
-				throw new QueueException(`Invalid configuration option: ${option}. Valid options are: ${Object.keys(Queue.defaultOptions).join(', ')}`)
-			}
-		}
 	}
 
 	get length(): number {
@@ -125,6 +91,239 @@ export class Queue {
 
 	get pending() {
 		return this.queue.size()
+	}
+
+	/**
+     * Set the default options for the queue
+     * @param {QueueOptions} options
+     */
+	static config(options: QueueOptions): void
+
+	/**
+     * Set a default option for the queue
+     * @param {QueueOption} option
+     * @param {QueueOptionsValue} value
+     */
+	static config(option: QueueOption, value: QueueOptionsValue): void
+
+	static config(optionOrOptions: QueueOption | QueueOptions, value?: QueueOptionsValue): void {
+		const options: any = typeof optionOrOptions === 'string' ? {[optionOrOptions]: value} : optionOrOptions
+		for (const option in options) {
+			if (option in Queue.defaultOptions) {
+				Queue.defaultOptions[option] = options[option]
+			} else {
+				throw new QueueException(`Invalid configuration option: ${option}. Valid options are: ${Object.keys(Queue.defaultOptions).join(', ')}`)
+			}
+		}
+	}
+
+	/**
+     * Wait for the next task to complete.
+     */
+	wait(): Promise<any> {
+		return new Promise((resolve, reject) => this.waiting = {resolve, reject})
+	}
+
+	/**
+     * Push a task or set of tasks to the queue.
+     * @param {...QueueTask[]} tasks
+     */
+	push(...tasks: QueueTask[]): this {
+		for (const key in tasks) {
+			const taskDefinition: QueueTaskDefinition = {task: tasks[key]}
+			this.tasks++
+			this.queue.enqueue(taskDefinition)
+		}
+
+		if (this.options.autoStart) {
+			this.run()
+		}
+
+		return this
+	}
+
+	/**
+     * Add a task to the queue.
+     * @param {QueueTask} task
+     */
+	add(task: QueueTask): this
+
+	/**
+     * Add a promise to the queue.
+     * @param {QueueTaskPromise} task
+     */
+	add(task: QueueTaskPromise): this
+
+	/**
+     * Add a Function to the queue, along with its arguments.
+     * @param {QueueTaskFunction} task
+     * @param {any[]} args
+     */
+	add(task: QueueTaskFunction, args: any[]): this
+
+	/**
+     * Add a Function to the queue, with its "this" context and arguments.
+     * @param {QueueTaskFunction} task
+     * @param {any} thisArg
+     * @param {any[]} args
+     */
+	add(task: QueueTaskFunction, thisArg: any, args: any[]): this
+
+	add(task: QueueTask, thisArgOrArgs?: any[] | any, args?: any[]): this {
+		if (!task) {
+			throw new QueueException('Task must be a function or object')
+		}
+
+		const taskDefinition: QueueTaskDefinition = {task}
+
+		if (Array.isArray(thisArgOrArgs)) {
+			taskDefinition.args = thisArgOrArgs as any[]
+		} else {
+			taskDefinition.args = args
+			taskDefinition.thisArg = thisArgOrArgs
+		}
+
+		this.tasks++
+		this.queue.enqueue(taskDefinition)
+
+		if (this.options.autoStart) {
+			this.run()
+		}
+
+		return this
+	}
+
+	/**
+     * Clear the queue.
+     */
+	clear(): void {
+		this.queue.clear()
+	}
+
+	/**
+     * Abort the queue.
+     * @param {string} [reason]
+     */
+	abort(reason?: string): void {
+		this.aborted = true
+		this.ticks.strict.splice(0)
+		this.queue.clear()
+
+		if (this.#reject) {
+			this.#reject(new AbortQueueError(reason))
+		}
+	}
+
+	/**
+     * Enable (or disable) the queue's abortOnError option.
+     * @param {boolean} [abortOnError]
+     */
+	abortOnError(abortOnError: boolean): this {
+		this.options.abortOnError = abortOnError
+		return this
+	}
+
+	/**
+     * Set the queue's concurrency.
+     * @param {number} concurrency - The maximum number of tasks to run at the same time.
+     */
+	concurrency(concurrency: number): this {
+		this.options.concurrency = concurrency
+		return this
+	}
+
+	/**
+     * Set the queue's throttling
+     * @param {number} limit - The maximum number of tasks to run per interval
+     * @param {number} interval - The interval in milliseconds
+     * @param {boolean} [strict] - Use strict throttling (more accurate, but could be more resource intensive)
+     *
+     * @example
+     * // 1 task per second
+     * myQueue.throttle(1, 1000)
+     */
+	throttle(limit: number, interval: number, strict?: boolean): this {
+		this.options.limit = limit
+		this.options.interval = interval
+		this.options.throttle = !!this.options.limit && !!this.options.interval
+		if (strict !== undefined) {
+			this.options.strict = strict
+		}
+		return this
+	}
+
+	/**
+     * Set the queueing strategy. Dynamic uses slightly more resources but tends to be faster,
+     * chunked uses slightly less resources but tends to be slower.
+     * Dynamic is the default.
+     * @see https://github.com/kleinron/lite-fifo lite-fifo for benchmarks
+     * @param {'dynamic' | 'chunked'} strategy
+     */
+	strategy(strategy: 'chunked' | 'dynamic'): this {
+		this.options.strategy = strategy
+		return this
+	}
+
+	/**
+     * Run your queue.
+     */
+	run(): QueuePromise<any> {
+		this.process ||= new QueuePromise(async (resolve, reject) => {
+			this.#reject = reject
+			this.processes = 0
+			const promises: Promise<any>[] = []
+			while (this.queue.size() > 0) {
+				const task = this.queue.dequeue()
+				if (this.aborted || !task) {
+					break
+				}
+				if (this.options.concurrency >= 0 && this.processes >= this.options.concurrency) {
+					// queue is full, wait for the next promise to finish
+					await this.wait()
+				}
+
+				this.processes++
+				promises.push(this.executeTask(task))
+
+				while (this.queue.size() === 0 && this.processes > 0) {
+					// while the queue is empty and there are processes running, wait for the next promise to finish
+					await this.wait()
+				}
+			}
+
+			// Double check that there are no more promises to wait for
+			await Promise.all(promises)
+
+			resolve(this.#results)
+		}, this)
+		return this.process
+	}
+
+	/**
+     * Callback called for each task that successfully completes.
+     * @param {ThenCallback} callback
+     */
+	thenEach(callback: ThenCallback): this {
+		this.handlers.thenEach = callback
+		return this
+	}
+
+	/**
+     * Callback called for each task that throws an error.
+     * @param {CatchCallback} callback
+     */
+	catchEach(callback: CatchCallback): this {
+		this.handlers.catchEach = callback
+		return this
+	}
+
+	/**
+     * Callback called for each task that when it is finished.
+     * @param {FinallyCallback} callback
+     */
+	finallyEach(callback: FinallyCallback): this {
+		this.handlers.finallyEach = callback
+		return this
 	}
 
 	private makeQueue() {
@@ -179,220 +378,33 @@ export class Queue {
 		return earliestTime - now
 	}
 
-	/**
-	 * Wait for the next task to complete.
-	 */
-	wait(): Promise<any> {
-		return new Promise((resolve, reject) => this.waiting = {resolve, reject})
-	}
-
-	/**
-	 * Push a task or set of tasks to the queue.
-	 * @param {...QueueTask[]} tasks
-	 */
-	push(...tasks: QueueTask[]): this {
-		for (const key in tasks) {
-			const taskDefinition: QueueTaskDefinition = {task: tasks[key]}
-			this.tasks++
-			this.queue.enqueue(taskDefinition)
-		}
-
-		if (this.options.autoStart) {
-			this.run()
-		}
-
-		return this
-	}
-
-	/**
-	 * Add a task to the queue.
-	 * @param {QueueTask} task
-	 */
-	add(task: QueueTask): this
-
-	/**
-	 * Add a promise to the queue.
-	 * @param {QueueTaskPromise} task
-	 */
-	add(task: QueueTaskPromise): this
-
-	/**
-	 * Add a Function to the queue, along with its arguments.
-	 * @param {QueueTaskFunction} task
-	 * @param {any[]} args
-	 */
-	add(task: QueueTaskFunction, args: any[]): this
-
-	/**
-	 * Add a Function to the queue, with its "this" context and arguments.
-	 * @param {QueueTaskFunction} task
-	 * @param {any} thisArg
-	 * @param {any[]} args
-	 */
-	add(task: QueueTaskFunction, thisArg: any, args: any[]): this
-	add(task: QueueTask, thisArgOrArgs?: any[] | any, args?: any[]): this {
-		if (!task) {
-			throw new QueueException('Task must be a function or object')
-		}
-
-		const taskDefinition: QueueTaskDefinition = {task}
-
-		if (Array.isArray(thisArgOrArgs)) {
-			taskDefinition.args = thisArgOrArgs as any[]
-		} else {
-			taskDefinition.args = args
-			taskDefinition.thisArg = thisArgOrArgs
-		}
-
-		this.tasks++
-		this.queue.enqueue(taskDefinition)
-
-		if (this.options.autoStart) {
-			this.run()
-		}
-
-		return this
-	}
-
-	/**
-	 * Clear the queue.
-	 */
-	clear(): void {
-		this.queue.clear()
-	}
-
-	/**
-	 * Abort the queue.
-	 * @param {string} [reason]
-	 */
-	abort(reason?: string): void {
-		this.aborted = true
-		this.ticks.strict.splice(0)
-		this.queue.clear()
-
-		if (this.#reject) {
-			this.#reject(new AbortQueueError(reason))
-		}
-	}
-
-	/**
-	 * Enable (or disable) the queue's abortOnError option.
-	 * @param {boolean} [abortOnError]
-	 */
-	abortOnError(abortOnError: boolean): this {
-		this.options.abortOnError = abortOnError
-		return this
-	}
-
-	/**
-	 * Set the queue's concurrency.
-	 * @param {number} concurrency - The maximum number of tasks to run at the same time.
-	 */
-	concurrency(concurrency: number): this {
-		this.options.concurrency = concurrency
-		return this
-	}
-
-	/**
-	 * Set the queue's throttling
-	 * @param {number} limit - The maximum number of tasks to run per interval
-	 * @param {number} interval - The interval in milliseconds
-	 * @param {boolean} [strict] - Use strict throttling (more accurate, but could be more resource intensive)
-	 *
-	 * @example
-	 * // 1 task per second
-	 * myQueue.throttle(1, 1000)
-	 */
-	throttle(limit: number, interval: number, strict?: boolean): this {
-		this.options.limit = limit
-		this.options.interval = interval
-		this.options.throttle = !!this.options.limit && !!this.options.interval
-		if (strict !== undefined) {
-			this.options.strict = strict
-		}
-		return this
-	}
-
-	/**
-	 * Set the queueing strategy. Dynamic uses slightly more resources but tends to be faster,
-	 * chunked uses slightly less resources but tends to be slower.
-	 * Dynamic is the default.
-	 * @see https://github.com/kleinron/lite-fifo lite-fifo for benchmarks
-	 * @param {'dynamic' | 'chunked'} strategy
-	 */
-	strategy(strategy: 'chunked' | 'dynamic'): this {
-		this.options.strategy = strategy
-		return this
-	}
-
-	/**
-	 * Run your queue.
-	 */
-	run(): QueuePromise<any> {
-		this.process ||= new QueuePromise(async (resolve, reject) => {
-			this.#reject = reject
-			this.processes = 0
-			const promises: Promise<any>[] = []
-			while (this.queue.size() > 0) {
-				const task = this.queue.dequeue()
-				if (this.aborted || !task) {
-					break
-				}
-				if (this.options.concurrency >= 0 && this.processes >= this.options.concurrency) {
-					// queue is full, wait for the next promise to finish
-					await this.wait()
-				}
-
-				this.processes++
-				promises.push(this.executeTask(task))
-
-				while (this.queue.size() === 0 && this.processes > 0) {
-					// while the queue is empty and there are processes running, wait for the next promise to finish
-					await this.wait()
-				}
-			}
-
-			// Double check that there are no more promises to wait for
-			await Promise.all(promises)
-
-			resolve(this.#results)
-		}, this)
-		return this.process
-	}
-
-	/**
-	 * Callback called for each task that successfully completes.
-	 * @param {ThenCallback} callback
-	 */
-	thenEach(callback: ThenCallback): this {
-		this.handlers.thenEach = callback
-		return this
-	}
-
-	/**
-	 * Callback called for each task that throws an error.
-	 * @param {CatchCallback} callback
-	 */
-	catchEach(callback: CatchCallback): this {
-		this.handlers.catchEach = callback
-		return this
-	}
-
-	/**
-	 * Callback called for each task that when it is finished.
-	 * @param {FinallyCallback} callback
-	 */
-	finallyEach(callback: FinallyCallback): this {
-		this.handlers.finallyEach = callback
-		return this
-	}
-
 	private abortTask(error?: any) {
 		if (this.waiting) {
 			this.waiting.reject(new QueueException('Queue has been aborted'))
 		}
 
 		throw new AbortQueueError(error)
+	}
+
+	/**
+     * Run the next task in the queue.
+     */
+	async next(force = false): Promise<any> {
+		if (this.queue.size() > 0) {
+			const task = this.queue.dequeue()
+
+			if (this.aborted || !task) {
+				return
+			}
+
+			if (force || (this.options.concurrency >= 0 && this.processes >= this.options.concurrency)) {
+				// queue is full, wait for the next promise to finish, unless force is true
+				await this.wait()
+			}
+
+			this.processes++
+			return this.executeTask(task)
+		}
 	}
 
 	private async executeTask(taskDefinition: QueueTaskDefinition): Promise<void> {
