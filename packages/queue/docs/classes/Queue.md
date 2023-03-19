@@ -26,6 +26,7 @@
 - [clear](Queue.md#clear)
 - [concurrency](Queue.md#concurrency)
 - [finallyEach](Queue.md#finallyeach)
+- [next](Queue.md#next)
 - [push](Queue.md#push)
 - [run](Queue.md#run)
 - [strategy](Queue.md#strategy)
@@ -252,6 +253,24 @@ Callback called for each task that when it is finished.
 #### Returns
 
 [`Queue`](Queue.md)
+
+___
+
+### next
+
+▸ **next**(`force?`): `Promise`<`any`\>
+
+Run the next task in the queue.
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `force` | `boolean` | `false` |
+
+#### Returns
+
+`Promise`<`any`\>
 
 ___
 
