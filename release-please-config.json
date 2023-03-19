@@ -1,0 +1,21 @@
+{
+  "separate-pull-requests": true,
+  "bootstrap-sha": "fcf43711de95b9802932dc6439d9a10ecde2dbd7",
+  "plugins": [
+    "node-workspace"
+  ],
+  "packages": {
+    "clis/snickbit": "1.0.23",
+    "packages/controller": "1.0.6",
+    "packages/cycle": "1.0.14",
+    "packages/dates": "1.0.69",
+    "packages/model": "1.0.72",
+    "packages/node-utilities": "4.7.0",
+    "packages/plural": "1.0.13",
+    "packages/queue": "1.2.26",
+    "packages/spinner": "1.0.0",
+    "packages/state": "1.0.3",
+    "packages/upwords": "2.0.37",
+    "packages/utilities": "3.4.19"
+  }
+}

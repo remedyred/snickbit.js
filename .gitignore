@@ -18,4 +18,4 @@ bin/
 !.git*
 !.*ignore
 !.*rc*
-!.husky/
+!.husky/!.release-please-manifest.json
