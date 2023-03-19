@@ -19,4 +19,3 @@ bin/
 !.*ignore
 !.*rc*
 !.husky/
-!.release-please-manifest.json
