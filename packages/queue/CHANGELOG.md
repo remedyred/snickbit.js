@@ -21,6 +21,13 @@ All notable changes to this project will be documented in this file. See
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.0.0 (2023-03-19)
+
+
+### Features
+
+* **queue:** add next() method to run next item in queue menually ([a86bb58](https://github.com/remedyred/snickbit.js/commit/a86bb58d30b1d78839891c1a957cf4270b7f1ba0))
+
 ## [1.2.6](https://github.com/snickbit/snickbit.js/compare/@snickbit/queue@1.2.5...@snickbit/queue@1.2.6) (2022-08-19)
 
 **Note:** Version bump only for package @snickbit/queue
