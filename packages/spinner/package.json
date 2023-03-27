@@ -31,12 +31,12 @@
 	},
 	"dependencies": {
 		"@snickbit/ansi": "^0.0.26",
-		"@snickbit/utilities": "3.5.0",
+		"@snickbit/utilities": "^3.5.0",
 		"cli-spinners": "^2.7.0",
 		"kleur": "^4.1.5"
 	},
 	"devDependencies": {
-		"@snickbit/indexer": "2.5.28",
+		"@snickbit/indexer": "^2.5.28",
 		"@types/node": "18.14.4",
 		"shx": "0.3.4",
 		"tsup": "6.6.3",
