@@ -17,35 +17,35 @@ const kLogSymbols = useSymbols()
 
 export interface ISpinnerOptions {
 
-    /**
-     * Spinner name (from cli-spinners lib)
-     *
-     * @default "dots"
-     */
-    name?: cliSpinners.SpinnerName
+	/**
+	 * Spinner name (from cli-spinners lib)
+	 *
+	 * @default "dots"
+	 */
+	name?: cliSpinners.SpinnerName
 
-    /**
-     * Spinner frame color
-     *
-     * @default "white"
-     */
-    color?: string
+	/**
+	 * Spinner frame color
+	 *
+	 * @default "white"
+	 */
+	color?: string
 
-    /**
-     * Do not log anything when disabled
-     *
-     * @default true
-     */
-    verbose?: boolean
+	/**
+	 * Do not log anything when disabled
+	 *
+	 * @default true
+	 */
+	verbose?: boolean
 
-    /**
-     * Show this prefix before all text
-     */
-    textPrefix?: string
+	/**
+	 * Show this prefix before all text
+	 */
+	textPrefix?: string
 }
 
 export interface IStartOptions {
-    withPrefix?: string
+	withPrefix?: string
 }
 
 export interface IAddOptions extends IStartOptions, ISpinnerOptions {
@@ -56,6 +56,7 @@ export function spinner(options: ISpinnerOptions = {}) {
 }
 
 export class Spinner extends EventEmitter {
+	private static spinners: Spinner[] = []
 	public stream: TTY.WriteStream = process.stdout
 	readonly verbose: boolean = true
 	protected readonly spinner: cliSpinners.Spinner
@@ -118,16 +119,20 @@ export class Spinner extends EventEmitter {
 	}
 
 	/**
-     * Reset the spinner count
-     */
+	 * Stop all spinners and remove them from the list
+	 */
 	static reset() {
 		internalSpinnerCount = 0
+		for (const spinner of Spinner.spinners) {
+			spinner.stop()
+		}
+		Spinner.spinners = []
 	}
 
 	/**
-     * Add text to the spinner after the existing text
-     * @param text
-     */
+	 * Add text to the spinner after the existing text
+	 * @param text
+	 */
 	next(text: string): this {
 		if (!this._started) {
 			return this.start(text)
@@ -140,10 +145,10 @@ export class Spinner extends EventEmitter {
 	}
 
 	/**
-     * Start the spinner
-     * @param text
-     * @param options
-     */
+	 * Start the spinner
+	 * @param text
+	 * @param options
+	 */
 	start(text?: string, options: IStartOptions = {}) {
 		this._started = true
 		this.text = text
@@ -167,20 +172,22 @@ export class Spinner extends EventEmitter {
 	}
 
 	/**
-     * Add a new spinner
-     * @param text
-     * @param options
-     */
+	 * Add a new spinner
+	 * @param text
+	 * @param options
+	 */
 	add(text?: string, options: IAddOptions = {}) {
 		const spinnerOptions = objectOnly(options, ['name', 'color', 'verbose'])
 		const startOptions = objectOnly(options, ['withPrefix'])
-		return new Spinner(spinnerOptions).start(text, startOptions)
+		const spinner = new Spinner(spinnerOptions).start(text, startOptions)
+		Spinner.spinners.push(spinner)
+		return spinner
 	}
 
 	/**
-     * Stop the spinner with a success state
-     * @param text
-     */
+	 * Stop the spinner with a success state
+	 * @param text
+	 */
 	finish(text?: string) {
 		if (this._started) {
 			this.#stop(text)
@@ -192,9 +199,9 @@ export class Spinner extends EventEmitter {
 	}
 
 	/**
-     * Stop the spinner with a failure state
-     * @param text
-     */
+	 * Stop the spinner with a failure state
+	 * @param text
+	 */
 	fail(text?: string) {
 		if (this._started) {
 			this.#stop(text)
@@ -206,9 +213,9 @@ export class Spinner extends EventEmitter {
 	}
 
 	/**
-     * Stop the spinner with a stop state
-     * @param text
-     */
+	 * Stop the spinner with a stop state
+	 * @param text
+	 */
 	stop(text?: string) {
 		if (this._started) {
 			this.#stop(text)
@@ -220,9 +227,27 @@ export class Spinner extends EventEmitter {
 	}
 
 	/**
-     * Stop the spinner with a warning state
-     * @param text
-     */
+	 * Stop all spinners
+	 */
+	stopAll() {
+		for (const spinner of Spinner.spinners) {
+			spinner.stop()
+		}
+	}
+
+	/**
+	 * Remove the spinner
+	 */
+	remove() {
+		this.stop()
+		Spinner.spinners = Spinner.spinners.filter(s => s !== this)
+		internalSpinnerCount--
+	}
+
+	/**
+	 * Stop the spinner with a warning state
+	 * @param text
+	 */
 	warn(text?: string) {
 		if (this._started) {
 			this.#stop(text)
