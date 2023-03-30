@@ -189,11 +189,9 @@ export class Spinner extends EventEmitter {
 	 * @param text
 	 */
 	finish(text?: string) {
-		if (this._started) {
-			this.#stop(text)
-			this.#renderLine(kLogSymbols.success)
-			this.emit('finished')
-		}
+		this.#stop(text)
+		this.#renderLine(kLogSymbols.success)
+		this.emit('finished')
 
 		return this
 	}
@@ -203,11 +201,9 @@ export class Spinner extends EventEmitter {
 	 * @param text
 	 */
 	fail(text?: string) {
-		if (this._started) {
-			this.#stop(text)
-			this.#renderLine(kLogSymbols.error)
-			this.emit('failed')
-		}
+		this.#stop(text)
+		this.#renderLine(kLogSymbols.error)
+		this.emit('failed')
 
 		return this
 	}
@@ -217,11 +213,9 @@ export class Spinner extends EventEmitter {
 	 * @param text
 	 */
 	stop(text?: string) {
-		if (this._started) {
-			this.#stop(text)
-			this.#renderLine(kLogSymbols.stop)
-			this.emit('stopped')
-		}
+		this.#stop(text)
+		this.#renderLine(kLogSymbols.stop)
+		this.emit('stopped')
 
 		return this
 	}
@@ -249,11 +243,9 @@ export class Spinner extends EventEmitter {
 	 * @param text
 	 */
 	warn(text?: string) {
-		if (this._started) {
-			this.#stop(text)
-			this.#renderLine(kLogSymbols.warning)
-			this.emit('warned')
-		}
+		this.#stop(text)
+		this.#renderLine(kLogSymbols.warning)
+		this.emit('warned')
 
 		return this
 	}
