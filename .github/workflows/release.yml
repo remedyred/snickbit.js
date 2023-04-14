@@ -6,6 +6,10 @@ on:
       - main
       - next
 
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
 jobs:
   release:
     name: Release
@@ -37,7 +41,4 @@ jobs:
           pnpm jest --ci --onlyChanged
 
       - name: Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: pnpm turbo run release:ci
