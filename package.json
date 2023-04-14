@@ -15,8 +15,10 @@
 		"prepare": "husky install",
 		"prerelease": "turbo run --no-daemon --no-cache clean build docs //#fix //#test",
 		"release": "turbo run release",
+		"prerelease:ci": "turbo run --no-daemon build docs //#fix && pnpm run test:ci",
 		"release:ci": "multi-semantic-release --deps.bump=satisfy",
-		"test": "jest --no-cache"
+		"test": "jest --no-cache",
+		"test:ci": "jest --no-cache --ci --onlyChanged"
 	},
 	"lint-staged": {
 		"*.{ts,json,yml,yaml}": "eslint --fix --cache"

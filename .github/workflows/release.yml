@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - next
+
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -16,29 +16,14 @@ jobs:
     timeout-minutes: 30
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - name: Build, Test, and Lint
+        uses: remedyred/check-action@v1.1.11
         with:
-          fetch-depth: 0
-          token: ${{ secrets.GH_TOKEN }}
-
-      - uses: pnpm/action-setup@v2.2.4
-        with:
-          version: 7
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 'lts/*'
-          cache: 'pnpm'
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Build, test, and lint
-        run: | 
-          pnpm turbo run build docs //#fix
-          pnpm jest --ci --onlyChanged
+          SCRIPTS: prerelease:ci
+          NO_BAIL: true
+          AUTO_COMMIT: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Release
         run: pnpm turbo run release:ci
+
