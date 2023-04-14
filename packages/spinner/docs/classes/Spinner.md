@@ -46,11 +46,13 @@
 - [prependListener](Spinner.md#prependlistener)
 - [prependOnceListener](Spinner.md#prependoncelistener)
 - [rawListeners](Spinner.md#rawlisteners)
+- [remove](Spinner.md#remove)
 - [removeAllListeners](Spinner.md#removealllisteners)
 - [removeListener](Spinner.md#removelistener)
 - [setMaxListeners](Spinner.md#setmaxlisteners)
 - [start](Spinner.md#start)
 - [stop](Spinner.md#stop)
+- [stopAll](Spinner.md#stopall)
 - [warn](Spinner.md#warn)
 - [getEventListeners](Spinner.md#geteventlisteners)
 - [listenerCount](Spinner.md#listenercount-1)
@@ -721,6 +723,18 @@ EventEmitter.rawListeners
 
 ___
 
+### remove
+
+▸ **remove**(): `void`
+
+Remove the spinner
+
+#### Returns
+
+`void`
+
+___
+
 ### removeAllListeners
 
 ▸ **removeAllListeners**(`event?`): [`Spinner`](Spinner.md)
@@ -920,6 +934,18 @@ Stop the spinner with a stop state
 #### Returns
 
 [`Spinner`](Spinner.md)
+
+___
+
+### stopAll
+
+▸ **stopAll**(): `void`
+
+Stop all spinners
+
+#### Returns
+
+`void`
 
 ___
 
@@ -1241,7 +1267,7 @@ ___
 
 ▸ `Static` **reset**(): `void`
 
-Reset the spinner count
+Stop all spinners and remove them from the list
 
 #### Returns
 
