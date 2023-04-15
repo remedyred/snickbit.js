@@ -59,6 +59,7 @@
 		},
 		"//#release:ci": {
 			"env": ["GITHUB_TOKEN", "NPM_TOKEN"],
+			"dependsOn": ["build"],
 			"outputs": ["CHANGELOG.md", "package.json", "docs/**", "README.md"],
 			"outputMode": "new-only"
 		}

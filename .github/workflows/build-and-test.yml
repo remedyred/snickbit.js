@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Build, Test, and Lint
-        uses: remedyred/check-action@v1.1.11
+        uses: remedyred/check-action@v1.1.12
         with:
           SCRIPTS: prerelease:ci
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
