@@ -52,22 +52,23 @@ const defaultOptions: QueueConfiguration = {
 	autoStart: true
 }
 
+const defaultQueueTicks = {
+	current: 0,
+	active: 0,
+	strict: []
+}
+
 export class Queue {
 	static readonly defaultOptions: QueueConfiguration = {...defaultOptions}
 	readonly options: QueueConfiguration
-	private stopped: boolean
 	private tasks = 0
 	#results: any[] = []
 	private queue: ChunkedQueue | DynamicCyclicQueue
 	private aborted = false
 	private processes = 0
-	private process: QueuePromise<any>
+	private process: QueuePromise<any> | null = null
 	private handlers = {} as QueueHandlers
-	private ticks: QueueTicks = {
-		current: 0,
-		active: 0,
-		strict: []
-	}
+	private ticks: QueueTicks = {...defaultQueueTicks}
 
 	private waiting: Waiting | null
 	#reject: ((error: QueueException) => void) | ((reason?: any) => void) | undefined
@@ -78,7 +79,7 @@ export class Queue {
 			...options
 		}
 		this.options.throttle = !!this.options.limit && !!this.options.interval
-		this.makeQueue()
+		this.reset()
 	}
 
 	get length(): number {
@@ -295,6 +296,9 @@ export class Queue {
 			await Promise.all(promises)
 
 			resolve(this.#results)
+
+			// reset the queue
+			this.reset()
 		}, this)
 		return this.process
 	}
@@ -326,11 +330,14 @@ export class Queue {
 		return this
 	}
 
-	private makeQueue() {
-		if (this.queue && this.queue.size() > 0) {
-			throw new QueueException('Cannot change queue strategy after queue has been started. Either create a new queue or clear the current one.')
-		}
-
+	private reset() {
+		this.processes = 0
+		this.process = null
+		this.tasks = 0
+		this.waiting = null
+		this.handlers = {}
+		this.ticks = {...defaultQueueTicks}
+		this.aborted = false
 		if (this.options.strategy === 'dynamic') {
 			this.queue = new DynamicCyclicQueue()
 		} else if (this.options.strategy === 'chunked') {

@@ -136,4 +136,25 @@ describe('Queue', () => {
 		await queue.run()
 		expect(results).toStrictEqual(expected)
 	})
+
+	it('should be able to start a new queue when the previous one is finished', async () => {
+		const queue = new Queue({autoStart: false})
+		const results: string[] = []
+		const expected: string[] = []
+		const testGroups = 2
+		const tests = 4
+
+		for (let tg = 0; tg < testGroups; tg++) {
+			for (let t = 0; t < tests; t++) {
+				queue.push(async () => {
+					await sleep(100)
+					results.push(`${tg}-${t}`)
+				})
+				expected.push(`${tg}-${t}`)
+			}
+			await queue.run()
+		}
+
+		expect(results).toStrictEqual(expected)
+	})
 })
