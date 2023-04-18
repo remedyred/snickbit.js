@@ -135,7 +135,7 @@ export class Spinner extends EventEmitter {
 	 */
 	next(text: string): this {
 		if (!this._started) {
-			return this.start(text)
+			this.#start()
 		}
 
 		this.textPrefix ||= this.text
@@ -150,13 +150,11 @@ export class Spinner extends EventEmitter {
 	 * @param options
 	 */
 	start(text?: string, options: IStartOptions = {}) {
-		this._started = true
 		this.text = text
 		if (typeof options.withPrefix === 'string') {
 			this.linePrefix = options.withPrefix
 		}
 
-		this.emit('start')
 		this.spinnerPos = internalSpinnerCount++
 		this._startTime = performance.now()
 
@@ -164,11 +162,17 @@ export class Spinner extends EventEmitter {
 			return this
 		}
 
+		this.#start()
+
+		return this
+	}
+
+	#start() {
+		this._started = true
+		this.emit('start')
 		this.frameIndex = 0
 		this.stream.write(`${this.#lineToRender()}\n`)
 		this.interval = setInterval(() => this.#renderLine(), this.spinner.interval)
-
-		return this
 	}
 
 	/**
@@ -296,7 +300,11 @@ export class Spinner extends EventEmitter {
 	}
 
 	#stop(text?: string) {
-		this.text = text
+		this.emit('stop')
+		if (text !== undefined) {
+			this.text = text
+		}
+
 		this._started = false
 
 		if (this.interval !== null) {
