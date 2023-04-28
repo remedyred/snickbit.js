@@ -15,6 +15,10 @@ jobs:
     name: Release
     timeout-minutes: 30
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      issues: write
+      contents: write
     steps:
       - name: Build, Test, and Lint
         uses: remedyred/check-action@v1.2.3
