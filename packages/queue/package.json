@@ -15,7 +15,7 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "tsup --minify",
+		"build": "indexer && tsup --minify",
 		"clean": "shx rm -rf ./dist",
 		"dev": "tsup",
 		"docs": "typedoc src/index.ts --tsconfig ./tsconfig.typedoc.json",
