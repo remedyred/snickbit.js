@@ -9,10 +9,8 @@ jobs:
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
-      - name: Build, test, and verify
-        uses: remedyred/release-please-action@v1.8.8
+      - name: Build, Test, and Lint
+        uses: remedyred/check-action@v1.2.3
         with:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          PRERELEASE_ONLY: true
-          PRERELEASE_SCRIPTS: build,test,fix,docs
+          SCRIPTS: prerelease:ci
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
