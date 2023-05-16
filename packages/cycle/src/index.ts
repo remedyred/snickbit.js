@@ -1,7 +1,7 @@
-import {arrayShuffle, isString} from '@snickbit/utilities'
+import {arrayShuffle, isString, JSONStringify} from '@snickbit/utilities'
 import * as presets from './presets'
 
-export type Preset = keyof typeof presets
+export type Preset = string & keyof typeof presets
 
 export class Cycle<T = any> {
 	protected started: boolean
@@ -92,10 +92,26 @@ export class Cycle<T = any> {
 	shuffle() {
 		this.items = arrayShuffle(this.items)
 	}
+
+	values() {
+		return [...this.items]
+	}
+
+	indexes() {
+		return Object.keys(this.items).map(Number)
+	}
+
+	toJSON() {
+		return this.values()
+	}
+
+	toString() {
+		return JSONStringify(this.toJSON())
+	}
 }
 
 export function cycle<T = any>(items?: T[]): Cycle
 export function cycle(prefix?: Preset): Cycle
-export function cycle<T = any>(itemsOrPreset?: T[] | string): Cycle<T> {
+export function cycle<T = any>(itemsOrPreset?: Preset | T[]): Cycle<T> {
 	return new Cycle<T>(itemsOrPreset as any)
 }
