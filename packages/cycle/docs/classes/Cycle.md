@@ -1,15 +1,16 @@
-# Class: Cycle
+# Class: Cycle<T\>
+
+## Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | `any` |
 
 ## Table of contents
 
 ### Constructors
 
 - [constructor](Cycle.md#constructor)
-
-### Properties
-
-- [index](Cycle.md#index)
-- [items](Cycle.md#items)
 
 ### Accessors
 
@@ -25,6 +26,7 @@
 - [first](Cycle.md#first)
 - [get](Cycle.md#get)
 - [getIndex](Cycle.md#getindex)
+- [indexes](Cycle.md#indexes)
 - [last](Cycle.md#last)
 - [next](Cycle.md#next)
 - [prev](Cycle.md#prev)
@@ -32,46 +34,55 @@
 - [remove](Cycle.md#remove)
 - [set](Cycle.md#set)
 - [shuffle](Cycle.md#shuffle)
+- [toJSON](Cycle.md#tojson)
+- [toString](Cycle.md#tostring)
+- [values](Cycle.md#values)
 
 ## Constructors
 
 ### constructor
 
-• **new Cycle**(`items?`)
+• **new Cycle**<`T`\>(`items?`)
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | `any` |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `items?` | `any`[] |
+| `items?` | `T`[] |
 
-• **new Cycle**(`preset?`)
+• **new Cycle**<`T`\>(`preset?`)
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | `any` |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `preset?` | `string` |
+| `preset?` | [`Preset`](../README.md#preset) |
 
-• **new Cycle**(`itemsOrPreset?`)
+• **new Cycle**<`T`\>(`itemsOrPreset?`)
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | `any` |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `itemsOrPreset?` | `string` \| `any`[] |
-
-## Properties
-
-### index
-
-• **index**: `number`
-
-___
-
-### items
-
-• **items**: `any`[] = `[]`
+| `itemsOrPreset?` | [`Preset`](../README.md#preset) \| `T`[] |
 
 ## Accessors
 
@@ -127,17 +138,17 @@ ___
 
 ### current
 
-▸ **current**(): `any`
+▸ **current**(): `T`
 
 #### Returns
 
-`any`
+`T`
 
 ___
 
 ### first
 
-▸ **first**(`save?`): `any`
+▸ **first**(`save?`): `T`
 
 #### Parameters
 
@@ -147,13 +158,13 @@ ___
 
 #### Returns
 
-`any`
+`T`
 
 ___
 
 ### get
 
-▸ **get**(`index`, `save?`): `any`
+▸ **get**(`index`, `save?`): `T`
 
 #### Parameters
 
@@ -164,13 +175,13 @@ ___
 
 #### Returns
 
-`any`
+`T`
 
 ___
 
 ### getIndex
 
-▸ **getIndex**(`index`, `save?`): `any`
+▸ **getIndex**(`index`, `save?`): `T`
 
 #### Parameters
 
@@ -181,13 +192,23 @@ ___
 
 #### Returns
 
-`any`
+`T`
+
+___
+
+### indexes
+
+▸ **indexes**(): `number`[]
+
+#### Returns
+
+`number`[]
 
 ___
 
 ### last
 
-▸ **last**(`save?`): `any`
+▸ **last**(`save?`): `T`
 
 #### Parameters
 
@@ -197,13 +218,13 @@ ___
 
 #### Returns
 
-`any`
+`T`
 
 ___
 
 ### next
 
-▸ **next**(`save?`): `any`
+▸ **next**(`save?`): `T`
 
 #### Parameters
 
@@ -213,13 +234,13 @@ ___
 
 #### Returns
 
-`any`
+`T`
 
 ___
 
 ### prev
 
-▸ **prev**(`save?`): `any`
+▸ **prev**(`save?`): `T`
 
 #### Parameters
 
@@ -229,7 +250,7 @@ ___
 
 #### Returns
 
-`any`
+`T`
 
 ___
 
@@ -241,7 +262,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `value` | `any` |
+| `value` | `T` |
 
 #### Returns
 
@@ -257,7 +278,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `value` | `any` |
+| `value` | `T` |
 
 #### Returns
 
@@ -274,7 +295,7 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `index` | `number` |
-| `value` | `any` |
+| `value` | `T` |
 
 #### Returns
 
@@ -289,3 +310,33 @@ ___
 #### Returns
 
 `void`
+
+___
+
+### toJSON
+
+▸ **toJSON**(): `T`[]
+
+#### Returns
+
+`T`[]
+
+___
+
+### toString
+
+▸ **toString**(): `string`
+
+#### Returns
+
+`string`
+
+___
+
+### values
+
+▸ **values**(): `T`[]
+
+#### Returns
+
+`T`[]

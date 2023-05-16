@@ -6,21 +6,37 @@
 
 - [Cycle](classes/Cycle.md)
 
+### Type Aliases
+
+- [Preset](README.md#preset)
+
 ### Functions
 
 - [cycle](README.md#cycle)
+
+## Type Aliases
+
+### Preset
+
+Ƭ **Preset**: `string` & keyof typeof `presets`
 
 ## Functions
 
 ### cycle
 
-▸ **cycle**(`items?`): [`Cycle`](classes/Cycle.md)
+▸ **cycle**<`T`\>(`items?`): [`Cycle`](classes/Cycle.md)
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | `any` |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `items?` | `any`[] |
+| `items?` | `T`[] |
 
 #### Returns
 
@@ -32,7 +48,7 @@
 
 | Name | Type |
 | :------ | :------ |
-| `prefix?` | `string` |
+| `prefix?` | [`Preset`](README.md#preset) |
 
 #### Returns
 
