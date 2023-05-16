@@ -1,24 +1,25 @@
 import {arrayShuffle, isString} from '@snickbit/utilities'
 import * as presets from './presets'
 
-export class Cycle {
-	#started: boolean
+export type Preset = keyof typeof presets
 
-	items: any[] = []
+export class Cycle<T = any> {
+	protected started: boolean
 
-	index: number
+	protected items: T[] = []
 
-	constructor(items?: any[])
-	constructor(preset?: string)
-	constructor(itemsOrPreset?: any[] | string)
-	constructor(itemsOrPreset?: any[] | string) {
-		this.index = 0
+	protected index = 0
+
+	constructor(items?: T[])
+	constructor(preset?: Preset)
+	constructor(itemsOrPreset?: Preset | T[])
+	constructor(itemsOrPreset?: Preset | T[]) {
 		if (!itemsOrPreset) {
 			this.items = []
 		} else if (Array.isArray(itemsOrPreset)) {
 			this.items = [...itemsOrPreset]
 		} else if (isString(itemsOrPreset)) {
-			this.items = presets[itemsOrPreset as keyof typeof presets]
+			this.items = presets[itemsOrPreset] as T[]
 		} else {
 			throw new TypeError('Invalid type for items, expected array or string')
 		}
@@ -48,12 +49,12 @@ export class Cycle {
 		if (save) {
 			this.index = index
 		}
-		this.#started = true
+		this.started = true
 		return this.items[index]
 	}
 
 	next(save?: boolean) {
-		return this.getIndex(this.#started ? this.nextIndex : this.currentIndex, save)
+		return this.getIndex(this.started ? this.nextIndex : this.currentIndex, save)
 	}
 
 	prev(save?: boolean) {
@@ -76,15 +77,15 @@ export class Cycle {
 		return this.getIndex(index % this.items.length, save)
 	}
 
-	set(index: number, value: any) {
+	set(index: number, value: T) {
 		this.items[index] = value
 	}
 
-	push(value: any) {
+	push(value: T) {
 		this.items.push(value)
 	}
 
-	remove(value: any) {
+	remove(value: T) {
 		this.items.splice(this.items.indexOf(value), 1)
 	}
 
@@ -93,8 +94,8 @@ export class Cycle {
 	}
 }
 
-export function cycle(items?: any[]): Cycle
-export function cycle(prefix?: string): Cycle
-export function cycle(itemsOrPreset?: any[] | string) {
-	return new Cycle(itemsOrPreset)
+export function cycle<T = any>(items?: T[]): Cycle
+export function cycle(prefix?: Preset): Cycle
+export function cycle<T = any>(itemsOrPreset?: T[] | string): Cycle<T> {
+	return new Cycle<T>(itemsOrPreset as any)
 }
