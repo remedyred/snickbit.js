@@ -21,7 +21,7 @@ jobs:
       contents: write
     steps:
       - name: Build, Test, and Lint
-        uses: remedyred/check-action@v1.2.3
+        uses: remedyred/check-action@v1.2.6
         with:
           SCRIPTS: prerelease:ci
           NO_BAIL: true
