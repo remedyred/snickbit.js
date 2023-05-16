@@ -1,4 +1,4 @@
-import {Cycle, cycle} from '../src'
+import {Cycle, cycle, Preset} from '../src'
 import * as presets from '../src/presets'
 
 describe('Cycle', () => {
@@ -34,7 +34,7 @@ describe('cycle()', () => it('should return Cycle instance', () => expect(cycle(
 describe('Parameters', () => {
 	it('[1,2,3] should have items [1,2,3]', () => expect(cycle([1, 2, 3])).toHaveProperty('items', [1, 2, 3]))
 
-	describe.each(Object.entries(presets))('%s', (name, values) => {
+	describe.each(Object.entries(presets))('%s', (name: Preset, values) => {
 		it(`${name} should have items ${values.length} matching values`, () => expect(cycle(name)).toHaveProperty('items', values))
 
 		it(`${name} ${values.length} supplied values should have items ${values.length} matching values`, () => expect(cycle(values)).toHaveProperty('items', values))
