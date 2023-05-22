@@ -71,7 +71,7 @@ Promise&lt;T\&gt;.constructor
 
 #### Inherited from
 
-Promise.\_\_@toStringTag@192
+Promise.[toStringTag]
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 #### Inherited from
 
-Promise.\_\_@species@82
+Promise.[species]
 
 ## Methods
 

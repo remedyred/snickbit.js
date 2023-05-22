@@ -18,6 +18,10 @@
 - [verbose](IAddOptions.md#verbose)
 - [withPrefix](IAddOptions.md#withprefix)
 
+### Methods
+
+- [verbosityCallback](IAddOptions.md#verbositycallback)
+
 ## Properties
 
 ### color
@@ -28,7 +32,9 @@ Spinner frame color
 
 **`Default`**
 
+```ts
 "white"
+```
 
 #### Inherited from
 
@@ -44,7 +50,9 @@ Spinner name (from cli-spinners lib)
 
 **`Default`**
 
+```ts
 "dots"
+```
 
 #### Inherited from
 
@@ -72,7 +80,9 @@ Do not log anything when disabled
 
 **`Default`**
 
+```ts
 true
+```
 
 #### Inherited from
 
@@ -87,3 +97,19 @@ ___
 #### Inherited from
 
 [IStartOptions](IStartOptions.md).[withPrefix](IStartOptions.md#withprefix)
+
+## Methods
+
+### verbosityCallback
+
+▸ `Optional` **verbosityCallback**(): `boolean`
+
+Callback to determine if spinner should be verbose aka disabled
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+[ISpinnerOptions](ISpinnerOptions.md).[verbosityCallback](ISpinnerOptions.md#verbositycallback)

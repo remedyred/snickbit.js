@@ -15,6 +15,10 @@
 - [textPrefix](ISpinnerOptions.md#textprefix)
 - [verbose](ISpinnerOptions.md#verbose)
 
+### Methods
+
+- [verbosityCallback](ISpinnerOptions.md#verbositycallback)
+
 ## Properties
 
 ### color
@@ -25,7 +29,9 @@ Spinner frame color
 
 **`Default`**
 
+```ts
 "white"
+```
 
 ___
 
@@ -37,7 +43,9 @@ Spinner name (from cli-spinners lib)
 
 **`Default`**
 
+```ts
 "dots"
+```
 
 ___
 
@@ -57,4 +65,18 @@ Do not log anything when disabled
 
 **`Default`**
 
+```ts
 true
+```
+
+## Methods
+
+### verbosityCallback
+
+▸ `Optional` **verbosityCallback**(): `boolean`
+
+Callback to determine if spinner should be verbose aka disabled
+
+#### Returns
+
+`boolean`

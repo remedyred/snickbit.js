@@ -15,7 +15,6 @@
 ### Properties
 
 - [stream](Spinner.md#stream)
-- [verbose](Spinner.md#verbose)
 - [captureRejectionSymbol](Spinner.md#capturerejectionsymbol)
 - [captureRejections](Spinner.md#capturerejections)
 - [defaultMaxListeners](Spinner.md#defaultmaxlisteners)
@@ -82,12 +81,6 @@ EventEmitter.constructor
 ### stream
 
 • **stream**: `WriteStream` = `process.stdout`
-
-___
-
-### verbose
-
-• `Readonly` **verbose**: `boolean` = `true`
 
 ___
 
@@ -395,9 +388,12 @@ ___
 
 ### listenerCount
 
-▸ **listenerCount**(`eventName`): `number`
+▸ **listenerCount**(`eventName`, `listener?`): `number`
 
 Returns the number of listeners listening to the event named `eventName`.
+
+If `listener` is provided, it will return how many times the listener
+is found in the list of the listeners of the event.
 
 **`Since`**
 
@@ -408,6 +404,7 @@ v3.2.0
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `eventName` | `string` \| `symbol` | The name of the event being listened for |
+| `listener?` | `Function` | The event handler function |
 
 #### Returns
 
