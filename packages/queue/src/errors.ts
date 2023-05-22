@@ -34,7 +34,11 @@ export class QueueError extends Error {
 		if (Array.isArray(_data)) {
 			properties.data = _data
 		} else if (typeof error === 'object' || _data !== undefined) {
-			const {message, errors, ...rest} = typeof error === 'object' ? error : _data
+			const {
+				message,
+				errors,
+				...rest
+			} = typeof error === 'object' ? error : _data
 
 			msg = message || msg
 			properties.errors = errors

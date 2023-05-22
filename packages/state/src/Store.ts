@@ -121,7 +121,11 @@ export class Store<State extends object = any> {
 		const isPending = !options && !hydration
 		options ||= {}
 		hydration ||= {} as State
-		const {actions, getters, ...rest} = options
+		const {
+			actions,
+			getters,
+			...rest
+		} = options
 		this.options = {
 			...this.options,
 			...rest,

@@ -13,7 +13,7 @@ function upperFirst(string) {
 }
 
 const stripPseudoSpaces = string => string.replace(/[_-]+$/, ' ').replace(/^[_-]+/, ' ')
-	.replace(/(\s)+/g, '$1')
+	.replaceAll(/(\s)+/g, '$1')
 
 export default function upwords(text, fast = false) {
 	if (text && typeof text === 'string') {

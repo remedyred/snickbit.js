@@ -614,7 +614,11 @@ export class Model<T extends object = any, D = Partial<T>> {
 					}
 				}
 
-				const {type, message, required} = definition
+				const {
+					type,
+					message,
+					required
+				} = definition
 				if (required && isEmpty(value)) {
 					this.errors[key] = message || `${key} is required`
 				}
