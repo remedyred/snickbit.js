@@ -45,7 +45,7 @@
 		"shx": "0.3.4",
 		"ts-jest": "29.0.5",
 		"tsup": "6.6.3",
-		"turbo": "1.8.3",
+		"turbo": "1.9.8",
 		"typescript": "4.9.5"
 	},
 	"engines": {
