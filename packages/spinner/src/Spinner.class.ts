@@ -42,6 +42,11 @@ export interface ISpinnerOptions {
 	 * Show this prefix before all text
 	 */
 	textPrefix?: string
+
+	/**
+	 * Callback to determine if spinner should be verbose aka disabled
+	 */
+	verbosityCallback?(): boolean
 }
 
 export interface IStartOptions {
@@ -55,10 +60,14 @@ export function spinner(options: ISpinnerOptions = {}) {
 	return new Spinner(options)
 }
 
+// eslint-disable-next-line unicorn/prefer-event-target
 export class Spinner extends EventEmitter {
 	private static spinners: Spinner[] = []
 	public stream: TTY.WriteStream = process.stdout
-	readonly verbose: boolean = true
+
+	/** Spinners are disabled when verbose is true */
+	protected readonly verbose: boolean = false
+	protected verbosityCallback: () => boolean = () => this.verbose
 	protected readonly spinner: cliSpinners.Spinner
 	protected linePrefix = ''
 	protected textPrefix = ''
@@ -72,12 +81,20 @@ export class Spinner extends EventEmitter {
 	protected _started = false
 	constructor(options: ISpinnerOptions = {}) {
 		super()
-		this.verbose = options.verbose ?? true
-		if (!this.verbose) {
+
+		const {
+			name = kDefaultSpinnerName,
+			color = null,
+			textPrefix = '',
+			verbose,
+			verbosityCallback
+		} = options
+
+		this.verbose = verbose
+		this.verbosityCallback = verbosityCallback ?? (() => this.verbose)
+		if (this.isVerbose) {
 			return
 		}
-
-		const {name = kDefaultSpinnerName, color = null, textPrefix = ''} = options
 
 		this.spinner = name in cliSpinners ? cliSpinners[name] : cliSpinners[kDefaultSpinnerName]
 		if (color === null) {
@@ -129,6 +146,10 @@ export class Spinner extends EventEmitter {
 		Spinner.spinners = []
 	}
 
+	protected get isVerbose() {
+		return this.verbosityCallback()
+	}
+
 	/**
 	 * Add text to the spinner after the existing text
 	 * @param text
@@ -158,7 +179,7 @@ export class Spinner extends EventEmitter {
 		this.spinnerPos = internalSpinnerCount++
 		this._startTime = performance.now()
 
-		if (!this.verbose) {
+		if (this.isVerbose) {
 			return this
 		}
 
@@ -181,7 +202,11 @@ export class Spinner extends EventEmitter {
 	 * @param options
 	 */
 	add(text?: string, options: IAddOptions = {}) {
-		const spinnerOptions = objectOnly(options, ['name', 'color', 'verbose'])
+		const spinnerOptions = objectOnly(options, [
+			'name',
+			'color',
+			'verbose'
+		])
 		const startOptions = objectOnly(options, ['withPrefix'])
 		const spinner = new Spinner(spinnerOptions).start(text, startOptions)
 		Spinner.spinners.push(spinner)
@@ -286,7 +311,10 @@ export class Spinner extends EventEmitter {
 	}
 
 	#renderLine(spinnerSymbol?: string) {
-		if (!this.verbose) {
+		if (this.isVerbose) {
+			if (this._started) {
+				this.#stop()
+			}
 			return
 		}
 
