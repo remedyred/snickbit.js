@@ -388,12 +388,9 @@ ___
 
 ### listenerCount
 
-▸ **listenerCount**(`eventName`, `listener?`): `number`
+▸ **listenerCount**(`eventName`): `number`
 
 Returns the number of listeners listening to the event named `eventName`.
-
-If `listener` is provided, it will return how many times the listener
-is found in the list of the listeners of the event.
 
 **`Since`**
 
@@ -404,7 +401,6 @@ v3.2.0
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `eventName` | `string` \| `symbol` | The name of the event being listened for |
-| `listener?` | `Function` | The event handler function |
 
 #### Returns
 

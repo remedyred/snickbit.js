@@ -32,9 +32,7 @@ Spinner frame color
 
 **`Default`**
 
-```ts
 "white"
-```
 
 #### Inherited from
 
@@ -50,9 +48,7 @@ Spinner name (from cli-spinners lib)
 
 **`Default`**
 
-```ts
 "dots"
-```
 
 #### Inherited from
 
@@ -80,9 +76,7 @@ Do not log anything when disabled
 
 **`Default`**
 
-```ts
 true
-```
 
 #### Inherited from
 

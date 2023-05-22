@@ -2,6 +2,26 @@
 
 Model Schema Record
 
+**`Property`**
+
+The variable type of the value
+
+**`Property`**
+
+The default value
+
+**`Property`**
+
+Whether the value is required
+
+**`Property`**
+
+Message to display when validation fails
+
+**`Property`**
+
+Validation method
+
 ## Table of contents
 
 ### Properties
@@ -18,15 +38,11 @@ Model Schema Record
 
 • `Optional` **default**: `any`
 
-The default value
-
 ___
 
 ### message
 
 • `Optional` **message**: `string`
-
-Message to display when validation fails
 
 ___
 
@@ -34,20 +50,14 @@ ___
 
 • `Optional` **required**: `boolean`
 
-Whether the value is required
-
 ___
 
 ### type
 
 • **type**: `VariableType` \| `VariableType`[]
 
-The variable type of the value
-
 ___
 
 ### validate
 
 • `Optional` **validate**: [`ModelValidationMethod`](../README.md#modelvalidationmethod)
-
-Validation method
