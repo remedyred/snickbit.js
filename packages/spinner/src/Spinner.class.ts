@@ -202,11 +202,16 @@ export class Spinner extends EventEmitter {
 	 * @param options
 	 */
 	add(text?: string, options: IAddOptions = {}) {
-		const spinnerOptions = objectOnly(options, [
-			'name',
-			'color',
-			'verbose'
-		])
+		const spinnerOptions = {
+			verbose: this.verbose,
+			verbosityCallback: this.verbosityCallback,
+			...objectOnly(options, [
+				'name',
+				'color',
+				'verbose',
+				'verbosityCallback'
+			])
+		}
 		const startOptions = objectOnly(options, ['withPrefix'])
 		const spinner = new Spinner(spinnerOptions).start(text, startOptions)
 		Spinner.spinners.push(spinner)
