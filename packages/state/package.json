@@ -1,6 +1,6 @@
 {
 	"name": "@snickbit/state",
-	"version": "1.0.7",
+	"version": "1.0.8",
 	"description": "Simple state management for TypeScript",
 	"license": "MIT",
 	"exports": {
