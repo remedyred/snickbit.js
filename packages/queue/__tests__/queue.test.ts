@@ -110,7 +110,11 @@ describe('Queue', () => {
 			results.push(3)
 		})
 		await queue.run()
-		expect(results).toStrictEqual([2, 3, 1])
+		expect(results).toStrictEqual([
+			2,
+			3,
+			1
+		])
 	})
 
 	it('should work through queue, fifo', async () => {
