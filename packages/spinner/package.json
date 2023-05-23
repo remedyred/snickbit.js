@@ -1,6 +1,6 @@
 {
 	"name": "@snickbit/spinner",
-	"version": "1.1.5",
+	"version": "1.1.6",
 	"description": "Minimal terminal spinner for Node.js",
 	"license": "MIT",
 	"exports": {
