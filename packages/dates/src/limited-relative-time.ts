@@ -57,9 +57,17 @@ export default (options, Dayjs, dayjs) => {
 	Dayjs.prototype.relativeToday = function(this: Dates, options: RelativeTodayOptions = defaultRelativeTodayOptions): string {
 		options = {...defaultRelativeTodayOptions, ...options}
 		if (this.isTomorrow()) {
-			return ['Tomorrow', options.preposition, this.format(options.timeformat)].filter(Boolean).join(' ')
+			return [
+				'Tomorrow',
+				options.preposition,
+				this.format(options.timeformat)
+			].filter(Boolean).join(' ')
 		} else if (this.isYesterday()) {
-			return ['Yesterday', options.preposition, this.format(options.timeformat)].filter(Boolean).join(' ')
+			return [
+				'Yesterday',
+				options.preposition,
+				this.format(options.timeformat)
+			].filter(Boolean).join(' ')
 		}
 		return this.format(options.fallbackFormat)
 	}

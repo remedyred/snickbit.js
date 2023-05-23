@@ -20,7 +20,11 @@ export class Controller<T extends object = any, D extends Partial<T> = Partial<T
 
 	persistable: string[] = []
 
-	protected id = (...keys: string[]) => ['controller', this.$name, ...keys].join('.')
+	protected id = (...keys: string[]) => [
+		'controller',
+		this.$name,
+		...keys
+	].join('.')
 
 	constructor(data: T = {} as T) {
 		this.originalState = objectClone(data) as T
