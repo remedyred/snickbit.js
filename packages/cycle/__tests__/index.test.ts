@@ -32,15 +32,7 @@ describe('Cycle', () => {
 describe('cycle()', () => it('should return Cycle instance', () => expect(cycle()).toBeInstanceOf(Cycle)))
 
 describe('Parameters', () => {
-	it('[1,2,3] should have items [1,2,3]', () => expect(cycle([
-		1,
-		2,
-		3
-	])).toHaveProperty('items', [
-		1,
-		2,
-		3
-	]))
+	it('[1,2,3] should have items [1,2,3]', () => expect(cycle([1, 2, 3])).toHaveProperty('items', [1, 2, 3]))
 
 	describe.each(Object.entries(presets))('%s', (name: Preset, values) => {
 		it(`${name} should have items ${values.length} matching values`, () => expect(cycle(name)).toHaveProperty('items', values))
@@ -50,11 +42,7 @@ describe('Parameters', () => {
 })
 
 describe('Values Forward', () => {
-	const instance = cycle([
-		1,
-		2,
-		3
-	])
+	const instance = cycle([1, 2, 3])
 
 	for (let index = 0; index < 6; index++) {
 		it(`${index + 1} next() should have value ${index % 3 + 1}`, () => expect(instance.next()).toBe(index % 3 + 1))
@@ -62,11 +50,7 @@ describe('Values Forward', () => {
 })
 
 describe('Values Backward', () => {
-	const instance = cycle([
-		1,
-		2,
-		3
-	])
+	const instance = cycle([1, 2, 3])
 
 	for (let index = 6; index > 0; index--) {
 		const num = index - 1

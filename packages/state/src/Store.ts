@@ -37,11 +37,7 @@ export class Store<State extends object = any> {
 		persist: []
 	}
 
-	protected id = (...keys: string[]) => [
-		'state-store',
-		this.$id,
-		...keys
-	].join('.')
+	protected id = (...keys: string[]) => ['state-store', this.$id, ...keys].join('.')
 
 	constructor(hydration?: State, options?: Partial<StoreOptions>) {
 		this.$config(options, hydration)

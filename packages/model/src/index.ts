@@ -152,11 +152,7 @@ export class Model<T extends object = any, D = Partial<T>> {
 	 * Get the model's id
 	 */
 	get id(): ModelId {
-		const id_fields = [
-			`.${this.options.id}`,
-			'._id',
-			'.id'
-		]
+		const id_fields = [`.${this.options.id}`, '._id', '.id']
 		for (const id_field of id_fields) {
 			if (this.has(id_field)) {
 				return this.get(id_field)
