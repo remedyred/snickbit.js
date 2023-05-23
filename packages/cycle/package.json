@@ -1,6 +1,6 @@
 {
 	"name": "@snickbit/cycle",
-	"version": "1.0.14",
+	"version": "1.0.19",
 	"description": "Helper function and class to cycle through an array of values",
 	"license": "MIT",
 	"exports": {
