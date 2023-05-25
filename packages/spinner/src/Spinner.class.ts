@@ -356,6 +356,8 @@ export class Spinner extends EventEmitter {
 		this.emit('stop')
 		if (text !== undefined) {
 			this.text = text
+		} else if (this.textPrefix) {
+			this.text = ''
 		}
 
 		this._started = false
