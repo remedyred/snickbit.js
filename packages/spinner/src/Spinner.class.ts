@@ -44,6 +44,11 @@ export interface ISpinnerOptions {
 	textPrefix?: string
 
 	/**
+	 * Define onVerbose behavior
+	 */
+	onVerbose?: 'disable' | 'ignore' | 'print'
+
+	/**
 	 * Callback to determine if spinner should be verbose aka disabled
 	 */
 	verbosityCallback?(): boolean
@@ -76,9 +81,11 @@ export class Spinner extends EventEmitter {
 	protected frameIndex = 0
 	protected spinnerPos = 0
 
+	protected onVerbose: string
 	protected _text = ''
 	protected _startTime: number
 	protected _started = false
+
 	constructor(options: ISpinnerOptions = {}) {
 		super()
 
@@ -87,16 +94,14 @@ export class Spinner extends EventEmitter {
 			color = null,
 			textPrefix = '',
 			verbose,
+			onVerbose = 'print',
 			verbosityCallback
 		} = options
 
 		this.verbose = verbose
+		this.onVerbose = onVerbose
 		this.verbosityCallback = verbosityCallback ?? (() => this.verbose)
-		if (this.isVerbose) {
-			return
-		}
 
-		this.spinner = name in cliSpinners ? cliSpinners[name] : cliSpinners[kDefaultSpinnerName]
 		if (color === null) {
 			this.color = (str: string) => str
 		} else {
@@ -104,6 +109,12 @@ export class Spinner extends EventEmitter {
 		}
 
 		this.textPrefix = textPrefix
+
+		if (this.isVerbose) {
+			return this.handleVerbose()
+		}
+
+		this.spinner = name in cliSpinners ? cliSpinners[name] : cliSpinners[kDefaultSpinnerName]
 	}
 
 	get text() {
@@ -147,7 +158,14 @@ export class Spinner extends EventEmitter {
 	}
 
 	protected get isVerbose() {
-		return this.verbosityCallback()
+		return this.onVerbose !== 'ignore' && this.verbosityCallback()
+	}
+
+	protected handleVerbose() {
+		if (this.onVerbose === 'print' && this.text.trim()) {
+			console.log(kleur.yellow('[SPINNER] ') + this.text)
+		}
+		return this
 	}
 
 	/**
@@ -155,12 +173,14 @@ export class Spinner extends EventEmitter {
 	 * @param text
 	 */
 	next(text: string): this {
-		if (!this._started) {
-			this.#start()
-		}
-
 		this.textPrefix ||= this.text
 		this.text = text
+
+		if (this.isVerbose) {
+			return this.handleVerbose()
+		} else if (!this._started) {
+			this.#start()
+		}
 
 		return this
 	}
@@ -180,7 +200,7 @@ export class Spinner extends EventEmitter {
 		this._startTime = performance.now()
 
 		if (this.isVerbose) {
-			return this
+			return this.handleVerbose()
 		}
 
 		this.#start()
@@ -320,7 +340,7 @@ export class Spinner extends EventEmitter {
 			if (this._started) {
 				this.#stop()
 			}
-			return
+			return this.handleVerbose()
 		}
 
 		const moveCursorPos = internalSpinnerCount - this.spinnerPos
