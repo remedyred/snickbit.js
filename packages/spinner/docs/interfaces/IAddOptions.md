@@ -14,6 +14,7 @@
 
 - [color](IAddOptions.md#color)
 - [name](IAddOptions.md#name)
+- [onVerbose](IAddOptions.md#onverbose)
 - [textPrefix](IAddOptions.md#textprefix)
 - [verbose](IAddOptions.md#verbose)
 - [withPrefix](IAddOptions.md#withprefix)
@@ -57,6 +58,18 @@ Spinner name (from cli-spinners lib)
 #### Inherited from
 
 [ISpinnerOptions](ISpinnerOptions.md).[name](ISpinnerOptions.md#name)
+
+___
+
+### onVerbose
+
+• `Optional` **onVerbose**: ``"disable"`` \| ``"ignore"`` \| ``"print"``
+
+Define onVerbose behavior
+
+#### Inherited from
+
+[ISpinnerOptions](ISpinnerOptions.md).[onVerbose](ISpinnerOptions.md#onverbose)
 
 ___
 

@@ -12,6 +12,7 @@
 
 - [color](ISpinnerOptions.md#color)
 - [name](ISpinnerOptions.md#name)
+- [onVerbose](ISpinnerOptions.md#onverbose)
 - [textPrefix](ISpinnerOptions.md#textprefix)
 - [verbose](ISpinnerOptions.md#verbose)
 
@@ -46,6 +47,14 @@ Spinner name (from cli-spinners lib)
 ```ts
 "dots"
 ```
+
+___
+
+### onVerbose
+
+• `Optional` **onVerbose**: ``"disable"`` \| ``"ignore"`` \| ``"print"``
+
+Define onVerbose behavior
 
 ___
 
