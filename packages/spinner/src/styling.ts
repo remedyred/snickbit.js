@@ -32,17 +32,17 @@ interface Symbols {
 
 const symbols: Symbols = {
 	// Symbols
-	error: '×',
-	warning: '⚠',
-	success: '✔',
-	stop: '⏹'
+	error: '[E]',
+	warning: '[!]',
+	success: '[+]',
+	stop: '[⏹]'
 }
 
 const symbolsUnicode: Symbols = {
-	error: '✖',
-	warning: '⚠',
-	success: '✔',
-	stop: '⏹'
+	error: '❌',
+	warning: '\u26A0\uFE0F',
+	success: '✓\uFE0F',
+	stop: '🛑'
 }
 
 export function useSymbols(): Symbols {
