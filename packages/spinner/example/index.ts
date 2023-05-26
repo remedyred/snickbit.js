@@ -91,10 +91,41 @@ async function loopSpinner({
 	}
 }
 
+async function fourthExample() {
+	// don't autostart
+	console.log('Fourth Example')
+
+	const spin = spinner.add('Test Spinner 4', {autostart: false})
+	console.log('Spinner added')
+
+	const spinTwo = spinner.add('Test Spinner 4 two (autostarted)')
+
+	await sleep(spinnerDelay)
+
+	spin.start('Test Start 4')
+	spinTwo.next('Test Next 4 two 2')
+
+	await sleep(spinnerDelay)
+
+	spin.next('Test Next 4')
+	spinTwo.next('Test Next 4 two 3')
+
+	await sleep(spinnerDelay)
+
+	spin.next('Test Next 4 2')
+	spinTwo.next('Test Next 4 two 4')
+
+	await sleep(spinnerDelay)
+
+	spin.finish()
+	spinTwo.finish()
+}
+
 async function main() {
-	// await firstExample()
-	// await secondExample()
+	await firstExample()
+	await secondExample()
 	await thirdExample()
+	await fourthExample()
 }
 
 main().catch(console.error)

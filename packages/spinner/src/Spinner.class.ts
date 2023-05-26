@@ -59,6 +59,7 @@ export interface IStartOptions {
 }
 
 export interface IAddOptions extends IStartOptions, ISpinnerOptions {
+	autostart?: boolean
 }
 
 export function spinner(options: ISpinnerOptions = {}) {
@@ -232,8 +233,13 @@ export class Spinner extends EventEmitter {
 				'verbosityCallback'
 			])
 		}
+		const {autostart = true} = options
+
 		const startOptions = objectOnly(options, ['withPrefix'])
-		const spinner = new Spinner(spinnerOptions).start(text, startOptions)
+		const spinner = new Spinner(spinnerOptions)
+		if (autostart) {
+			spinner.start(text, startOptions)
+		}
 		Spinner.spinners.push(spinner)
 		return spinner
 	}
