@@ -15,7 +15,15 @@ let internalSpinnerCount = 0
 const kDefaultSpinnerName = 'dots' satisfies cliSpinners.SpinnerName
 const kLogSymbols = useSymbols()
 
-export interface ISpinnerOptions {
+enum VerbosityBehavior {
+	disable = 'disable',
+	print = 'print',
+	ignore = 'ignore'
+}
+
+type IVerbosityBehavior = keyof typeof VerbosityBehavior
+
+export interface SpinnerOptions {
 
 	/**
 	 * Spinner name (from cli-spinners lib)
@@ -51,7 +59,7 @@ export interface ISpinnerOptions {
 	/**
 	 * Define onVerbose behavior
 	 */
-	onVerbose?: 'disable' | 'ignore' | 'print'
+	onVerbose?: IVerbosityBehavior | VerbosityBehavior
 
 	/**
 	 * Callback to determine if spinner should be verbose aka disabled
@@ -59,15 +67,15 @@ export interface ISpinnerOptions {
 	verbosityCallback?(): boolean
 }
 
-export interface IStartOptions {
+export interface StartOptions {
 	withPrefix?: string
 }
 
-export interface IAddOptions extends IStartOptions, ISpinnerOptions {
+export interface AddOptions extends StartOptions, Pick<SpinnerOptions, 'text' | 'textPrefix'> {
 	autostart?: boolean
 }
 
-export function spinner(options: ISpinnerOptions = {}) {
+export function spinner(options: SpinnerOptions = {}) {
 	return new Spinner(options)
 }
 
@@ -87,12 +95,12 @@ export class Spinner extends EventEmitter {
 	protected frameIndex = 0
 	protected spinnerPos = 0
 
-	protected onVerbose: string
+	protected onVerbose: IVerbosityBehavior | VerbosityBehavior
 	protected _text = ''
 	protected _startTime: number
 	protected _started = false
 
-	constructor(options: ISpinnerOptions = {}) {
+	constructor(options: SpinnerOptions = {}) {
 		super()
 
 		const {
@@ -101,7 +109,7 @@ export class Spinner extends EventEmitter {
 			text,
 			textPrefix = '',
 			verbose,
-			onVerbose = 'print',
+			onVerbose = VerbosityBehavior.print,
 			verbosityCallback
 		} = options
 
@@ -198,7 +206,7 @@ export class Spinner extends EventEmitter {
 	 * @param text
 	 * @param options
 	 */
-	start(text?: string, options: IStartOptions = {}) {
+	start(text?: string, options: StartOptions = {}) {
 		this.text = text
 		if (typeof options.withPrefix === 'string') {
 			this.linePrefix = options.withPrefix
@@ -229,8 +237,8 @@ export class Spinner extends EventEmitter {
 	 * @param text
 	 * @param options
 	 */
-	add(text?: string, options: IAddOptions = {}) {
-		const spinnerOptions = {
+	add(text?: string, options: AddOptions = {}) {
+		const spinnerOptions: SpinnerOptions = {
 			verbose: this.verbose,
 			verbosityCallback: this.verbosityCallback,
 			onVerbose: this.onVerbose,
