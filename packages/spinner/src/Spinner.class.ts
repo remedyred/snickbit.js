@@ -86,7 +86,6 @@ export class Spinner extends EventEmitter {
 
 	/** Spinners are disabled when verbose is true */
 	protected readonly verbose: boolean = false
-	protected verbosityCallback: () => boolean = () => this.verbose
 	protected readonly spinner: cliSpinners.Spinner
 	protected linePrefix = ''
 	protected textPrefix = ''
@@ -94,12 +93,12 @@ export class Spinner extends EventEmitter {
 	protected interval: NodeJS.Timer | null = null
 	protected frameIndex = 0
 	protected spinnerPos = 0
-
 	protected onVerbose: IVerbosityBehavior | VerbosityBehavior
+
+	protected verbosityCallback: () => boolean = () => this.verbose
 	protected _text = ''
 	protected _startTime: number
 	protected _started = false
-
 	constructor(options: SpinnerOptions = {}) {
 		super()
 
@@ -162,6 +161,10 @@ export class Spinner extends EventEmitter {
 		return performance.now() - this._startTime
 	}
 
+	protected get isVerbose() {
+		return this.onVerbose !== 'ignore' && this.verbosityCallback()
+	}
+
 	/**
 	 * Stop all spinners and remove them from the list
 	 */
@@ -171,17 +174,6 @@ export class Spinner extends EventEmitter {
 			spinner.stop()
 		}
 		Spinner.spinners = []
-	}
-
-	protected get isVerbose() {
-		return this.onVerbose !== 'ignore' && this.verbosityCallback()
-	}
-
-	protected handleVerbose() {
-		if (this.onVerbose === 'print' && this.text.trim()) {
-			console.log(kleur.yellow('[SPINNER] ') + this.text)
-		}
-		return this
 	}
 
 	/**
@@ -222,14 +214,6 @@ export class Spinner extends EventEmitter {
 		this.#start()
 
 		return this
-	}
-
-	#start() {
-		this._started = true
-		this.emit('start')
-		this.frameIndex = 0
-		this.stream.write(`${this.#lineToRender()}\n`)
-		this.interval = setInterval(() => this.#renderLine(), this.spinner.interval)
 	}
 
 	/**
@@ -319,6 +303,21 @@ export class Spinner extends EventEmitter {
 		this.emit('warned')
 
 		return this
+	}
+
+	protected handleVerbose() {
+		if (this.onVerbose === 'print' && this.text.trim()) {
+			console.log(kleur.yellow('[SPINNER] ') + this.text)
+		}
+		return this
+	}
+
+	#start() {
+		this._started = true
+		this.emit('start')
+		this.frameIndex = 0
+		this.stream.write(`${this.#lineToRender()}\n`)
+		this.interval = setInterval(() => this.#renderLine(), this.spinner.interval)
 	}
 
 	#getSpinnerFrame(spinnerSymbol?: string) {
