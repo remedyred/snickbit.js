@@ -39,6 +39,11 @@ export interface ISpinnerOptions {
 	verbose?: boolean
 
 	/**
+	 * Spinner text
+	 */
+	text?: string
+
+	/**
 	 * Show this prefix before all text
 	 */
 	textPrefix?: string
@@ -93,6 +98,7 @@ export class Spinner extends EventEmitter {
 		const {
 			name = kDefaultSpinnerName,
 			color = null,
+			text,
 			textPrefix = '',
 			verbose,
 			onVerbose = 'print',
@@ -109,6 +115,7 @@ export class Spinner extends EventEmitter {
 			this.color = color in kleur ? kleur[color] : kleur.white
 		}
 
+		this._text = text ?? ''
 		this.textPrefix = textPrefix
 
 		if (this.isVerbose) {
@@ -226,12 +233,8 @@ export class Spinner extends EventEmitter {
 		const spinnerOptions = {
 			verbose: this.verbose,
 			verbosityCallback: this.verbosityCallback,
-			...objectOnly(options, [
-				'name',
-				'color',
-				'verbose',
-				'verbosityCallback'
-			])
+			onVerbose: this.onVerbose,
+			...objectOnly(options, ['text', 'textPrefix'])
 		}
 		const {autostart = true} = options
 
