@@ -70,7 +70,7 @@
 
 | Name | Type |
 | :------ | :------ |
-| `options` | [`ISpinnerOptions`](../interfaces/ISpinnerOptions.md) |
+| `options` | [`SpinnerOptions`](../interfaces/SpinnerOptions.md) |
 
 #### Overrides
 
@@ -197,7 +197,7 @@ Add a new spinner
 | Name | Type |
 | :------ | :------ |
 | `text?` | `string` |
-| `options` | [`IAddOptions`](../interfaces/IAddOptions.md) |
+| `options` | [`AddOptions`](../interfaces/AddOptions.md) |
 
 #### Returns
 
@@ -908,7 +908,7 @@ Start the spinner
 | Name | Type |
 | :------ | :------ |
 | `text?` | `string` |
-| `options` | [`IStartOptions`](../interfaces/IStartOptions.md) |
+| `options` | [`StartOptions`](../interfaces/StartOptions.md) |
 
 #### Returns
 

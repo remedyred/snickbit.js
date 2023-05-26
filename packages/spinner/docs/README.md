@@ -8,9 +8,9 @@
 
 ### Interfaces
 
-- [IAddOptions](interfaces/IAddOptions.md)
-- [ISpinnerOptions](interfaces/ISpinnerOptions.md)
-- [IStartOptions](interfaces/IStartOptions.md)
+- [AddOptions](interfaces/AddOptions.md)
+- [SpinnerOptions](interfaces/SpinnerOptions.md)
+- [StartOptions](interfaces/StartOptions.md)
 
 ### Functions
 
@@ -40,7 +40,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `options` | [`ISpinnerOptions`](interfaces/ISpinnerOptions.md) |
+| `options` | [`SpinnerOptions`](interfaces/SpinnerOptions.md) |
 
 #### Returns
 

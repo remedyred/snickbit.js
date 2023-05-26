@@ -1,24 +1,19 @@
-# Interface: ISpinnerOptions
-
-## Hierarchy
-
-- **`ISpinnerOptions`**
-
-  ↳ [`IAddOptions`](IAddOptions.md)
+# Interface: SpinnerOptions
 
 ## Table of contents
 
 ### Properties
 
-- [color](ISpinnerOptions.md#color)
-- [name](ISpinnerOptions.md#name)
-- [onVerbose](ISpinnerOptions.md#onverbose)
-- [textPrefix](ISpinnerOptions.md#textprefix)
-- [verbose](ISpinnerOptions.md#verbose)
+- [color](SpinnerOptions.md#color)
+- [name](SpinnerOptions.md#name)
+- [onVerbose](SpinnerOptions.md#onverbose)
+- [text](SpinnerOptions.md#text)
+- [textPrefix](SpinnerOptions.md#textprefix)
+- [verbose](SpinnerOptions.md#verbose)
 
 ### Methods
 
-- [verbosityCallback](ISpinnerOptions.md#verbositycallback)
+- [verbosityCallback](SpinnerOptions.md#verbositycallback)
 
 ## Properties
 
@@ -52,9 +47,17 @@ ___
 
 ### onVerbose
 
-• `Optional` **onVerbose**: ``"disable"`` \| ``"ignore"`` \| ``"print"``
+• `Optional` **onVerbose**: `VerbosityBehavior` \| ``"disable"`` \| ``"print"`` \| ``"ignore"``
 
 Define onVerbose behavior
+
+___
+
+### text
+
+• `Optional` **text**: `string`
+
+Spinner text
 
 ___
 
