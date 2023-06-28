@@ -559,7 +559,7 @@ ___
 
 ### isAfter
 
-▸ **isAfter**(`date`, `unit?`): `boolean`
+▸ **isAfter**(`date?`, `unit?`): `boolean`
 
 This indicates whether the Day.js object is after the other supplied date-time.
 ```
@@ -577,7 +577,7 @@ Docs: https://day.js.org/docs/en/query/is-after
 
 | Name | Type |
 | :------ | :------ |
-| `date` | `string` \| `number` \| `Dayjs` \| `Date` |
+| `date?` | `string` \| `number` \| `Dayjs` \| `Date` |
 | `unit?` | `OpUnitType` |
 
 #### Returns
@@ -592,7 +592,7 @@ ___
 
 ### isBefore
 
-▸ **isBefore**(`date`, `unit?`): `boolean`
+▸ **isBefore**(`date?`, `unit?`): `boolean`
 
 This indicates whether the Day.js object is before the other supplied date-time.
 ```
@@ -610,7 +610,7 @@ Docs: https://day.js.org/docs/en/query/is-before
 
 | Name | Type |
 | :------ | :------ |
-| `date` | `string` \| `number` \| `Dayjs` \| `Date` |
+| `date?` | `string` \| `number` \| `Dayjs` \| `Date` |
 | `unit?` | `OpUnitType` |
 
 #### Returns
@@ -625,7 +625,7 @@ ___
 
 ### isSame
 
-▸ **isSame**(`date`, `unit?`): `boolean`
+▸ **isSame**(`date?`, `unit?`): `boolean`
 
 This indicates whether the Day.js object is the same as the other supplied date-time.
 ```
@@ -641,7 +641,7 @@ Docs: https://day.js.org/docs/en/query/is-same
 
 | Name | Type |
 | :------ | :------ |
-| `date` | `string` \| `number` \| `Dayjs` \| `Date` |
+| `date?` | `string` \| `number` \| `Dayjs` \| `Date` |
 | `unit?` | `OpUnitType` |
 
 #### Returns
