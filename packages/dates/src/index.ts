@@ -1,6 +1,6 @@
 import duration, {DatesDuration} from './duration'
 import limitedRelativeTime, {LimitedRelativeOptions} from './limited-relative-time'
-import dayjs, {Dayjs, PluginFunc} from 'dayjs'
+import dayjs, {Dayjs, OpUnitType, PluginFunc} from 'dayjs'
 import customParseFormat from 'dayjs/plugin/customParseFormat'
 import isTomorrow from 'dayjs/plugin/isTomorrow'
 import isYesterday from 'dayjs/plugin/isYesterday'
@@ -33,7 +33,7 @@ export interface Dates extends dayjs.Dayjs {
 
 	shortdatetime(): string
 
-	duration(input: DateInput, unit?: string): DatesDuration
+	duration(input: DateInput, unit?: OpUnitType): DatesDuration
 
 	toLimited(input: DateInput, options: Partial<LimitedRelativeOptions>): string
 

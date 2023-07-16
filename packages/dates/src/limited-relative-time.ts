@@ -1,9 +1,10 @@
 // option, Dayjs, dayjs
 import {DateInput, Dates} from './index'
+import {OpUnitType} from 'dayjs'
 
 export interface LimitedRelativeOptions {
 	max?: number
-	maxUnit?: string
+	maxUnit?: OpUnitType
 	withoutSuffix?: boolean
 	format?: string
 }

@@ -1,5 +1,6 @@
 import {maxDecimals, plural} from '@snickbit/utilities'
 import {Dates} from './index'
+import {OpUnitType} from 'dayjs'
 import duration from 'dayjs/plugin/duration'
 
 export interface DatesDuration extends Dates {
@@ -127,7 +128,7 @@ export default (option, Dayjs, dayjs) => {
 	 * Create a new duration
 	 * @see https://day.js.org/docs/en/durations/durations
 	 */
-	dayjs.duration = function(input: number | object | string, unit?: string): DatesDuration {
+	dayjs.duration = function(input: number | object | string, unit?: OpUnitType): DatesDuration {
 		const _duration = this._duration(input, unit)
 		_duration.toWords = toWords
 		_duration.toObject = toObject
