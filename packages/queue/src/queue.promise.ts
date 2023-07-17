@@ -1,8 +1,8 @@
 import {CatchCallback, FinallyCallback, ThenCallback} from './definitions'
 import {Queue} from './queue'
 
-type PromiseCallback<TValue, TResult> = (value: TValue) => (PromiseLike<TResult> | TResult)
-type PromiseCallbackValue<TValue, TResult> = PromiseCallback<TValue, TResult> | null | undefined
+export type PromiseCallback<TValue, TResult> = (value: TValue) => (PromiseLike<TResult> | TResult)
+export type PromiseCallbackValue<TValue, TResult> = PromiseCallback<TValue, TResult> | null | undefined
 
 /**
  * @noInheritDoc
