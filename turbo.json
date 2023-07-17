@@ -21,11 +21,6 @@
 			"outputs": ["dist/**"],
 			"outputMode": "new-only"
 		},
-		"types": {
-			"dependsOn": ["dev"],
-			"outputs": ["dist/**/*.d.ts"],
-			"outputMode": "new-only"
-		},
 		"docs": {
 			"dependsOn": ["build"],
 			"outputs": ["docs/**", "README.md"],
@@ -42,7 +37,7 @@
 		"//#lint": {
 			"outputs": []
 		},
-		"//#fix": {
+		"//#lint:fix": {
 			"outputs": ["**/*.ts", "**/*.json"],
 			"outputMode": "new-only"
 		},

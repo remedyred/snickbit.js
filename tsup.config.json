@@ -3,9 +3,9 @@
 		"src/index.ts"
 	],
 	"clean": true,
+	"dts": true,
 	"format": [
 		"esm",
 		"cjs"
-	],
-	"onSuccess": "pnpm run types"
+	]
 }

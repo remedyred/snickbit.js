@@ -15,14 +15,13 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "indexer && tsup --minify",
-		"clean": "shx rm -rf ./dist",
-		"dev": "tsup",
+		"build": "tsup --minify",
+		"check": "pnpm -w run lint && pnpm run typecheck",
+		"dev": "tsup --watch",
 		"docs": "typedoc src/index.ts --tsconfig ./tsconfig.typedoc.json",
 		"index": "indexer",
 		"release": "semantic-release",
-		"types": "tsc --project ./tsconfig.types.json",
-		"watch": "pnpm run dev --watch"
+		"typecheck": "tsc --noEmit"
 	},
 	"release": {
 		"extends": [
@@ -34,19 +33,18 @@
 		"testEnvironment": "node"
 	},
 	"dependencies": {
-		"@snickbit/utilities": "^3.5.0",
+		"@snickbit/utilities": "workspace:*",
 		"lite-fifo": "0.3.3"
 	},
 	"devDependencies": {
-		"@snickbit/indexer": "^2.5.28",
-		"@types/jest": "29.5.2",
-		"jest": "29.5.0",
-		"shx": "0.3.4",
-		"ts-jest": "29.1.0",
-		"tsup": "6.7.0",
+		"@snickbit/indexer": "2.7.3",
+		"@types/jest": "29.5.3",
+		"jest": "29.6.1",
+		"ts-jest": "29.1.1",
+		"tsup": "7.1.0",
 		"typedoc": "0.24.8",
 		"typedoc-plugin-markdown": "3.15.3",
-		"typescript": "4.9.5"
+		"typescript": "5.1.6"
 	},
 	"engines": {
 		"node": ">= 14.17"
