@@ -1,5 +1,5 @@
 /**
- * Pluralize a word.
+ * Get the plural version of a word
  */
 import {checkWord, replaceWord} from './pluralize'
 
@@ -31,7 +31,7 @@ export function plural(word: string, countOrPluralized?: number | string, option
 }
 
 /**
- * Singularize a word.
+ * Get the singular version of a word
  */
 export function singular(word: string, count?: number)
 export function singular(word: string, singularized: string, count?: number)
