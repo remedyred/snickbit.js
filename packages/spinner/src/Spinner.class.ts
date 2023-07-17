@@ -15,7 +15,7 @@ let internalSpinnerCount = 0
 const kDefaultSpinnerName = 'dots' satisfies cliSpinners.SpinnerName
 const kLogSymbols = useSymbols()
 
-enum VerbosityBehavior {
+export enum VerbosityBehavior {
 	disable = 'disable',
 	print = 'print',
 	ignore = 'ignore'

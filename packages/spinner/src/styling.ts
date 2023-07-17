@@ -23,14 +23,14 @@ export function isUnicodeSupported(): boolean {
 	return is_unicode_supported
 }
 
-interface Symbols {
+export interface SpinnerLogSymbols {
 	error: string
 	warning: string
 	success: string
 	stop: string
 }
 
-const symbols: Symbols = {
+const symbols: SpinnerLogSymbols = {
 	// Symbols
 	error: '[E]',
 	warning: '[!]',
@@ -38,14 +38,14 @@ const symbols: Symbols = {
 	stop: '[⏹]'
 }
 
-const symbolsUnicode: Symbols = {
+const symbolsUnicode: SpinnerLogSymbols = {
 	error: '❌',
 	warning: '\u26A0\uFE0F',
 	success: '✓\uFE0F',
 	stop: '🛑'
 }
 
-export function useSymbols(): Symbols {
+export function useSymbols(): SpinnerLogSymbols {
 	if (isUnicodeSupported()) {
 		return {
 			...symbols,
