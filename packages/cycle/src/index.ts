@@ -115,3 +115,5 @@ export function cycle(prefix?: Preset): Cycle
 export function cycle<T = any>(itemsOrPreset?: Preset | T[]): Cycle<T> {
 	return new Cycle<T>(itemsOrPreset as any)
 }
+
+export * as presets from './presets'
