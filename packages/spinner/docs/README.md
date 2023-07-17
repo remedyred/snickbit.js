@@ -2,6 +2,10 @@
 
 ## Table of contents
 
+### Enumerations
+
+- [VerbosityBehavior](enums/VerbosityBehavior.md)
+
 ### Classes
 
 - [Spinner](classes/Spinner.md)
@@ -9,6 +13,7 @@
 ### Interfaces
 
 - [AddOptions](interfaces/AddOptions.md)
+- [SpinnerLogSymbols](interfaces/SpinnerLogSymbols.md)
 - [SpinnerOptions](interfaces/SpinnerOptions.md)
 - [StartOptions](interfaces/StartOptions.md)
 
@@ -50,8 +55,8 @@ ___
 
 ### useSymbols
 
-▸ **useSymbols**(): `Symbols`
+▸ **useSymbols**(): [`SpinnerLogSymbols`](interfaces/SpinnerLogSymbols.md)
 
 #### Returns
 
-`Symbols`
+[`SpinnerLogSymbols`](interfaces/SpinnerLogSymbols.md)

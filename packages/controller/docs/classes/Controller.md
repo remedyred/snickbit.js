@@ -146,7 +146,7 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `event` | `string` |
-| `callback` | `Handler`<`unknown`\> |
+| `callback` | `Handler` |
 
 #### Returns
 
@@ -163,7 +163,7 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `event` | `string` |
-| `callback` | `Handler`<`unknown`\> |
+| `callback` | `Handler` |
 
 #### Returns
 

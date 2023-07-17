@@ -24,10 +24,13 @@
 - [spread](AbortQueueError.md#spread)
 - [stack](AbortQueueError.md#stack)
 - [type](AbortQueueError.md#type)
+- [prepareStackTrace](AbortQueueError.md#preparestacktrace)
+- [stackTraceLimit](AbortQueueError.md#stacktracelimit)
 
 ### Methods
 
 - [toJSON](AbortQueueError.md#tojson)
+- [captureStackTrace](AbortQueueError.md#capturestacktrace)
 
 ## Constructors
 
@@ -126,6 +129,47 @@ ___
 
 [QueueError](QueueError.md).[type](QueueError.md#type)
 
+___
+
+### prepareStackTrace
+
+▪ `Static` `Optional` **prepareStackTrace**: (`err`: `Error`, `stackTraces`: `CallSite`[]) => `any`
+
+#### Type declaration
+
+▸ (`err`, `stackTraces`): `any`
+
+Optional override for formatting stack traces
+
+**`See`**
+
+https://v8.dev/docs/stack-trace-api#customizing-stack-traces
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `err` | `Error` |
+| `stackTraces` | `CallSite`[] |
+
+##### Returns
+
+`any`
+
+#### Inherited from
+
+[QueueError](QueueError.md).[prepareStackTrace](QueueError.md#preparestacktrace)
+
+___
+
+### stackTraceLimit
+
+▪ `Static` **stackTraceLimit**: `number`
+
+#### Inherited from
+
+[QueueError](QueueError.md).[stackTraceLimit](QueueError.md#stacktracelimit)
+
 ## Methods
 
 ### toJSON
@@ -139,3 +183,26 @@ ___
 #### Inherited from
 
 [QueueError](QueueError.md).[toJSON](QueueError.md#tojson)
+
+___
+
+### captureStackTrace
+
+▸ `Static` **captureStackTrace**(`targetObject`, `constructorOpt?`): `void`
+
+Create .stack property on a target object
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `targetObject` | `object` |
+| `constructorOpt?` | `Function` |
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[QueueError](QueueError.md).[captureStackTrace](QueueError.md#capturestacktrace)

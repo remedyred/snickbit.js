@@ -47,7 +47,7 @@ ___
 
 ### onVerbose
 
-• `Optional` **onVerbose**: `VerbosityBehavior` \| ``"disable"`` \| ``"print"`` \| ``"ignore"``
+• `Optional` **onVerbose**: ``"disable"`` \| ``"print"`` \| ``"ignore"`` \| [`VerbosityBehavior`](../enums/VerbosityBehavior.md)
 
 Define onVerbose behavior
 

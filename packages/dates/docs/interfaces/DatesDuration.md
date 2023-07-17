@@ -1,18 +1,16 @@
-# Interface: Dates
+# Interface: DatesDuration
 
 ## Hierarchy
 
-- `Dayjs`
+- [`Dates`](Dates.md)
 
-  ↳ **`Dates`**
-
-  ↳↳ [`DatesDuration`](DatesDuration.md)
+  ↳ **`DatesDuration`**
 
 ## Callable
 
-### Dates
+### DatesDuration
 
-▸ **Dates**(`input?`): [`Dates`](Dates.md)
+▸ **DatesDuration**(`input?`): [`Dates`](Dates.md)
 
 #### Parameters
 
@@ -26,59 +24,71 @@
 
 ## Table of contents
 
+### Properties
+
+- [toWords](DatesDuration.md#towords)
+
 ### Methods
 
-- [add](Dates.md#add)
-- [clone](Dates.md#clone)
-- [date](Dates.md#date)
-- [datestamp](Dates.md#datestamp)
-- [day](Dates.md#day)
-- [daysInMonth](Dates.md#daysinmonth)
-- [diff](Dates.md#diff)
-- [duration](Dates.md#duration)
-- [endOf](Dates.md#endof)
-- [extend](Dates.md#extend)
-- [format](Dates.md#format)
-- [from](Dates.md#from)
-- [fromLimited](Dates.md#fromlimited)
-- [fromNow](Dates.md#fromnow)
-- [fromNowLimited](Dates.md#fromnowlimited)
-- [get](Dates.md#get)
-- [hour](Dates.md#hour)
-- [isAfter](Dates.md#isafter)
-- [isBefore](Dates.md#isbefore)
-- [isSame](Dates.md#issame)
-- [isToday](Dates.md#istoday)
-- [isTomorrow](Dates.md#istomorrow)
-- [isValid](Dates.md#isvalid)
-- [isYesterday](Dates.md#isyesterday)
-- [locale](Dates.md#locale)
-- [millisecond](Dates.md#millisecond)
-- [minute](Dates.md#minute)
-- [month](Dates.md#month)
-- [relativeToday](Dates.md#relativetoday)
-- [safeTimestamp](Dates.md#safetimestamp)
-- [second](Dates.md#second)
-- [set](Dates.md#set)
-- [shortdate](Dates.md#shortdate)
-- [shortdatetime](Dates.md#shortdatetime)
-- [shorttime](Dates.md#shorttime)
-- [startOf](Dates.md#startof)
-- [subtract](Dates.md#subtract)
-- [time](Dates.md#time)
-- [timestamp](Dates.md#timestamp)
-- [to](Dates.md#to)
-- [toDate](Dates.md#todate)
-- [toISOString](Dates.md#toisostring)
-- [toJSON](Dates.md#tojson)
-- [toLimited](Dates.md#tolimited)
-- [toNow](Dates.md#tonow)
-- [toNowLimited](Dates.md#tonowlimited)
-- [toString](Dates.md#tostring)
-- [unix](Dates.md#unix)
-- [utcOffset](Dates.md#utcoffset)
-- [valueOf](Dates.md#valueof)
-- [year](Dates.md#year)
+- [add](DatesDuration.md#add)
+- [clone](DatesDuration.md#clone)
+- [date](DatesDuration.md#date)
+- [datestamp](DatesDuration.md#datestamp)
+- [day](DatesDuration.md#day)
+- [daysInMonth](DatesDuration.md#daysinmonth)
+- [diff](DatesDuration.md#diff)
+- [duration](DatesDuration.md#duration)
+- [endOf](DatesDuration.md#endof)
+- [extend](DatesDuration.md#extend)
+- [format](DatesDuration.md#format)
+- [from](DatesDuration.md#from)
+- [fromLimited](DatesDuration.md#fromlimited)
+- [fromNow](DatesDuration.md#fromnow)
+- [fromNowLimited](DatesDuration.md#fromnowlimited)
+- [get](DatesDuration.md#get)
+- [hour](DatesDuration.md#hour)
+- [humanize](DatesDuration.md#humanize)
+- [isAfter](DatesDuration.md#isafter)
+- [isBefore](DatesDuration.md#isbefore)
+- [isSame](DatesDuration.md#issame)
+- [isToday](DatesDuration.md#istoday)
+- [isTomorrow](DatesDuration.md#istomorrow)
+- [isValid](DatesDuration.md#isvalid)
+- [isYesterday](DatesDuration.md#isyesterday)
+- [locale](DatesDuration.md#locale)
+- [millisecond](DatesDuration.md#millisecond)
+- [minute](DatesDuration.md#minute)
+- [month](DatesDuration.md#month)
+- [relativeToday](DatesDuration.md#relativetoday)
+- [safeTimestamp](DatesDuration.md#safetimestamp)
+- [second](DatesDuration.md#second)
+- [set](DatesDuration.md#set)
+- [shortdate](DatesDuration.md#shortdate)
+- [shortdatetime](DatesDuration.md#shortdatetime)
+- [shorttime](DatesDuration.md#shorttime)
+- [startOf](DatesDuration.md#startof)
+- [subtract](DatesDuration.md#subtract)
+- [time](DatesDuration.md#time)
+- [timestamp](DatesDuration.md#timestamp)
+- [to](DatesDuration.md#to)
+- [toDate](DatesDuration.md#todate)
+- [toISOString](DatesDuration.md#toisostring)
+- [toJSON](DatesDuration.md#tojson)
+- [toLimited](DatesDuration.md#tolimited)
+- [toNow](DatesDuration.md#tonow)
+- [toNowLimited](DatesDuration.md#tonowlimited)
+- [toObject](DatesDuration.md#toobject)
+- [toString](DatesDuration.md#tostring)
+- [unix](DatesDuration.md#unix)
+- [utcOffset](DatesDuration.md#utcoffset)
+- [valueOf](DatesDuration.md#valueof)
+- [year](DatesDuration.md#year)
+
+## Properties
+
+### toWords
+
+• **toWords**: () => `string` & (`long`: `boolean`) => `string` & (`options`: [`ToWordsOptions`](ToWordsOptions.md)) => `string`
 
 ## Methods
 
@@ -107,7 +117,7 @@ Docs: https://day.js.org/docs/en/manipulate/add
 
 #### Inherited from
 
-dayjs.Dayjs.add
+[Dates](Dates.md).[add](Dates.md#add)
 
 ▸ **add**(`duration`): `Dayjs`
 
@@ -123,7 +133,7 @@ dayjs.Dayjs.add
 
 #### Inherited from
 
-dayjs.Dayjs.add
+[Dates](Dates.md).[add](Dates.md#add)
 
 ___
 
@@ -144,7 +154,7 @@ Docs: https://day.js.org/docs/en/parse/dayjs-clone
 
 #### Inherited from
 
-dayjs.Dayjs.clone
+[Dates](Dates.md).[clone](Dates.md#clone)
 
 ___
 
@@ -164,7 +174,7 @@ Docs: https://day.js.org/docs/en/get-set/date
 
 #### Inherited from
 
-dayjs.Dayjs.date
+[Dates](Dates.md).[date](Dates.md#date)
 
 ▸ **date**(`value`): `Dayjs`
 
@@ -188,7 +198,7 @@ Docs: https://day.js.org/docs/en/get-set/date
 
 #### Inherited from
 
-dayjs.Dayjs.date
+[Dates](Dates.md).[date](Dates.md#date)
 
 ___
 
@@ -199,6 +209,10 @@ ___
 #### Returns
 
 `string`
+
+#### Inherited from
+
+[Dates](Dates.md).[datestamp](Dates.md#datestamp)
 
 ___
 
@@ -220,7 +234,7 @@ Docs: https://day.js.org/docs/en/get-set/day
 
 #### Inherited from
 
-dayjs.Dayjs.day
+[Dates](Dates.md).[day](Dates.md#day)
 
 ▸ **day**(`value`): `Dayjs`
 
@@ -244,7 +258,7 @@ Docs: https://day.js.org/docs/en/get-set/day
 
 #### Inherited from
 
-dayjs.Dayjs.day
+[Dates](Dates.md).[day](Dates.md#day)
 
 ___
 
@@ -264,7 +278,7 @@ Docs: https://day.js.org/docs/en/display/days-in-month
 
 #### Inherited from
 
-dayjs.Dayjs.daysInMonth
+[Dates](Dates.md).[daysInMonth](Dates.md#daysinmonth)
 
 ___
 
@@ -305,7 +319,7 @@ Docs: https://day.js.org/docs/en/display/difference
 
 #### Inherited from
 
-dayjs.Dayjs.diff
+[Dates](Dates.md).[diff](Dates.md#diff)
 
 ___
 
@@ -323,6 +337,10 @@ ___
 #### Returns
 
 [`DatesDuration`](DatesDuration.md)
+
+#### Inherited from
+
+[Dates](Dates.md).[duration](Dates.md#duration)
 
 ___
 
@@ -350,7 +368,7 @@ Docs: https://day.js.org/docs/en/manipulate/end-of
 
 #### Inherited from
 
-dayjs.Dayjs.endOf
+[Dates](Dates.md).[endOf](Dates.md#endof)
 
 ___
 
@@ -375,11 +393,15 @@ ___
 
 `Dayjs`
 
+#### Inherited from
+
+[Dates](Dates.md).[extend](Dates.md#extend)
+
 ___
 
 ### format
 
-▸ **format**(`template?`): `string`
+▸ **format**(`formatString?`): `string`
 
 Get the formatted date according to the string of tokens passed in.
 
@@ -395,15 +417,15 @@ Docs: https://day.js.org/docs/en/display/format
 
 | Name | Type |
 | :------ | :------ |
-| `template?` | `string` |
+| `formatString?` | `string` |
 
 #### Returns
 
 `string`
 
-#### Inherited from
+#### Overrides
 
-dayjs.Dayjs.format
+[Dates](Dates.md).[format](Dates.md#format)
 
 ___
 
@@ -424,7 +446,7 @@ ___
 
 #### Inherited from
 
-dayjs.Dayjs.from
+[Dates](Dates.md).[from](Dates.md#from)
 
 ___
 
@@ -442,6 +464,10 @@ ___
 #### Returns
 
 `string`
+
+#### Inherited from
+
+[Dates](Dates.md).[fromLimited](Dates.md#fromlimited)
 
 ___
 
@@ -461,7 +487,7 @@ ___
 
 #### Inherited from
 
-dayjs.Dayjs.fromNow
+[Dates](Dates.md).[fromNow](Dates.md#fromnow)
 
 ___
 
@@ -478,6 +504,10 @@ ___
 #### Returns
 
 `string`
+
+#### Inherited from
+
+[Dates](Dates.md).[fromNowLimited](Dates.md#fromnowlimited)
 
 ___
 
@@ -511,7 +541,7 @@ Docs: https://day.js.org/docs/en/get-set/get
 
 #### Inherited from
 
-dayjs.Dayjs.get
+[Dates](Dates.md).[get](Dates.md#get)
 
 ___
 
@@ -531,7 +561,7 @@ Docs: https://day.js.org/docs/en/get-set/hour
 
 #### Inherited from
 
-dayjs.Dayjs.hour
+[Dates](Dates.md).[hour](Dates.md#hour)
 
 ▸ **hour**(`value`): `Dayjs`
 
@@ -555,7 +585,23 @@ Docs: https://day.js.org/docs/en/get-set/hour
 
 #### Inherited from
 
-dayjs.Dayjs.hour
+[Dates](Dates.md).[hour](Dates.md#hour)
+
+___
+
+### humanize
+
+▸ **humanize**(`withSuffix?`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `withSuffix?` | `boolean` |
+
+#### Returns
+
+`string`
 
 ___
 
@@ -588,7 +634,7 @@ Docs: https://day.js.org/docs/en/query/is-after
 
 #### Inherited from
 
-dayjs.Dayjs.isAfter
+[Dates](Dates.md).[isAfter](Dates.md#isafter)
 
 ___
 
@@ -621,7 +667,7 @@ Docs: https://day.js.org/docs/en/query/is-before
 
 #### Inherited from
 
-dayjs.Dayjs.isBefore
+[Dates](Dates.md).[isBefore](Dates.md#isbefore)
 
 ___
 
@@ -652,7 +698,7 @@ Docs: https://day.js.org/docs/en/query/is-same
 
 #### Inherited from
 
-dayjs.Dayjs.isSame
+[Dates](Dates.md).[isSame](Dates.md#issame)
 
 ___
 
@@ -664,9 +710,9 @@ ___
 
 `boolean`
 
-#### Overrides
+#### Inherited from
 
-dayjs.Dayjs.isToday
+[Dates](Dates.md).[isToday](Dates.md#istoday)
 
 ___
 
@@ -680,7 +726,7 @@ ___
 
 #### Inherited from
 
-dayjs.Dayjs.isTomorrow
+[Dates](Dates.md).[isTomorrow](Dates.md#istomorrow)
 
 ___
 
@@ -700,7 +746,7 @@ Docs: https://day.js.org/docs/en/parse/is-valid
 
 #### Inherited from
 
-dayjs.Dayjs.isValid
+[Dates](Dates.md).[isValid](Dates.md#isvalid)
 
 ___
 
@@ -714,7 +760,7 @@ ___
 
 #### Inherited from
 
-dayjs.Dayjs.isYesterday
+[Dates](Dates.md).[isYesterday](Dates.md#isyesterday)
 
 ___
 
@@ -728,7 +774,7 @@ ___
 
 #### Inherited from
 
-dayjs.Dayjs.locale
+[Dates](Dates.md).[locale](Dates.md#locale)
 
 ▸ **locale**(`preset`, `object?`): `Dayjs`
 
@@ -745,7 +791,7 @@ dayjs.Dayjs.locale
 
 #### Inherited from
 
-dayjs.Dayjs.locale
+[Dates](Dates.md).[locale](Dates.md#locale)
 
 ___
 
@@ -765,7 +811,7 @@ Docs: https://day.js.org/docs/en/get-set/millisecond
 
 #### Inherited from
 
-dayjs.Dayjs.millisecond
+[Dates](Dates.md).[millisecond](Dates.md#millisecond)
 
 ▸ **millisecond**(`value`): `Dayjs`
 
@@ -789,7 +835,7 @@ Docs: https://day.js.org/docs/en/get-set/millisecond
 
 #### Inherited from
 
-dayjs.Dayjs.millisecond
+[Dates](Dates.md).[millisecond](Dates.md#millisecond)
 
 ___
 
@@ -809,7 +855,7 @@ Docs: https://day.js.org/docs/en/get-set/minute
 
 #### Inherited from
 
-dayjs.Dayjs.minute
+[Dates](Dates.md).[minute](Dates.md#minute)
 
 ▸ **minute**(`value`): `Dayjs`
 
@@ -833,7 +879,7 @@ Docs: https://day.js.org/docs/en/get-set/minute
 
 #### Inherited from
 
-dayjs.Dayjs.minute
+[Dates](Dates.md).[minute](Dates.md#minute)
 
 ___
 
@@ -855,7 +901,7 @@ Docs: https://day.js.org/docs/en/get-set/month
 
 #### Inherited from
 
-dayjs.Dayjs.month
+[Dates](Dates.md).[month](Dates.md#month)
 
 ▸ **month**(`value`): `Dayjs`
 
@@ -881,7 +927,7 @@ Docs: https://day.js.org/docs/en/get-set/month
 
 #### Inherited from
 
-dayjs.Dayjs.month
+[Dates](Dates.md).[month](Dates.md#month)
 
 ___
 
@@ -899,6 +945,10 @@ ___
 
 `string`
 
+#### Inherited from
+
+[Dates](Dates.md).[relativeToday](Dates.md#relativetoday)
+
 ___
 
 ### safeTimestamp
@@ -908,6 +958,10 @@ ___
 #### Returns
 
 `string`
+
+#### Inherited from
+
+[Dates](Dates.md).[safeTimestamp](Dates.md#safetimestamp)
 
 ___
 
@@ -927,7 +981,7 @@ Docs: https://day.js.org/docs/en/get-set/second
 
 #### Inherited from
 
-dayjs.Dayjs.second
+[Dates](Dates.md).[second](Dates.md#second)
 
 ▸ **second**(`value`): `Dayjs`
 
@@ -950,7 +1004,7 @@ dayjs().second(1)// Dayjs
 
 #### Inherited from
 
-dayjs.Dayjs.second
+[Dates](Dates.md).[second](Dates.md#second)
 
 ___
 
@@ -985,7 +1039,7 @@ Docs: https://day.js.org/docs/en/get-set/set
 
 #### Inherited from
 
-dayjs.Dayjs.set
+[Dates](Dates.md).[set](Dates.md#set)
 
 ___
 
@@ -997,6 +1051,10 @@ ___
 
 `string`
 
+#### Inherited from
+
+[Dates](Dates.md).[shortdate](Dates.md#shortdate)
+
 ___
 
 ### shortdatetime
@@ -1007,6 +1065,10 @@ ___
 
 `string`
 
+#### Inherited from
+
+[Dates](Dates.md).[shortdatetime](Dates.md#shortdatetime)
+
 ___
 
 ### shorttime
@@ -1016,6 +1078,10 @@ ___
 #### Returns
 
 `string`
+
+#### Inherited from
+
+[Dates](Dates.md).[shorttime](Dates.md#shorttime)
 
 ___
 
@@ -1043,7 +1109,7 @@ Docs: https://day.js.org/docs/en/manipulate/start-of
 
 #### Inherited from
 
-dayjs.Dayjs.startOf
+[Dates](Dates.md).[startOf](Dates.md#startof)
 
 ___
 
@@ -1072,7 +1138,7 @@ Docs: https://day.js.org/docs/en/manipulate/subtract
 
 #### Inherited from
 
-dayjs.Dayjs.subtract
+[Dates](Dates.md).[subtract](Dates.md#subtract)
 
 ▸ **subtract**(`duration`): `Dayjs`
 
@@ -1088,7 +1154,7 @@ dayjs.Dayjs.subtract
 
 #### Inherited from
 
-dayjs.Dayjs.subtract
+[Dates](Dates.md).[subtract](Dates.md#subtract)
 
 ___
 
@@ -1100,6 +1166,10 @@ ___
 
 `string`
 
+#### Inherited from
+
+[Dates](Dates.md).[time](Dates.md#time)
+
 ___
 
 ### timestamp
@@ -1109,6 +1179,10 @@ ___
 #### Returns
 
 `string`
+
+#### Inherited from
+
+[Dates](Dates.md).[timestamp](Dates.md#timestamp)
 
 ___
 
@@ -1129,7 +1203,7 @@ ___
 
 #### Inherited from
 
-dayjs.Dayjs.to
+[Dates](Dates.md).[to](Dates.md#to)
 
 ___
 
@@ -1148,7 +1222,7 @@ dayjs('2019-01-25').toDate()// => Date
 
 #### Inherited from
 
-dayjs.Dayjs.toDate
+[Dates](Dates.md).[toDate](Dates.md#todate)
 
 ___
 
@@ -1168,7 +1242,7 @@ Docs: https://day.js.org/docs/en/display/as-iso-string
 
 #### Inherited from
 
-dayjs.Dayjs.toISOString
+[Dates](Dates.md).[toISOString](Dates.md#toisostring)
 
 ___
 
@@ -1186,9 +1260,9 @@ Docs: https://day.js.org/docs/en/display/as-json
 
 `string`
 
-#### Inherited from
+#### Overrides
 
-dayjs.Dayjs.toJSON
+[Dates](Dates.md).[toJSON](Dates.md#tojson)
 
 ___
 
@@ -1206,6 +1280,10 @@ ___
 #### Returns
 
 `string`
+
+#### Inherited from
+
+[Dates](Dates.md).[toLimited](Dates.md#tolimited)
 
 ___
 
@@ -1225,7 +1303,7 @@ ___
 
 #### Inherited from
 
-dayjs.Dayjs.toNow
+[Dates](Dates.md).[toNow](Dates.md#tonow)
 
 ___
 
@@ -1242,6 +1320,20 @@ ___
 #### Returns
 
 `string`
+
+#### Inherited from
+
+[Dates](Dates.md).[toNowLimited](Dates.md#tonowlimited)
+
+___
+
+### toObject
+
+▸ **toObject**(): [`DurationObject`](DurationObject.md)
+
+#### Returns
+
+[`DurationObject`](DurationObject.md)
 
 ___
 
@@ -1261,7 +1353,7 @@ Docs: https://day.js.org/docs/en/display/as-string
 
 #### Inherited from
 
-dayjs.Dayjs.toString
+[Dates](Dates.md).[toString](Dates.md#tostring)
 
 ___
 
@@ -1283,7 +1375,7 @@ Docs: https://day.js.org/docs/en/display/unix-timestamp
 
 #### Inherited from
 
-dayjs.Dayjs.unix
+[Dates](Dates.md).[unix](Dates.md#unix)
 
 ___
 
@@ -1303,7 +1395,7 @@ Docs: https://day.js.org/docs/en/manipulate/utc-offset
 
 #### Inherited from
 
-dayjs.Dayjs.utcOffset
+[Dates](Dates.md).[utcOffset](Dates.md#utcoffset)
 
 ___
 
@@ -1326,7 +1418,7 @@ Docs: https://day.js.org/docs/en/display/unix-timestamp-milliseconds
 
 #### Inherited from
 
-dayjs.Dayjs.valueOf
+[Dates](Dates.md).[valueOf](Dates.md#valueof)
 
 ___
 
@@ -1346,7 +1438,7 @@ Docs: https://day.js.org/docs/en/get-set/year
 
 #### Inherited from
 
-dayjs.Dayjs.year
+[Dates](Dates.md).[year](Dates.md#year)
 
 ▸ **year**(`value`): `Dayjs`
 
@@ -1368,4 +1460,4 @@ Docs: https://day.js.org/docs/en/get-set/year
 
 #### Inherited from
 
-dayjs.Dayjs.year
+[Dates](Dates.md).[year](Dates.md#year)

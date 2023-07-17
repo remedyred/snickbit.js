@@ -2,6 +2,10 @@
 
 ## Table of contents
 
+### Namespaces
+
+- [presets](modules/presets.md)
+
 ### Classes
 
 - [Cycle](classes/Cycle.md)
@@ -18,7 +22,7 @@
 
 ### Preset
 
-Ƭ **Preset**: `string` & keyof typeof `presets`
+Ƭ **Preset**: `string` & keyof typeof [`presets`](modules/presets.md)
 
 ## Functions
 

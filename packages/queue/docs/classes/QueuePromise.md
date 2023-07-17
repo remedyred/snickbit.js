@@ -190,8 +190,8 @@ Attaches callbacks for the resolution and/or rejection of the Queue as a whole.
 
 | Name | Type |
 | :------ | :------ |
-| `onfulfilled?` | `PromiseCallback`<`T`, `TResult1`\> |
-| `onrejected?` | `PromiseCallback`<`T`, `TResult2`\> |
+| `onfulfilled?` | [`PromiseCallback`](../README.md#promisecallback)<`T`, `TResult1`\> |
+| `onrejected?` | [`PromiseCallback`](../README.md#promisecallback)<`T`, `TResult2`\> |
 
 #### Returns
 

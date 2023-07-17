@@ -5,6 +5,10 @@
 ### Interfaces
 
 - [Dates](interfaces/Dates.md)
+- [DatesDuration](interfaces/DatesDuration.md)
+- [DurationObject](interfaces/DurationObject.md)
+- [LimitedRelativeOptions](interfaces/LimitedRelativeOptions.md)
+- [ToWordsOptions](interfaces/ToWordsOptions.md)
 
 ### Type Aliases
 

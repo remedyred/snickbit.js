@@ -21,6 +21,8 @@
 - [DynamicError](README.md#dynamicerror)
 - [ErrorMessage](README.md#errormessage)
 - [FinallyCallback](README.md#finallycallback)
+- [PromiseCallback](README.md#promisecallback)
+- [PromiseCallbackValue](README.md#promisecallbackvalue)
 - [QueueConfigurationValue](README.md#queueconfigurationvalue)
 - [QueueOption](README.md#queueoption)
 - [QueueOptions](README.md#queueoptions)
@@ -79,6 +81,46 @@ ___
 ##### Returns
 
 `Promise`<`any`\> \| `any`
+
+___
+
+### PromiseCallback
+
+Ƭ **PromiseCallback**<`TValue`, `TResult`\>: (`value`: `TValue`) => `PromiseLike`<`TResult`\> \| `TResult`
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `TValue` |
+| `TResult` |
+
+#### Type declaration
+
+▸ (`value`): `PromiseLike`<`TResult`\> \| `TResult`
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `TValue` |
+
+##### Returns
+
+`PromiseLike`<`TResult`\> \| `TResult`
+
+___
+
+### PromiseCallbackValue
+
+Ƭ **PromiseCallbackValue**<`TValue`, `TResult`\>: [`PromiseCallback`](README.md#promisecallback)<`TValue`, `TResult`\> \| ``null`` \| `undefined`
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `TValue` |
+| `TResult` |
 
 ___
 
