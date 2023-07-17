@@ -59,3 +59,6 @@ dayjs.extend(quick)
 dayjs.extend(timeago)
 
 export const dates: Dates = dayjs as unknown as Dates
+
+export {DatesDuration, DurationObject, ToWordsOptions} from './duration'
+export {LimitedRelativeOptions} from './limited-relative-time'

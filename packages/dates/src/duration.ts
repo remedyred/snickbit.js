@@ -1,4 +1,5 @@
-import {maxDecimals, plural} from '@snickbit/utilities'
+import {maxDecimals} from '@snickbit/utilities'
+import {plural} from '@snickbit/plural'
 import {Dates} from './index'
 import {OpUnitType} from 'dayjs'
 import duration from 'dayjs/plugin/duration'
