@@ -54,10 +54,10 @@ importers:
   clis/snickbit:
     dependencies:
       '@snickbit/node-cli':
-        specifier: ^3.0.25
-        version: 3.0.25
+        specifier: ^3.0.26
+        version: 3.0.26
       '@snickbit/node-utilities':
-        specifier: ^4.7.6
+        specifier: ^4.7.7
         version: link:../../packages/node-utilities
       '@snickbit/out':
         specifier: ^2.1.4
@@ -2235,6 +2235,18 @@ packages:
       '@snickbit/utilities': 3.8.2
       lilconfig: 2.1.0
       yargs-parser: 21.1.1
+    dev: true
+
+  /@snickbit/node-cli@3.0.26:
+    resolution: {integrity: sha512-Lkq0FVmCDRsPATuamgiGM5e0BSrgrxyQGxYjAGjax1L+w5/uLr3KM9gjfHjcqBe0EmsBbtQ+amFntguqodGJtQ==}
+    engines: {node: '>= 14.17'}
+    dependencies:
+      '@snickbit/node-utilities': 4.7.7
+      '@snickbit/out': 2.1.4
+      '@snickbit/utilities': 3.11.1
+      lilconfig: 2.1.0
+      yargs-parser: 21.1.1
+    dev: false
 
   /@snickbit/node-utilities@4.7.2:
     resolution: {integrity: sha512-bovJYSAkyw8TNfrLMX61M6wEpOyBq5pQ7djllVz0srbqzI2Mh5X58kD7e26mkGz0PkN0B3UX16WpReICPcpigg==}
@@ -2248,6 +2260,7 @@ packages:
       lodash.throttle: 4.1.1
       nanospinner: 1.1.0
       prompts: 2.4.2
+    dev: true
 
   /@snickbit/node-utilities@4.7.6:
     resolution: {integrity: sha512-93jRhqrL3M42G/7gCigYAyf+5iKjtMGU4SYlHdYMtSVuJRG8382ALxXP3cgEHCMZPZhww/TLgVAvCO4oTHD4bA==}
@@ -2263,6 +2276,20 @@ packages:
       prompts: 2.4.2
     dev: true
 
+  /@snickbit/node-utilities@4.7.7:
+    resolution: {integrity: sha512-85KvPuq3ZtimpbjvzDAeqwsnsP/FCD6VoFfteBV6oJyVWdbB2CTQIxYCaxnEypGJYXaIhq6fDbHWH1H89Z7zYQ==}
+    engines: {node: '>= 14.17'}
+    dependencies:
+      '@snickbit/out': 2.1.4
+      '@snickbit/utilities': 3.11.1
+      ansi-styles-template: 1.0.0
+      cli-progress: 3.12.0
+      is-wsl: 2.2.0
+      lodash.throttle: 4.1.1
+      nanospinner: 1.1.0
+      prompts: 2.4.2
+    dev: false
+
   /@snickbit/out@2.0.48:
     resolution: {integrity: sha512-c7K4hX050CFZ255J8AK6JUQAJIC2GI7S4Ph2ci5eHcL14k+K1PdQQS4jLbO/E7QKOA+0Wa4Rg05o9JdZh+W0xw==}
     engines: {node: '>= 12'}
@@ -2274,6 +2301,7 @@ packages:
       browser-or-node: 2.0.0
       node-inspect-extracted: 1.1.0
       picomatch-browser: 2.2.6
+    dev: true
 
   /@snickbit/out@2.1.2:
     resolution: {integrity: sha512-hpSq8Tee0n3JOqbgq3Ly1c1InuNG0lKKMGlWWtDfNcpovOyZ41+1Sl521lpsJQBwxhux/UQwWmUo95RiBW1tVA==}
@@ -2303,6 +2331,7 @@ packages:
   /@snickbit/plural@1.0.14:
     resolution: {integrity: sha512-i3A2CllbJ1a+xNwQ/n/HBCTdFTwdCdKrlDvrwg2rrTXzKFhkFpE3/GUXxDnobZJUhMSyFnVFF6yvN2BSnZBKHQ==}
     engines: {node: '>= 14.17'}
+    dev: true
 
   /@snickbit/plural@1.0.18:
     resolution: {integrity: sha512-BPf935z4FabSXGA4cTT9q9GbU6K4Ykaw7dk1QtpOJmEK2u+lYog96wm5GfZ2F/ITbyl4JMRRKyWjbLllP6Z4Lw==}
@@ -2369,6 +2398,7 @@ packages:
       '@snickbit/plural': 1.0.14
       just-camel-case: 6.2.0
       nanoid: 3.3.6
+    dev: true
 
   /@snickbit/utilities@3.5.0:
     resolution: {integrity: sha512-+sqcJBgs5qbmKdPrDYj6bcUHcyWQwYW2p7AaNArtoxy1olkJV19+xuW7ulbFnUOjKu8Iwa1juIG+xWZhN3DhAg==}
@@ -2377,6 +2407,7 @@ packages:
       '@snickbit/plural': 1.0.14
       just-camel-case: 6.2.0
       nanoid: 3.3.6
+    dev: true
 
   /@snickbit/utilities@3.8.2:
     resolution: {integrity: sha512-Qrc2J2HBDYq9rqQiDJIVUt1MD1YD5KPd1cZQaOFpDqOT5pDQ8m90psuTkFyZ9QV4bK/kFzLxN3Wq3M5c+ykiWQ==}
@@ -2385,6 +2416,7 @@ packages:
       '@snickbit/plural': 1.0.18
       just-camel-case: 6.2.0
       nanoid: 3.3.6
+    dev: true
 
   /@snickbit/utilities@3.9.0:
     resolution: {integrity: sha512-4cYfFrN/JlM0TXNOklHpuPMDumcytjYHxOa5VtqO1z0A2Rn+6I3PJsZx6N788vhesS+gEncdjezAYCKBwlkX7w==}
@@ -3055,6 +3087,7 @@ packages:
 
   /browser-or-node@2.0.0:
     resolution: {integrity: sha512-3Lrks/Okgof+/cRguUNG+qRXSeq79SO3hY4QrXJayJofwJwHiGC0qi99uDjsfTwULUFSr1OGVsBkdIkygKjTUA==}
+    dev: true
 
   /browser-or-node@2.1.1:
     resolution: {integrity: sha512-8CVjaLJGuSKMVTxJ2DpBl5XnlNDiT4cQFeuCJJrvJmts9YrTZDizTX7PjC2s6W4x+MBGZeEY6dGMrF04/6Hgqg==}
@@ -5757,6 +5790,7 @@ packages:
     resolution: {integrity: sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
+    dev: true
 
   /nanospinner@1.1.0:
     resolution: {integrity: sha512-yFvNYMig4AthKYfHFl1sLj7B2nkHL4lzdig4osvl9/LdGbXwrdFRoqBS98gsEsOakr0yH+r5NZ/1Y9gdVB8trA==}
@@ -5814,6 +5848,7 @@ packages:
   /node-inspect-extracted@1.1.0:
     resolution: {integrity: sha512-GtmPYJiHqmkt4sd7oYqUIzFepBDY6aotmD7nuF9QV9lolH+Sru5FZCholI5QuuyM+NvgAq/BaQB6OgXv+ZT8lA==}
     engines: {node: '>=10.18.0'}
+    dev: true
 
   /node-inspect-extracted@2.0.2:
     resolution: {integrity: sha512-8qm9+tu/GmbA/uWQRs6ad8KstyhH94a0pXpRVGHaJ9wHlJbetCYoCwXbKILaaMcE+wgbgpOpzcCnipkL8vTqxA==}
