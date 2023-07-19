@@ -26,7 +26,7 @@
 	"dependencies": {
 		"@snickbit/node-cli": "^3.0.25",
 		"@snickbit/node-utilities": "^4.7.6",
-		"@snickbit/out": "^2.1.2",
+		"@snickbit/out": "^2.1.4",
 		"ansi-styles-template": "1.0.0",
 		"figlet": "1.6.0",
 		"is-email": "1.0.2",
