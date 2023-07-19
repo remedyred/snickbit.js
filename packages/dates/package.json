@@ -32,7 +32,7 @@
 		"testEnvironment": "node"
 	},
 	"dependencies": {
-		"@snickbit/plural": "1.0.17",
+		"@snickbit/plural": "1.0.18",
 		"@snickbit/utilities": "workspace:*",
 		"dayjs": "1.11.9"
 	},
