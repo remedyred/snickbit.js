@@ -1,6 +1,6 @@
 {
 	"name": "@snickbit/state",
-	"version": "1.0.9",
+	"version": "1.0.10",
 	"description": "Simple state management for TypeScript",
 	"license": "MIT",
 	"exports": {
@@ -32,7 +32,7 @@
 		"testEnvironment": "node"
 	},
 	"dependencies": {
-		"@snickbit/utilities": "workspace:*",
+		"@snickbit/utilities": "3.11.2",
 		"mitt": "3.0.1"
 	},
 	"devDependencies": {
