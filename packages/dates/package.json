@@ -1,6 +1,6 @@
 {
 	"name": "@snickbit/dates",
-	"version": "1.0.75",
+	"version": "1.0.76",
 	"description": "Extended Date and Time functionality for Dayjs",
 	"license": "MIT",
 	"exports": {
@@ -33,7 +33,7 @@
 	},
 	"dependencies": {
 		"@snickbit/plural": "1.0.18",
-		"@snickbit/utilities": "workspace:*",
+		"@snickbit/utilities": "3.11.2",
 		"dayjs": "1.11.9"
 	},
 	"devDependencies": {
