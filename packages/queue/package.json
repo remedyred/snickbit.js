@@ -1,6 +1,6 @@
 {
 	"name": "@snickbit/queue",
-	"version": "1.3.6",
+	"version": "1.3.7",
 	"description": "Fluid queueing library for any function or promise",
 	"license": "MIT",
 	"exports": {
@@ -33,7 +33,7 @@
 		"testEnvironment": "node"
 	},
 	"dependencies": {
-		"@snickbit/utilities": "workspace:*",
+		"@snickbit/utilities": "3.11.2",
 		"lite-fifo": "0.3.3"
 	},
 	"devDependencies": {
