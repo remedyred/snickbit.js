@@ -28,5 +28,5 @@ jobs:
           AUTO_COMMIT: true
 
       - name: Release
-        run: npm whoami && pnpm turbo run build release:ci
+        run: npm whoami && pnpm run release:ci
 

@@ -7,8 +7,17 @@
 				"*.json",
 				"../../tsup.config.json"
 			],
-			"dependsOn": ["^clean", "^build"],
+			"dependsOn": ["^build"],
 			"outputs": ["dist/**"],
+			"outputMode": "new-only"
+		},
+		"index": {
+			"inputs": [
+				"src/**",
+				"indexer.config.json"
+			],
+			"dependsOn": [],
+			"outputs": ["dist/**/*/index.ts"],
 			"outputMode": "new-only"
 		},
 		"dev": {
@@ -44,19 +53,9 @@
 		"//#docs": {
 			"outputs": ["README.md"]
 		},
-		"clean": {
-			"inputs": ["dist/**"],
-			"outputs": []
-		},
 		"release": {
 			"dependsOn": ["build", "//#lint", "//#test"],
 			"outputs": ["CHANGELOG.md", "package.json", "docs/**", "README.md"]
-		},
-		"//#release:ci": {
-			"env": ["GITHUB_TOKEN", "NPM_TOKEN"],
-			"dependsOn": ["build"],
-			"outputs": ["CHANGELOG.md", "package.json", "docs/**", "README.md"],
-			"outputMode": "new-only"
 		}
 	}
 }
