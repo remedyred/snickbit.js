@@ -1,6 +1,6 @@
 {
 	"name": "@snickbit/spinner",
-	"version": "1.3.3",
+	"version": "1.3.4",
 	"description": "Minimal terminal spinner for Node.js",
 	"license": "MIT",
 	"exports": {
@@ -31,7 +31,7 @@
 	},
 	"dependencies": {
 		"@snickbit/ansi": "^0.0.26",
-		"@snickbit/utilities": "3.11.1",
+		"@snickbit/utilities": "3.11.3",
 		"cli-spinners": "^2.9.0",
 		"kleur": "^4.1.5"
 	},
