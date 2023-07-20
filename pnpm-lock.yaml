@@ -57,7 +57,7 @@ importers:
         specifier: ^3.0.26
         version: 3.0.26
       '@snickbit/node-utilities':
-        specifier: ^4.7.7
+        specifier: ^4.7.8
         version: link:../../packages/node-utilities
       '@snickbit/out':
         specifier: ^2.1.4
