@@ -91,7 +91,7 @@ importers:
   packages/controller:
     dependencies:
       '@snickbit/utilities':
-        specifier: workspace:*
+        specifier: 3.11.2
         version: link:../utilities
       mitt:
         specifier: ~3.0.1
@@ -113,7 +113,7 @@ importers:
   packages/cycle:
     dependencies:
       '@snickbit/utilities':
-        specifier: 3.11.1
+        specifier: 3.11.2
         version: link:../utilities
     devDependencies:
       '@types/jest':
@@ -144,7 +144,7 @@ importers:
         specifier: 1.0.18
         version: link:../plural
       '@snickbit/utilities':
-        specifier: workspace:*
+        specifier: 3.11.2
         version: link:../utilities
       dayjs:
         specifier: 1.11.9
@@ -288,7 +288,7 @@ importers:
   packages/queue:
     dependencies:
       '@snickbit/utilities':
-        specifier: workspace:*
+        specifier: 3.11.2
         version: link:../utilities
       lite-fifo:
         specifier: 0.3.3
@@ -325,7 +325,7 @@ importers:
         specifier: ^0.0.26
         version: 0.0.26
       '@snickbit/utilities':
-        specifier: workspace:*
+        specifier: 3.11.2
         version: link:../utilities
       cli-spinners:
         specifier: ^2.9.0
@@ -359,7 +359,7 @@ importers:
   packages/state:
     dependencies:
       '@snickbit/utilities':
-        specifier: workspace:*
+        specifier: 3.11.2
         version: link:../utilities
       mitt:
         specifier: 3.0.1
@@ -2433,7 +2433,7 @@ packages:
     engines: {node: '>= 14.17'}
     dependencies:
       '@snickbit/out': 2.1.4
-      '@snickbit/utilities': 3.11.1
+      '@snickbit/utilities': 3.11.2
       ansi-styles-template: 1.0.0
       cli-progress: 3.12.0
       is-wsl: 2.2.0
@@ -2496,6 +2496,14 @@ packages:
 
   /@snickbit/utilities@3.11.1:
     resolution: {integrity: sha512-vEi4bRO/0raCVe6jAa7+9tMtVqeBGqawzbFCGm1gffwlzTVk8U4DyxJxkvuBjI1Oz8WnRrYiwZTwbHoB8Kkolw==}
+    engines: {node: '>= 14.17'}
+    dependencies:
+      '@lukeed/uuid': 2.0.1
+      '@snickbit/plural': 1.0.18
+      just-camel-case: 6.2.0
+
+  /@snickbit/utilities@3.11.2:
+    resolution: {integrity: sha512-4w1Okhd8P1NxORfBpiWE6phE/MEF+Rf9zTvIXOmziKAK7WrmAAwf7uUwCbd76MV5YBLOkiXfGhFO2wkbI2/93w==}
     engines: {node: '>= 14.17'}
     dependencies:
       '@lukeed/uuid': 2.0.1
