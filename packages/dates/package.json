@@ -33,7 +33,7 @@
 	},
 	"dependencies": {
 		"@snickbit/plural": "1.0.18",
-		"@snickbit/utilities": "3.11.2",
+		"@snickbit/utilities": "3.11.1",
 		"dayjs": "1.11.9"
 	},
 	"devDependencies": {

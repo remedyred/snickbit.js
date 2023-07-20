@@ -33,11 +33,11 @@
 		"testEnvironment": "node"
 	},
 	"dependencies": {
-		"@snickbit/utilities": "3.11.2",
+		"@snickbit/utilities": "3.11.1",
 		"lite-fifo": "0.3.3"
 	},
 	"devDependencies": {
-		"@snickbit/indexer": "2.8.4",
+		"@snickbit/indexer": "2.9.0",
 		"@types/jest": "29.5.3",
 		"jest": "29.6.1",
 		"ts-jest": "29.1.1",

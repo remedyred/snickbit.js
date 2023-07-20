@@ -91,8 +91,8 @@ importers:
   packages/controller:
     dependencies:
       '@snickbit/utilities':
-        specifier: 3.11.2
-        version: link:../utilities
+        specifier: 3.11.1
+        version: 3.11.1
       mitt:
         specifier: ~3.0.1
         version: 3.0.1
@@ -113,8 +113,8 @@ importers:
   packages/cycle:
     dependencies:
       '@snickbit/utilities':
-        specifier: 3.11.2
-        version: link:../utilities
+        specifier: 3.11.1
+        version: 3.11.1
     devDependencies:
       '@types/jest':
         specifier: 29.5.3
@@ -144,8 +144,8 @@ importers:
         specifier: 1.0.18
         version: link:../plural
       '@snickbit/utilities':
-        specifier: 3.11.2
-        version: link:../utilities
+        specifier: 3.11.1
+        version: 3.11.1
       dayjs:
         specifier: 1.11.9
         version: 1.11.9
@@ -178,7 +178,7 @@ importers:
         specifier: ^2.1.4
         version: 2.1.4
       '@snickbit/utilities':
-        specifier: ^3.11.2
+        specifier: ^3.11.1
         version: link:../utilities
       object-path:
         specifier: ^0.11.8
@@ -215,7 +215,7 @@ importers:
         specifier: ^2.1.4
         version: 2.1.4
       '@snickbit/utilities':
-        specifier: ^3.11.2
+        specifier: ^3.11.1
         version: link:../utilities
       ansi-styles-template:
         specifier: ^1.0.0
@@ -288,15 +288,15 @@ importers:
   packages/queue:
     dependencies:
       '@snickbit/utilities':
-        specifier: 3.11.2
-        version: link:../utilities
+        specifier: 3.11.1
+        version: 3.11.1
       lite-fifo:
         specifier: 0.3.3
         version: 0.3.3
     devDependencies:
       '@snickbit/indexer':
-        specifier: 2.8.4
-        version: 2.8.4
+        specifier: 2.9.0
+        version: 2.9.0
       '@types/jest':
         specifier: 29.5.3
         version: 29.5.3
@@ -325,8 +325,8 @@ importers:
         specifier: ^0.0.26
         version: 0.0.26
       '@snickbit/utilities':
-        specifier: 3.11.2
-        version: link:../utilities
+        specifier: 3.11.1
+        version: 3.11.1
       cli-spinners:
         specifier: ^2.9.0
         version: 2.9.0
@@ -335,8 +335,8 @@ importers:
         version: 4.1.5
     devDependencies:
       '@snickbit/indexer':
-        specifier: 2.8.4
-        version: 2.8.4
+        specifier: 2.9.0
+        version: 2.9.0
       '@types/node':
         specifier: 20.4.2
         version: 20.4.2
@@ -359,8 +359,8 @@ importers:
   packages/state:
     dependencies:
       '@snickbit/utilities':
-        specifier: 3.11.2
-        version: link:../utilities
+        specifier: 3.11.1
+        version: 3.11.1
       mitt:
         specifier: 3.0.1
         version: 3.0.1
@@ -424,8 +424,8 @@ importers:
         version: 6.2.0
     devDependencies:
       '@snickbit/indexer':
-        specifier: 2.8.4
-        version: 2.8.4
+        specifier: 2.9.0
+        version: 2.9.0
       '@types/jest':
         specifier: 29.5.3
         version: 29.5.3
@@ -2402,8 +2402,8 @@ packages:
       - typescript
     dev: true
 
-  /@snickbit/indexer@2.8.4:
-    resolution: {integrity: sha512-rBerl9Sxjuee/9gZsrAHteL9sWGmo77XHsiMFaHE41qhoOv+fZFyXponatyUeUGSVRBhF5l1OqFLuT1wVFvtZA==}
+  /@snickbit/indexer@2.9.0:
+    resolution: {integrity: sha512-NzwQw7mojqnAYbWQ9nTh5OyQLhFtZ2uYQ5lCxmdr3+TQ/60SutpOQcwCPAKC8m6K61uooK/iveDLFx7Ir5LSeg==}
     engines: {node: '>= 14'}
     hasBin: true
     dependencies:
@@ -2433,7 +2433,7 @@ packages:
     engines: {node: '>= 14.17'}
     dependencies:
       '@snickbit/out': 2.1.4
-      '@snickbit/utilities': 3.11.2
+      '@snickbit/utilities': 3.11.1
       ansi-styles-template: 1.0.0
       cli-progress: 3.12.0
       is-wsl: 2.2.0
@@ -2496,14 +2496,6 @@ packages:
 
   /@snickbit/utilities@3.11.1:
     resolution: {integrity: sha512-vEi4bRO/0raCVe6jAa7+9tMtVqeBGqawzbFCGm1gffwlzTVk8U4DyxJxkvuBjI1Oz8WnRrYiwZTwbHoB8Kkolw==}
-    engines: {node: '>= 14.17'}
-    dependencies:
-      '@lukeed/uuid': 2.0.1
-      '@snickbit/plural': 1.0.18
-      just-camel-case: 6.2.0
-
-  /@snickbit/utilities@3.11.2:
-    resolution: {integrity: sha512-4w1Okhd8P1NxORfBpiWE6phE/MEF+Rf9zTvIXOmziKAK7WrmAAwf7uUwCbd76MV5YBLOkiXfGhFO2wkbI2/93w==}
     engines: {node: '>= 14.17'}
     dependencies:
       '@lukeed/uuid': 2.0.1
