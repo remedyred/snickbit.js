@@ -3,19 +3,20 @@
 	"version": "0.0.0",
 	"private": true,
 	"scripts": {
-		"ci": "turbo run --no-daemon index //#lint //#test build",
-		"dev": "turbo run dev",
-		"docs": "readmes",
-		"index": "turbo run index",
+		"ci:docs": "pnpm -r run --parallel --if-present docs && readmes",
+		"ci:index": "pnpm -r run --parallel --if-present index",
+		"ci:check": "pnpm run test --ci && pnpm -r run --parallel --if-present typecheck",
+		"ci:lint": "pnpm run lint:fix",
+		"ci:test": "pnpm run test --ci",
+		"ci:build": "pnpm -r run build",
 		"lint": "eslint \"**/*.{ts,json,yml,yaml}\" --cache --color",
 		"lint:fix": "pnpm run lint --fix",
 		"prepare": "husky install",
-		"prerelease": "turbo run --no-daemon --no-cache index //#lint:fix //#test build docs",
-		"release": "turbo run --no-daemon release",
-		"prerelease:ci": "turbo run --no-daemon index build docs",
+		"prerelease": "pnpm run ci:lint && pnpm run ci:build && pnpm run ci:check && pnpm run ci:docs",
+		"release": "pnpm -r run --parallel --if-present release",
+		"prerelease:ci": "pnpm run ci:index ci:build ci:docs",
 		"release:ci": "multi-semantic-release --deps.bump=satisfy",
-		"test": "jest --no-cache",
-		"test:ci": "jest --no-cache --ci --onlyChanged"
+		"test": "jest --no-cache"
 	},
 	"lint-staged": {
 		"*.{ts,json,yml,yaml}": "eslint --fix --cache"
