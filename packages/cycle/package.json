@@ -18,7 +18,7 @@
 		"build": "tsup --minify",
 		"check": "pnpm -w run lint && pnpm run typecheck",
 		"dev": "tsup --watch",
-		"docs": "typedoc --tsconfig ./tsconfig.typedoc.json",
+		"docs": "typedoc",
 		"release": "semantic-release",
 		"start": "node ./examples/index.js",
 		"typecheck": "tsc --noEmit"
