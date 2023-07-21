@@ -1,0 +1,27 @@
+{
+	"name": "scripts",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"build": "tsup",
+		"dev": "tsup --watch",
+		"start": "zx dist/index.mjs build",
+		"typecheck": "tsc --noEmit"
+	},
+	"dependencies": {
+		"zx": "7.2.3"
+	},
+	"devDependencies": {
+		"tsx": "3.12.7"
+	},
+	"tsup": {
+		"entry": [
+			"src/index.ts"
+		],
+		"clean": true,
+		"dts": true,
+		"format": [
+			"esm"
+		]
+	}
+}
