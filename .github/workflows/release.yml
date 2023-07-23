@@ -23,10 +23,10 @@ jobs:
       - name: Build, Test, and Lint
         uses: remedyred/check-action@v1.2.7
         with:
-          SCRIPTS: prerelease:ci
+          SCRIPTS: pr
           NO_BAIL: true
           AUTO_COMMIT: true
 
       - name: Release
-        run: npm whoami && pnpm run release:ci
+        run: npm whoami && pnpm run release
 

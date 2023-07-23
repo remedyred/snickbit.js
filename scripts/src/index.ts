@@ -1,6 +1,6 @@
 #!/usr/bin/env zx
-import {pnpmRun, RunOptions} from './lib/pnpm'
-import {debug, error, info, title} from './lib/output'
+import {pnpm, RunOptions} from './lib/pnpm'
+import {debug, error, info, title, warn} from './lib/output'
 import 'zx/globals'
 
 $.verbose = argv.verbose || argv.v
@@ -51,52 +51,88 @@ const actionMap: Record<string, ActionDefinition> = {
 		recursive: true,
 		script: 'docs'
 	},
-	ci: {
-		description: 'Run all CI tasks',
+	releaseCI: {
+		description: 'Run multi-semantic-release',
+		script: 'release:ci'
+	},
+	quick: {
+		description: 'Run all CI tasks [quick]',
 		actions: [
-			'lint',
+			'index',
+			'lintFix',
 			'build',
-			'check',
-			'test',
 			'docs'
 		]
+	},
+	pr: {
+		description: 'Run all CI tasks [pre-release/pull request]',
+		actions: [
+			'quick',
+			'check',
+			'test'
+		]
+	},
+	ci: {
+		description: 'Run only necessary CI tasks',
+		actions: [
+			'lintFix',
+			'build',
+			'docs'
+		]
+	},
+	release: {
+		description: 'Run only necessary CI tasks and then publish',
+		actions: ['ci', 'releaseCI']
 	}
 }
 
+const hasRun = new Set<string>()
 export default void async function main() {
 	title`Starting snickbit.js CI Script`
-	argv._?.splice(0, 1) // remove script name from args
+
 	const actions = argv._?.length ? argv._ : ['ci']
-
 	for (const commandAction of actions) {
-		if (fs.existsSync(commandAction)) {
-			continue
-		}
-
-		if (!(commandAction in actionMap)) {
-			error`Unknown action: ${commandAction}`
-			continue
-		}
-
-		const actionDef = actionMap[commandAction]
-		if (!actionDef || (!actionDef.script && !actionDef.actions)) {
-			error`No script or actions specified for ${commandAction}`
-			continue
-		}
-
-		if (actionDef.actions) {
-			debug`Running group actions for ${commandAction}`
-			for (const actionName of actionDef.actions) {
-				await runAction(actionName)
-			}
-		} else {
-			debug`Running action ${commandAction}`
-			await runAction(commandAction)
-		}
+		await handleCommandAction(commandAction)
 	}
 }()
 
+async function handleCommandAction(commandAction: string) {
+	if (hasRun.has(commandAction)) {
+		warn`Skipping duplicate action: ${commandAction}`
+		return
+	}
+
+	if (fs.existsSync(commandAction)) {
+		return
+	}
+
+	if (!(commandAction in actionMap)) {
+		error`Unknown action: ${commandAction}`
+		return
+	}
+
+	const actionDef = actionMap[commandAction]
+	if (!actionDef || (!actionDef.script && !actionDef.actions)) {
+		error`No script or actions specified for ${commandAction}`
+		return
+	}
+
+	if (actionDef.actions) {
+		debug`Running group actions for ${commandAction}`
+		for (const actionName of actionDef.actions) {
+			await (actionMap[actionName] ? handleCommandAction(actionName) : runAction(actionName))
+		}
+	} else {
+		debug`Running action ${commandAction}`
+		await runAction(commandAction)
+	}
+}
+
 async function runAction(commandAction: string) {
+	console.log('')
+	title`Command: ${chalk.cyan(commandAction)}`
+
+	hasRun.add(commandAction)
 	const {
 		description,
 		parallel,
@@ -106,7 +142,6 @@ async function runAction(commandAction: string) {
 		script
 	} = actionMap[commandAction]
 
-	title`Command: ${chalk.cyan(commandAction)}`
 	if (description) {
 		info`${description}`
 	}
@@ -118,7 +153,8 @@ async function runAction(commandAction: string) {
 		'if-present': ifPresent
 	}
 
-	debug`${JSON.stringify(options)}`
+	debug`${JSON.stringify({script, ...options})}`
 
-	await pnpmRun(script, options)
+	await pnpm('run', script, options)
+	console.log('')
 }

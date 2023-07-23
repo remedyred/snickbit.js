@@ -1,8 +1,9 @@
 #!/usr/bin/env zx
 
-import {arrayPull, arrayUnique, arrayWrap, isString, slugify} from './helpers'
-import {debug, die, error} from './output'
+import {arrayWrap, isString, slugify} from './helpers'
+import {debug, error, info} from './output'
 import {ProcessOutput} from 'zx'
+import {PnpmCommandFlagSet, PnpmFlag, PnpmGlobalFlag, PnpmGlobalFlagSet, PnpmRunFlag} from '../types'
 
 export interface RunOptions {
 	parallel?: boolean
@@ -11,9 +12,9 @@ export interface RunOptions {
 	recursive?: boolean
 }
 
-function makeParams(command: string, args?: string[] | string, options?: RunOptions) {
-	const optionParams = options
-		? arrayUnique(Object.entries(options)
+function makeParams(command: string, args?: string[] | string, options?: RunOptions): Set<string> {
+	const flags = new Set<PnpmFlag | string>(options
+		? Object.entries(options)
 			.map(([key, value]) => {
 				if (isString(value)) {
 					value = slugify(value)
@@ -31,44 +32,42 @@ function makeParams(command: string, args?: string[] | string, options?: RunOpti
 				}
 
 				return parsedValue ? `--${key}${parsedValue === true ? '' : parsedValue}` : ''
-			}).filter(Boolean))
-		: []
+			}).filter(Boolean)
+		: [])
 
 	args = arrayWrap(args || [])
 
-	const pnpmOptions: string[] = []
-	const availablePnpmOptions = [
-		'--recursive',
-		'--aggregate-output',
-		'--stream',
-		'--report-summary',
-		'-C',
-		'--dir',
-		'-w',
-		'--workspace-root',
-		'--color',
-		'--no-color',
-		'--loglevel'
-	]
+	if (!flags.has('--no-color')) {
+		flags.add('--color')
+	}
 
-	for (const pnpmOption of availablePnpmOptions) {
-		if (optionParams.includes(pnpmOption)) {
-			pnpmOptions.push(arrayPull(optionParams, pnpmOption))
+	if (flags.has('--recursive')) {
+		flags.add('--filter=!./scripts')
+	}
+
+	const pnpmGlobalFlags = new Set<PnpmGlobalFlag | string>()
+	const pnpmCommandFlags = new Set<PnpmRunFlag | string>()
+	const pnpmSubCommandFlags = new Set<string>()
+
+	for (const flag of flags) {
+		if (PnpmGlobalFlagSet.some(globalFlag => flag.startsWith(globalFlag))) {
+			pnpmGlobalFlags.add(flag)
+		} else if (PnpmCommandFlagSet.some(commandFlag => flag.startsWith(commandFlag))) {
+			pnpmCommandFlags.add(flag)
+		} else {
+			pnpmSubCommandFlags.add(flag)
 		}
 	}
 
-	if (!pnpmOptions.includes('--no-color')) {
-		pnpmOptions.push('--color')
-	}
+	debug`${JSON.stringify({pnpmGlobalFlags, pnpmCommandFlags, pnpmSubCommandFlags, args})}`
 
-	debug`${JSON.stringify({pnpmOptions, optionParams, args})}`
-
-	return [
+	return new Set([
+		...pnpmGlobalFlags,
 		command,
-		...pnpmOptions,
-		...optionParams,
-		...args
-	].filter(param => !!param || typeof param === 'string')
+		...pnpmCommandFlags,
+		...args,
+		...pnpmSubCommandFlags
+	].filter(param => !!param || typeof param === 'string'))
 }
 
 export async function pnpmRun(args: string[] | string, options?: RunOptions): Promise<void> {
@@ -90,10 +89,18 @@ export async function pnpmRecursive(command: string, args: string[] | string, op
 	return pnpm(command, args, options)
 }
 
+const notDisplayed = new Set(['--color', '--filter=!./scripts'])
+
 export async function pnpm(command: string, args: string[] | string, options?: RunOptions): Promise<void> {
 	const params = makeParams(command, args, options)
+	if (params.has('--stream')) {
+		params.delete('--stream')
+	}
 	try {
-		await $`pnpm ${params}`.pipe(process.stdout)
+		if (!$.verbose) {
+			info`pnpm ${[...params].filter(p => !notDisplayed.has(p)).join(' ')}`
+		}
+		await $`pnpm ${[...params]}`.pipe(process.stdout)
 	} catch (error_) {
 		if (error_ instanceof ProcessOutput) {
 			error`PNPM ERROR while running command: pnpm ${params}`
