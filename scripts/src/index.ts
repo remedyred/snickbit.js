@@ -1,6 +1,6 @@
 #!/usr/bin/env zx
 import {pnpm, RunOptions} from './lib/pnpm'
-import {debug, error, info, title, warn} from './lib/output'
+import {debug, die, error, info, title, warn} from './lib/output'
 import 'zx/globals'
 
 $.verbose = argv.verbose || argv.v
@@ -107,7 +107,7 @@ async function handleCommandAction(commandAction: string) {
 	}
 
 	if (!(commandAction in actionMap)) {
-		error`Unknown action: ${commandAction}`
+		error`Unknown action: ${commandAction}. Available actions: ${Object.keys(actionMap).join(', ')}`
 		return
 	}
 
@@ -129,6 +129,10 @@ async function handleCommandAction(commandAction: string) {
 }
 
 async function runAction(commandAction: string) {
+	if (!actionMap[commandAction]) {
+		die`No action found for ${commandAction}. Available actions: ${Object.keys(actionMap).join(', ')}`
+	}
+
 	console.log('')
 	title`Command: ${chalk.cyan(commandAction)}`
 
