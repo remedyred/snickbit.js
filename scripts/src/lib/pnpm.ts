@@ -96,15 +96,17 @@ export async function pnpm(command: string, args: string[] | string, options?: R
 	if (params.has('--stream')) {
 		params.delete('--stream')
 	}
+	const stringParams = [...params].filter(p => !notDisplayed.has(p)).join(' ')
 	try {
 		if (!$.verbose) {
-			info`pnpm ${[...params].filter(p => !notDisplayed.has(p)).join(' ')}`
+			info`pnpm ${stringParams}`
 		}
 		await $`pnpm ${[...params]}`.pipe(process.stdout)
 	} catch (error_) {
 		if (error_ instanceof ProcessOutput) {
-			error`PNPM ERROR while running command: pnpm ${params}`
+			error`PNPM ERROR while running command: pnpm ${stringParams}`
 			console.log(error_.stderr || error_.stdout)
+			console.trace()
 			process.exit(1)
 		}
 	}
