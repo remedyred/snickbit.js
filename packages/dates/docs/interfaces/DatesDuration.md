@@ -53,8 +53,10 @@
 - [isSame](DatesDuration.md#issame)
 - [isToday](DatesDuration.md#istoday)
 - [isTomorrow](DatesDuration.md#istomorrow)
+- [isUTC](DatesDuration.md#isutc)
 - [isValid](DatesDuration.md#isvalid)
 - [isYesterday](DatesDuration.md#isyesterday)
+- [local](DatesDuration.md#local)
 - [locale](DatesDuration.md#locale)
 - [millisecond](DatesDuration.md#millisecond)
 - [minute](DatesDuration.md#minute)
@@ -80,6 +82,7 @@
 - [toObject](DatesDuration.md#toobject)
 - [toString](DatesDuration.md#tostring)
 - [unix](DatesDuration.md#unix)
+- [utc](DatesDuration.md#utc)
 - [utcOffset](DatesDuration.md#utcoffset)
 - [valueOf](DatesDuration.md#valueof)
 - [year](DatesDuration.md#year)
@@ -730,6 +733,20 @@ ___
 
 ___
 
+### isUTC
+
+▸ **isUTC**(): `boolean`
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+[Dates](Dates.md).[isUTC](Dates.md#isutc)
+
+___
+
 ### isValid
 
 ▸ **isValid**(): `boolean`
@@ -761,6 +778,20 @@ ___
 #### Inherited from
 
 [Dates](Dates.md).[isYesterday](Dates.md#isyesterday)
+
+___
+
+### local
+
+▸ **local**(): `Dayjs`
+
+#### Returns
+
+`Dayjs`
+
+#### Inherited from
+
+[Dates](Dates.md).[local](Dates.md#local)
 
 ___
 
@@ -1379,6 +1410,26 @@ Docs: https://day.js.org/docs/en/display/unix-timestamp
 
 ___
 
+### utc
+
+▸ **utc**(`keepLocalTime?`): `Dayjs`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `keepLocalTime?` | `boolean` |
+
+#### Returns
+
+`Dayjs`
+
+#### Inherited from
+
+[Dates](Dates.md).[utc](Dates.md#utc)
+
+___
+
 ### utcOffset
 
 ▸ **utcOffset**(): `number`
@@ -1392,6 +1443,23 @@ Docs: https://day.js.org/docs/en/manipulate/utc-offset
 #### Returns
 
 `number`
+
+#### Inherited from
+
+[Dates](Dates.md).[utcOffset](Dates.md#utcoffset)
+
+▸ **utcOffset**(`offset`, `keepLocalTime?`): `Dayjs`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `offset` | `string` \| `number` |
+| `keepLocalTime?` | `boolean` |
+
+#### Returns
+
+`Dayjs`
 
 #### Inherited from
 
