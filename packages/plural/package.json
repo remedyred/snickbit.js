@@ -1,6 +1,6 @@
 {
 	"name": "@snickbit/plural",
-	"version": "1.0.18",
+	"version": "1.0.19",
 	"description": "Pluralize and singularize any English word.",
 	"license": "MIT",
 	"exports": {
