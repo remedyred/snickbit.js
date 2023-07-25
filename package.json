@@ -9,7 +9,7 @@
 		"prepare": "husky install",
 		"pr": "pnpm run ci pr",
 		"release": "pnpm run ci release",
-		"release:ci": "multi-semantic-release --deps.bump=satisfy",
+		"release:ci": "multi-semantic-release --deps.bump=satisfy --ignore-private-packages",
 		"test": "jest --no-cache"
 	},
 	"lint-staged": {
