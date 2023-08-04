@@ -88,7 +88,7 @@ importers:
   packages/controller:
     dependencies:
       '@snickbit/utilities':
-        specifier: 3.11.4
+        specifier: 3.12.0
         version: link:../utilities
       mitt:
         specifier: ~3.0.1
@@ -110,7 +110,7 @@ importers:
   packages/cycle:
     dependencies:
       '@snickbit/utilities':
-        specifier: 3.11.4
+        specifier: 3.12.0
         version: link:../utilities
     devDependencies:
       '@types/jest':
@@ -141,7 +141,7 @@ importers:
         specifier: 1.0.19
         version: link:../plural
       '@snickbit/utilities':
-        specifier: 3.11.4
+        specifier: 3.12.0
         version: link:../utilities
       dayjs:
         specifier: 1.11.9
@@ -286,7 +286,7 @@ importers:
     dependencies:
       '@snickbit/utilities':
         specifier: 3.11.4
-        version: link:../utilities
+        version: 3.11.4
       lite-fifo:
         specifier: 0.3.3
         version: 0.3.3
@@ -322,7 +322,7 @@ importers:
         specifier: ^0.0.26
         version: 0.0.26
       '@snickbit/utilities':
-        specifier: 3.11.4
+        specifier: 3.12.0
         version: link:../utilities
       cli-spinners:
         specifier: ^2.9.0
@@ -357,7 +357,7 @@ importers:
     dependencies:
       '@snickbit/utilities':
         specifier: 3.11.4
-        version: link:../utilities
+        version: 3.11.4
       mitt:
         specifier: 3.0.1
         version: 3.0.1
@@ -2414,7 +2414,7 @@ packages:
       '@snickbit/node-cli': 3.0.27
       '@snickbit/node-utilities': link:packages/node-utilities
       '@snickbit/out': 2.1.4
-      '@snickbit/utilities': link:packages/utilities
+      '@snickbit/utilities': 3.11.4
       chokidar: 3.5.3
       esbuild: 0.18.13
       fast-glob: 3.3.0
@@ -2512,6 +2512,14 @@ packages:
 
   /@snickbit/utilities@3.11.1:
     resolution: {integrity: sha512-vEi4bRO/0raCVe6jAa7+9tMtVqeBGqawzbFCGm1gffwlzTVk8U4DyxJxkvuBjI1Oz8WnRrYiwZTwbHoB8Kkolw==}
+    engines: {node: '>= 14.17'}
+    dependencies:
+      '@lukeed/uuid': 2.0.1
+      '@snickbit/plural': 1.0.18
+      just-camel-case: 6.2.0
+
+  /@snickbit/utilities@3.11.4:
+    resolution: {integrity: sha512-NODmhIuYFspd9UDn+pg2HCtzVa0ol1bw32H1g/Wl5wjF1D5eWPPQ4OoWcJWW5ve25fSqGsU/K3tuJ2DBGr2uWQ==}
     engines: {node: '>= 14.17'}
     dependencies:
       '@lukeed/uuid': 2.0.1
