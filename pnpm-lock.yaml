@@ -28,7 +28,7 @@ importers:
         version: 8.0.3
       jest:
         specifier: 29.6.1
-        version: 29.6.1(@types/node@20.4.2)
+        version: 29.6.1
       lint-staged:
         specifier: 13.2.3
         version: 13.2.3
@@ -55,7 +55,7 @@ importers:
         version: 3.0.27
       '@snickbit/node-utilities':
         specifier: ^4.7.10
-        version: link:../../packages/node-utilities
+        version: 4.7.10
       '@snickbit/out':
         specifier: ^2.2.0
         version: 2.2.0
@@ -89,7 +89,7 @@ importers:
     dependencies:
       '@snickbit/utilities':
         specifier: 3.12.0
-        version: link:../utilities
+        version: 3.12.0
       mitt:
         specifier: ~3.0.1
         version: 3.0.1
@@ -111,14 +111,14 @@ importers:
     dependencies:
       '@snickbit/utilities':
         specifier: 3.12.0
-        version: link:../utilities
+        version: 3.12.0
     devDependencies:
       '@types/jest':
         specifier: 29.5.3
         version: 29.5.3
       jest:
         specifier: 29.6.1
-        version: 29.6.1(@types/node@20.4.2)
+        version: 29.6.1
       ts-jest:
         specifier: 29.1.1
         version: 29.1.1(@babel/core@7.22.9)(esbuild@0.18.14)(jest@29.6.1)(typescript@5.1.6)
@@ -139,10 +139,10 @@ importers:
     dependencies:
       '@snickbit/plural':
         specifier: 1.0.19
-        version: link:../plural
+        version: 1.0.19
       '@snickbit/utilities':
         specifier: 3.12.0
-        version: link:../utilities
+        version: 3.12.0
       dayjs:
         specifier: 1.11.9
         version: 1.11.9
@@ -152,7 +152,7 @@ importers:
         version: 29.5.3
       jest:
         specifier: 29.6.1
-        version: 29.6.1(@types/node@20.4.2)
+        version: 29.6.1
       ts-jest:
         specifier: 29.1.1
         version: 29.1.1(@babel/core@7.22.9)(esbuild@0.18.14)(jest@29.6.1)(typescript@5.1.6)
@@ -176,7 +176,7 @@ importers:
         version: 2.2.0
       '@snickbit/utilities':
         specifier: ^3.11.4
-        version: link:../utilities
+        version: 3.11.4
       object-path:
         specifier: ^0.11.8
         version: 0.11.8
@@ -189,83 +189,7 @@ importers:
         version: 0.11.1
       jest:
         specifier: 29.6.1
-        version: 29.6.1(@types/node@20.4.2)
-      ts-jest:
-        specifier: 29.1.1
-        version: 29.1.1(@babel/core@7.22.9)(esbuild@0.18.14)(jest@29.6.1)(typescript@5.1.6)
-      tsup:
-        specifier: 7.1.0
-        version: 7.1.0(typescript@5.1.6)
-      typedoc:
-        specifier: 0.24.8
-        version: 0.24.8(typescript@5.1.6)
-      typedoc-plugin-markdown:
-        specifier: 3.15.3
-        version: 3.15.3(typedoc@0.24.8)
-      typescript:
-        specifier: 5.1.6
-        version: 5.1.6
-
-  packages/node-utilities:
-    dependencies:
-      '@snickbit/out':
-        specifier: ^2.2.0
-        version: 2.2.0
-      '@snickbit/utilities':
-        specifier: ^3.11.4
-        version: link:../utilities
-      ansi-styles-template:
-        specifier: ^1.0.0
-        version: 1.0.0
-      cli-progress:
-        specifier: 3.12.0
-        version: 3.12.0
-      is-wsl:
-        specifier: ^2.2.0
-        version: 2.2.0
-      lodash.throttle:
-        specifier: ^4.1.1
-        version: 4.1.1
-      nanospinner:
-        specifier: ^1.1.0
-        version: 1.1.0
-      prompts:
-        specifier: ^2.4.2
-        version: 2.4.2
-    devDependencies:
-      '@types/jest':
-        specifier: 29.5.3
-        version: 29.5.3
-      '@types/node':
-        specifier: 20.4.2
-        version: 20.4.2
-      jest:
-        specifier: 29.6.1
-        version: 29.6.1(@types/node@20.4.2)
-      ts-jest:
-        specifier: 29.1.1
-        version: 29.1.1(@babel/core@7.22.9)(esbuild@0.18.14)(jest@29.6.1)(typescript@5.1.6)
-      tsup:
-        specifier: 7.1.0
-        version: 7.1.0(typescript@5.1.6)
-      typedoc:
-        specifier: 0.24.8
-        version: 0.24.8(typescript@5.1.6)
-      typedoc-plugin-markdown:
-        specifier: 3.15.3
-        version: 3.15.3(typedoc@0.24.8)
-      typescript:
-        specifier: 5.1.6
-        version: 5.1.6
-
-  packages/plural:
-    devDependencies:
-      '@types/jest':
-        specifier: 29.5.3
-        version: 29.5.3
-      jest:
-        specifier: 29.6.1
-        version: 29.6.1(@types/node@20.4.2)
+        version: 29.6.1
       ts-jest:
         specifier: 29.1.1
         version: 29.1.1(@babel/core@7.22.9)(esbuild@0.18.14)(jest@29.6.1)(typescript@5.1.6)
@@ -299,7 +223,7 @@ importers:
         version: 29.5.3
       jest:
         specifier: 29.6.1
-        version: 29.6.1(@types/node@20.4.2)
+        version: 29.6.1
       ts-jest:
         specifier: 29.1.1
         version: 29.1.1(@babel/core@7.22.9)(esbuild@0.18.14)(jest@29.6.1)(typescript@5.1.6)
@@ -323,7 +247,7 @@ importers:
         version: 0.0.26
       '@snickbit/utilities':
         specifier: 3.12.0
-        version: link:../utilities
+        version: 3.12.0
       cli-spinners:
         specifier: ^2.9.0
         version: 2.9.0
@@ -367,7 +291,7 @@ importers:
         version: 29.5.3
       jest:
         specifier: 29.6.1
-        version: 29.6.1(@types/node@20.4.2)
+        version: 29.6.1
       ts-jest:
         specifier: 29.1.1
         version: 29.1.1(@babel/core@7.22.9)(esbuild@0.18.14)(jest@29.6.1)(typescript@5.1.6)
@@ -391,44 +315,7 @@ importers:
         version: 29.5.3
       jest:
         specifier: 29.6.1
-        version: 29.6.1(@types/node@20.4.2)
-      ts-jest:
-        specifier: 29.1.1
-        version: 29.1.1(@babel/core@7.22.9)(esbuild@0.18.14)(jest@29.6.1)(typescript@5.1.6)
-      tsup:
-        specifier: 7.1.0
-        version: 7.1.0(typescript@5.1.6)
-      typedoc:
-        specifier: 0.24.8
-        version: 0.24.8(typescript@5.1.6)
-      typedoc-plugin-markdown:
-        specifier: 3.15.3
-        version: 3.15.3(typedoc@0.24.8)
-      typescript:
-        specifier: 5.1.6
-        version: 5.1.6
-
-  packages/utilities:
-    dependencies:
-      '@lukeed/uuid':
-        specifier: ^2.0.1
-        version: 2.0.1
-      '@snickbit/plural':
-        specifier: 1.0.19
-        version: link:../plural
-      just-camel-case:
-        specifier: 6.2.0
-        version: 6.2.0
-    devDependencies:
-      '@snickbit/indexer':
-        specifier: 2.9.4
-        version: 2.9.4
-      '@types/jest':
-        specifier: 29.5.3
-        version: 29.5.3
-      jest:
-        specifier: 29.6.1
-        version: 29.6.1(@types/node@20.4.2)
+        version: 29.6.1
       ts-jest:
         specifier: 29.1.1
         version: 29.1.1(@babel/core@7.22.9)(esbuild@0.18.14)(jest@29.6.1)(typescript@5.1.6)
@@ -2412,7 +2299,7 @@ packages:
     hasBin: true
     dependencies:
       '@snickbit/node-cli': 3.0.27
-      '@snickbit/node-utilities': link:packages/node-utilities
+      '@snickbit/node-utilities': 4.7.10
       '@snickbit/out': 2.1.4
       '@snickbit/utilities': 3.11.4
       chokidar: 3.5.3
@@ -2432,12 +2319,25 @@ packages:
       lilconfig: 2.1.0
       yargs-parser: 21.1.1
 
+  /@snickbit/node-utilities@4.7.10:
+    resolution: {integrity: sha512-vY7m8/KVTY5g9LDvmaFIOjiYqlMZoUMWYg0rDze/xJ1/NQTFHJHu96ffLMJQBbH/xaMMoklpV0vAz05Eu+55bQ==}
+    engines: {node: '>= 14.17'}
+    dependencies:
+      '@snickbit/out': 2.2.0
+      '@snickbit/utilities': 3.12.0
+      ansi-styles-template: 1.0.0
+      cli-progress: 3.12.0
+      is-wsl: 2.2.0
+      lodash.throttle: 4.1.1
+      nanospinner: 1.1.0
+      prompts: 2.4.2
+
   /@snickbit/node-utilities@4.7.8:
     resolution: {integrity: sha512-m+VTAGJNZ91SBEbUiwxW0uYLXKliFZV3z1Za13URl5QrmEtbi2PdlpxS4zD18ja+n8sLuvRF0Mgiroyrf2sF+Q==}
     engines: {node: '>= 14.17'}
     dependencies:
       '@snickbit/out': 2.2.0
-      '@snickbit/utilities': link:packages/utilities
+      '@snickbit/utilities': 3.12.0
       ansi-styles-template: 1.0.0
       cli-progress: 3.12.0
       is-wsl: 2.2.0
@@ -2471,6 +2371,10 @@ packages:
 
   /@snickbit/plural@1.0.18:
     resolution: {integrity: sha512-BPf935z4FabSXGA4cTT9q9GbU6K4Ykaw7dk1QtpOJmEK2u+lYog96wm5GfZ2F/ITbyl4JMRRKyWjbLllP6Z4Lw==}
+    engines: {node: '>= 14.17'}
+
+  /@snickbit/plural@1.0.19:
+    resolution: {integrity: sha512-EObov+ryM781xd4i04JJ+FGT37dfX+82oYGjs4O4BUUwTYWpAhl+XVVkmG+h10BAKe0ASb3wIaXz1VZKkhXBOg==}
     engines: {node: '>= 14.17'}
 
   /@snickbit/readmes@0.0.28:
@@ -2524,6 +2428,14 @@ packages:
     dependencies:
       '@lukeed/uuid': 2.0.1
       '@snickbit/plural': 1.0.18
+      just-camel-case: 6.2.0
+
+  /@snickbit/utilities@3.12.0:
+    resolution: {integrity: sha512-wd8ZKzwjgAUAQDO0GcvrSPQlJqTrL9IdiHBs2tLhxFbiU5Jtxdl7q1vqBc08fLqZzdCMdvgjNVjwEA7ZBjhN+Q==}
+    engines: {node: '>= 14.17'}
+    dependencies:
+      '@lukeed/uuid': 2.0.1
+      '@snickbit/plural': 1.0.19
       just-camel-case: 6.2.0
 
   /@tootallnate/once@2.0.0:
@@ -3935,7 +3847,7 @@ packages:
       '@typescript-eslint/eslint-plugin': 5.59.5(@typescript-eslint/parser@5.59.5)(eslint@8.45.0)(typescript@5.1.6)
       '@typescript-eslint/utils': 5.62.0(eslint@8.45.0)(typescript@5.1.6)
       eslint: 8.45.0
-      jest: 29.6.1(@types/node@20.4.2)
+      jest: 29.6.1
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -5054,7 +4966,7 @@ packages:
       - supports-color
     dev: true
 
-  /jest-cli@29.6.1(@types/node@20.4.2):
+  /jest-cli@29.6.1:
     resolution: {integrity: sha512-607dSgTA4ODIN6go9w6xY3EYkyPFGicx51a69H7yfvt7lN53xNswEVLovq+E77VsTRi5fWprLH0yl4DJgE8Ing==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     hasBin: true
@@ -5405,7 +5317,7 @@ packages:
       supports-color: 8.1.1
     dev: true
 
-  /jest@29.6.1(@types/node@20.4.2):
+  /jest@29.6.1:
     resolution: {integrity: sha512-Nirw5B4nn69rVUZtemCQhwxOBhm0nsp3hmtF4rzCeWD7BkjAXRIji7xWQfnTNbz9g0aVsBX6aZK3n+23LM6uDw==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     hasBin: true
@@ -5418,7 +5330,7 @@ packages:
       '@jest/core': 29.6.1
       '@jest/types': 29.6.1
       import-local: 3.1.0
-      jest-cli: 29.6.1(@types/node@20.4.2)
+      jest-cli: 29.6.1
     transitivePeerDependencies:
       - '@types/node'
       - supports-color
@@ -7340,7 +7252,7 @@ packages:
       bs-logger: 0.2.6
       esbuild: 0.18.14
       fast-json-stable-stringify: 2.1.0
-      jest: 29.6.1(@types/node@20.4.2)
+      jest: 29.6.1
       jest-util: 29.6.1
       json5: 2.2.3
       lodash.memoize: 4.1.2

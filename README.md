@@ -23,7 +23,6 @@
   - [@snickbit/dates](#snickbit-dates)
   - [@snickbit/model](#snickbit-model)
   - [@snickbit/node-utilities](#snickbit-node-utilities)
-  - [@snickbit/plural](#snickbit-plural)
   - [@snickbit/queue](#snickbit-queue)
   - [@snickbit/spinner](#snickbit-spinner)
   - [@snickbit/upwords](#snickbit-upwords)
@@ -102,20 +101,6 @@ Simple object modeling library based on [object-path](https://github.com/marioca
 </div>
 
 This is a collection of helper functions for Node.js. Some of these are just wrappers of other libraries with more intuitive APIs.
-
-
-<div id="@snickbit/plural">
-    <h3>
-        <a href="https://github.com/snickbit/snickbit.js/tree/main/packages/plural">
-            @snickbit/plural
-        </a>
-    </h3>
-</div>
-
-- Pluralizes strings
-- Singularizes strings
-- Written in TypeScript
-- Zero dependencies
 
 
 <div id="@snickbit/queue">
