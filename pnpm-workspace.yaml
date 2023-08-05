@@ -1,5 +1,4 @@
 packages:
   - "scripts"
-  - "packages/utilities"
   - "packages/*"
   - "clis/*"

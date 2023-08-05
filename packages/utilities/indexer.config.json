@@ -1,4 +1,0 @@
-{
-	"source": "src/**/*.ts",
-	"output": "src/index.ts"
-}
