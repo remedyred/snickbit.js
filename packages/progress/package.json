@@ -1,6 +1,6 @@
 {
 	"name": "@snickbit/progress",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"description": "Minimal terminal progress bars for Node.js",
 	"license": "MIT",
 	"exports": {
