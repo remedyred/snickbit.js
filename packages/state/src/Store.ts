@@ -1,5 +1,6 @@
 import {objectClone, uuid} from '@snickbit/utilities'
-import mitt, {Handler} from 'mitt'
+import {ReactiveState} from './ReactiveState'
+import {makeStateProxy} from './lib/make-state-proxy'
 
 export interface StoreOptions {
 	name: string
@@ -14,73 +15,32 @@ export type StoreGetter = (this: Store) => any
 export type StoreActions = Record<string, StoreAction>
 export type StoreGetters = Record<string, StoreGetter>
 
-export class Store<State extends object = any> {
-	protected state: State = {} as State
-	private readonly $state: ProxyHandler<State>
-
-	protected originalState: State = {} as State
-
-	protected proxy: Store
-
-	protected actions: StoreActions = {}
-	private readonly $actions: ProxyHandler<StoreActions>
-
-	protected getters: StoreGetters = {}
-	private readonly $getters: ProxyHandler<StoreGetters>
-
-	protected ready = false
-
-	private emitter = mitt()
-
+export class Store<T extends object = any> extends ReactiveState<T> {
+	declare protected proxy: Store<T> & T
 	options: StoreOptions = {
 		name: 'default',
 		persist: []
 	}
 
-	protected id = (...keys: string[]) => [
-		'state-store',
-		this.$id,
-		...keys
-	].join('.')
+	persistable: string[] = []
 
-	constructor(hydration?: State, options?: Partial<StoreOptions>) {
-		this.$config(options, hydration)
+	protected actions: StoreActions = {}
+	protected getters: StoreGetters = {}
+	protected ready = false
+	private readonly $actions: ProxyHandler<StoreActions>
+	private readonly $getters: ProxyHandler<StoreGetters>
 
-		this.proxy = new Proxy(this, {
-			get(target: Store<State>, prop: string, receiver?: any): any {
-				if (prop in target) {
-					return target[prop]
-				}
+	constructor(data?: T, options?: Partial<StoreOptions>) {
+		super(data)
+		this.$config(options, data)
 
-				if (target.$has(prop)) {
-					return target.$get(prop)
-				}
-
-				if (prop in target.actions) {
-					return target.callAction.bind(target, prop)
-				}
-
-				if (prop in target.getters) {
-					return target.callGetter.call(target, prop)
-				}
-
-				return Reflect.get(target, prop, receiver)
-			},
-			set(target: Store<State>, prop: string, value?: any) {
-				target.$set(prop, value)
-				return true
+		this.proxy = makeStateProxy.apply(this, (target: Store<T>, prop) => {
+			if (prop in target.actions) {
+				return target.callAction.bind(target, prop)
 			}
-		})
 
-		this.$state = new Proxy(this.state, {
-			get: (target: State, prop: string) => {
-				if (this.$has(prop)) {
-					return this.$get(prop)
-				}
-			},
-			set: (target: State, prop: string, value: any) => {
-				this.$set(prop, value)
-				return true
+			if (prop in target.getters) {
+				return target.callGetter.call(target, prop)
 			}
 		})
 
@@ -105,26 +65,14 @@ export class Store<State extends object = any> {
 		return this.proxy
 	}
 
-	get $id() {
-		return this.options.name
-	}
-
 	get $ready() {
 		return this.ready
 	}
 
-	protected callAction(name: string, ...args: any[]) {
-		return this.actions[name].call(this, ...args)
-	}
-
-	protected callGetter(name: string) {
-		return this.getters[name]
-	}
-
-	$config(options?: Partial<StoreOptions>, hydration?: State) {
-		const isPending = !options && !hydration
+	$config(options?: Partial<StoreOptions>, data?: T) {
+		const isPending = !options && !data
 		options ||= {}
-		hydration ||= {} as State
+		data ||= {} as T
 		const {
 			actions,
 			getters,
@@ -137,7 +85,7 @@ export class Store<State extends object = any> {
 		}
 
 		if (!isPending) {
-			this.$hydrate(hydration)
+			this.$hydrate(data)
 		}
 
 		this.actions = actions || {}
@@ -149,63 +97,18 @@ export class Store<State extends object = any> {
 		this.ready = !isPending
 	}
 
-	$hydrate(hydration: State) {
-		this.originalState = objectClone(hydration)
+	$hydrate(hydration: T) {
+		this.original = objectClone(hydration)
 		for (const key in hydration) {
 			this.state[key] = hydration[key]
 		}
 	}
 
-	$get(key: string) {
-		return this.state[key]
+	protected callAction(name: string, ...args: any[]) {
+		return this.actions[name].call(this, ...args)
 	}
 
-	$set(key: string, value: any) {
-		this.state[key] = value
-	}
-
-	$has(key: string) {
-		return key in this.state
-	}
-
-	$keys() {
-		return Object.keys(this.state)
-	}
-
-	$patch(data: Partial<State>) {
-		for (const key in data) {
-			this.$set(key, data[key])
-		}
-	}
-
-	$reset() {
-		this.state = this.originalState
-	}
-
-	private on(...args: any[]): void {
-		const callback = args.pop()
-		this.emitter.on(args.join('.'), callback)
-	}
-
-	private off(...args: any[]): void {
-		const callback = args.pop()
-		this.emitter.off(args.join('.'), callback)
-	}
-
-	private emit(...args: any[]): void {
-		const data = args.pop()
-		this.emitter.emit(args.join('.'), data)
-	}
-
-	$on(event: string, callback: Handler) {
-		this.on(this.id(event), callback)
-	}
-
-	$off(event: string, callback: Handler) {
-		this.off(this.id(event), callback)
-	}
-
-	$emit(event: string, data: any) {
-		this.emit(this.id(event), data)
+	protected callGetter(name: string) {
+		return this.getters[name]
 	}
 }
