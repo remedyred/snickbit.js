@@ -15,11 +15,11 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "tsup --minify --dts",
+		"build": "tsup --minify",
 		"check": "pnpm -w run lint && pnpm run typecheck",
-		"depcheck": "depcheck",
-		"dev": "tsup --sourcemap",
+		"dev": "tsup --watch",
 		"docs": "typedoc src/index.ts",
+		"index": "indexer",
 		"release": "semantic-release",
 		"start": "tsx example/index.ts",
 		"typecheck": "tsc --noEmit"
@@ -36,7 +36,7 @@
 		"kleur": "^4.1.5"
 	},
 	"devDependencies": {
-		"@snickbit/indexer": "2.9.4",
+		"@snickbit/indexer": "2.9.8",
 		"@types/node": "20.4.2",
 		"tsup": "7.1.0",
 		"tsx": "3.12.7",
