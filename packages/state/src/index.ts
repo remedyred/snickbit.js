@@ -2,7 +2,6 @@
 
 export * from './ReactiveState'
 export * from './SimpleState'
-export * from '../__tests__/SimpleState.test'
 export * from './State'
 export * from './Store'
 export * from './factory'
