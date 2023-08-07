@@ -58,7 +58,6 @@ const actionMap: Record<string, ActionDefinition> = {
 	quick: {
 		description: 'Run all CI tasks [quick]',
 		actions: [
-			'index',
 			'lintFix',
 			'build',
 			'docs'
