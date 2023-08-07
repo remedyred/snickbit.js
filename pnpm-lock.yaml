@@ -206,6 +206,43 @@ importers:
         specifier: 5.1.6
         version: 5.1.6
 
+  packages/progress:
+    dependencies:
+      '@snickbit/out':
+        specifier: ^2.2.0
+        version: 2.2.0
+      '@snickbit/utilities':
+        specifier: 3.12.0
+        version: 3.12.0
+      ansi-styles-template:
+        specifier: ^1.0.0
+        version: 1.0.0
+      cli-progress:
+        specifier: 3.12.0
+        version: 3.12.0
+    devDependencies:
+      '@snickbit/indexer':
+        specifier: 2.9.8
+        version: 2.9.8
+      '@types/node':
+        specifier: 20.4.2
+        version: 20.4.2
+      tsup:
+        specifier: 7.1.0
+        version: 7.1.0(typescript@5.1.6)
+      tsx:
+        specifier: 3.12.7
+        version: 3.12.7
+      typedoc:
+        specifier: 0.24.8
+        version: 0.24.8(typescript@5.1.6)
+      typedoc-plugin-markdown:
+        specifier: 3.15.3
+        version: 3.15.3(typedoc@0.24.8)
+      typescript:
+        specifier: 5.1.6
+        version: 5.1.6
+
   packages/queue:
     dependencies:
       '@snickbit/utilities':
@@ -4186,6 +4223,7 @@ packages:
       glob-parent: 5.1.2
       merge2: 1.4.1
       micromatch: 4.0.5
+    dev: true
 
   /fast-glob@3.3.1:
     resolution: {integrity: sha512-kNFPyjhh5cKjrUltxs+wFx+ZkbRaxxmZ+X0ZU31SOsxCEtP9VPgtq2teZw1DebupL5GmDaNQ6yKMMVcM41iqDg==}
@@ -4196,7 +4234,6 @@ packages:
       glob-parent: 5.1.2
       merge2: 1.4.1
       micromatch: 4.0.5
-    dev: true
 
   /fast-json-stable-stringify@2.1.0:
     resolution: {integrity: sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw==}
@@ -4490,7 +4527,7 @@ packages:
       '@types/glob': 7.2.0
       array-union: 2.1.0
       dir-glob: 3.0.1
-      fast-glob: 3.3.0
+      fast-glob: 3.3.1
       glob: 7.2.3
       ignore: 5.2.4
       merge2: 1.4.1
@@ -4503,7 +4540,7 @@ packages:
     dependencies:
       array-union: 2.1.0
       dir-glob: 3.0.1
-      fast-glob: 3.3.0
+      fast-glob: 3.3.1
       ignore: 5.2.4
       merge2: 1.4.1
       slash: 3.0.0
@@ -4515,7 +4552,7 @@ packages:
     dependencies:
       array-union: 2.1.0
       dir-glob: 3.0.1
-      fast-glob: 3.3.0
+      fast-glob: 3.3.1
       ignore: 5.2.4
       merge2: 1.4.1
       slash: 3.0.0
@@ -4526,7 +4563,7 @@ packages:
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
       dir-glob: 3.0.1
-      fast-glob: 3.3.0
+      fast-glob: 3.3.1
       ignore: 5.2.4
       merge2: 1.4.1
       slash: 4.0.0

@@ -1,0 +1,50 @@
+{
+	"name": "@snickbit/progress",
+	"version": "0.0.1",
+	"description": "Minimal terminal progress bars for Node.js",
+	"license": "MIT",
+	"exports": {
+		"require": "./dist/index.js",
+		"import": "./dist/index.mjs",
+		"types": "./dist/index.d.ts"
+	},
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "tsup --minify",
+		"check": "pnpm -w run lint && pnpm run typecheck",
+		"dev": "tsup --watch",
+		"docs": "typedoc src/index.ts",
+		"index": "indexer",
+		"release": "semantic-release",
+		"start": "tsx example/index.ts",
+		"typecheck": "tsc --noEmit"
+	},
+	"release": {
+		"extends": [
+			"@snickbit/semantic-release"
+		]
+	},
+	"dependencies": {
+		"@snickbit/utilities": "3.12.0",
+		"cli-progress": "3.12.0",
+		"ansi-styles-template": "^1.0.0",
+		"@snickbit/out": "^2.2.0"
+	},
+	"devDependencies": {
+		"@snickbit/indexer": "2.9.8",
+		"@types/node": "20.4.2",
+		"tsup": "7.1.0",
+		"tsx": "3.12.7",
+		"typedoc": "0.24.8",
+		"typedoc-plugin-markdown": "3.15.3",
+		"typescript": "5.1.6"
+	},
+	"engines": {
+		"node": ">= 14.17"
+	}
+}
