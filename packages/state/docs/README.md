@@ -4,6 +4,9 @@
 
 ### Classes
 
+- [ReactiveState](classes/ReactiveState.md)
+- [SimpleState](classes/SimpleState.md)
+- [State](classes/State.md)
 - [Store](classes/Store.md)
 
 ### Interfaces
@@ -16,10 +19,14 @@
 - [StoreActions](README.md#storeactions)
 - [StoreGetter](README.md#storegetter)
 - [StoreGetters](README.md#storegetters)
-- [UseStore](README.md#usestore)
+- [WatchCallback](README.md#watchcallback)
+- [WatchStop](README.md#watchstop)
+- [Watchers](README.md#watchers)
 
 ### Functions
 
+- [createReactiveState](README.md#createreactivestate)
+- [createState](README.md#createstate)
 - [createStore](README.md#createstore)
 
 ## Type Aliases
@@ -77,9 +84,49 @@ ___
 
 ___
 
-### UseStore
+### WatchCallback
 
-Ƭ **UseStore**<`T`\>: () => [`Store`](classes/Store.md)<`T`\> & `T`
+Ƭ **WatchCallback**: (`value`: `any`) => `any`
+
+#### Type declaration
+
+▸ (`value`): `any`
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `any` |
+
+##### Returns
+
+`any`
+
+___
+
+### WatchStop
+
+Ƭ **WatchStop**: () => `void`
+
+#### Type declaration
+
+▸ (): `void`
+
+##### Returns
+
+`void`
+
+___
+
+### Watchers
+
+Ƭ **Watchers**: `Record`<`string`, [`WatchCallback`](README.md#watchcallback)\>
+
+## Functions
+
+### createReactiveState
+
+▸ **createReactiveState**<`T`\>(`hydration?`): () => [`ReactiveState`](classes/ReactiveState.md)<`T`\>
 
 #### Type parameters
 
@@ -87,33 +134,75 @@ ___
 | :------ | :------ |
 | `T` | extends `object` = `any` |
 
-#### Type declaration
+#### Parameters
 
-▸ (): [`Store`](classes/Store.md)<`T`\> & `T`
+| Name | Type |
+| :------ | :------ |
+| `hydration` | `Partial`<`T`\> |
+
+#### Returns
+
+`fn`
+
+▸ (): [`ReactiveState`](classes/ReactiveState.md)<`T`\>
 
 ##### Returns
 
-[`Store`](classes/Store.md)<`T`\> & `T`
+[`ReactiveState`](classes/ReactiveState.md)<`T`\>
 
-## Functions
+___
 
-### createStore
+### createState
 
-▸ **createStore**<`State`\>(`hydration?`, `options?`): [`UseStore`](README.md#usestore)<`State`\>
+▸ **createState**<`T`\>(`hydration?`): () => [`State`](classes/State.md)<`T`\>
 
 #### Type parameters
 
 | Name | Type |
 | :------ | :------ |
-| `State` | extends `object` = `any` |
+| `T` | extends `object` = `any` |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `hydration` | `State` |
+| `hydration` | `Partial`<`T`\> |
+
+#### Returns
+
+`fn`
+
+▸ (): [`State`](classes/State.md)<`T`\>
+
+##### Returns
+
+[`State`](classes/State.md)<`T`\>
+
+___
+
+### createStore
+
+▸ **createStore**<`T`\>(`hydration?`, `options?`): () => [`Store`](classes/Store.md)<`T`\>
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `object` = `any` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `hydration` | `T` |
 | `options?` | `Partial`<[`StoreOptions`](interfaces/StoreOptions.md)\> |
 
 #### Returns
 
-[`UseStore`](README.md#usestore)<`State`\>
+`fn`
+
+▸ (): [`Store`](classes/Store.md)<`T`\>
+
+##### Returns
+
+[`Store`](classes/Store.md)<`T`\>

@@ -1,4 +1,4 @@
-# Class: Store<T\>
+# Class: ReactiveState<T\>
 
 ## Type parameters
 
@@ -8,48 +8,42 @@
 
 ## Hierarchy
 
-- [`ReactiveState`](ReactiveState.md)<`T`\>
+- [`State`](State.md)<`T`\>
 
-  ↳ **`Store`**
+  ↳ **`ReactiveState`**
+
+  ↳↳ [`Store`](Store.md)
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](Store.md#constructor)
-
-### Properties
-
-- [options](Store.md#options)
-- [persistable](Store.md#persistable)
+- [constructor](ReactiveState.md#constructor)
 
 ### Accessors
 
-- [$id](Store.md#$id)
-- [$name](Store.md#$name)
-- [$ready](Store.md#$ready)
-- [$state](Store.md#$state)
+- [$id](ReactiveState.md#$id)
+- [$name](ReactiveState.md#$name)
+- [$state](ReactiveState.md#$state)
 
 ### Methods
 
-- [$config](Store.md#$config)
-- [$emit](Store.md#$emit)
-- [$get](Store.md#$get)
-- [$has](Store.md#$has)
-- [$hydrate](Store.md#$hydrate)
-- [$keys](Store.md#$keys)
-- [$off](Store.md#$off)
-- [$on](Store.md#$on)
-- [$patch](Store.md#$patch)
-- [$reset](Store.md#$reset)
-- [$set](Store.md#$set)
-- [$watch](Store.md#$watch)
+- [$emit](ReactiveState.md#$emit)
+- [$get](ReactiveState.md#$get)
+- [$has](ReactiveState.md#$has)
+- [$keys](ReactiveState.md#$keys)
+- [$off](ReactiveState.md#$off)
+- [$on](ReactiveState.md#$on)
+- [$patch](ReactiveState.md#$patch)
+- [$reset](ReactiveState.md#$reset)
+- [$set](ReactiveState.md#$set)
+- [$watch](ReactiveState.md#$watch)
 
 ## Constructors
 
 ### constructor
 
-• **new Store**<`T`\>(`data?`, `options?`)
+• **new ReactiveState**<`T`\>(`data?`)
 
 #### Type parameters
 
@@ -61,24 +55,11 @@
 
 | Name | Type |
 | :------ | :------ |
-| `data?` | `T` |
-| `options?` | `Partial`<[`StoreOptions`](../interfaces/StoreOptions.md)\> |
+| `data` | `Partial`<`T`\> |
 
 #### Overrides
 
-[ReactiveState](ReactiveState.md).[constructor](ReactiveState.md#constructor)
-
-## Properties
-
-### options
-
-• **options**: [`StoreOptions`](../interfaces/StoreOptions.md)
-
-___
-
-### persistable
-
-• **persistable**: `string`[] = `[]`
+[State](State.md).[constructor](State.md#constructor)
 
 ## Accessors
 
@@ -92,7 +73,7 @@ ___
 
 #### Inherited from
 
-ReactiveState.$id
+State.$id
 
 ___
 
@@ -106,17 +87,7 @@ ___
 
 #### Inherited from
 
-ReactiveState.$name
-
-___
-
-### $ready
-
-• `get` **$ready**(): `boolean`
-
-#### Returns
-
-`boolean`
+State.$name
 
 ___
 
@@ -130,26 +101,9 @@ ___
 
 #### Inherited from
 
-ReactiveState.$state
+State.$state
 
 ## Methods
-
-### $config
-
-▸ **$config**(`options?`, `data?`): `void`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `options?` | `Partial`<[`StoreOptions`](../interfaces/StoreOptions.md)\> |
-| `data?` | `T` |
-
-#### Returns
-
-`void`
-
-___
 
 ### $emit
 
@@ -165,10 +119,6 @@ ___
 #### Returns
 
 `void`
-
-#### Inherited from
-
-[ReactiveState](ReactiveState.md).[$emit](ReactiveState.md#$emit)
 
 ___
 
@@ -188,7 +138,7 @@ ___
 
 #### Inherited from
 
-[ReactiveState](ReactiveState.md).[$get](ReactiveState.md#$get)
+[State](State.md).[$get](State.md#$get)
 
 ___
 
@@ -208,23 +158,7 @@ ___
 
 #### Inherited from
 
-[ReactiveState](ReactiveState.md).[$has](ReactiveState.md#$has)
-
-___
-
-### $hydrate
-
-▸ **$hydrate**(`hydration`): `void`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `hydration` | `T` |
-
-#### Returns
-
-`void`
+[State](State.md).[$has](State.md#$has)
 
 ___
 
@@ -238,7 +172,7 @@ ___
 
 #### Inherited from
 
-[ReactiveState](ReactiveState.md).[$keys](ReactiveState.md#$keys)
+[State](State.md).[$keys](State.md#$keys)
 
 ___
 
@@ -257,10 +191,6 @@ ___
 
 `void`
 
-#### Inherited from
-
-[ReactiveState](ReactiveState.md).[$off](ReactiveState.md#$off)
-
 ___
 
 ### $on
@@ -277,10 +207,6 @@ ___
 #### Returns
 
 `void`
-
-#### Inherited from
-
-[ReactiveState](ReactiveState.md).[$on](ReactiveState.md#$on)
 
 ___
 
@@ -300,7 +226,7 @@ ___
 
 #### Inherited from
 
-[ReactiveState](ReactiveState.md).[$patch](ReactiveState.md#$patch)
+[State](State.md).[$patch](State.md#$patch)
 
 ___
 
@@ -314,7 +240,7 @@ ___
 
 #### Inherited from
 
-[ReactiveState](ReactiveState.md).[$reset](ReactiveState.md#$reset)
+[State](State.md).[$reset](State.md#$reset)
 
 ___
 
@@ -333,9 +259,9 @@ ___
 
 `void`
 
-#### Inherited from
+#### Overrides
 
-[ReactiveState](ReactiveState.md).[$set](ReactiveState.md#$set)
+[State](State.md).[$set](State.md#$set)
 
 ___
 
@@ -359,7 +285,3 @@ ___
 ##### Returns
 
 `void`
-
-#### Inherited from
-
-[ReactiveState](ReactiveState.md).[$watch](ReactiveState.md#$watch)
