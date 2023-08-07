@@ -16,8 +16,6 @@ export class ReactiveState<T extends object = any> extends State<T> {
 	constructor(data: Partial<T> = {}) {
 		super(data)
 
-		console.log(`ReactiveState ${this.id} constructor`, {data, state: this.$state})
-
 		if (!this.proxy) {
 			throw new Error('No ReactiveState proxy')
 		}
@@ -27,7 +25,6 @@ export class ReactiveState<T extends object = any> extends State<T> {
 	}
 
 	$set(key: keyof T, value: any) {
-		console.log({key, value})
 		super.$set(key, value)
 		this.callWatchers(key, value)
 	}

@@ -15,9 +15,6 @@ export class SimpleState<T extends object = any> {
 		this.state = {...data} as T
 
 		this.proxy = makeStateProxy.apply(this)
-
-		console.log(`SimpleState ${this.id} constructor`, {data, state: this.state})
-
 		return this.proxy
 	}
 }
