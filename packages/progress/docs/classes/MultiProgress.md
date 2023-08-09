@@ -27,9 +27,14 @@ https://github.com/npkgz/cli-progress
 - [options](MultiProgress.md#options)
 - [out](MultiProgress.md#out)
 
+### Accessors
+
+- [isDebug](MultiProgress.md#isdebug)
+
 ### Methods
 
 - [create](MultiProgress.md#create)
+- [debug](MultiProgress.md#debug)
 - [eta](MultiProgress.md#eta)
 - [fail](MultiProgress.md#fail)
 - [finish](MultiProgress.md#finish)
@@ -107,6 +112,20 @@ ___
 
 [Progress](Progress.md).[out](Progress.md#out)
 
+## Accessors
+
+### isDebug
+
+• `get` **isDebug**(): `boolean`
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+Progress.isDebug
+
 ## Methods
 
 ### create
@@ -124,6 +143,26 @@ Create a child progress bar
 #### Returns
 
 [`MultiProgressChild`](MultiProgressChild.md)
+
+___
+
+### debug
+
+▸ **debug**(`value?`): [`MultiProgress`](MultiProgress.md)
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value` | `boolean` | `true` |
+
+#### Returns
+
+[`MultiProgress`](MultiProgress.md)
+
+#### Inherited from
+
+[Progress](Progress.md).[debug](Progress.md#debug)
 
 ___
 

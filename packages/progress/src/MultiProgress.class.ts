@@ -77,7 +77,7 @@ export class MultiProgress extends Progress {
 	}
 
 	protected setup(): this {
-		if (!this.out.isVerbose() && this.id) {
+		if (!this.isDebug && this.id) {
 			this.multibar = new cliProgress.MultiBar(makeProgressConfig(this.options), cliProgress.Presets.shades_classic)
 		}
 		return this

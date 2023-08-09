@@ -13,6 +13,7 @@
 - [autoStart](ProgressConfig.md#autostart)
 - [config](ProgressConfig.md#config)
 - [current](ProgressConfig.md#current)
+- [debug](ProgressConfig.md#debug)
 - [message](ProgressConfig.md#message)
 - [name](ProgressConfig.md#name)
 - [out](ProgressConfig.md#out)
@@ -36,6 +37,12 @@ ___
 ### current
 
 • **current**: `number`
+
+___
+
+### debug
+
+• `Optional` **debug**: `boolean`
 
 ___
 

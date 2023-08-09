@@ -26,8 +26,13 @@ https://github.com/npkgz/cli-progress
 - [options](Progress.md#options)
 - [out](Progress.md#out)
 
+### Accessors
+
+- [isDebug](Progress.md#isdebug)
+
 ### Methods
 
+- [debug](Progress.md#debug)
 - [eta](Progress.md#eta)
 - [fail](Progress.md#fail)
 - [finish](Progress.md#finish)
@@ -69,7 +74,33 @@ ___
 
 • **out**: `Out`
 
+## Accessors
+
+### isDebug
+
+• `get` **isDebug**(): `boolean`
+
+#### Returns
+
+`boolean`
+
 ## Methods
+
+### debug
+
+▸ **debug**(`value?`): [`Progress`](Progress.md)
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value` | `boolean` | `true` |
+
+#### Returns
+
+[`Progress`](Progress.md)
+
+___
 
 ### eta
 

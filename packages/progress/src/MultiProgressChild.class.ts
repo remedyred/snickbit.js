@@ -40,7 +40,7 @@ export class MultiProgressChild extends Progress {
 	 * @internal
 	 */
 	protected setup() {
-		if (!this.out.isVerbose()) {
+		if (!this.isDebug) {
 			this.bar = this.options.parent.multibar.create()
 		}
 		return this

@@ -13,6 +13,7 @@
 - [autoStart](MultiProgressChildConfig.md#autostart)
 - [config](MultiProgressChildConfig.md#config)
 - [current](MultiProgressChildConfig.md#current)
+- [debug](MultiProgressChildConfig.md#debug)
 - [id](MultiProgressChildConfig.md#id)
 - [message](MultiProgressChildConfig.md#message)
 - [name](MultiProgressChildConfig.md#name)
@@ -50,6 +51,16 @@ ___
 #### Inherited from
 
 [ProgressConfig](ProgressConfig.md).[current](ProgressConfig.md#current)
+
+___
+
+### debug
+
+• `Optional` **debug**: `boolean`
+
+#### Inherited from
+
+[ProgressConfig](ProgressConfig.md).[debug](ProgressConfig.md#debug)
 
 ___
 

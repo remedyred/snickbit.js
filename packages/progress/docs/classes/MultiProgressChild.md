@@ -17,8 +17,13 @@ Multi-progress child bar
 - [options](MultiProgressChild.md#options)
 - [out](MultiProgressChild.md#out)
 
+### Accessors
+
+- [isDebug](MultiProgressChild.md#isdebug)
+
 ### Methods
 
+- [debug](MultiProgressChild.md#debug)
 - [eta](MultiProgressChild.md#eta)
 - [fail](MultiProgressChild.md#fail)
 - [finish](MultiProgressChild.md#finish)
@@ -67,7 +72,41 @@ ___
 
 [Progress](Progress.md).[out](Progress.md#out)
 
+## Accessors
+
+### isDebug
+
+• `get` **isDebug**(): `boolean`
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+Progress.isDebug
+
 ## Methods
+
+### debug
+
+▸ **debug**(`value?`): [`MultiProgressChild`](MultiProgressChild.md)
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value` | `boolean` | `true` |
+
+#### Returns
+
+[`MultiProgressChild`](MultiProgressChild.md)
+
+#### Inherited from
+
+[Progress](Progress.md).[debug](Progress.md#debug)
+
+___
 
 ### eta
 

@@ -11,6 +11,7 @@ export interface ProgressConfig {
 	total: number
 	current: number
 	out?: Out
+	debug?: boolean
 	config: Partial<CLIProgressOptions>
 }
 
@@ -45,6 +46,12 @@ export class Progress {
 		if (this.options.autoStart) {
 			this.start()
 		}
+	}
+
+	debug(value = true) {
+		this.options.debug = value
+		this.out.setVerbosity(value ? 4 : 1)
+		return this
 	}
 
 	/**
@@ -186,8 +193,12 @@ export class Progress {
 		return this
 	}
 
+	get isDebug() {
+		return this.options.debug || this.out.isVerbose()
+	}
+
 	protected setup(): this {
-		if (!this.out.isVerbose()) {
+		if (!this.isDebug) {
 			this.bar = new cliProgress.SingleBar(makeProgressConfig(this.options), cliProgress.Presets.shades_classic)
 		}
 		return this
