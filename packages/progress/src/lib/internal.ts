@@ -38,7 +38,10 @@ export const default_progress_options: ProgressConfig = {
  * @internal
  */
 export function makeProgressFormat(options) {
-	let _format = '[{{white}}{bar}{{/white}}]{{reset}} {{magenta}}{percentage}%{{/magenta}} | {{yellow}}ETA: {eta}s{{/yellow}} | {{green}}{value}{{/green}}/{total} | {message}'
+	let _format = '[{{white}}{bar}{{/white}}]{{reset}} {{magenta}}{percentage}%{{/magenta}} | ' +
+		'{{yellow}}ETA: {eta_formatted}{{/yellow}} | ' +
+		'{{green}}{value}{{/green}}/{total} | ' +
+		'{message}'
 	if (options.config.format) {
 		_format = options.config.format
 	} else if (options.label) {
