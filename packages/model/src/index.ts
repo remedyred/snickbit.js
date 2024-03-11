@@ -15,7 +15,7 @@ import {
 	uuid,
 	VariableType
 } from '@snickbit/utilities'
-import objectPath, {ObjectPathBound} from 'object-path'
+import objectPath, {ensureExists, ObjectPathBound} from 'object-path'
 
 export type ModelId = number | string | undefined
 
@@ -462,8 +462,19 @@ export class Model<T extends object = any, D = Partial<T>> {
 	/**
 	 * Push a value to an array path
 	 */
-	push(key: ModelKey, ...values) {
+	push(key: ModelKey, ...values: any[]) {
 		this.data.push(this.checkKey(key), ...values)
+		return this
+	}
+
+	/**
+	 * Push a value to an array path if it doesn't exist
+	 */
+	pushUnique(key: ModelKey, value: ModelValue) {
+		const current = this.get(key)
+		if (!current.includes(value)) {
+			this.push(key, value)
+		}
 		return this
 	}
 
