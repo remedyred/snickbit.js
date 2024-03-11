@@ -402,10 +402,12 @@ export class Model<T extends object = any, D = Partial<T>> {
 	 */
 	valueHas(key: ModelKey, value: ModelValue): boolean {
 		const data = this.get(key)
-		if (isObject(data)) {
-			return Object.values(data).includes(value)
-		} else if (isArray(data)) {
-			return data.includes(value)
+		if (data) {
+			if (isObject(data)) {
+				return Object.values(data).includes(value)
+			} else if (isArray(data)) {
+				return data.includes(value)
+			}
 		}
 		return false
 	}
@@ -490,7 +492,7 @@ export class Model<T extends object = any, D = Partial<T>> {
 	 */
 	pushUnique(key: ModelKey, value: ModelValue) {
 		const current = this.get(key)
-		if (!current.includes(value)) {
+		if (!current?.includes(value)) {
 			this.push(key, value)
 		}
 		return this
