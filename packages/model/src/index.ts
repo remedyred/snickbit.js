@@ -15,7 +15,7 @@ import {
 	uuid,
 	VariableType
 } from '@snickbit/utilities'
-import objectPath, {ensureExists, ObjectPathBound} from 'object-path'
+import objectPath, {ObjectPathBound} from 'object-path'
 
 export type ModelId = number | string | undefined
 
