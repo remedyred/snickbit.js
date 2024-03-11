@@ -49,6 +49,7 @@ Create a simple object model
 - [patch](Model.md#patch)
 - [pull](Model.md#pull)
 - [push](Model.md#push)
+- [pushUnique](Model.md#pushunique)
 - [remove](Model.md#remove)
 - [set](Model.md#set)
 - [toJSON](Model.md#tojson)
@@ -531,6 +532,25 @@ Push a value to an array path
 | :------ | :------ |
 | `key` | [`ModelKey`](../README.md#modelkey) |
 | `...values` | `any`[] |
+
+#### Returns
+
+[`Model`](Model.md)<`T`, `D`\>
+
+___
+
+### pushUnique
+
+▸ **pushUnique**(`key`, `value`): [`Model`](Model.md)<`T`, `D`\>
+
+Push a value to an array path if it doesn't exist
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `key` | [`ModelKey`](../README.md#modelkey) |
+| `value` | `any` |
 
 #### Returns
 
