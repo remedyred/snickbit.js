@@ -15,7 +15,7 @@ import {
 	uuid,
 	VariableType
 } from '@snickbit/utilities'
-import objectPath, {ensureExists, ObjectPathBound} from 'object-path'
+import objectPath, {ObjectPathBound} from 'object-path'
 
 export type ModelId = number | string | undefined
 
@@ -395,6 +395,19 @@ export class Model<T extends object = any, D = Partial<T>> {
 	 */
 	has(key: ModelKey): boolean {
 		return this.data.has(this.checkKey(key))
+	}
+
+	/**
+	 * Tests if value exists in paths value (i.e. in an array or object)
+	 */
+	valueHas(key: ModelKey, value: ModelValue): boolean {
+		const data = this.get(key)
+		if (isObject(data)) {
+			return Object.values(data).includes(value)
+		} else if (isArray(data)) {
+			return data.includes(value)
+		}
+		return false
 	}
 
 	/**
