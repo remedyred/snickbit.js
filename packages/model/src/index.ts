@@ -398,6 +398,19 @@ export class Model<T extends object = any, D = Partial<T>> {
 	}
 
 	/**
+	 * Tests if value exists in paths value (i.e. in an array or object)
+	 */
+	valueHas(key: ModelKey, value: ModelValue): boolean {
+		const data = this.get(key)
+		if (isObject(data)) {
+			return Object.values(data).includes(value)
+		} else if (isArray(data)) {
+			return data.includes(value)
+		}
+		return false
+	}
+
+	/**
 	 * Get the keys of the data
 	 */
 	keys(): string[]
