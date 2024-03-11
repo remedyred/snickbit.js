@@ -169,7 +169,12 @@ export class Model<T extends object = any, D = Partial<T>> {
 		this.out = new Out(`${this.options.name}#${this.is_new || !this.id ? 'new' : this.id}`)
 	}
 
-	protected checkKey(key): string {
+	protected checkKey(key: any): string {
+		// check for escaped periods and replace them (including the slash) with - instead
+		if (isString(key) && key.includes('\\.')) {
+			key = key.replaceAll('\\.', '-')
+		}
+
 		if (isString(key) && key.startsWith('.')) {
 			key = key.slice(1)
 		} else if (this.options.root) {
