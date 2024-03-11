@@ -55,6 +55,7 @@ Create a simple object model
 - [toJSON](Model.md#tojson)
 - [toString](Model.md#tostring)
 - [validate](Model.md#validate)
+- [valueHas](Model.md#valuehas)
 
 ## Constructors
 
@@ -647,3 +648,22 @@ If the model is invalid and strict mode is enabled
 #### Returns
 
 `Promise`<``true`` \| [`ModelErrors`](../README.md#modelerrors)\>
+
+___
+
+### valueHas
+
+▸ **valueHas**(`key`, `value`): `boolean`
+
+Tests if value exists in paths value (i.e. in an array or object)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `key` | [`ModelKey`](../README.md#modelkey) |
+| `value` | `any` |
+
+#### Returns
+
+`boolean`
