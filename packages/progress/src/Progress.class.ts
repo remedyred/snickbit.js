@@ -155,6 +155,14 @@ export class Progress {
 	}
 
 	/**
+	 * Add to the progress bar total
+	 */
+	addTotal(value: number): this {
+		this.options.total += value
+		return this.setTotal(this.options.total)
+	}
+
+	/**
 	 * Fail and stop the progress bar
 	 */
 	fail(...messages: any[]): this {

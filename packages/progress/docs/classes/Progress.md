@@ -32,6 +32,7 @@ https://github.com/npkgz/cli-progress
 
 ### Methods
 
+- [addTotal](Progress.md#addtotal)
 - [debug](Progress.md#debug)
 - [eta](Progress.md#eta)
 - [fail](Progress.md#fail)
@@ -85,6 +86,24 @@ ___
 `boolean`
 
 ## Methods
+
+### addTotal
+
+▸ **addTotal**(`value`): [`Progress`](Progress.md)
+
+Add to the progress bar total
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `number` |
+
+#### Returns
+
+[`Progress`](Progress.md)
+
+___
 
 ### debug
 
