@@ -23,6 +23,7 @@ Multi-progress child bar
 
 ### Methods
 
+- [addTotal](MultiProgressChild.md#addtotal)
 - [debug](MultiProgressChild.md#debug)
 - [eta](MultiProgressChild.md#eta)
 - [fail](MultiProgressChild.md#fail)
@@ -87,6 +88,28 @@ ___
 Progress.isDebug
 
 ## Methods
+
+### addTotal
+
+▸ **addTotal**(`value`): [`MultiProgressChild`](MultiProgressChild.md)
+
+Add to the progress bar total
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `number` |
+
+#### Returns
+
+[`MultiProgressChild`](MultiProgressChild.md)
+
+#### Inherited from
+
+[Progress](Progress.md).[addTotal](Progress.md#addtotal)
+
+___
 
 ### debug
 

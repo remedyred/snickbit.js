@@ -33,6 +33,7 @@ https://github.com/npkgz/cli-progress
 
 ### Methods
 
+- [addTotal](MultiProgress.md#addtotal)
 - [create](MultiProgress.md#create)
 - [debug](MultiProgress.md#debug)
 - [eta](MultiProgress.md#eta)
@@ -127,6 +128,28 @@ ___
 Progress.isDebug
 
 ## Methods
+
+### addTotal
+
+▸ **addTotal**(`value`): [`MultiProgress`](MultiProgress.md)
+
+Add to the progress bar total
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `number` |
+
+#### Returns
+
+[`MultiProgress`](MultiProgress.md)
+
+#### Inherited from
+
+[Progress](Progress.md).[addTotal](Progress.md#addtotal)
+
+___
 
 ### create
 
